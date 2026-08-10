@@ -135,10 +135,21 @@
                 "type": "string"
               },
               "marker": {
-                "type": "string"
+                "type": "string",
+                "description": "画像生成・位置調整のための説明テキスト（例：①〜⑤）。画面には描画されない。"
               },
               "marker_target": {
-                "type": "string"
+                "type": "string",
+                "description": "marker が指す解剖学的構造の説明テキスト。画面には描画されない。"
+              },
+              "overlay": {
+                "$ref": "#/$defs/overlayMarker",
+                "description": "画像上に単一マーカーを重ねて表示するための正規化座標。省略時は何も描画しない。"
+              },
+              "overlays": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/overlayMarker" },
+                "description": "画像上に複数マーカーを重ねて表示する場合に使用。省略時は何も描画しない。"
               }
             }
           }
@@ -159,6 +170,30 @@
             }
           }
         ]
+      }
+    }
+  },
+  "$defs": {
+    "overlayMarker": {
+      "type": "object",
+      "required": ["x", "y", "label"],
+      "properties": {
+        "x": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "画像左上を0、右下を1とする正規化X座標。"
+        },
+        "y": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "画像左上を0、右下を1とする正規化Y座標。"
+        },
+        "label": {
+          "type": "string",
+          "description": "画像上に表示する短いラベル（例：①）。"
+        }
       }
     }
   }

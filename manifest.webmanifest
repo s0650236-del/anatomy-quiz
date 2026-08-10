@@ -1,6 +1,8 @@
 {
   "name": "人体の構造と機能｜試験対策クイズ",
   "short_name": "人体クイズ",
+  "description": "看護学科1年生向け「人体の構造と機能」試験対策クイズ。総論・循環器・呼吸器・泌尿器を分野別またはランダムに出題。",
+  "id": "./",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
