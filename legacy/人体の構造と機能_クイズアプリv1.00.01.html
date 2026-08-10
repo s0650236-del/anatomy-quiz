@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人体の構造と機能 クイズアプリ</title>
+<style>
+  :root {
+    --bg: #f6f5ef;
+    --card: #ffffff;
+    --line: #e5e7eb;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --blue: #2f7dd3;
+    --blue-soft: #ebf4ff;
+    --green: #12815a;
+    --green-soft: #e6f7ef;
+    --red: #b63d3d;
+    --red-soft: #fdecec;
+    --shadow: 0 2px 10px rgba(0,0,0,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  .wrap {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 6px;
+  }
+  .score-mini {
+    color: var(--muted);
+    font-size: 14px;
+    white-space: nowrap;
+    padding-top: 6px;
+  }
+  .panel {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .toolbar-group {
+    margin-bottom: 12px;
+  }
+  .toolbar-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip {
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: #4b5563;
+    border-radius: 999px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: .15s;
+  }
+  .chip.active {
+    background: var(--blue-soft);
+    color: var(--blue);
+    border-color: transparent;
+    font-weight: 700;
+  }
+  .controls {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .control-box {
+    background: #fafafa;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px;
+  }
+  .control-title {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  select, button.primary, button.secondary {
+    width: 100%;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 11px 12px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: var(--text);
+  }
+  button.primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  button.secondary {
+    background: #fff;
+    cursor: pointer;
+  }
+  .progress-bar {
+    width: 100%;
+    height: 6px;
+    border-radius: 99px;
+    overflow: hidden;
+    background: #e5e7eb;
+    margin-bottom: 16px;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--blue);
+    transition: width .25s ease;
+  }
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .question-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 22px 18px 18px;
+  }
+  .q-number {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .q-text {
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .options {
+    display: grid;
+    gap: 10px;
+  }
+  .option {
+    width: 100%;
+    text-align: left;
+    border: 1px solid #d8dde5;
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 14px;
+    cursor: pointer;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    transition: .15s;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .option:hover:not(:disabled) {
+    border-color: #bfc8d4;
+    background: #fafcff;
+  }
+  .option:disabled {
+    cursor: default;
+  }
+  .badge {
+    min-width: 28px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1.5px solid #c7cdd6;
+    color: #6b7280;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+  .option.correct {
+    border-color: var(--green);
+    background: var(--green-soft);
+  }
+  .option.correct .badge {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+  }
+  .option.wrong {
+    border-color: var(--red);
+    background: var(--red-soft);
+  }
+  .option.wrong .badge {
+    background: var(--red);
+    border-color: var(--red);
+    color: #fff;
+  }
+  .feedback {
+    margin-top: 14px;
+    border-left: 4px solid var(--blue);
+    background: #f8fbff;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .feedback .head {
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .feedback .ok { color: var(--green); }
+  .feedback .ng { color: var(--red); }
+  .actions {
+    margin-top: 14px;
+    display: flex;
+    gap: 10px;
+  }
+  .actions button {
+    flex: 1;
+  }
+  .result {
+    text-align: center;
+    padding: 24px 10px 4px;
+  }
+  .result-score {
+    font-size: 56px;
+    line-height: 1;
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 10px;
+  }
+  .result-text {
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .stat {
+    background: #fafafa;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 10px;
+  }
+  .stat-num {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .footer-note {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+  @media (max-width: 720px) {
+    .controls { grid-template-columns: 1fr; }
+    .title { font-size: 22px; }
+    .q-text { font-size: 17px; }
+    .header { flex-direction: column; }
+    .score-mini { padding-top: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <div class="title">人体の構造と機能 クイズアプリ</div>
+      <div class="sub"></div>
+    </div>
+    <div class="score-mini" id="scoreMini"></div>
+  </div>
+
+  <div class="panel">
+    <div class="toolbar-group">
+      <div class="toolbar-label">出題範囲</div>
+      <div class="chips" id="chapterChips"></div>
+    </div>
+
+    <div class="controls">
+      <div class="control-box">
+        <div class="control-title">出題数</div>
+        <select id="countSelect">
+          <option value="10">10問</option>
+          <option value="20">20問</option>
+          <option value="30">30問</option>
+          <option value="50">50問</option>
+          <option value="9999">全問</option>
+        </select>
+      </div>
+      <div class="control-box">
+        <div class="control-title">出題順</div>
+        <select id="orderSelect">
+          <option value="random">ランダム</option>
+          <option value="sequential">順番どおり</option>
+        </select>
+      </div>
+      <div class="control-box">
+        <div class="control-title">開始・再設定</div>
+        <button class="primary" id="startBtn">この条件で開始</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+  <div id="mainArea"></div>
+  <div class="footer-note">保存形式：単一HTML / 章別フィルタ：総論・循環器・呼吸器・腎・泌尿器・生殖器</div>
+</div>
+
+<script>
+const QUESTIONS = [{"id": 1, "chapter": "総論", "question": "解剖学と生理学の組み合わせとして正しいものはどれか。", "options": ["解剖学は人体の働きを扱い、生理学は人体の形を扱う。", "解剖学は人体の形・位置・構造を扱い、生理学は人体の働き・調節を扱う。", "解剖学も生理学も、主として疾患名を覚える学問である。", "生理学は臓器の位置のみを扱う。"], "answer": 1, "explanation": "解剖学は形態、 生理学は機能を扱う。両者を対応させて理解することが重要である。"}, {"id": 2, "chapter": "総論", "question": "人体の成り立ちを小さい単位から大きい単位へ正しく並べたものはどれか。", "options": ["細胞→組織→器官→器官系→個体", "細胞→器官→組織→器官系→個体", "組織→細胞→器官→個体→器官系", "細胞→組織→器官系→器官→個体"], "answer": 0, "explanation": "人体は細胞から始まり、組織、器官、器官系、個体へと階層的に成り立つ。"}, {"id": 3, "chapter": "総論", "question": "組織について正しいものはどれか。", "options": ["同じ器官が集まったものを組織という。", "似た形態と機能をもつ細胞が一定の配列で集まったものを組織という。", "組織は一種類の細胞だけから必ず成る。", "組織は器官より大きい単位である。"], "answer": 1, "explanation": "組織は類似した細胞が特定の配列で集まった単位であり、器官を構成する。"}, {"id": 4, "chapter": "総論", "question": "人体の基本組織に含まれないものはどれか。", "options": ["上皮組織", "結合組織", "筋組織", "内臓組織"], "answer": 3, "explanation": "基本組織は上皮組織、結合組織、筋組織、神経組織の4つである。"}, {"id": 5, "chapter": "総論", "question": "上皮組織の説明として正しいものはどれか。", "options": ["主に収縮して運動を生み出す。", "主に身体表面や管・腔の内面を覆い、分泌・吸収にも関わる。", "主に情報の受容と伝達を担う。", "主に骨や軟骨からなる。"], "answer": 1, "explanation": "上皮組織は被覆、分泌、吸収に関わる。"}, {"id": 6, "chapter": "総論", "question": "結合組織の説明として正しいものはどれか。", "options": ["組織同士をつなぎ、支持し、場合によっては運搬にも関わる。", "主に声帯の振動を担う。", "主に身体の表面を覆う。", "主に電気信号の伝達を担う。"], "answer": 0, "explanation": "結合組織には線維性結合組織、脂肪、血液、リンパ、骨、軟骨などが含まれる。"}, {"id": 7, "chapter": "総論", "question": "筋組織について誤っているものはどれか。", "options": ["骨格筋は身体運動や姿勢保持に関わる。", "心筋は横紋をもつ。", "平滑筋は自律神経の支配を受ける。", "心筋は平滑筋に分類される。"], "answer": 3, "explanation": "心筋は横紋筋であり、不随意筋である。"}, {"id": 8, "chapter": "総論", "question": "神経組織について正しいものはどれか。", "options": ["主な役割は身体の表面を覆うことである。", "主な役割は情報の受容・伝達と調節である。", "主な役割は骨格をつくることである。", "主な役割は尿をつくることである。"], "answer": 1, "explanation": "神経組織は刺激を受け取り、伝え、応答や調節を成り立たせる。"}, {"id": 9, "chapter": "総論", "question": "器官について正しいものはどれか。", "options": ["一種類の組織だけでできている。", "複数の組織が特定の機能を果たすために組み合わさった構造である。", "器官は個体より大きい単位である。", "器官と器官系は同じ意味である。"], "answer": 1, "explanation": "胃や心臓などの器官は、複数の組織が組み合わさって機能する。"}, {"id": 10, "chapter": "総論", "question": "器官系の説明として正しいものはどれか。", "options": ["複数の器官が連携して特定の機能を果たすまとまりである。", "複数の細胞が集まったものをいう。", "器官より小さい単位である。", "器官系は必ず一つの器官で構成される。"], "answer": 0, "explanation": "器官系は複数の器官の協働で成立する。"}, {"id": 11, "chapter": "総論", "question": "身体の大区分として正しいものはどれか。", "options": ["頭頸部、体幹、上肢、下肢", "頭頸部、胸腹部、手、足", "頭部、胸部、腹部、骨盤", "頸部、体幹、手、足"], "answer": 0, "explanation": "体表の大区分は頭頸部、体幹、上肢、下肢で整理する。"}, {"id": 12, "chapter": "総論", "question": "体幹に含まれる部位として最も適切なものはどれか。", "options": ["上腕", "前腕", "腰部", "下腿"], "answer": 2, "explanation": "体幹には胸部、腹部、背部、腰部、殿部などが含まれる。"}, {"id": 13, "chapter": "総論", "question": "上肢の区分として誤っているものはどれか。", "options": ["肩甲帯", "上腕", "前腕", "大腿"], "answer": 3, "explanation": "大腿は下肢の区分である。"}, {"id": 14, "chapter": "総論", "question": "下肢の区分として正しいものはどれか。", "options": ["肩甲帯、上腕、前腕、手", "股帯、大腿、下腿、足", "頭部、頸部、体幹、足", "胸部、腹部、殿部、足"], "answer": 1, "explanation": "下肢は股帯、大腿、下腿、足などに区分される。"}, {"id": 15, "chapter": "総論", "question": "体内の腔所について正しいものはどれか。", "options": ["頭蓋腔には脊髄が収められる。", "脊柱管には脳が収められる。", "胸腔と腹腔は横隔膜で隔てられる。", "骨盤腔は心臓を収める。"], "answer": 2, "explanation": "頭蓋腔は脳、脊柱管は脊髄、胸腔と腹腔は横隔膜で隔てられる。"}, {"id": 16, "chapter": "総論", "question": "胸腔に収められるものとして最も適切なものはどれか。", "options": ["脳", "脊髄", "呼吸器系や循環器系の器官", "膀胱"], "answer": 2, "explanation": "胸腔には肺や心臓などが含まれる。"}, {"id": 17, "chapter": "総論", "question": "腹腔について正しいものはどれか。", "options": ["主として消化器系の大部分を収める。", "主として脳を収める。", "主として尿路上皮のみを収める。", "主として声帯を収める。"], "answer": 0, "explanation": "腹腔には消化器系の多くが含まれる。"}, {"id": 18, "chapter": "総論", "question": "骨盤腔について正しいものはどれか。", "options": ["主として呼吸器系を収める。", "主として泌尿器系や生殖器系の一部を収める。", "頭蓋腔と同義である。", "横隔膜の上方にある。"], "answer": 1, "explanation": "骨盤腔には膀胱や内性器などが位置する。"}, {"id": 19, "chapter": "総論", "question": "解剖学的正位として正しいものはどれか。", "options": ["直立し、手掌を後方に向ける。", "直立し、顔を正面に向け、手掌を前方に向ける。", "座位で両上肢を前方に挙上する。", "もっとも楽な自然立位をとる。"], "answer": 1, "explanation": "解剖学的正位は位置関係を記載する基準姿勢である。"}, {"id": 20, "chapter": "総論", "question": "解剖学的正位について誤っているものはどれか。", "options": ["顔を正面に向ける。", "上肢を体側に下ろす。", "手背を前方に向ける。", "身体の位置関係記載の基準である。"], "answer": 2, "explanation": "手掌を前方に向けるのが解剖学的正位である。"}, {"id": 21, "chapter": "総論", "question": "正中面について正しいものはどれか。", "options": ["身体を上下に分ける。", "身体を左右に等分する矢状面である。", "身体を前後に等分する冠状面である。", "身体を水平に横断する面である。"], "answer": 1, "explanation": "正中面は正中を通る矢状面である。"}, {"id": 22, "chapter": "総論", "question": "身体を左右に分ける平面はどれか。", "options": ["矢状面", "冠状面", "水平面", "横断面ではない面"], "answer": 0, "explanation": "矢状面は身体を左右に分ける。"}, {"id": 23, "chapter": "総論", "question": "身体を前後に分ける平面はどれか。", "options": ["矢状面", "冠状面", "水平面", "正中面"], "answer": 1, "explanation": "冠状面は身体を前後に分ける。"}, {"id": 24, "chapter": "総論", "question": "身体を上下に分ける平面はどれか。", "options": ["矢状面", "冠状面", "水平面", "正中面"], "answer": 2, "explanation": "水平面は身体を上下に分ける。"}, {"id": 25, "chapter": "総論", "question": "近位と遠位の説明として正しいものはどれか。", "options": ["近位は体幹から遠い側、遠位は体幹に近い側である。", "四肢では体幹に近い側を近位、遠い側を遠位という。", "近位と遠位は頭部にのみ用いる。", "消化管では用いない。"], "answer": 1, "explanation": "四肢や管状器官で用いられる基本用語である。"}, {"id": 26, "chapter": "総論", "question": "橈側と尺側の説明として正しいものはどれか。", "options": ["橈側は小指側、尺側は親指側である。", "橈側は親指側、尺側は小指側である。", "橈側は前方、尺側は後方である。", "橈側と尺側は下肢で用いる。"], "answer": 1, "explanation": "上肢では親指側が橈側、小指側が尺側である。"}, {"id": 27, "chapter": "総論", "question": "脛側と腓側の説明として正しいものはどれか。", "options": ["脛側は腓骨の側、腓側は脛骨の側である。", "脛側は母趾側、腓側は小趾側である。", "脛側は下肢で脛骨の側、腓側は腓骨の側である。", "脛側と腓側は上肢で用いる。"], "answer": 2, "explanation": "下肢では脛骨の側が脛側、腓骨の側が腓側である。"}, {"id": 28, "chapter": "総論", "question": "内側と外側の説明として正しいものはどれか。", "options": ["正中面に近い側が内側、遠い側が外側である。", "前面に近い側が内側、後面に近い側が外側である。", "体表に近い側が内側、遠い側が外側である。", "親指側が常に内側である。"], "answer": 0, "explanation": "内外側は正中面との距離で定義する。"}, {"id": 29, "chapter": "総論", "question": "浅と深の説明として正しいものはどれか。", "options": ["体表に近い側を深、遠い側を浅という。", "体表に近い側を浅、遠い側を深という。", "頭側に近い側を浅という。", "尾側に近い側を深という。"], "answer": 1, "explanation": "浅深は体表からの距離で表す。"}, {"id": 30, "chapter": "総論", "question": "前方と後方の説明として正しいものはどれか。", "options": ["腹側は後方、背側は前方を意味する。", "腹側は前方、背側は後方を意味する。", "腹側は内側、背側は外側を意味する。", "腹側と背側は四肢には用いない。"], "answer": 1, "explanation": "腹側は前方、背側は後方とほぼ対応する。"}, {"id": 31, "chapter": "総論", "question": "屈曲と伸展の説明として正しいものはどれか。", "options": ["角度が大きくなる運動を屈曲、角度が小さくなる運動を伸展という。", "角度が小さくなる運動を屈曲、角度が大きくなる運動を伸展という。", "前方への運動をすべて屈曲という。", "後方への運動をすべて伸展という。"], "answer": 1, "explanation": "一般に関節角度が小さくなる運動が屈曲、増大する運動が伸展である。"}, {"id": 32, "chapter": "総論", "question": "足関節で足底へ向ける運動はどれか。", "options": ["背屈", "底屈", "掌屈", "回外"], "answer": 1, "explanation": "足底方向は底屈、足背方向は背屈である。"}, {"id": 33, "chapter": "総論", "question": "外転と内転の説明として正しいものはどれか。", "options": ["体幹や手指の軸から遠ざかる運動を外転、近づく運動を内転という。", "正中面に近づく運動を外転、遠ざかる運動を内転という。", "前方への運動を外転という。", "後方への運動を内転という。"], "answer": 0, "explanation": "外転は離れる、内転は近づく運動である。"}, {"id": 34, "chapter": "総論", "question": "外旋と内旋の説明として正しいものはどれか。", "options": ["外方へ回旋する運動を外旋、内方へ回旋する運動を内旋という。", "前方へ回旋する運動を外旋という。", "外旋と内旋は体幹には用いない。", "内旋は常に伸展と同じである。"], "answer": 0, "explanation": "上肢帯や大腿などの長軸を中心とした回旋で用いる。"}, {"id": 35, "chapter": "総論", "question": "前腕における回外として正しいものはどれか。", "options": ["前腕軸を中心に内方へ回旋する運動", "前腕軸を中心に外方へ回旋する運動", "足部の複合運動", "肩関節の水平伸展"], "answer": 1, "explanation": "前腕では外方へ回旋する運動を回外、内方を回内という。"}, {"id": 36, "chapter": "総論", "question": "肩関節90度外転位から前方へ動かす運動はどれか。", "options": ["水平伸展", "水平屈曲", "外転", "内転"], "answer": 1, "explanation": "水平面で前方へ動かすのが水平屈曲、後方が水平伸展である。"}, {"id": 37, "chapter": "総論", "question": "頭部や体幹の矢状面での左右への運動を何というか。", "options": ["回旋", "側屈", "挙上", "回外"], "answer": 1, "explanation": "頭部や体幹を右左へ傾ける運動は側屈である。"}, {"id": 38, "chapter": "総論", "question": "肩甲帯の運動として正しいものはどれか。", "options": ["上方への運動を下制、下方への運動を挙上という。", "上方への運動を挙上、下方への運動を下制という。", "肩甲帯には挙上・下制はない。", "肩甲帯の上方回旋は内転と同義である。"], "answer": 1, "explanation": "肩甲帯では挙上と下制の用語を用いる。"}, {"id": 39, "chapter": "総論", "question": "母指の掌側外転について正しいものはどれか。", "options": ["示指に近づく運動である。", "掌側面に対して直角方向に示指から離す運動である。", "前腕の回外を意味する。", "母指には外転がない。"], "answer": 1, "explanation": "母指は手の他の指と異なる平面で運動するため用語の理解が重要である。"}, {"id": 40, "chapter": "総論", "question": "安静立位姿勢の理想的アライメントについて正しいものはどれか。", "options": ["前後方向の理想的アライメントでは、重心線は外果の前方付近を通る。", "前後方向の理想的アライメントでは、重心線は膝蓋骨の後面中央を通る。", "左右方向の理想的アライメントでは、重心線は常に右足のみを通る。", "理想的アライメントは解剖学的正位と無関係である。"], "answer": 0, "explanation": "安静立位では前後方向の重心線が外果前方付近などを通る。"}, {"id": 41, "chapter": "循環器", "question": "循環器系の主な役割として最も適切なものはどれか。", "options": ["酸素や栄養素を全身に輸送し、老廃物の回収にも関わる。", "空気を加温・加湿する。", "食物を消化・吸収する。", "骨格を支持する。"], "answer": 0, "explanation": "循環器系は体内の輸送系として働く。"}, {"id": 42, "chapter": "循環器", "question": "循環器系の構成として正しいものはどれか。", "options": ["心臓、血管系、リンパ系", "心臓、肺、気管、リンパ節", "脳、脊髄、心臓", "腎臓、尿管、膀胱"], "answer": 0, "explanation": "資料では心臓、血管系、リンパ系で構成されると整理される。"}, {"id": 43, "chapter": "循環器", "question": "体循環の開始部位はどれか。", "options": ["右心房", "右心室", "左心房", "左心室"], "answer": 3, "explanation": "体循環は左心室から始まる。"}, {"id": 44, "chapter": "循環器", "question": "体循環の終了部位はどれか。", "options": ["右心房", "左心房", "右心室", "左心室"], "answer": 0, "explanation": "体循環は右心房で終わる。"}, {"id": 45, "chapter": "循環器", "question": "肺循環の開始部位はどれか。", "options": ["右心房", "右心室", "左心房", "左心室"], "answer": 1, "explanation": "肺循環は右心室から始まる。"}, {"id": 46, "chapter": "循環器", "question": "肺循環の終了部位はどれか。", "options": ["右心房", "右心室", "左心房", "左心室"], "answer": 2, "explanation": "肺循環は左心房で終わる。"}, {"id": 47, "chapter": "循環器", "question": "肺動脈に流れる血液として正しいものはどれか。", "options": ["動脈血", "静脈血", "リンパ液", "原尿"], "answer": 1, "explanation": "血管名は流れの方向で決まり、肺動脈には静脈血が流れる。"}, {"id": 48, "chapter": "循環器", "question": "肺静脈に流れる血液として正しいものはどれか。", "options": ["動脈血", "静脈血", "門脈血", "リンパ液"], "answer": 0, "explanation": "肺静脈には酸素の多い動脈血が流れる。"}, {"id": 49, "chapter": "循環器", "question": "肺循環の主な役割はどれか。", "options": ["酸素・栄養素を全身へ供給する。", "二酸化炭素を排出し酸素を取り込む。", "腎臓へ老廃物を送る。", "心筋へ血液を送る。"], "answer": 1, "explanation": "肺循環は肺でのガス交換を担う。"}, {"id": 50, "chapter": "循環器", "question": "体循環と肺循環の組み合わせとして正しいものはどれか。", "options": ["体循環：右心室→左心房、肺循環：左心室→右心房", "体循環：左心室→右心房、肺循環：右心室→左心房", "体循環：左心房→右心室、肺循環：右心房→左心室", "体循環：右心房→左心房、肺循環：左心室→右心室"], "answer": 1, "explanation": "体循環と肺循環の始まりと終わりを対比して覚える。"}, {"id": 51, "chapter": "循環器", "question": "心臓の位置について正しいものはどれか。", "options": ["腹腔内にある。", "縦隔中央部で胸骨の後方、左右の肺の間にある。", "骨盤腔にある。", "脊柱管内にある。"], "answer": 1, "explanation": "心臓は縦隔に位置する。"}, {"id": 52, "chapter": "循環器", "question": "心底について正しいものはどれか。", "options": ["心臓の尖端で左第5肋間隙に相当する。", "大血管の出入り口側で第2肋骨の高さに相当する。", "膀胱の後方に位置する。", "右心室の最下端である。"], "answer": 1, "explanation": "心底は大血管の出入り口側である。"}, {"id": 53, "chapter": "循環器", "question": "心尖について正しいものはどれか。", "options": ["第2肋骨の高さにある。", "左第5肋間隙、乳頭線内側に位置する。", "右第5肋間隙に位置する。", "頸部に位置する。"], "answer": 1, "explanation": "心尖拍動を触れやすい位置として重要である。"}, {"id": 54, "chapter": "循環器", "question": "心膜について正しいものはどれか。", "options": ["心膜腔には通常大量の空気がある。", "線維性心膜は心臓を固定し位置を安定化させる。", "臓側板は心臓から離れた外層である。", "心膜液は心拍動時の摩擦を増やす。"], "answer": 1, "explanation": "線維性心膜、漿膜性心膜、心膜腔・心膜液の機能を区別する。"}, {"id": 55, "chapter": "循環器", "question": "心膜腔・心膜液の説明として正しいものはどれか。", "options": ["臓側板と壁側板の間にあり、心拍動時の摩擦を軽減する。", "線維性心膜の外側にあり、骨格筋を含む。", "胸腔と同義である。", "心房内に存在する。"], "answer": 0, "explanation": "心膜液は潤滑液として働く。"}, {"id": 56, "chapter": "循環器", "question": "心臓の4腔の組み合わせとして正しいものはどれか。", "options": ["右房、右室、左房、左室", "右房、左房、肺房、左室", "右室、左室、上室、下室", "右房、右肺、左房、左肺"], "answer": 0, "explanation": "心臓の内腔は右房・右室・左房・左室である。"}, {"id": 57, "chapter": "循環器", "question": "心室壁について正しいものはどれか。", "options": ["右室壁の方が左室壁より厚い。", "左室壁は右室壁より厚い。", "左右の心室壁の厚さは同じである。", "どちらも心房壁より薄い。"], "answer": 1, "explanation": "左心室は全身へ拍出するため壁が厚い。"}, {"id": 58, "chapter": "循環器", "question": "房室弁に含まれる組み合わせはどれか。", "options": ["三尖弁、僧帽弁", "肺動脈弁、大動脈弁", "三尖弁、肺動脈弁", "僧帽弁、大動脈弁"], "answer": 0, "explanation": "房室弁は心房と心室の間にある。"}, {"id": 59, "chapter": "循環器", "question": "動脈弁に含まれる組み合わせはどれか。", "options": ["三尖弁、僧帽弁", "肺動脈弁、大動脈弁", "三尖弁、肺動脈弁", "僧帽弁、大動脈弁"], "answer": 1, "explanation": "動脈弁は心室と大血管の間にある。"}, {"id": 60, "chapter": "循環器", "question": "三尖弁の位置として正しいものはどれか。", "options": ["左心房と左心室の間", "右心房と右心室の間", "右心室と肺動脈の間", "左心室と大動脈の間"], "answer": 1, "explanation": "三尖弁は右房室弁である。"}, {"id": 61, "chapter": "循環器", "question": "僧帽弁の位置として正しいものはどれか。", "options": ["右心房と右心室の間", "左心房と左心室の間", "右心室と肺動脈の間", "左心室と大動脈の間"], "answer": 1, "explanation": "僧帽弁は左房室弁である。"}, {"id": 62, "chapter": "循環器", "question": "肺動脈弁の位置として正しいものはどれか。", "options": ["右心房と右心室の間", "左心房と左心室の間", "右心室と肺動脈の間", "左心室と大動脈の間"], "answer": 2, "explanation": "肺動脈弁は右心室流出路にある。"}, {"id": 63, "chapter": "循環器", "question": "大動脈弁の位置として正しいものはどれか。", "options": ["右心房と右心室の間", "左心房と左心室の間", "右心室と肺動脈の間", "左心室と大動脈の間"], "answer": 3, "explanation": "大動脈弁は左心室流出路にある。"}, {"id": 64, "chapter": "循環器", "question": "心室収縮時に閉鎖する弁の組み合わせはどれか。", "options": ["三尖弁と僧帽弁", "肺動脈弁と大動脈弁", "三尖弁と肺動脈弁", "僧帽弁と大動脈弁"], "answer": 0, "explanation": "房室弁は心室収縮時に閉鎖する。"}, {"id": 65, "chapter": "循環器", "question": "心室拡張時に閉鎖する弁の組み合わせはどれか。", "options": ["三尖弁と僧帽弁", "肺動脈弁と大動脈弁", "三尖弁と肺動脈弁", "僧帽弁と大動脈弁"], "answer": 1, "explanation": "動脈弁は心室拡張時に閉鎖する。"}, {"id": 66, "chapter": "循環器", "question": "僧帽弁に関する説明として正しいものはどれか。", "options": ["3尖からなる。", "2尖からなる。", "腱索を持たない。", "肺動脈に接続する。"], "answer": 1, "explanation": "僧帽弁は2尖で、他の弁は3尖である。"}, {"id": 67, "chapter": "循環器", "question": "弁について正しいものはどれか。", "options": ["弁には心筋が含まれ、能動的に開閉する。", "弁の動きは受動的である。", "全ての弁は2尖である。", "腱索は動脈弁に付着する。"], "answer": 1, "explanation": "弁自体に心筋は含まれず、圧差で受動的に動く。"}, {"id": 68, "chapter": "循環器", "question": "房室弁と腱索・乳頭筋の関係として正しいものはどれか。", "options": ["腱索は大動脈弁に付着する。", "乳頭筋は房室弁が心房側へ反転しないよう支える。", "乳頭筋は房室弁を能動的に開く。", "腱索は肺動脈弁に付着する。"], "answer": 1, "explanation": "収縮時に乳頭筋と腱索が房室弁の反転を防ぐ。"}, {"id": 69, "chapter": "循環器", "question": "弁の位置関係について正しいものはどれか。", "options": ["肺動脈弁は大動脈弁より低位で後方にある。", "肺動脈弁は大動脈弁より高位で前方にある。", "大動脈弁と僧帽弁は離れている。", "三尖弁は大動脈弁と近接する。"], "answer": 1, "explanation": "肺動脈弁は前上方、大動脈弁と僧帽弁は近接する。"}, {"id": 70, "chapter": "循環器", "question": "左冠動脈について正しいものはどれか。", "options": ["上行大動脈右側から起こる。", "主に左心房、左心室、心室中隔前面などを栄養する。", "右心房と刺激伝導系の一部のみを栄養する。", "冠静脈洞へ流入する静脈である。"], "answer": 1, "explanation": "左冠動脈は左心系中心に分布する。"}, {"id": 71, "chapter": "循環器", "question": "右冠動脈について正しいものはどれか。", "options": ["上行大動脈左側から起こる。", "右心房、右心室、刺激伝導系の一部に分布する。", "左心室前壁のみに分布する。", "冠静脈洞から出る。"], "answer": 1, "explanation": "右冠動脈は右心系と刺激伝導系の一部に関わる。"}, {"id": 72, "chapter": "循環器", "question": "前室間枝について正しいものはどれか。", "options": ["右冠動脈から分岐する。", "左冠動脈から分岐し、心室前壁と中隔前部に分布する。", "冠静脈洞に注ぐ。", "左回旋枝の別名である。"], "answer": 1, "explanation": "前室間枝は左前下行枝に相当する。"}, {"id": 73, "chapter": "循環器", "question": "回旋枝について正しいものはどれか。", "options": ["左冠動脈から分岐し、左心房・左心室側壁に分布する。", "右冠動脈から分岐し、右室前壁に分布する。", "静脈である。", "前室間枝と同じ部位にのみ分布する。"], "answer": 0, "explanation": "左回旋枝は左房・左室側壁側へ走る。"}, {"id": 74, "chapter": "循環器", "question": "冠静脈洞について正しいものはどれか。", "options": ["左心房へ開口する。", "右心房へ開口し、心臓静脈血の還流経路の終点となる。", "左心室へ開口する。", "大動脈へ開口する。"], "answer": 1, "explanation": "多くの冠静脈は冠静脈洞を介して右心房へ戻る。"}, {"id": 75, "chapter": "循環器", "question": "刺激伝導系の開始部位はどれか。", "options": ["房室結節", "房室束", "洞房結節", "プルキンエ線維"], "answer": 2, "explanation": "洞房結節がペースメーカーとして働く。"}, {"id": 76, "chapter": "循環器", "question": "房室結節の主な役割はどれか。", "options": ["心室全体へ一斉に刺激を伝える。", "刺激伝導を一時的に遅延させる。", "自発的興奮を最初に発生させる。", "心房と心室を機械的に連結する。"], "answer": 1, "explanation": "房室結節での遅延が心房と心室の協調に重要である。"}, {"id": 77, "chapter": "循環器", "question": "房室束について正しいものはどれか。", "options": ["心房と心室の唯一の電気的接続路である。", "心房筋のみに分布する。", "左右心房を結ぶ。", "冠状動脈の一部である。"], "answer": 0, "explanation": "His束が心房から心室への伝導を担う。"}, {"id": 78, "chapter": "循環器", "question": "心室全体に一斉に刺激を伝える構造はどれか。", "options": ["洞房結節", "房室結節", "プルキンエ線維", "僧帽弁"], "answer": 2, "explanation": "プルキンエ線維が心室筋末梢へ広がる。"}, {"id": 79, "chapter": "循環器", "question": "心電図のP波が示すものはどれか。", "options": ["心房の脱分極", "心房の再分極", "心室の脱分極", "心室の再分極"], "answer": 0, "explanation": "P波は心房興奮を示す。"}, {"id": 80, "chapter": "循環器", "question": "心電図のQRS群が示すものはどれか。", "options": ["心房の脱分極", "心房の再分極", "心室の脱分極", "心室の再分極"], "answer": 2, "explanation": "QRS群は心室興奮を示す。"}, {"id": 81, "chapter": "循環器", "question": "心電図のT波が示すものはどれか。", "options": ["心房の脱分極", "心房の再分極", "心室の再分極", "心室の脱分極"], "answer": 2, "explanation": "T波は心室の再分極を示す。"}, {"id": 82, "chapter": "循環器", "question": "PQ間隔について正しいものはどれか。", "options": ["心房から心室への興奮伝導時間を反映する。", "心室の再分極時間のみを反映する。", "心室筋全体が興奮している時期を示す。", "心房筋のみの収縮時間を示す。"], "answer": 0, "explanation": "房室結節での遅延を含む伝導時間の指標である。"}, {"id": 83, "chapter": "循環器", "question": "ST部分について正しいものはどれか。", "options": ["心房の再分極を表す。", "心室全体が興奮している時期に相当する。", "心室の再分極のみを表す。", "洞房結節の活動を直接表す。"], "answer": 1, "explanation": "ST部分は心室全体の脱分極が持続している時期に相当する。"}, {"id": 84, "chapter": "循環器", "question": "動脈の特徴として正しいものはどれか。", "options": ["壁は薄く内腔が広い。", "静脈弁を持つ。", "厚い壁で弾性線維・平滑筋が豊富である。", "主として組織との物質交換を行う。"], "answer": 2, "explanation": "動脈は高圧に耐える構造をもつ。"}, {"id": 85, "chapter": "循環器", "question": "静脈の特徴として正しいものはどれか。", "options": ["壁は厚く高圧に耐える。", "内腔は狭く静脈弁を持たない。", "壁は薄く内腔が広く、静脈弁をもつ。", "単層扁平上皮と基底膜のみからなる。"], "answer": 2, "explanation": "静脈は低圧系で逆流防止の弁を持つ。"}, {"id": 86, "chapter": "循環器", "question": "毛細血管の特徴として正しいものはどれか。", "options": ["厚い平滑筋層をもつ。", "単層扁平上皮と基底膜のみの薄い壁をもち、物質交換を行う。", "静脈弁をもつ。", "脈拍を触れる。"], "answer": 1, "explanation": "毛細血管は交換に特化した薄い壁をもつ。"}, {"id": 87, "chapter": "循環器", "question": "心臓を栄養する血流について正しいものはどれか。", "options": ["左冠動脈では収縮期に血流が増加しやすい。", "左冠動脈では拡張期に血流が増加しやすい。", "右冠動脈では拡張期にしか血流がない。", "冠動脈は内膜側から外膜側へ走行する。"], "answer": 1, "explanation": "左室収縮で左冠動脈が圧迫されるため、左冠血流は拡張期優位となる。"}, {"id": 88, "chapter": "循環器", "question": "Valsalva洞について正しいものはどれか。", "options": ["肺動脈起始部の隆起である。", "大動脈起始部の隆起で、左右の冠動脈が分岐する。", "冠静脈洞の別名である。", "左心房内の隆起である。"], "answer": 1, "explanation": "Valsalva洞は冠動脈起始に重要である。"}, {"id": 89, "chapter": "循環器", "question": "心臓骨格について正しいものはどれか。", "options": ["骨組織からなる。", "弁の付着部となり、心房と心室を電気的に絶縁する。", "心室筋の一部である。", "冠静脈洞を囲む平滑筋である。"], "answer": 1, "explanation": "線維性結合組織からなり、弁付着と電気絶縁の役割をもつ。"}, {"id": 90, "chapter": "循環器", "question": "心房と心室の位置関係として正しいものはどれか。", "options": ["心房は同じ側の心室より常に左側に位置する。", "心房は同じ側の心室より右側に位置する。", "心房は同じ側の心室より後下方に位置する。", "心房と心室の位置関係に一定の傾向はない。"], "answer": 1, "explanation": "資料の立体構造図では心房が同側心室より右側に位置すると整理される。"}, {"id": 91, "chapter": "循環器", "question": "心耳について正しいものはどれか。", "options": ["心房の発生初期の名残で、内部に櫛状筋をもつ。", "心室中隔の下端にある。", "冠静脈洞の別名である。", "弁膜の一部である。"], "answer": 0, "explanation": "左心耳・右心耳は心房の付属構造である。"}, {"id": 92, "chapter": "循環器", "question": "右心系と左心系の位置関係として正しいものはどれか。", "options": ["右心系は左心系の後方に位置する。", "右心系は左心系の前方に位置する。", "右心系は左心系の上方に位置する。", "右心系と左心系は完全に左右対称で前後差はない。"], "answer": 1, "explanation": "前方には右心系、後方には左心系が位置しやすい。"}, {"id": 93, "chapter": "循環器", "question": "大心臓静脈について正しいものはどれか。", "options": ["心臓後面のみの静脈血を集める。", "左心房・左心室・心室前面の静脈血を集める。", "肺静脈の別名である。", "右心房から出る動脈である。"], "answer": 1, "explanation": "大心臓静脈は前室間溝付近を走る代表的静脈である。"}, {"id": 94, "chapter": "循環器", "question": "中心臓静脈について正しいものはどれか。", "options": ["後室間溝を走り、心室後面の静脈血を集める。", "前室間溝を走り、左心房のみの静脈血を集める。", "左冠動脈の枝である。", "肺静脈へ流入する。"], "answer": 0, "explanation": "中心臓静脈は後室間溝を走る。"}, {"id": 95, "chapter": "循環器", "question": "心臓の外膜としても呼ばれるものはどれか。", "options": ["漿膜性心膜の臓側板", "線維性心膜", "漿膜性心膜の壁側板", "心内膜"], "answer": 0, "explanation": "臓側板は心外膜とも呼ばれる。"}, {"id": 96, "chapter": "循環器", "question": "右冠動脈から分岐するものとして資料に示されるのはどれか。", "options": ["前室間枝", "回旋枝", "円錐枝", "左冠尖"], "answer": 2, "explanation": "右冠動脈前面枝として円錐枝が挙げられる。"}, {"id": 97, "chapter": "循環器", "question": "左冠動脈の代表的分枝として正しい組み合わせはどれか。", "options": ["前室間枝と回旋枝", "円錐枝と後下行枝", "鋭角枝と右室枝", "大心臓静脈と中心臓静脈"], "answer": 0, "explanation": "左冠動脈は前室間枝と回旋枝に分かれる。"}, {"id": 98, "chapter": "循環器", "question": "刺激伝導系に関する説明として誤っているものはどれか。", "options": ["洞房結節は上大静脈開口部近くの右房後壁にある。", "房室結節は右心房下部にある。", "右脚と左脚は心房中隔を走る。", "プルキンエ線維は心室筋末梢へ広がる。"], "answer": 2, "explanation": "右脚・左脚は心室中隔を走る。"}, {"id": 99, "chapter": "循環器", "question": "心電図で狭心症や心筋梗塞で上昇や下降がみられる部分はどれか。", "options": ["P波", "PQ間隔", "ST部分", "T波"], "answer": 2, "explanation": "資料ではST部分の異常として説明される。"}, {"id": 100, "chapter": "循環器", "question": "血管の種類と役割の組み合わせとして正しいものはどれか。", "options": ["動脈―組織との物質交換", "静脈―心臓から全身へ送る", "毛細血管―酸素・栄養・老廃物の交換", "毛細血管―高圧に耐える"], "answer": 2, "explanation": "毛細血管は物質交換の場である。"}, {"id": 101, "chapter": "呼吸器", "question": "呼吸の3段階の分類として正しいものはどれか。", "options": ["外呼吸、内呼吸、細胞呼吸", "吸気、呼気、換気", "上気道、下気道、呼吸部", "鼻呼吸、口呼吸、細胞呼吸"], "answer": 0, "explanation": "呼吸は外呼吸、内呼吸、細胞呼吸に整理できる。"}, {"id": 102, "chapter": "呼吸器", "question": "外呼吸として正しいものはどれか。", "options": ["肺胞と肺毛細血管との間で行われるガス交換", "全身の毛細血管と組織との間で行われるガス交換", "細胞内でのATP産生", "鼻腔での加温・加湿"], "answer": 0, "explanation": "外呼吸は肺でのガス交換である。"}, {"id": 103, "chapter": "呼吸器", "question": "内呼吸として正しいものはどれか。", "options": ["鼻腔で空気をろ過する過程", "全身の毛細血管と組織細胞との間で行われるガス交換", "肺胞でのガス交換", "ミトコンドリアでのATP合成"], "answer": 1, "explanation": "内呼吸は組織でのガス交換である。"}, {"id": 104, "chapter": "呼吸器", "question": "細胞呼吸について正しいものはどれか。", "options": ["肺胞で酸素を取り込むこと", "組織で二酸化炭素を回収すること", "細胞内でATPを産生すること", "咽頭で空気を送ること"], "answer": 2, "explanation": "細胞呼吸は細胞内、主にミトコンドリアで進む。"}, {"id": 105, "chapter": "呼吸器", "question": "呼吸器系の構造分類として正しいものはどれか。", "options": ["気道と呼吸部に大別される。", "上気道と下気道のみに大別される。", "鼻腔と肺胞の2部のみである。", "呼吸部は気管から始まる。"], "answer": 0, "explanation": "呼吸器系は気道と呼吸部に大別され、気道がさらに上下に分かれる。"}, {"id": 106, "chapter": "呼吸器", "question": "上気道に含まれるものはどれか。", "options": ["鼻腔、咽頭、喉頭", "気管、気管支、細気管支", "呼吸細気管支、肺胞管、肺胞", "主気管支、葉気管支"], "answer": 0, "explanation": "上気道は鼻腔・咽頭・喉頭である。"}, {"id": 107, "chapter": "呼吸器", "question": "下気道の始まりはどれか。", "options": ["鼻腔", "咽頭", "喉頭", "気管"], "answer": 3, "explanation": "資料では気管以下が下気道とされる。"}, {"id": 108, "chapter": "呼吸器", "question": "呼吸部に含まれるものはどれか。", "options": ["終末細気管支、主気管支、肺胞", "呼吸細気管支、肺胞管、肺胞", "葉気管支、区域気管支、肺胞", "鼻腔、喉頭、肺胞"], "answer": 1, "explanation": "呼吸細気管支から肺胞までが呼吸部である。"}, {"id": 109, "chapter": "呼吸器", "question": "呼吸部に含まれないものはどれか。", "options": ["呼吸細気管支", "肺胞管", "肺胞", "終末細気管支"], "answer": 3, "explanation": "終末細気管支は導気部の終点である。"}, {"id": 110, "chapter": "呼吸器", "question": "上気道の機能として誤っているものはどれか。", "options": ["加温・加湿", "異物除去", "誤嚥防止への関与", "肺胞でのガス交換"], "answer": 3, "explanation": "上気道は空気の調整や防御に関わるが、ガス交換は行わない。"}, {"id": 111, "chapter": "呼吸器", "question": "鼻腔について正しいものはどれか。", "options": ["鼻甲介による乱流で加温・加湿・塵埃除去が行われる。", "主に精液の通路である。", "肺胞と直接連続する。", "ガス交換の主部位である。"], "answer": 0, "explanation": "鼻甲介は空気調整に重要である。"}, {"id": 112, "chapter": "呼吸器", "question": "咽頭について正しいものはどれか。", "options": ["呼吸のみを担い、消化とは無関係である。", "呼吸と消化の交差点となる。", "気管分岐部から肺胞までを指す。", "骨盤内に位置する。"], "answer": 1, "explanation": "咽頭は呼吸と嚥下の通路が交わる。"}, {"id": 113, "chapter": "呼吸器", "question": "喉頭について正しいものはどれか。", "options": ["気道の入口であり、誤嚥防止や発声に関わる。", "主に尿の通路である。", "横隔膜の一部である。", "肺胞に含まれる。"], "answer": 0, "explanation": "喉頭は呼吸・嚥下・発声に関わる複合器官である。"}, {"id": 114, "chapter": "呼吸器", "question": "上咽頭について正しいものはどれか。", "options": ["軟口蓋より上にあり、耳管咽頭口や咽頭扁桃を含む。", "口腔と直接つながる主領域である。", "喉頭の背側で食道入口へ続く。", "声門を含む。"], "answer": 0, "explanation": "上咽頭は鼻咽頭とも呼ばれる。"}, {"id": 115, "chapter": "呼吸器", "question": "中咽頭について正しいものはどれか。", "options": ["耳管咽頭口を含む。", "口腔とつながる。", "喉頭の背側で食道へ続く。", "軟口蓋より上のみを指す。"], "answer": 1, "explanation": "中咽頭は口腔側と連続する。"}, {"id": 116, "chapter": "呼吸器", "question": "下咽頭について正しいものはどれか。", "options": ["喉頭の前方に位置する。", "喉頭の背側に位置し、食道入口へ続く。", "鼻腔に開く。", "声帯ヒダを含む。"], "answer": 1, "explanation": "下咽頭は喉頭後方から食道へ続く。"}, {"id": 117, "chapter": "呼吸器", "question": "呼吸時と嚥下時の違いとして正しいものはどれか。", "options": ["嚥下時には声門が開き、喉頭口が広がる。", "嚥下時には喉頭蓋が喉頭口を覆う。", "呼吸時には喉頭蓋が喉頭口を完全に覆う。", "呼吸時には軟口蓋が口腔を閉鎖する。"], "answer": 1, "explanation": "嚥下時には喉頭蓋と声門閉鎖が誤嚥を防ぐ。"}, {"id": 118, "chapter": "呼吸器", "question": "喉頭の前頸部での位置として正しいものはどれか。", "options": ["おおよそ第3頸椎〜第6頸椎の高さ", "胸椎のみ", "腰椎のみ", "仙骨部"], "answer": 0, "explanation": "成人ではC3〜C6付近に位置する。"}, {"id": 119, "chapter": "呼吸器", "question": "喉頭の最も狭い部位として正しいものはどれか。", "options": ["前庭ヒダ", "喉頭室", "声門", "気管分岐部"], "answer": 2, "explanation": "声門は上気道の中で最も狭い場所とされる。"}, {"id": 120, "chapter": "呼吸器", "question": "喉頭の主要軟骨として正しいものはどれか。", "options": ["甲状軟骨、輪状軟骨、披裂軟骨など", "胸骨、肋骨、鎖骨", "大腿骨、寛骨、仙骨", "尺骨、橈骨、上腕骨"], "answer": 0, "explanation": "喉頭骨格は複数の軟骨からなる。"}, {"id": 121, "chapter": "呼吸器", "question": "喉頭の最下部に位置する完全な輪状構造の軟骨はどれか。", "options": ["甲状軟骨", "輪状軟骨", "披裂軟骨", "喉頭蓋軟骨"], "answer": 1, "explanation": "輪状軟骨が喉頭最下部の輪状構造である。"}, {"id": 122, "chapter": "呼吸器", "question": "喉頭隆起を形成する軟骨はどれか。", "options": ["輪状軟骨", "甲状軟骨", "披裂軟骨", "小角軟骨"], "answer": 1, "explanation": "甲状軟骨がのどぼとけを形成する。"}, {"id": 123, "chapter": "呼吸器", "question": "披裂軟骨について正しいものはどれか。", "options": ["輪状軟骨の上にのり、声帯振動に関わる。", "膀胱の下方にある。", "尿道を取り囲む。", "気管支の壁にのみ存在する。"], "answer": 0, "explanation": "披裂軟骨は声帯の開閉・緊張調節に重要である。"}, {"id": 124, "chapter": "呼吸器", "question": "喉頭腔の区分として正しいものはどれか。", "options": ["喉頭前庭、喉頭室、声門下腔", "上咽頭、中咽頭、下咽頭", "鼻腔、口腔、咽頭", "気管、気管支、肺胞"], "answer": 0, "explanation": "喉頭腔は3区分で整理する。"}, {"id": 125, "chapter": "呼吸器", "question": "喉頭前庭の位置として正しいものはどれか。", "options": ["喉頭口から前庭ヒダまで", "前庭ヒダと声帯ヒダの間", "声帯ヒダから輪状軟骨下縁まで", "声門の左右間"], "answer": 0, "explanation": "喉頭口から前庭ヒダまでが喉頭前庭である。"}, {"id": 126, "chapter": "呼吸器", "question": "喉頭室の位置として正しいものはどれか。", "options": ["喉頭口から前庭ヒダまで", "前庭ヒダと声帯ヒダの間", "声帯ヒダから輪状軟骨下縁まで", "気管分岐部の内部"], "answer": 1, "explanation": "喉頭室は前庭ヒダと声帯ヒダの間のくぼみである。"}, {"id": 127, "chapter": "呼吸器", "question": "声門下腔の位置として正しいものはどれか。", "options": ["喉頭口から前庭ヒダまで", "前庭ヒダと声帯ヒダの間", "声帯ヒダから輪状軟骨下縁まで", "左右の前庭ヒダの間"], "answer": 2, "explanation": "声門下腔は声帯ヒダより下方である。"}, {"id": 128, "chapter": "呼吸器", "question": "声門について正しいものはどれか。", "options": ["左右の前庭ヒダの間である。", "左右の声帯ヒダの間で、呼吸時に開大する。", "喉頭口から前庭ヒダまでを指す。", "声帯ヒダから輪状軟骨下縁までを指す。"], "answer": 1, "explanation": "声門は左右声帯の間の空間である。"}, {"id": 129, "chapter": "呼吸器", "question": "発声に直接関わる主構造はどれか。", "options": ["仮声帯", "声帯ヒダ", "喉頭蓋", "咽頭扁桃"], "answer": 1, "explanation": "呼気で振動して音を生じるのは声帯ヒダである。"}, {"id": 130, "chapter": "呼吸器", "question": "仮声帯について正しいものはどれか。", "options": ["音を生じる主構造である。", "音を直接生じないが、閉鎖や共鳴に寄与する。", "肺胞の一部である。", "尿路上皮に覆われる。"], "answer": 1, "explanation": "仮声帯は前庭ヒダとも呼ばれる。"}, {"id": 131, "chapter": "呼吸器", "question": "内喉頭筋について正しいものはどれか。", "options": ["喉頭全体の上下動のみを担う。", "声門の開閉と声帯の張力調整に関わる。", "横隔膜と同義である。", "骨盤底筋群に含まれる。"], "answer": 1, "explanation": "内喉頭筋は発声・呼吸・嚥下に関わる。"}, {"id": 132, "chapter": "呼吸器", "question": "唯一の声門外転筋はどれか。", "options": ["外側輪状披裂筋", "後輪状披裂筋", "横披裂筋", "甲状披裂筋"], "answer": 1, "explanation": "後輪状披裂筋が唯一の外転筋である。"}, {"id": 133, "chapter": "呼吸器", "question": "声門を閉じる方向に働く筋として正しいものはどれか。", "options": ["後輪状披裂筋", "外側輪状披裂筋", "輪状甲状筋のみ", "横隔膜"], "answer": 1, "explanation": "外側輪状披裂筋は内転筋である。"}, {"id": 134, "chapter": "呼吸器", "question": "輪状甲状筋の作用として正しいものはどれか。", "options": ["声帯を弛緩させて低音のみを出す。", "声帯を緊張・伸展させて音高を上げる。", "唯一の声門外転を担う。", "喉頭口を覆う。"], "answer": 1, "explanation": "輪状甲状筋は高音に関わる。"}, {"id": 135, "chapter": "呼吸器", "question": "気管について正しいものはどれか。", "options": ["成人で長さは約10cmである。", "食道の後ろに位置する。", "完全な骨性の管である。", "鼻腔に直接開く。"], "answer": 0, "explanation": "気管は食道の前にあり、約10cmである。"}, {"id": 136, "chapter": "呼吸器", "question": "右主気管支と左主気管支の比較として正しいものはどれか。", "options": ["左主気管支は右より短く太い。", "左主気管支は右より細長く、分岐角が大きい。", "右主気管支は左より細長い。", "左右差はない。"], "answer": 1, "explanation": "左主気管支は心臓の位置のため細長く角度が大きい。"}, {"id": 137, "chapter": "呼吸器", "question": "気管壁について正しいものはどれか。", "options": ["後壁も完全な軟骨輪である。", "前方に凸の馬蹄形軟骨輪をもち、後壁は膜様部である。", "平滑筋を欠く。", "輪状靱帯を持たない。"], "answer": 1, "explanation": "気管後壁は軟骨がなく膜様部と呼ばれる。"}, {"id": 138, "chapter": "呼吸器", "question": "気管から末梢への分岐順序として正しいものはどれか。", "options": ["気管→主気管支→葉気管支→区域気管支→細気管支", "気管→葉気管支→主気管支→区域気管支→細気管支", "気管→主気管支→区域気管支→葉気管支→細気管支", "気管→細気管支→主気管支→葉気管支"], "answer": 0, "explanation": "大きい気道から小さい気道へ順に分岐する。"}, {"id": 139, "chapter": "呼吸器", "question": "終末細気管支について正しいものはどれか。", "options": ["呼吸部の開始部である。", "導気部の終点である。", "肺胞管に直接続く。", "軟骨を豊富に含む。"], "answer": 1, "explanation": "終末細気管支の次が呼吸細気管支である。"}, {"id": 140, "chapter": "呼吸器", "question": "呼吸細気管支について正しいものはどれか。", "options": ["上気道に属する。", "下気道に属するが呼吸部ではない。", "呼吸部の始まりに相当する。", "気管と同様に馬蹄形軟骨をもつ。"], "answer": 2, "explanation": "呼吸細気管支からガス交換領域が始まる。"}, {"id": 141, "chapter": "呼吸器", "question": "下気道の役割として正しいものはどれか。", "options": ["形態維持と感染防御", "精子の産生", "受精卵の着床", "尿の貯留"], "answer": 0, "explanation": "空気輸送路であると同時に防御機構を備える。"}, {"id": 142, "chapter": "呼吸器", "question": "呼吸器の異物除去機構として誤っているものはどれか。", "options": ["線毛運動", "粘液による捕捉", "肺胞マクロファージによる貪食", "腎乳頭によるろ過"], "answer": 3, "explanation": "異物除去は気道と肺胞で行われる。"}, {"id": 143, "chapter": "呼吸器", "question": "くしゃみ反射と咳嗽反射について正しいものはどれか。", "options": ["両者とも尿道刺激で起こる。", "鼻腔刺激ではくしゃみ反射、気道刺激では咳嗽反射が起こる。", "どちらも肺胞でしか起こらない。", "いずれも反射中枢は大脳皮質のみである。"], "answer": 1, "explanation": "鼻腔と気道で防御反射が分かれる。"}, {"id": 144, "chapter": "呼吸器", "question": "Waldeyer咽頭輪に含まれるものはどれか。", "options": ["咽頭扁桃、耳管扁桃、口蓋扁桃、舌扁桃", "甲状扁桃、輪状扁桃、気管扁桃、肺扁桃", "腎扁桃、膀胱扁桃、卵管扁桃、口蓋扁桃", "心耳、心房、心室、弁"], "answer": 0, "explanation": "Waldeyer咽頭輪は上気道入口部の免疫構造である。"}, {"id": 145, "chapter": "呼吸器", "question": "肺について正しいものはどれか。", "options": ["右肺は2葉、左肺は3葉である。", "右肺は3葉、左肺は2葉である。", "左右とも3葉である。", "左右とも2葉である。"], "answer": 1, "explanation": "右肺3葉、左肺2葉が基本である。"}, {"id": 146, "chapter": "呼吸器", "question": "肺の裂について正しいものはどれか。", "options": ["右肺には斜裂のみがある。", "左肺には斜裂と水平裂がある。", "右肺には斜裂と水平裂がある。", "左肺には水平裂のみがある。"], "answer": 2, "explanation": "右肺のみ水平裂をもつ。"}, {"id": 147, "chapter": "呼吸器", "question": "左肺の舌区について正しいものはどれか。", "options": ["左肺中葉を構成する。", "右肺中葉に相当し、左肺上葉の一部である。", "左肺下葉の一部である。", "右肺下葉に相当する。"], "answer": 1, "explanation": "左肺には中葉がないため舌区が上葉に含まれる。"}, {"id": 148, "chapter": "呼吸器", "question": "肺区域について正しいものはどれか。", "options": ["肺区域には対応する区域気管支がない。", "肺区域には対応する区域気管支がある。", "左右で区域数も名称も完全に同じである。", "肺区域は肺葉より大きい。"], "answer": 1, "explanation": "区域と区域気管支の対応は解剖学上重要である。"}, {"id": 149, "chapter": "呼吸器", "question": "左肺の区域について正しいものはどれか。", "options": ["S7が常に存在する。", "心臓の位置の関係でS7が存在しない。", "S6が存在しない。", "舌区が存在しない。"], "answer": 1, "explanation": "資料では左肺にS7がないと整理される。"}, {"id": 150, "chapter": "呼吸器", "question": "呼吸部の連続として正しいものはどれか。", "options": ["終末細気管支→呼吸細気管支→肺胞管→肺胞嚢・肺胞", "終末細気管支→肺胞→呼吸細気管支→肺胞管", "区域気管支→終末細気管支→主気管支→肺胞", "呼吸細気管支→終末細気管支→肺胞管→肺胞"], "answer": 0, "explanation": "末梢へ向かう連続を順に覚える。"}, {"id": 151, "chapter": "腎・泌尿器・生殖器", "question": "泌尿器系・生殖器系の全体像について正しいものはどれか。", "options": ["男性では尿道が泌尿器系と生殖器系の両方に関わる。", "女性では尿道が精液の通路にもなる。", "泌尿器系は生殖機能のみを担う。", "生殖器系は尿の生成を担う。"], "answer": 0, "explanation": "男性尿道は尿路と精路の両方に関わる。"}, {"id": 152, "chapter": "腎・泌尿器・生殖器", "question": "泌尿器系の主な器官の組み合わせとして正しいものはどれか。", "options": ["腎臓、尿管、膀胱、尿道", "腎臓、精管、膀胱、腟", "尿管、膀胱、子宮、尿道", "腎臓、尿管、前立腺、卵管"], "answer": 0, "explanation": "泌尿器系は腎臓と尿路から成る。"}, {"id": 153, "chapter": "腎・泌尿器・生殖器", "question": "尿の流れとして正しいものはどれか。", "options": ["腎臓→腎杯・腎盂→尿管→膀胱→尿道→体外", "腎臓→尿管→腎盂→膀胱→尿道", "腎臓→膀胱→尿管→尿道", "腎臓→腎盂→膀胱→尿管→尿道"], "answer": 0, "explanation": "腎杯・腎盂から尿管、膀胱、尿道へ流れる。"}, {"id": 154, "chapter": "腎・泌尿器・生殖器", "question": "上部尿路に含まれるものはどれか。", "options": ["腎杯、腎盂、尿管", "膀胱、尿道", "腎臓、膀胱", "尿道、外尿道口"], "answer": 0, "explanation": "上部尿路は腎杯・腎盂・尿管である。"}, {"id": 155, "chapter": "腎・泌尿器・生殖器", "question": "下部尿路に含まれるものはどれか。", "options": ["腎盂、尿管", "膀胱、尿道", "腎臓、尿管", "腎杯、膀胱"], "answer": 1, "explanation": "下部尿路は膀胱と尿道を指す。"}, {"id": 156, "chapter": "腎・泌尿器・生殖器", "question": "腎臓について正しいものはどれか。", "options": ["左右1対である。", "骨盤内にある。", "腹膜内臓器である。", "左腎が右腎より低い。"], "answer": 0, "explanation": "腎臓は左右一対の後腹膜臓器である。"}, {"id": 157, "chapter": "腎・泌尿器・生殖器", "question": "腎臓の位置として正しいものはどれか。", "options": ["第3頸椎〜第6頸椎の高さ", "第12胸椎〜第3腰椎の高さ", "第1腰椎〜第5腰椎の高さのみ", "仙骨の高さ"], "answer": 1, "explanation": "おおよそTh12〜L3の高さにある。"}, {"id": 158, "chapter": "腎・泌尿器・生殖器", "question": "左右の腎臓の位置関係として正しいものはどれか。", "options": ["右腎は左腎よりやや高い。", "右腎は左腎よりやや低い。", "左右同じ高さである。", "左腎は右腎よりかなり前方にある。"], "answer": 1, "explanation": "右側に肝臓があるため右腎がやや低い。"}, {"id": 159, "chapter": "腎・泌尿器・生殖器", "question": "腎臓の存在部位として正しいものはどれか。", "options": ["後腹膜", "腹膜腔内", "胸腔内", "骨盤底"], "answer": 0, "explanation": "腎臓と尿管は後腹膜に位置する。"}, {"id": 160, "chapter": "腎・泌尿器・生殖器", "question": "腎門を通るものとして正しいものはどれか。", "options": ["腎動脈、腎静脈、尿管", "腎静脈、精管、尿道", "腎盂、膀胱、尿道", "腎動脈、卵管、腎小体"], "answer": 0, "explanation": "腎門は血管と尿路の出入り口である。"}, {"id": 161, "chapter": "腎・泌尿器・生殖器", "question": "腎臓の内部構造として正しいものはどれか。", "options": ["腎髄質と腎外膜に分かれる。", "腎皮質と腎髄質に分かれる。", "腎皮質と子宮筋層に分かれる。", "腎髄質と前立腺に分かれる。"], "answer": 1, "explanation": "内部は皮質と髄質で整理する。"}, {"id": 162, "chapter": "腎・泌尿器・生殖器", "question": "腎髄質に並ぶ構造はどれか。", "options": ["腎錐体", "肺胞", "卵胞", "前庭ヒダ"], "answer": 0, "explanation": "腎髄質には腎錐体が並ぶ。"}, {"id": 163, "chapter": "腎・泌尿器・生殖器", "question": "腎錐体の先端を何というか。", "options": ["腎門", "腎乳頭", "腎盂", "小腎杯"], "answer": 1, "explanation": "腎乳頭から小腎杯へ尿が流れる。"}, {"id": 164, "chapter": "腎・泌尿器・生殖器", "question": "尿の通り道として正しいものはどれか。", "options": ["腎乳頭→小腎杯→大腎杯→腎盂→尿管", "腎盂→腎乳頭→小腎杯→尿管", "腎皮質→大腎杯→腎盂→膀胱", "小腎杯→腎乳頭→腎盂→尿管"], "answer": 0, "explanation": "腎内尿路の順序を押さえる。"}, {"id": 165, "chapter": "腎・泌尿器・生殖器", "question": "ネフロンについて正しいものはどれか。", "options": ["膀胱で尿をためる最小単位である。", "腎臓で尿をつくる最小単位である。", "尿道で精液を運ぶ最小単位である。", "卵巣で卵子をつくる最小単位である。"], "answer": 1, "explanation": "ネフロンは腎小体と尿細管からなる。"}, {"id": 166, "chapter": "腎・泌尿器・生殖器", "question": "腎小体の主なはたらきはどれか。", "options": ["原尿をろ過してつくる。", "精子をつくる。", "尿を貯留する。", "精液を分泌する。"], "answer": 0, "explanation": "腎小体ではろ過が行われる。"}, {"id": 167, "chapter": "腎・泌尿器・生殖器", "question": "尿細管の主なはたらきとして正しいものはどれか。", "options": ["原尿の再吸収と分泌", "尿の貯留のみ", "ガス交換", "精液の分泌"], "answer": 0, "explanation": "尿細管では再吸収と分泌が行われる。"}, {"id": 168, "chapter": "腎・泌尿器・生殖器", "question": "集合管について正しいものはどれか。", "options": ["尿を集めて腎乳頭側へ送る。", "原尿をろ過する。", "尿を体外へ排出する。", "精子を蓄える。"], "answer": 0, "explanation": "集合管を流れた尿は腎杯側へ進む。"}, {"id": 169, "chapter": "腎・泌尿器・生殖器", "question": "蓄尿時の状態として正しいものはどれか。", "options": ["排尿筋収縮、内尿道括約筋弛緩、外尿道括約筋弛緩", "排尿筋弛緩、内尿道括約筋収縮、外尿道括約筋収縮", "排尿筋収縮、内尿道括約筋収縮、外尿道括約筋弛緩", "すべて弛緩"], "answer": 1, "explanation": "蓄尿時はためる方向に働く。"}, {"id": 170, "chapter": "腎・泌尿器・生殖器", "question": "排尿時の状態として正しいものはどれか。", "options": ["排尿筋収縮、内尿道括約筋弛緩、外尿道括約筋弛緩", "排尿筋弛緩、内尿道括約筋収縮、外尿道括約筋収縮", "排尿筋収縮、内尿道括約筋収縮、外尿道括約筋収縮", "排尿筋弛緩、内尿道括約筋弛緩、外尿道括約筋収縮"], "answer": 0, "explanation": "排尿時は出す方向に切り替わる。"}, {"id": 171, "chapter": "腎・泌尿器・生殖器", "question": "外尿道括約筋について正しいものはどれか。", "options": ["平滑筋である。", "骨格筋であり、随意的に調節しうる。", "副交感神経のみで支配される。", "尿路上皮でできている。"], "answer": 1, "explanation": "外尿道括約筋は体性神経支配の骨格筋である。"}, {"id": 172, "chapter": "腎・泌尿器・生殖器", "question": "尿管について正しいものはどれか。", "options": ["腎盂から膀胱まで尿を運ぶ。", "膀胱から腎盂へ尿を送る。", "精液の通路である。", "長さは約3cmである。"], "answer": 0, "explanation": "尿管は上部尿路の通路である。"}, {"id": 173, "chapter": "腎・泌尿器・生殖器", "question": "尿管の特徴として正しいものはどれか。", "options": ["3か所の生理的狭窄がある。", "左右2本ずつある。", "膀胱壁を直角に貫く。", "海綿体内を通る。"], "answer": 0, "explanation": "尿管は膀胱壁を斜めに通って逆流を防ぐ。"}, {"id": 174, "chapter": "腎・泌尿器・生殖器", "question": "膀胱について正しいものはどれか。", "options": ["尿をつくる器官である。", "尿を一時的に貯留する器官である。", "精子を成熟させる。", "受精卵が着床する。"], "answer": 1, "explanation": "膀胱は下部尿路の貯留器官である。"}, {"id": 175, "chapter": "腎・泌尿器・生殖器", "question": "膀胱三角について正しいものはどれか。", "options": ["2つの尿管口と1つの内尿道口で囲まれる。", "2つの内尿道口と1つの尿管口で囲まれる。", "2つの腎盂口と1つの外尿道口で囲まれる。", "膀胱頂にある。"], "answer": 0, "explanation": "膀胱底部の重要な解剖学的領域である。"}, {"id": 176, "chapter": "腎・泌尿器・生殖器", "question": "尿路上皮について正しいものはどれか。", "options": ["重層扁平上皮と同義である。", "伸び縮みに対応する特殊な上皮である。", "肺胞を覆う上皮である。", "子宮内膜を覆う上皮である。"], "answer": 1, "explanation": "尿路上皮は移行上皮とも呼ばれる。"}, {"id": 177, "chapter": "腎・泌尿器・生殖器", "question": "尿路上皮が覆う部位として正しいものはどれか。", "options": ["腎盂、尿管、膀胱、後部尿道", "腟、外陰、会陰", "喉頭、気管、気管支", "精巣、精巣上体、精管"], "answer": 0, "explanation": "蓄尿と伸展に対応する部位を覆う。"}, {"id": 178, "chapter": "腎・泌尿器・生殖器", "question": "男性尿道について正しいものはどれか。", "options": ["長さは約3〜4cmで比較的まっすぐである。", "尿と精液の両方の通路になる。", "区分は前部と後部のみである。", "外尿道口は会陰後方に開く。"], "answer": 1, "explanation": "男性尿道は長く、S字状である。"}, {"id": 179, "chapter": "腎・泌尿器・生殖器", "question": "男性尿道の区分として正しいものはどれか。", "options": ["前立腺部、膜様部、海綿体部", "上部、中部、下部", "腎部、尿管部、膀胱部", "精巣部、精管部、尿道部"], "answer": 0, "explanation": "資料では3区分で整理される。"}, {"id": 180, "chapter": "腎・泌尿器・生殖器", "question": "男性尿道で最も短く、尿生殖隔膜を貫く部位はどれか。", "options": ["前立腺部尿道", "膜様部尿道", "海綿体部尿道", "外尿道口"], "answer": 1, "explanation": "膜様部尿道は短く細い。"}, {"id": 181, "chapter": "腎・泌尿器・生殖器", "question": "男性尿道で最も長く、陰茎内を通る部位はどれか。", "options": ["前立腺部尿道", "膜様部尿道", "海綿体部尿道", "腎盂部尿道"], "answer": 2, "explanation": "海綿体部尿道は陰茎内を走る。"}, {"id": 182, "chapter": "腎・泌尿器・生殖器", "question": "男性尿道の狭窄部として誤っているものはどれか。", "options": ["内尿道口", "膜様部尿道", "外尿道口", "海綿体部全体"], "answer": 3, "explanation": "狭窄部は内尿道口、膜様部尿道、外尿道口である。"}, {"id": 183, "chapter": "腎・泌尿器・生殖器", "question": "女性尿道について正しいものはどれか。", "options": ["長さは約15〜20cmである。", "精液の通路にもなる。", "約3〜4cmで比較的直線的である。", "前立腺部尿道をもつ。"], "answer": 2, "explanation": "女性尿道は短く比較的まっすぐである。"}, {"id": 184, "chapter": "腎・泌尿器・生殖器", "question": "尿道の男女差として正しいものはどれか。", "options": ["男性は短く単純、女性は長くS字状である。", "男性は尿の排出のみ、女性は尿と精液の通路である。", "男性は長くS字状、女性は短く比較的まっすぐである。", "男女とも精液の通路になる。"], "answer": 2, "explanation": "男性の方が長く複雑である。"}, {"id": 185, "chapter": "腎・泌尿器・生殖器", "question": "男性生殖器の区分として正しいものはどれか。", "options": ["性腺、精路、付属生殖腺、外性器", "上気道、下気道、呼吸部、外性器", "上部尿路、下部尿路、外性器", "皮質、髄質、精路、会陰"], "answer": 0, "explanation": "男性生殖器は役割に応じて区分できる。"}, {"id": 186, "chapter": "腎・泌尿器・生殖器", "question": "精巣の主な役割はどれか。", "options": ["精子をつくる。", "尿を一時的にためる。", "精液を体外へ押し出す。", "卵子を取り込む。"], "answer": 0, "explanation": "精巣は性腺である。"}, {"id": 187, "chapter": "腎・泌尿器・生殖器", "question": "精巣上体について正しいものはどれか。", "options": ["精巣の後上方に付着し、精子を蓄え精管へ送る。", "膀胱の下方で尿道を囲む。", "子宮の左右に1つずつある。", "腎門を通る。"], "answer": 0, "explanation": "精巣上体は頭部・体部・尾部に区分される。"}, {"id": 188, "chapter": "腎・泌尿器・生殖器", "question": "精管について正しいものはどれか。", "options": ["精巣上体尾から続き、精索内を上行して骨盤内へ入る。", "膀胱内にのみ存在する。", "子宮側へ卵子を送る。", "尿だけを運ぶ。"], "answer": 0, "explanation": "精子を骨盤内へ運ぶ精路である。"}, {"id": 189, "chapter": "腎・泌尿器・生殖器", "question": "射精管について正しいものはどれか。", "options": ["精管と精嚢の導管の合流部から始まり、前立腺部尿道へ開く。", "膀胱から外尿道口へ続く。", "腎盂と膀胱をつなぐ。", "卵巣と子宮をつなぐ。"], "answer": 0, "explanation": "射精管は前立腺内を通る。"}, {"id": 190, "chapter": "腎・泌尿器・生殖器", "question": "精嚢と前立腺について正しいものはどれか。", "options": ["精嚢は膀胱の後方、前立腺は膀胱の下方にある。", "精嚢は膀胱の下方、前立腺は膀胱の後方にある。", "両者とも精子をつくる。", "前立腺は卵巣の一部である。"], "answer": 0, "explanation": "どちらも付属生殖腺で、精液成分を分泌する。"}, {"id": 191, "chapter": "腎・泌尿器・生殖器", "question": "陰茎について正しいものはどれか。", "options": ["尿道海綿体の中を尿道が通る。", "陰茎海綿体の中を尿道が通る。", "先端部を腟円蓋という。", "外尿道口は陰嚢に開く。"], "answer": 0, "explanation": "尿道海綿体は腹側、陰茎海綿体は背側に位置する。"}, {"id": 192, "chapter": "腎・泌尿器・生殖器", "question": "女性生殖器の内性器の組み合わせとして正しいものはどれか。", "options": ["卵巣、卵管、子宮、腟", "卵巣、外陰、会陰、尿道", "卵管、外陰、子宮、直腸", "卵巣、前立腺、子宮、腟"], "answer": 0, "explanation": "外陰は外性器である。"}, {"id": 193, "chapter": "腎・泌尿器・生殖器", "question": "女性生殖器の位置関係として正しいものはどれか。", "options": ["子宮の前に直腸、後ろに膀胱がある。", "子宮の前に膀胱、後ろに直腸がある。", "膀胱の前に子宮がある。", "直腸の前に膀胱がある。"], "answer": 1, "explanation": "骨盤正中矢状断での位置関係を押さえる。"}, {"id": 194, "chapter": "腎・泌尿器・生殖器", "question": "卵巣について正しいものはどれか。", "options": ["卵子の成熟と排卵のみを担い、内分泌機能はない。", "子宮の左右に1つずつあり、性ホルモンも分泌する。", "膀胱の下方にある。", "精子を蓄える。"], "answer": 1, "explanation": "卵巣は生殖と内分泌の両方に関わる。"}, {"id": 195, "chapter": "腎・泌尿器・生殖器", "question": "卵胞の発育と排卵後の変化として正しいものはどれか。", "options": ["一次卵胞→二次卵胞→成熟卵胞→排卵→黄体→白体", "一次卵胞→黄体→二次卵胞→白体", "成熟卵胞→一次卵胞→排卵", "排卵後ただちに白体になる"], "answer": 0, "explanation": "成熟卵胞はGraaf卵胞とも呼ばれる。"}, {"id": 196, "chapter": "腎・泌尿器・生殖器", "question": "卵管について正しいものはどれか。", "options": ["卵管采は子宮に近い細い部分である。", "卵管膨大部は最も広く、受精が起こりやすい。", "卵管は卵巣と直接連続する。", "卵管子宮部は卵巣の外側にある。"], "answer": 1, "explanation": "卵管采、膨大部、峡、子宮部の順で整理する。"}, {"id": 197, "chapter": "腎・泌尿器・生殖器", "question": "子宮について正しいものはどれか。", "options": ["子宮底は最下部である。", "子宮峡は子宮体と子宮頸の間にある。", "子宮内膜は最外層である。", "子宮頸は卵巣に続く。"], "answer": 1, "explanation": "子宮は内膜・筋層・外膜の3層でみる。"}, {"id": 198, "chapter": "腎・泌尿器・生殖器", "question": "腟について正しいものはどれか。", "options": ["子宮頸の下方から外陰部へ続く筋性の管状器官である。", "尿路上皮で覆われる。", "上端で腎門を形成する。", "子宮筋層と同義である。"], "answer": 0, "explanation": "腟粘膜は重層扁平上皮で覆われる。"}, {"id": 199, "chapter": "腎・泌尿器・生殖器", "question": "外陰について正しいものはどれか。", "options": ["女性内性器の総称である。", "体表からみえる女性外性器の総称である。", "膀胱と同義である。", "卵巣と卵管の総称である。"], "answer": 1, "explanation": "恥丘、大陰唇、小陰唇、陰核、外尿道口、腟口などを含む。"}, {"id": 200, "chapter": "腎・泌尿器・生殖器", "question": "会陰と骨盤底について正しいものはどれか。", "options": ["会陰は外陰の前方にある。", "骨盤底は骨盤内臓器を下から支える構造である。", "前方を通るのは直腸である。", "中央を通るのは膀胱である。"], "answer": 1, "explanation": "会陰は体表、骨盤底は内部支持構造として理解する。"}, {"id": 201, "chapter": "循環器", "question": "次のうち、肺循環および体循環における「動脈血」と「静脈血」の関係について、最も適切なものはどれか。", "options": ["肺動脈には動脈血が流れ、体静脈には静脈血が流れる。", "体動脈には静脈血が流れ、肺静脈には動脈血が流れる。", "肺動脈には静脈血が流れ、肺静脈には動脈血が流れる。", "体静脈には動脈血が流れ、体動脈には静脈血が流れる。"], "answer": 2, "explanation": "血管名の「動脈・静脈」は酸素の多さではなく、心臓から出るか、心臓へ戻るかで決まる。肺動脈には静脈血、肺静脈には動脈血が流れる。"}, {"id": 202, "chapter": "循環器", "question": "次の文の空欄①～④に当てはまる最も適切な語句の組み合わせはどれか。静脈血は全身から（①）に流れ込み、次に（②）を通って肺へ送られる。肺でガス交換を受けた動脈血は、（③）に戻り、さらに（④）から全身へ送り出される。", "options": ["①右心房　②右心室　③左心房　④左心室", "①右心室　②右心房　③左心房　④左心室", "①左心房　②左心室　③右心房　④右心室", "①左心室　②左心房　③右心室　④右心房"], "answer": 0, "explanation": "全身から戻った静脈血は右心房へ入り、右心室から肺動脈を通って肺へ送られる。肺で酸素化された血液は左心房へ戻り、左心室から全身へ送り出される。"}, {"id": 203, "chapter": "循環器", "question": "心臓に存在する4つの弁に関する記述のうち、最も適切なものはどれか。", "options": ["僧帽弁は右心房と右心室の間に位置し、収縮期に開く。", "肺動脈弁は心房の拡張とともに開き、右心房への逆流を防ぐ。", "大動脈弁は左心室収縮時に閉鎖し、全身への逆流を防ぐ。", "三尖弁は右心房と右心室の間にあり、右心室収縮期に閉鎖する。"], "answer": 3, "explanation": "三尖弁は右心房と右心室の間にある房室弁で、右心室収縮期に閉鎖し、右心室から右心房への逆流を防ぐ。僧帽弁は左心房と左心室の間にある。"}, {"id": 204, "chapter": "循環器", "question": "次のうち、心臓の刺激伝導系における機能や伝導の特徴について正しいものを選びなさい。", "options": ["洞房結節（SA node）は右心室の内側に存在し、刺激伝導の終点である。", "房室結節（AV node）では刺激の一時的な遅延が起こり、心房と心室の収縮のタイミングが調整される。", "房室束（ヒス束）は房室結節の前で右脚・左脚に分かれ、心房筋へ電気刺激を伝える。", "プルキンエ線維は心房筋に広がり、心房全体の収縮を担っている。"], "answer": 1, "explanation": "房室結節では刺激伝導が一時的に遅延し、心房が収縮した後に心室が収縮する時間差が生じる。房室束（ヒス束）は房室結節の後に続き、右脚・左脚を介して心室へ刺激を伝える。"}, {"id": 205, "chapter": "呼吸器", "question": "次のうち、「内呼吸（組織呼吸）」に該当するものとして最も適切なものはどれか。", "options": ["肺胞と毛細血管の間で酸素と二酸化炭素が交換されること", "全身の毛細血管と組織細胞との間で酸素と二酸化炭素が交換されること", "細胞内のミトコンドリアで酸素を使ってATPを合成する一連の化学反応", "鼻腔・咽頭・喉頭・気管・気管支を通して空気が肺へ導かれること"], "answer": 1, "explanation": "内呼吸は、全身の毛細血管と組織細胞との間で行われるガス交換である。酸素は血液から組織細胞へ移動し、二酸化炭素は組織細胞から血液へ移動する。"}, {"id": 206, "chapter": "呼吸器", "question": "呼吸器系の構造と機能に関する次の記述のうち、最も適切なものはどれか。", "options": ["上気道は気管と気管支から構成され、主にガス交換を行う。", "下気道は鼻腔と咽頭からなり、加温や加湿の機能を担う。", "呼吸部には、肺胞のほかに呼吸細気管支や肺胞嚢などが含まれる。", "気管から終末細気管支まではすべてガス交換を行う呼吸部である。"], "answer": 2, "explanation": "呼吸部には、呼吸細気管支、肺胞管、肺胞嚢、肺胞が含まれる。鼻腔・咽頭・喉頭は上気道、気管・気管支・細気管支は主に空気の通り道である。"}, {"id": 207, "chapter": "呼吸器", "question": "喉頭の構造と機能に関する次の記述のうち、最も適切なものはどれか。", "options": ["声帯ヒダは嚥下時に振動し、食物の通過を助けている。", "仮声帯は音声の主な発生源であり、発声において必ず振動する。", "喉頭蓋は嚥下時に喉頭口を覆い、食物が気道に入らないようにする。", "声門は常に閉じており、呼吸時には空気の通過を妨げている。"], "answer": 2, "explanation": "嚥下時には喉頭蓋が喉頭口を覆い、声門も閉鎖方向に働くことで、食物や水分が気道へ入ることを防ぐ。声帯ヒダは発声時に振動する。"}, {"id": 208, "chapter": "呼吸器", "question": "呼吸運動の調節および神経支配に関する次の記述のうち、最も適切なものはどれか。", "options": ["延髄の背側呼吸群は強制呼気時に腹筋を収縮させる中枢である。", "化学受容器は酸素濃度のみを感知し、二酸化炭素やpHには反応しない。", "横隔神経は迷走神経から分岐し、気道の拡張を制御する。", "吸息時には延髄の吸息中枢が主に働き、横隔膜の収縮を引き起こす。"], "answer": 3, "explanation": "吸息時には延髄の吸息中枢が働き、横隔神経を介して横隔膜を収縮させる。横隔膜の収縮により胸腔容積が増加し、吸気が起こる。"}, {"id": 209, "chapter": "呼吸器", "question": "気管および気管支の構造と機能に関する次の記述のうち、正しいものはどれか。", "options": ["右主気管支は左主気管支より太く短く、分岐角度が小さい。", "左主気管支は右に比べて太く短く、角度も小さいため手術時の挿管に適している。", "気管の背側は食道に接しており、軟骨で囲まれているため消化管に影響を与えにくい。", "区域気管支は肺葉のみに分布し、肺区域の区分には関与しない。"], "answer": 0, "explanation": "右主気管支は左主気管支より太く短く、気管からより垂直に近い角度で分岐する。左右の形態差を確認する問題である。"}, {"id": 210, "chapter": "呼吸器", "question": "肺の構造と臨床的意義に関する次の記述のうち、正しいものはどれか。", "options": ["右肺には水平裂と斜裂があり、3葉構造をとる。", "左肺門では、肺動脈が気管支よりも前下方に位置する。", "聴診時、前胸部では右肺下葉を主に聴診するのが原則である。", "左肺は心臓の圧迫を受けるため、右肺よりも大きく重い。"], "answer": 0, "explanation": "右肺は上葉・中葉・下葉の3葉からなり、斜裂と水平裂をもつ。左肺は上葉・下葉の2葉で、斜裂のみをもつ。"}, {"id": 211, "chapter": "呼吸器", "question": "次のうち、「空気血液関門（air-blood barrier）」の構成要素として正しいものはどれか。", "options": ["II型肺胞上皮細胞、血漿、肺毛細血管内皮細胞", "I型肺胞上皮細胞、共通基底膜、肺毛細血管内皮細胞", "I型肺胞上皮細胞、肺胞マクロファージ、リンパ管内皮", "血液脳関門細胞、肺胞上皮、線毛上皮細胞", "II型肺胞上皮細胞、基底膜、食細胞"], "answer": 1, "explanation": "空気血液関門は、肺胞気と毛細血管血液の間でガス交換が行われる薄い構造で、主にI型肺胞上皮細胞、共通基底膜、肺毛細血管内皮細胞からなる。"}, {"id": 212, "chapter": "腎・泌尿器・生殖器", "question": "次のうち、腎臓の働きとして誤っているものはどれか。", "options": ["血中の尿素やクレアチニンを尿中に排出する", "ナトリウムやカリウム濃度を調節し、水分バランスを整える", "酵素を分泌して血糖値を低下させる", "重炭酸イオンを再吸収し、血液のpHバランスを維持する"], "answer": 2, "explanation": "腎臓は老廃物排泄、水・電解質調節、酸塩基平衡の維持などを担う。血糖値を低下させるホルモンであるインスリンは膵臓から分泌される。"}, {"id": 213, "chapter": "腎・泌尿器・生殖器", "question": "次のうち、「泌尿器系臓器の位置関係」について正しい記述はどれか。", "options": ["腎動脈は腎静脈よりも背側を走行し、下大静脈から分岐して腎臓に血液を供給する。", "副腎は腎臓の外側に位置し、内分泌腺として腎臓と連結している。", "尿管は腎盂から始まり、腹腔前方を垂直に下行しながら膀胱に向かう。", "腎臓は後腹膜腔に存在し、左右それぞれから尿管が下行して骨盤腔に達する。"], "answer": 3, "explanation": "腎臓は後腹膜に位置し、左右それぞれの腎盂から尿管が下行して骨盤腔内の膀胱へ向かう。腎動脈は腹大動脈から分岐する。"}, {"id": 214, "chapter": "腎・泌尿器・生殖器", "question": "排尿時に副交感神経によって刺激されて収縮する筋肉はどれか。", "options": ["内尿道括約筋", "外尿道括約筋", "排尿筋（膀胱壁）", "骨盤底筋群"], "answer": 2, "explanation": "排尿時には副交感神経の作用により膀胱壁の排尿筋が収縮し、内尿道括約筋と外尿道括約筋が弛緩することで尿が体外へ排出される。"}];
+
+const state = {
+  chapter: '全範囲',
+  count: 10,
+  order: 'random',
+  queue: [],
+  index: 0,
+  correct: 0,
+  answered: false
+};
+
+const chapterOrder = ['全範囲', '総論', '循環器', '呼吸器', '腎・泌尿器・生殖器'];
+
+function shuffle(arr) {
+  const copied = [...arr];
+  for (let i = copied.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copied[i], copied[j]] = [copied[j], copied[i]];
+  }
+  return copied;
+}
+
+function getPool() {
+  if (state.chapter === '全範囲') return QUESTIONS;
+  return QUESTIONS.filter(q => q.chapter === state.chapter);
+}
+
+function getRequestedCount(poolLength) {
+  const raw = Number(document.getElementById('countSelect').value);
+  if (raw === 9999) return poolLength;
+  return Math.min(raw, poolLength);
+}
+
+function buildQueue() {
+  let pool = getPool();
+  state.order = document.getElementById('orderSelect').value;
+  state.count = getRequestedCount(pool.length);
+
+  if (state.order === 'random') {
+    pool = shuffle(pool);
+  } else {
+    pool = [...pool].sort((a, b) => a.id - b.id);
+  }
+
+  state.queue = pool.slice(0, state.count).map(q => ({
+    ...q,
+    shuffledOptions: shuffle(q.options.map((opt, idx) => ({ text: opt, originalIndex: idx })))
+  }));
+
+  state.index = 0;
+  state.correct = 0;
+  state.answered = false;
+}
+
+function setupChapterChips() {
+  const wrap = document.getElementById('chapterChips');
+  wrap.innerHTML = '';
+  chapterOrder.forEach(ch => {
+    const btn = document.createElement('button');
+    btn.className = 'chip' + (ch === state.chapter ? ' active' : '');
+    btn.textContent = ch;
+    btn.onclick = () => {
+      state.chapter = ch;
+      document.querySelectorAll('.chip').forEach(el => el.classList.remove('active'));
+      btn.classList.add('active');
+      adjustCountOptions();
+    };
+    wrap.appendChild(btn);
+  });
+}
+
+function adjustCountOptions() {
+  const select = document.getElementById('countSelect');
+  const poolLength = getPool().length;
+  const opts = [
+    { value: 10, label: '10問' },
+    { value: 20, label: '20問' },
+    { value: 30, label: '30問' },
+    { value: 50, label: '50問' },
+    { value: 9999, label: '全問' }
+  ];
+
+  const currentValue = Number(select.value || 10);
+  select.innerHTML = '';
+  opts.forEach(o => {
+    if (o.value === 9999 || o.value <= poolLength) {
+      const op = document.createElement('option');
+      op.value = String(o.value);
+      op.textContent = o.label;
+      select.appendChild(op);
+    }
+  });
+
+  const availableValues = [...select.options].map(o => Number(o.value));
+  select.value = String(availableValues.includes(currentValue) ? currentValue : availableValues[0]);
+}
+
+function updateMiniScore() {
+  const total = state.queue.length || 0;
+  const current = total ? Math.min(state.index + 1, total) : 0;
+  document.getElementById('scoreMini').textContent =
+    total ? `正解 ${state.correct} / ${state.index} ｜ ${current} / ${total}` : '';
+}
+
+function updateProgress() {
+  const total = state.queue.length || 1;
+  const percent = (state.index / total) * 100;
+  document.getElementById('progressFill').style.width = percent + '%';
+}
+
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function renderQuestion() {
+  updateMiniScore();
+  updateProgress();
+
+  if (!state.queue.length) {
+    document.getElementById('mainArea').innerHTML = `
+      <div class="question-card">
+        <div class="result">
+          <div class="result-text">出題条件を選んで「この条件で開始」を押してください。</div>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  if (state.index >= state.queue.length) {
+    renderResult();
+    return;
+  }
+
+  const q = state.queue[state.index];
+  const labels = ['A', 'B', 'C', 'D', 'E'];
+
+  document.getElementById('mainArea').innerHTML = `
+    <div class="question-card">
+      <div class="meta">
+        <div>章：${escapeHtml(q.chapter)}</div>
+        <div>問題番号：${q.id}</div>
+      </div>
+      <div class="q-number">問題 ${state.index + 1} / ${state.queue.length}</div>
+      <div class="q-text">${escapeHtml(q.question)}</div>
+      <div class="options">
+        ${q.shuffledOptions.map((opt, i) => `
+          <button class="option" data-index="${i}" onclick="answerQuestion(${i})">
+            <span class="badge">${labels[i]}</span>
+            <span>${escapeHtml(opt.text)}</span>
+          </button>
+        `).join('')}
+      </div>
+      <div id="feedbackArea"></div>
+      <div class="actions" id="actionArea"></div>
+    </div>
+  `;
+}
+
+function answerQuestion(chosenIndex) {
+  if (state.answered) return;
+  state.answered = true;
+
+  const q = state.queue[state.index];
+  const correctIndex = q.shuffledOptions.findIndex(opt => opt.originalIndex === q.answer);
+  const buttons = document.querySelectorAll('.option');
+
+  buttons.forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === correctIndex) btn.classList.add('correct');
+    if (i === chosenIndex && i !== correctIndex) btn.classList.add('wrong');
+  });
+
+  const isCorrect = chosenIndex === correctIndex;
+  if (isCorrect) state.correct += 1;
+  state.index += 1;
+
+  document.getElementById('feedbackArea').innerHTML = `
+    <div class="feedback">
+      <div class="head ${isCorrect ? 'ok' : 'ng'}">${isCorrect ? '✓ 正解' : '✗ 不正解'}</div>
+      ${escapeHtml(q.explanation)}
+    </div>
+  `;
+
+  document.getElementById('actionArea').innerHTML = `
+    <button class="primary" onclick="goNext()">次の問題へ</button>
+    <button class="secondary" onclick="restartSame()">この条件で最初から</button>
+  `;
+
+  updateMiniScore();
+  updateProgress();
+}
+
+function goNext() {
+  state.answered = false;
+  renderQuestion();
+}
+
+function restartSame() {
+  buildQueue();
+  renderQuestion();
+}
+
+function renderResult() {
+  updateMiniScore();
+  updateProgress();
+  const total = state.queue.length || 1;
+  const pct = Math.round((state.correct / total) * 100);
+  let msg = 'もう一度挑戦してみましょう。';
+  if (pct >= 90) msg = '非常に良好です。';
+  else if (pct >= 80) msg = 'よくできています。';
+  else if (pct >= 60) msg = '基礎は押さえられています。';
+
+  document.getElementById('mainArea').innerHTML = `
+    <div class="question-card">
+      <div class="result">
+        <div class="result-score">${pct}%</div>
+        <div class="result-text">${msg}</div>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">${state.correct}</div>
+            <div class="stat-label">正解</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">${total - state.correct}</div>
+            <div class="stat-label">不正解</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">${total}</div>
+            <div class="stat-label">出題数</div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="primary" onclick="restartSame()">同じ条件で再挑戦</button>
+          <button class="secondary" onclick="resetApp()">条件を変えてやり直す</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function resetApp() {
+  state.queue = [];
+  state.index = 0;
+  state.correct = 0;
+  state.answered = false;
+  updateMiniScore();
+  updateProgress();
+  renderQuestion();
+}
+
+document.getElementById('startBtn').addEventListener('click', () => {
+  buildQueue();
+  renderQuestion();
+});
+
+setupChapterChips();
+adjustCountOptions();
+renderQuestion();
+</script>
+</body>
+</html>

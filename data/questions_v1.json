@@ -1,0 +1,1755 @@
+{
+  "version": "1.0.0",
+  "title": "人体の構造と機能A クイズ 初版50問",
+  "language": "ja",
+  "question_count": 50,
+  "difficulty_scale": {
+    "1": "基礎",
+    "2": "標準",
+    "3": "応用"
+  },
+  "questions": [
+    {
+      "id": "Q001",
+      "category": "総論",
+      "subcategory": "解剖学と生理学",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "解剖学が主として扱う内容はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "人体の働きと調節"
+        },
+        {
+          "id": "B",
+          "text": "人体の形・位置・構造"
+        },
+        {
+          "id": "C",
+          "text": "疾患の治療方法"
+        },
+        {
+          "id": "D",
+          "text": "薬物の作用"
+        }
+      ],
+      "answer": "B",
+      "explanation": "解剖学は人体の形、位置、構造、つながりを扱う。生理学は人体の働きや調節を扱う。",
+      "tags": [
+        "解剖学",
+        "生理学"
+      ]
+    },
+    {
+      "id": "Q002",
+      "category": "総論",
+      "subcategory": "人体の構成",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "図に示した人体の構成段階を、小さい単位から正しく並べたものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "組織 → 細胞 → 器官 → 個体 → 器官系"
+        },
+        {
+          "id": "B",
+          "text": "細胞 → 組織 → 器官 → 器官系 → 個体"
+        },
+        {
+          "id": "C",
+          "text": "細胞 → 器官 → 組織 → 個体 → 器官系"
+        },
+        {
+          "id": "D",
+          "text": "組織 → 器官 → 細胞 → 器官系 → 個体"
+        }
+      ],
+      "answer": "B",
+      "explanation": "人体は、細胞 → 組織 → 器官 → 器官系 → 個体という階層で構成される。",
+      "tags": [
+        "細胞",
+        "組織",
+        "器官",
+        "器官系",
+        "個体"
+      ],
+      "image": {
+        "prompt_id": "IMG-001",
+        "asset": "assets/images/q002_hierarchy.webp",
+        "alt": "人体の構成段階を示す5段階の模式図",
+        "marker": "①〜⑤",
+        "marker_target": "細胞→組織→器官→器官系→個体の各段階"
+      }
+    },
+    {
+      "id": "Q003",
+      "category": "総論",
+      "subcategory": "組織",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "「組織」の説明として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "生命活動を営む最小単位"
+        },
+        {
+          "id": "B",
+          "text": "複数の器官が連携したもの"
+        },
+        {
+          "id": "C",
+          "text": "同様の機能・形態をもつ細胞が特定の配列で集まったもの"
+        },
+        {
+          "id": "D",
+          "text": "すべての器官系が統合されたもの"
+        }
+      ],
+      "answer": "C",
+      "explanation": "組織は、同様の機能・形態をもつ細胞が特定の配列で集まったものである。",
+      "tags": [
+        "組織"
+      ]
+    },
+    {
+      "id": "Q004",
+      "category": "総論",
+      "subcategory": "基本組織",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "図中①で示された、身体表面を覆い、分泌や吸収にも関わる組織はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "上皮組織"
+        },
+        {
+          "id": "B",
+          "text": "結合組織"
+        },
+        {
+          "id": "C",
+          "text": "筋組織"
+        },
+        {
+          "id": "D",
+          "text": "神経組織"
+        }
+      ],
+      "answer": "A",
+      "explanation": "上皮組織は身体表面や管腔の内面などを覆い、分泌や吸収にも関わる。",
+      "tags": [
+        "上皮組織",
+        "基本組織"
+      ],
+      "image": {
+        "prompt_id": "IMG-002",
+        "asset": "assets/images/q004_epithelium.webp",
+        "alt": "上皮組織とその下の結合組織を示す模式図",
+        "marker": "①",
+        "marker_target": "最表層の上皮組織"
+      }
+    },
+    {
+      "id": "Q005",
+      "category": "総論",
+      "subcategory": "基本組織",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "組織とその主な働きの組み合わせで正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "筋組織―情報を伝える"
+        },
+        {
+          "id": "B",
+          "text": "神経組織―収縮して運動を生み出す"
+        },
+        {
+          "id": "C",
+          "text": "結合組織―組織をつなぎ支える"
+        },
+        {
+          "id": "D",
+          "text": "上皮組織―骨格を形成する"
+        }
+      ],
+      "answer": "C",
+      "explanation": "結合組織は組織をつなぎ、支持する。筋組織は収縮、神経組織は情報の受容・伝達を担う。",
+      "tags": [
+        "結合組織",
+        "基本組織"
+      ]
+    },
+    {
+      "id": "Q006",
+      "category": "総論",
+      "subcategory": "器官",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "器官について正しい説明はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "1種類の細胞のみから構成される"
+        },
+        {
+          "id": "B",
+          "text": "1種類の組織のみから構成される"
+        },
+        {
+          "id": "C",
+          "text": "複数の組織が特定の機能を果たすために組み合わさったものである"
+        },
+        {
+          "id": "D",
+          "text": "複数の個体が集まったものである"
+        }
+      ],
+      "answer": "C",
+      "explanation": "心臓や肺、腎臓などの器官は、複数の組織が組み合わさって機能する。",
+      "tags": [
+        "器官",
+        "組織"
+      ]
+    },
+    {
+      "id": "Q007",
+      "category": "総論",
+      "subcategory": "方向用語",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "正中から遠ざかる方向を表す用語はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "内側"
+        },
+        {
+          "id": "B",
+          "text": "外側"
+        },
+        {
+          "id": "C",
+          "text": "近位"
+        },
+        {
+          "id": "D",
+          "text": "頭側"
+        }
+      ],
+      "answer": "B",
+      "explanation": "内側は正中に近い方向、外側は正中から遠い方向を示す。",
+      "tags": [
+        "方向用語",
+        "内側",
+        "外側"
+      ]
+    },
+    {
+      "id": "Q008",
+      "category": "総論",
+      "subcategory": "人体の面",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "図中Aのように、人体を前方と後方に分ける面はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "矢状面"
+        },
+        {
+          "id": "B",
+          "text": "冠状面"
+        },
+        {
+          "id": "C",
+          "text": "水平面"
+        },
+        {
+          "id": "D",
+          "text": "正中矢状面"
+        }
+      ],
+      "answer": "B",
+      "explanation": "冠状面は人体を前後に分ける面で、前額面ともいう。矢状面は左右、水平面は上下に分ける。",
+      "tags": [
+        "冠状面",
+        "矢状面",
+        "水平面"
+      ],
+      "image": {
+        "prompt_id": "IMG-003",
+        "asset": "assets/images/q008_body_planes.webp",
+        "alt": "人体の矢状面・冠状面・水平面を示す模式図",
+        "marker": "A",
+        "marker_target": "冠状面"
+      }
+    },
+    {
+      "id": "Q009",
+      "category": "総論",
+      "subcategory": "方向用語",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "手関節は肘関節に対してどの方向にあるか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "近位"
+        },
+        {
+          "id": "B",
+          "text": "遠位"
+        },
+        {
+          "id": "C",
+          "text": "内側"
+        },
+        {
+          "id": "D",
+          "text": "頭側"
+        }
+      ],
+      "answer": "B",
+      "explanation": "近位は体幹に近い側、遠位は体幹から遠い側を示す。",
+      "tags": [
+        "近位",
+        "遠位"
+      ]
+    },
+    {
+      "id": "Q010",
+      "category": "総論",
+      "subcategory": "発生",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "人体の発生における3つの胚葉はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "外胚葉・中胚葉・内胚葉"
+        },
+        {
+          "id": "B",
+          "text": "前胚葉・中胚葉・後胚葉"
+        },
+        {
+          "id": "C",
+          "text": "上胚葉・中胚葉・下胚葉"
+        },
+        {
+          "id": "D",
+          "text": "表胚葉・筋胚葉・神経胚葉"
+        }
+      ],
+      "answer": "A",
+      "explanation": "人体の器官や組織は、外胚葉・中胚葉・内胚葉から分化する。",
+      "tags": [
+        "外胚葉",
+        "中胚葉",
+        "内胚葉"
+      ]
+    },
+    {
+      "id": "Q011",
+      "category": "総論",
+      "subcategory": "発生",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "図中①の表皮や神経系の主な由来となる胚葉はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "外胚葉"
+        },
+        {
+          "id": "B",
+          "text": "中胚葉"
+        },
+        {
+          "id": "C",
+          "text": "内胚葉"
+        },
+        {
+          "id": "D",
+          "text": "いずれにも由来しない"
+        }
+      ],
+      "answer": "A",
+      "explanation": "外胚葉からは主に神経系や表皮が分化する。",
+      "tags": [
+        "外胚葉",
+        "発生"
+      ],
+      "image": {
+        "prompt_id": "IMG-004",
+        "asset": "assets/images/q011_germ_layers.webp",
+        "alt": "外胚葉・中胚葉・内胚葉の3層を示す初期胚模式図",
+        "marker": "①",
+        "marker_target": "最外層（外胚葉）"
+      }
+    },
+    {
+      "id": "Q012",
+      "category": "総論",
+      "subcategory": "発生",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "呼吸器上皮の主な発生学的由来はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "外胚葉"
+        },
+        {
+          "id": "B",
+          "text": "中胚葉"
+        },
+        {
+          "id": "C",
+          "text": "内胚葉"
+        },
+        {
+          "id": "D",
+          "text": "神経堤"
+        }
+      ],
+      "answer": "C",
+      "explanation": "内胚葉からは消化管上皮や呼吸器上皮などが分化する。",
+      "tags": [
+        "内胚葉",
+        "呼吸器上皮"
+      ]
+    },
+    {
+      "id": "Q013",
+      "category": "循環器",
+      "subcategory": "循環器系の構成",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "循環器系に含まれる組み合わせとして正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心臓・血管系・リンパ系"
+        },
+        {
+          "id": "B",
+          "text": "心臓・肺・腎臓"
+        },
+        {
+          "id": "C",
+          "text": "動脈・気管・リンパ節"
+        },
+        {
+          "id": "D",
+          "text": "心臓・食道・静脈"
+        }
+      ],
+      "answer": "A",
+      "explanation": "循環器系は心臓、血管系、リンパ系から構成される。",
+      "tags": [
+        "循環器系",
+        "心臓",
+        "血管系",
+        "リンパ系"
+      ]
+    },
+    {
+      "id": "Q014",
+      "category": "循環器",
+      "subcategory": "肺循環",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "肺循環が始まる部位はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "左心房"
+        },
+        {
+          "id": "B",
+          "text": "左心室"
+        },
+        {
+          "id": "C",
+          "text": "右心房"
+        },
+        {
+          "id": "D",
+          "text": "右心室"
+        }
+      ],
+      "answer": "D",
+      "explanation": "肺循環では右心室から肺へ血液を送り、肺で酸素化された血液が左心房へ戻る。",
+      "tags": [
+        "肺循環",
+        "右心室"
+      ]
+    },
+    {
+      "id": "Q015",
+      "category": "循環器",
+      "subcategory": "体循環",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "体循環の血液が最終的に戻る心腔はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "右心房"
+        },
+        {
+          "id": "B",
+          "text": "右心室"
+        },
+        {
+          "id": "C",
+          "text": "左心房"
+        },
+        {
+          "id": "D",
+          "text": "左心室"
+        }
+      ],
+      "answer": "A",
+      "explanation": "体循環は左心室から始まり、全身を循環した血液が右心房へ戻る。",
+      "tags": [
+        "体循環",
+        "右心房"
+      ]
+    },
+    {
+      "id": "Q016",
+      "category": "循環器",
+      "subcategory": "心臓の位置",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "図中①で示された、左第5肋間付近で拍動を触知できる部位はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心底"
+        },
+        {
+          "id": "B",
+          "text": "心尖"
+        },
+        {
+          "id": "C",
+          "text": "右心房"
+        },
+        {
+          "id": "D",
+          "text": "大動脈弓"
+        }
+      ],
+      "answer": "B",
+      "explanation": "心尖は左第5肋間付近に位置し、拍動を触知できる。",
+      "tags": [
+        "心尖",
+        "心臓"
+      ],
+      "image": {
+        "prompt_id": "IMG-005",
+        "asset": "assets/images/q016_apex.webp",
+        "alt": "前胸部と心臓の位置関係を示す模式図",
+        "marker": "①",
+        "marker_target": "心尖"
+      }
+    },
+    {
+      "id": "Q017",
+      "category": "循環器",
+      "subcategory": "心臓の内部構造",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "心臓断面図の①で示された部屋はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "右心房"
+        },
+        {
+          "id": "B",
+          "text": "右心室"
+        },
+        {
+          "id": "C",
+          "text": "左心房"
+        },
+        {
+          "id": "D",
+          "text": "左心室"
+        }
+      ],
+      "answer": "D",
+      "explanation": "左心室は体循環へ血液を送り出す心室である。",
+      "tags": [
+        "左心室",
+        "心腔"
+      ],
+      "image": {
+        "prompt_id": "IMG-006",
+        "asset": "assets/images/q017_heart_chambers.webp",
+        "alt": "4つの心腔を示す心臓断面模式図",
+        "marker": "①",
+        "marker_target": "左心室"
+      }
+    },
+    {
+      "id": "Q018",
+      "category": "循環器",
+      "subcategory": "心臓弁",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "左心房と左心室の間にある弁はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "三尖弁"
+        },
+        {
+          "id": "B",
+          "text": "僧帽弁"
+        },
+        {
+          "id": "C",
+          "text": "肺動脈弁"
+        },
+        {
+          "id": "D",
+          "text": "大動脈弁"
+        }
+      ],
+      "answer": "B",
+      "explanation": "僧帽弁は左心房と左心室の間にあり、左心室から左心房への逆流を防ぐ。",
+      "tags": [
+        "僧帽弁",
+        "心臓弁"
+      ]
+    },
+    {
+      "id": "Q019",
+      "category": "循環器",
+      "subcategory": "肺循環",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "図中①で示された、肺から左心房へ血液を運ぶ血管はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "肺動脈"
+        },
+        {
+          "id": "B",
+          "text": "肺静脈"
+        },
+        {
+          "id": "C",
+          "text": "上大静脈"
+        },
+        {
+          "id": "D",
+          "text": "大動脈"
+        }
+      ],
+      "answer": "B",
+      "explanation": "肺静脈は肺で酸素化された血液を左心房へ運ぶ。",
+      "tags": [
+        "肺静脈",
+        "肺循環"
+      ],
+      "image": {
+        "prompt_id": "IMG-007",
+        "asset": "assets/images/q019_pulmonary_vein.webp",
+        "alt": "心臓と左右肺を示す肺循環の模式図",
+        "marker": "①",
+        "marker_target": "肺から左心房へ入る肺静脈"
+      }
+    },
+    {
+      "id": "Q020",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "静脈の特徴として適切なのはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "壁が厚く弾性線維と平滑筋が豊富"
+        },
+        {
+          "id": "B",
+          "text": "単層扁平上皮と基底膜のみで構成される"
+        },
+        {
+          "id": "C",
+          "text": "壁が比較的薄く、内腔が広い"
+        },
+        {
+          "id": "D",
+          "text": "心臓から全身へ血液を送る"
+        }
+      ],
+      "answer": "C",
+      "explanation": "静脈は動脈より壁が薄く内腔が広く、静脈弁によって逆流を防ぐ。",
+      "tags": [
+        "静脈",
+        "血管"
+      ]
+    },
+    {
+      "id": "Q021",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "3種類の血管断面のうち、物質交換を主な役割とする①はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "動脈"
+        },
+        {
+          "id": "B",
+          "text": "静脈"
+        },
+        {
+          "id": "C",
+          "text": "毛細血管"
+        },
+        {
+          "id": "D",
+          "text": "リンパ節"
+        }
+      ],
+      "answer": "C",
+      "explanation": "毛細血管は非常に薄い壁をもち、酸素、栄養素、老廃物などの交換を行う。",
+      "tags": [
+        "毛細血管",
+        "血管"
+      ],
+      "image": {
+        "prompt_id": "IMG-008",
+        "asset": "assets/images/q021_vessel_cross_sections.webp",
+        "alt": "動脈・静脈・毛細血管の断面を比較する模式図",
+        "marker": "①",
+        "marker_target": "毛細血管"
+      }
+    },
+    {
+      "id": "Q022",
+      "category": "循環器",
+      "subcategory": "刺激伝導系",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "心臓の刺激伝導の順序として適切なのはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "房室結節 → 洞房結節 → 房室束 → プルキンエ線維"
+        },
+        {
+          "id": "B",
+          "text": "洞房結節 → 房室結節 → 房室束 → 右脚・左脚 → プルキンエ線維"
+        },
+        {
+          "id": "C",
+          "text": "洞房結節 → 房室束 → 房室結節 → プルキンエ線維"
+        },
+        {
+          "id": "D",
+          "text": "プルキンエ線維 → 洞房結節 → 房室結節 → 房室束"
+        }
+      ],
+      "answer": "B",
+      "explanation": "洞房結節で生じた興奮は、房室結節、房室束、右脚・左脚、プルキンエ線維へ伝わる。",
+      "tags": [
+        "刺激伝導系",
+        "洞房結節",
+        "房室結節"
+      ]
+    },
+    {
+      "id": "Q023",
+      "category": "循環器",
+      "subcategory": "心電図",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "electrocardiogram（心電図；ECG）のP波が表すものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心房の脱分極"
+        },
+        {
+          "id": "B",
+          "text": "心室の脱分極"
+        },
+        {
+          "id": "C",
+          "text": "心室の再分極"
+        },
+        {
+          "id": "D",
+          "text": "心房の機械的拡張のみ"
+        }
+      ],
+      "answer": "A",
+      "explanation": "P波は心房の興奮、すなわち脱分極を示す。",
+      "tags": [
+        "心電図",
+        "P波"
+      ]
+    },
+    {
+      "id": "Q024",
+      "category": "循環器",
+      "subcategory": "心電図",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "心電図のQRS群が表すものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心房の脱分極"
+        },
+        {
+          "id": "B",
+          "text": "心室の脱分極"
+        },
+        {
+          "id": "C",
+          "text": "心室の再分極"
+        },
+        {
+          "id": "D",
+          "text": "心房の再分極のみ"
+        }
+      ],
+      "answer": "B",
+      "explanation": "QRS群は心室の興奮、すなわち脱分極を示す。",
+      "tags": [
+        "心電図",
+        "QRS群"
+      ]
+    },
+    {
+      "id": "Q025",
+      "category": "循環器",
+      "subcategory": "刺激伝導系",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "刺激伝導系の図中①で示された、正常な心臓のペースメーカーとして働く部位はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "洞房結節"
+        },
+        {
+          "id": "B",
+          "text": "房室結節"
+        },
+        {
+          "id": "C",
+          "text": "房室束"
+        },
+        {
+          "id": "D",
+          "text": "プルキンエ線維"
+        }
+      ],
+      "answer": "A",
+      "explanation": "洞房結節は右心房上部に位置し、自発的に興奮を発生させる。",
+      "tags": [
+        "洞房結節",
+        "刺激伝導系"
+      ],
+      "image": {
+        "prompt_id": "IMG-009",
+        "asset": "assets/images/q025_conduction_system.webp",
+        "alt": "心臓の刺激伝導系を示す模式図",
+        "marker": "①",
+        "marker_target": "右心房上部の洞房結節"
+      }
+    },
+    {
+      "id": "Q026",
+      "category": "循環器",
+      "subcategory": "大動脈",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "大動脈弓から直接分岐する血管はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "右冠状動脈"
+        },
+        {
+          "id": "B",
+          "text": "左総頸動脈"
+        },
+        {
+          "id": "C",
+          "text": "腎動脈"
+        },
+        {
+          "id": "D",
+          "text": "上腸間膜動脈"
+        }
+      ],
+      "answer": "B",
+      "explanation": "大動脈弓からは腕頭動脈、左総頸動脈、左鎖骨下動脈が分岐する。",
+      "tags": [
+        "大動脈弓",
+        "左総頸動脈"
+      ]
+    },
+    {
+      "id": "Q027",
+      "category": "循環器",
+      "subcategory": "冠状動脈",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "右冠状動脈と左冠状動脈が起始する部位はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "上行大動脈"
+        },
+        {
+          "id": "B",
+          "text": "大動脈弓"
+        },
+        {
+          "id": "C",
+          "text": "肺動脈幹"
+        },
+        {
+          "id": "D",
+          "text": "上大静脈"
+        }
+      ],
+      "answer": "A",
+      "explanation": "冠状動脈は上行大動脈から起始し、心筋へ血液を供給する。",
+      "tags": [
+        "冠状動脈",
+        "上行大動脈"
+      ]
+    },
+    {
+      "id": "Q028",
+      "category": "呼吸器",
+      "subcategory": "呼吸の分類",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "呼吸の3段階として正しい組み合わせはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "吸気・呼気・換気"
+        },
+        {
+          "id": "B",
+          "text": "外呼吸・内呼吸・細胞呼吸"
+        },
+        {
+          "id": "C",
+          "text": "肺呼吸・胸式呼吸・腹式呼吸"
+        },
+        {
+          "id": "D",
+          "text": "換気・循環・排泄"
+        }
+      ],
+      "answer": "B",
+      "explanation": "授業では呼吸を外呼吸、内呼吸、細胞呼吸の3段階で整理している。",
+      "tags": [
+        "外呼吸",
+        "内呼吸",
+        "細胞呼吸"
+      ]
+    },
+    {
+      "id": "Q029",
+      "category": "呼吸器",
+      "subcategory": "外呼吸",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "外呼吸が行われる主な場所はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "肺胞と肺毛細血管の間"
+        },
+        {
+          "id": "B",
+          "text": "全身の組織細胞と毛細血管の間"
+        },
+        {
+          "id": "C",
+          "text": "ミトコンドリア内部"
+        },
+        {
+          "id": "D",
+          "text": "左心室と大動脈の間"
+        }
+      ],
+      "answer": "A",
+      "explanation": "外呼吸は肺胞と肺毛細血管の間で行われるガス交換である。",
+      "tags": [
+        "外呼吸",
+        "肺胞",
+        "肺毛細血管"
+      ]
+    },
+    {
+      "id": "Q030",
+      "category": "呼吸器",
+      "subcategory": "内呼吸",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "内呼吸における酸素の主な移動方向はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "組織細胞 → 血液"
+        },
+        {
+          "id": "B",
+          "text": "血液 → 組織細胞"
+        },
+        {
+          "id": "C",
+          "text": "肺胞 → 外気"
+        },
+        {
+          "id": "D",
+          "text": "組織細胞 → 肺胞"
+        }
+      ],
+      "answer": "B",
+      "explanation": "内呼吸では血液から組織細胞へ酸素が移動し、二酸化炭素は組織細胞から血液へ移動する。",
+      "tags": [
+        "内呼吸",
+        "酸素"
+      ]
+    },
+    {
+      "id": "Q031",
+      "category": "呼吸器",
+      "subcategory": "気道",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "上気道に含まれるものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "鼻腔・咽頭・喉頭"
+        },
+        {
+          "id": "B",
+          "text": "気管・気管支・細気管支"
+        },
+        {
+          "id": "C",
+          "text": "呼吸細気管支・肺胞管・肺胞"
+        },
+        {
+          "id": "D",
+          "text": "気管・肺胞・横隔膜"
+        }
+      ],
+      "answer": "A",
+      "explanation": "上気道は鼻腔、咽頭、喉頭からなる。下気道は気管、気管支、細気管支である。",
+      "tags": [
+        "上気道",
+        "鼻腔",
+        "咽頭",
+        "喉頭"
+      ]
+    },
+    {
+      "id": "Q032",
+      "category": "呼吸器",
+      "subcategory": "上気道",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "呼吸器の模式図で①が示す部位はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "鼻腔"
+        },
+        {
+          "id": "B",
+          "text": "喉頭"
+        },
+        {
+          "id": "C",
+          "text": "気管支"
+        },
+        {
+          "id": "D",
+          "text": "肺胞"
+        }
+      ],
+      "answer": "B",
+      "explanation": "喉頭は上気道に含まれ、咽頭と気管の間に位置する。",
+      "tags": [
+        "喉頭",
+        "上気道"
+      ],
+      "image": {
+        "prompt_id": "IMG-010",
+        "asset": "assets/images/q032_larynx.webp",
+        "alt": "頭頸部から胸部までの呼吸器模式図",
+        "marker": "①",
+        "marker_target": "喉頭"
+      }
+    },
+    {
+      "id": "Q033",
+      "category": "呼吸器",
+      "subcategory": "咽頭",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "軟口蓋より上方に位置する咽頭の区分はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "上咽頭"
+        },
+        {
+          "id": "B",
+          "text": "中咽頭"
+        },
+        {
+          "id": "C",
+          "text": "下咽頭"
+        },
+        {
+          "id": "D",
+          "text": "喉頭"
+        }
+      ],
+      "answer": "A",
+      "explanation": "咽頭は上咽頭、中咽頭、下咽頭に区分され、上咽頭は軟口蓋より上方に位置する。",
+      "tags": [
+        "上咽頭",
+        "咽頭"
+      ]
+    },
+    {
+      "id": "Q034",
+      "category": "呼吸器",
+      "subcategory": "導気部",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "導気部の終点にあたるものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "気管"
+        },
+        {
+          "id": "B",
+          "text": "区域気管支"
+        },
+        {
+          "id": "C",
+          "text": "終末細気管支"
+        },
+        {
+          "id": "D",
+          "text": "肺胞"
+        }
+      ],
+      "answer": "C",
+      "explanation": "終末細気管支までが導気部で、その先の呼吸細気管支から呼吸部が始まる。",
+      "tags": [
+        "終末細気管支",
+        "導気部"
+      ]
+    },
+    {
+      "id": "Q035",
+      "category": "呼吸器",
+      "subcategory": "肺葉",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "肺の図で①が示す、右肺にのみ存在する肺葉はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "上葉"
+        },
+        {
+          "id": "B",
+          "text": "中葉"
+        },
+        {
+          "id": "C",
+          "text": "下葉"
+        },
+        {
+          "id": "D",
+          "text": "舌区"
+        }
+      ],
+      "answer": "B",
+      "explanation": "右肺は上葉・中葉・下葉の3葉、左肺は上葉・下葉の2葉からなる。",
+      "tags": [
+        "右肺",
+        "中葉",
+        "肺葉"
+      ],
+      "image": {
+        "prompt_id": "IMG-011",
+        "asset": "assets/images/q035_right_middle_lobe.webp",
+        "alt": "左右肺の葉間裂と肺葉を示す正面模式図",
+        "marker": "①",
+        "marker_target": "右肺中葉"
+      }
+    },
+    {
+      "id": "Q036",
+      "category": "呼吸器",
+      "subcategory": "肺葉",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "左右の肺葉数の組み合わせとして正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "右2葉・左2葉"
+        },
+        {
+          "id": "B",
+          "text": "右2葉・左3葉"
+        },
+        {
+          "id": "C",
+          "text": "右3葉・左2葉"
+        },
+        {
+          "id": "D",
+          "text": "右3葉・左3葉"
+        }
+      ],
+      "answer": "C",
+      "explanation": "右肺は3葉、左肺は2葉である。",
+      "tags": [
+        "肺葉",
+        "右肺",
+        "左肺"
+      ]
+    },
+    {
+      "id": "Q037",
+      "category": "呼吸器",
+      "subcategory": "ガス交換",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "肺胞と毛細血管の図で、①の矢印が肺胞から血液へ向かっている。この物質はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "酸素"
+        },
+        {
+          "id": "B",
+          "text": "二酸化炭素"
+        },
+        {
+          "id": "C",
+          "text": "尿素"
+        },
+        {
+          "id": "D",
+          "text": "グルコース"
+        }
+      ],
+      "answer": "A",
+      "explanation": "外呼吸では酸素が肺胞から血液へ移動し、二酸化炭素は血液から肺胞へ移動する。",
+      "tags": [
+        "肺胞",
+        "ガス交換",
+        "酸素"
+      ],
+      "image": {
+        "prompt_id": "IMG-012",
+        "asset": "assets/images/q037_alveolar_gas_exchange.webp",
+        "alt": "肺胞と周囲毛細血管間のガス移動を示す模式図",
+        "marker": "①",
+        "marker_target": "肺胞から血液へ向かう矢印"
+      }
+    },
+    {
+      "id": "Q038",
+      "category": "呼吸器",
+      "subcategory": "呼吸筋",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "主な吸気筋はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "横隔膜"
+        },
+        {
+          "id": "B",
+          "text": "上腕二頭筋"
+        },
+        {
+          "id": "C",
+          "text": "大殿筋"
+        },
+        {
+          "id": "D",
+          "text": "咬筋"
+        }
+      ],
+      "answer": "A",
+      "explanation": "横隔膜は主吸気筋であり、横隔神経によって支配される。",
+      "tags": [
+        "横隔膜",
+        "吸気"
+      ]
+    },
+    {
+      "id": "Q039",
+      "category": "呼吸器",
+      "subcategory": "呼吸中枢",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "呼吸中枢が主に存在する部位の組み合わせはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "延髄と橋"
+        },
+        {
+          "id": "B",
+          "text": "小脳と脊髄"
+        },
+        {
+          "id": "C",
+          "text": "視床と海馬"
+        },
+        {
+          "id": "D",
+          "text": "大脳基底核と小脳"
+        }
+      ],
+      "answer": "A",
+      "explanation": "呼吸の自律的・周期的な制御には延髄および橋の呼吸中枢が関与する。",
+      "tags": [
+        "延髄",
+        "橋",
+        "呼吸中枢"
+      ]
+    },
+    {
+      "id": "Q040",
+      "category": "呼吸器",
+      "subcategory": "気道分岐",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "気道分岐図の①で示された「導気部の終点」はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "主気管支"
+        },
+        {
+          "id": "B",
+          "text": "区域気管支"
+        },
+        {
+          "id": "C",
+          "text": "終末細気管支"
+        },
+        {
+          "id": "D",
+          "text": "呼吸細気管支"
+        }
+      ],
+      "answer": "C",
+      "explanation": "終末細気管支までが導気部で、その先の呼吸細気管支から呼吸部が始まる。",
+      "tags": [
+        "終末細気管支",
+        "気道分岐"
+      ],
+      "image": {
+        "prompt_id": "IMG-013",
+        "asset": "assets/images/q040_airway_branching.webp",
+        "alt": "気管から肺胞までの気道分岐を示す模式図",
+        "marker": "①",
+        "marker_target": "終末細気管支"
+      }
+    },
+    {
+      "id": "Q041",
+      "category": "呼吸器",
+      "subcategory": "肺胞",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "図中①で示された、複数の肺胞が集合した最末端部はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "終末細気管支"
+        },
+        {
+          "id": "B",
+          "text": "呼吸細気管支"
+        },
+        {
+          "id": "C",
+          "text": "肺胞管"
+        },
+        {
+          "id": "D",
+          "text": "肺胞嚢"
+        }
+      ],
+      "answer": "D",
+      "explanation": "呼吸細気管支から肺胞管を経て、複数の肺胞が集合する肺胞嚢へ至る。",
+      "tags": [
+        "肺胞嚢",
+        "肺胞"
+      ],
+      "image": {
+        "prompt_id": "IMG-014",
+        "asset": "assets/images/q041_alveolar_sac.webp",
+        "alt": "呼吸細気管支から肺胞嚢までの末梢構造模式図",
+        "marker": "①",
+        "marker_target": "肺胞嚢"
+      }
+    },
+    {
+      "id": "Q042",
+      "category": "泌尿器",
+      "subcategory": "尿路",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "尿が体外へ排泄されるまでの順序として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腎臓 → 膀胱 → 尿管 → 尿道"
+        },
+        {
+          "id": "B",
+          "text": "腎臓 → 尿管 → 膀胱 → 尿道"
+        },
+        {
+          "id": "C",
+          "text": "膀胱 → 腎臓 → 尿管 → 尿道"
+        },
+        {
+          "id": "D",
+          "text": "腎臓 → 尿道 → 尿管 → 膀胱"
+        }
+      ],
+      "answer": "B",
+      "explanation": "腎臓でつくられた尿は、尿管を通って膀胱へ送られ、尿道から体外へ排泄される。",
+      "tags": [
+        "尿路",
+        "尿管",
+        "膀胱",
+        "尿道"
+      ]
+    },
+    {
+      "id": "Q043",
+      "category": "泌尿器",
+      "subcategory": "尿路",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "下部尿路を構成するものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腎杯と腎盂"
+        },
+        {
+          "id": "B",
+          "text": "腎盂と尿管"
+        },
+        {
+          "id": "C",
+          "text": "尿管と膀胱"
+        },
+        {
+          "id": "D",
+          "text": "膀胱と尿道"
+        }
+      ],
+      "answer": "D",
+      "explanation": "腎杯・腎盂・尿管を上部尿路、膀胱・尿道を下部尿路とする。",
+      "tags": [
+        "上部尿路",
+        "下部尿路"
+      ]
+    },
+    {
+      "id": "Q044",
+      "category": "泌尿器",
+      "subcategory": "腎臓の位置",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "腎臓について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "左腎は右腎より低い"
+        },
+        {
+          "id": "B",
+          "text": "右腎は左腎よりやや低い"
+        },
+        {
+          "id": "C",
+          "text": "両腎は胸腔内に存在する"
+        },
+        {
+          "id": "D",
+          "text": "腎臓は骨盤内にのみ存在する"
+        }
+      ],
+      "answer": "B",
+      "explanation": "腎臓は後腹膜に位置し、右側には肝臓があるため右腎は左腎よりやや低い。",
+      "tags": [
+        "右腎",
+        "左腎",
+        "後腹膜"
+      ]
+    },
+    {
+      "id": "Q045",
+      "category": "泌尿器",
+      "subcategory": "腎臓の外形",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "腎臓の図中①で示された、腎動脈・腎静脈・尿管などが出入りする部位はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腎門"
+        },
+        {
+          "id": "B",
+          "text": "腎皮質"
+        },
+        {
+          "id": "C",
+          "text": "腎髄質"
+        },
+        {
+          "id": "D",
+          "text": "腎杯"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎門は腎臓内側のくぼんだ部分で、腎動脈、腎静脈、尿管などが出入りする。",
+      "tags": [
+        "腎門",
+        "腎臓"
+      ],
+      "image": {
+        "prompt_id": "IMG-015",
+        "asset": "assets/images/q045_renal_hilum.webp",
+        "alt": "腎臓外観と腎門を示す模式図",
+        "marker": "①",
+        "marker_target": "腎門"
+      }
+    },
+    {
+      "id": "Q046",
+      "category": "泌尿器",
+      "subcategory": "ネフロン",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "ネフロンを構成するものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腎小体と尿細管"
+        },
+        {
+          "id": "B",
+          "text": "腎盂と尿管"
+        },
+        {
+          "id": "C",
+          "text": "膀胱と尿道"
+        },
+        {
+          "id": "D",
+          "text": "腎動脈と腎静脈"
+        }
+      ],
+      "answer": "A",
+      "explanation": "ネフロンは腎臓で尿をつくる最小単位で、腎小体と尿細管から構成される。",
+      "tags": [
+        "ネフロン",
+        "腎小体",
+        "尿細管"
+      ]
+    },
+    {
+      "id": "Q047",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "尿生成の基本的な過程として適切な順序はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "再吸収 → ろ過 → 分泌"
+        },
+        {
+          "id": "B",
+          "text": "分泌 → 再吸収 → ろ過"
+        },
+        {
+          "id": "C",
+          "text": "ろ過 → 再吸収 → 分泌"
+        },
+        {
+          "id": "D",
+          "text": "ろ過 → 分泌 → 再吸収のみ"
+        }
+      ],
+      "answer": "C",
+      "explanation": "尿生成の基本は、ろ過 → 再吸収 → 分泌 → 尿として排泄、の順で整理できる。",
+      "tags": [
+        "ろ過",
+        "再吸収",
+        "分泌",
+        "尿生成"
+      ]
+    },
+    {
+      "id": "Q048",
+      "category": "泌尿器",
+      "subcategory": "ネフロン",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "ネフロンの模式図で①で示された、血液をろ過して原尿をつくる部位はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腎小体"
+        },
+        {
+          "id": "B",
+          "text": "集合管"
+        },
+        {
+          "id": "C",
+          "text": "尿管"
+        },
+        {
+          "id": "D",
+          "text": "膀胱"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎小体では血液がろ過され、原尿が形成される。",
+      "tags": [
+        "腎小体",
+        "原尿",
+        "ネフロン"
+      ],
+      "image": {
+        "prompt_id": "IMG-016",
+        "asset": "assets/images/q048_nephron.webp",
+        "alt": "腎小体・尿細管・集合管を示すネフロン模式図",
+        "marker": "①",
+        "marker_target": "腎小体"
+      }
+    },
+    {
+      "id": "Q049",
+      "category": "泌尿器",
+      "subcategory": "尿路上皮",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "尿路上皮の特徴として適切なのはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "伸縮性がほとんどない"
+        },
+        {
+          "id": "B",
+          "text": "蓄尿量に応じて形態が変化できる"
+        },
+        {
+          "id": "C",
+          "text": "心筋細胞から構成される"
+        },
+        {
+          "id": "D",
+          "text": "肺胞の内面を覆う"
+        }
+      ],
+      "answer": "B",
+      "explanation": "尿路上皮（移行上皮）は伸縮性が高く、蓄尿量に応じて細胞の形態が変化する。",
+      "tags": [
+        "尿路上皮",
+        "移行上皮"
+      ]
+    },
+    {
+      "id": "Q050",
+      "category": "泌尿器",
+      "subcategory": "尿路",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "泌尿器系の図中①で示された、腎臓から膀胱へ尿を運ぶ管はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "尿道"
+        },
+        {
+          "id": "B",
+          "text": "尿管"
+        },
+        {
+          "id": "C",
+          "text": "腎動脈"
+        },
+        {
+          "id": "D",
+          "text": "精管"
+        }
+      ],
+      "answer": "B",
+      "explanation": "尿管は腎臓で生成された尿を膀胱へ送る尿路である。",
+      "tags": [
+        "尿管",
+        "尿路"
+      ],
+      "image": {
+        "prompt_id": "IMG-017",
+        "asset": "assets/images/q050_urinary_system.webp",
+        "alt": "腎臓・尿管・膀胱・尿道を示す泌尿器系模式図",
+        "marker": "①",
+        "marker_target": "尿管"
+      }
+    }
+  ]
+}

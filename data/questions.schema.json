@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "人体の構造と機能A Quiz Question Set",
+  "type": "object",
+  "required": [
+    "version",
+    "title",
+    "language",
+    "question_count",
+    "questions"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "language": {
+      "const": "ja"
+    },
+    "question_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "difficulty_scale": {
+      "type": "object"
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "category",
+          "subcategory",
+          "type",
+          "difficulty",
+          "question",
+          "choices",
+          "answer",
+          "explanation",
+          "tags"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^Q[0-9]{3}$"
+          },
+          "category": {
+            "enum": [
+              "総論",
+              "循環器",
+              "呼吸器",
+              "泌尿器"
+            ]
+          },
+          "subcategory": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "text_mcq",
+              "image_mcq"
+            ]
+          },
+          "difficulty": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "question": {
+            "type": "string"
+          },
+          "choices": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "text"
+              ],
+              "properties": {
+                "id": {
+                  "enum": [
+                    "A",
+                    "B",
+                    "C",
+                    "D"
+                  ]
+                },
+                "text": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "answer": {
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "image": {
+            "type": "object",
+            "required": [
+              "prompt_id",
+              "asset",
+              "alt",
+              "marker",
+              "marker_target"
+            ],
+            "properties": {
+              "prompt_id": {
+                "type": "string",
+                "pattern": "^IMG-[0-9]{3}$"
+              },
+              "asset": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              },
+              "marker": {
+                "type": "string"
+              },
+              "marker_target": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "image_mcq"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "image"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}
