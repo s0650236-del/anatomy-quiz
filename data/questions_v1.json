@@ -1893,7 +1893,7 @@
         "身体面"
       ],
       "image": {
-        "prompt_id": "IMG-018",
+        "prompt_id": "IMG-003",
         "asset": "assets/images/q008_body_planes.webp",
         "alt": "人体の矢状面・冠状面・水平面を示す模式図",
         "marker": "①",
@@ -1932,7 +1932,7 @@
         "身体面"
       ],
       "image": {
-        "prompt_id": "IMG-019",
+        "prompt_id": "IMG-003",
         "asset": "assets/images/q008_body_planes.webp",
         "alt": "人体の矢状面・冠状面・水平面を示す模式図",
         "marker": "①",
@@ -2265,7 +2265,7 @@
         "心腔"
       ],
       "image": {
-        "prompt_id": "IMG-020",
+        "prompt_id": "IMG-006",
         "asset": "assets/images/q017_heart_chambers.webp",
         "alt": "4つの心腔を示す心臓断面模式図",
         "marker": "①②③④",
@@ -2392,7 +2392,7 @@
         "血管壁"
       ],
       "image": {
-        "prompt_id": "IMG-021",
+        "prompt_id": "IMG-008",
         "asset": "assets/images/q021_vessel_cross_sections.webp",
         "alt": "動脈・静脈・毛細血管の断面を比較する模式図",
         "marker": "①",
@@ -2432,7 +2432,7 @@
         "再分極"
       ],
       "image": {
-        "prompt_id": "IMG-022",
+        "prompt_id": "IMG-020",
         "asset": "assets/images/q068_ecg_waveform.webp",
         "alt": "P波・QRS群・T波を示す心電図波形の模式図",
         "marker": "①",
@@ -2604,7 +2604,7 @@
         "左冠動脈"
       ],
       "image": {
-        "prompt_id": "IMG-023",
+        "prompt_id": "IMG-018",
         "asset": "assets/images/q073_coronary_arteries.webp",
         "alt": "心臓前面から見た左冠動脈・右冠動脈の走行を示す模式図",
         "marker": "①",
@@ -2643,7 +2643,7 @@
         "右冠動脈"
       ],
       "image": {
-        "prompt_id": "IMG-024",
+        "prompt_id": "IMG-018",
         "asset": "assets/images/q073_coronary_arteries.webp",
         "alt": "心臓前面から見た左冠動脈・右冠動脈の走行を示す模式図",
         "marker": "②",
@@ -2748,7 +2748,7 @@
         "区域気管支"
       ],
       "image": {
-        "prompt_id": "IMG-025",
+        "prompt_id": "IMG-013",
         "asset": "assets/images/q040_airway_branching.webp",
         "alt": "気管から肺胞までの気道分岐を示す模式図",
         "marker": "②",
@@ -2915,7 +2915,7 @@
         "肺葉"
       ],
       "image": {
-        "prompt_id": "IMG-026",
+        "prompt_id": "IMG-011",
         "asset": "assets/images/q035_right_middle_lobe.webp",
         "alt": "左右肺の葉間裂と肺葉を示す正面模式図",
         "marker": "①",
@@ -3219,7 +3219,7 @@
         "糸球体"
       ],
       "image": {
-        "prompt_id": "IMG-027",
+        "prompt_id": "IMG-019",
         "asset": "assets/images/q091_kidney_cross_section.webp",
         "alt": "腎臓の前額断面（皮質・髄質・腎錐体・腎乳頭）を示す模式図",
         "marker": "①",
@@ -3258,7 +3258,7 @@
         "腎髄質"
       ],
       "image": {
-        "prompt_id": "IMG-028",
+        "prompt_id": "IMG-019",
         "asset": "assets/images/q091_kidney_cross_section.webp",
         "alt": "腎臓の前額断面（皮質・髄質・腎錐体・腎乳頭）を示す模式図",
         "marker": "②",
@@ -3297,7 +3297,7 @@
         "小腎杯"
       ],
       "image": {
-        "prompt_id": "IMG-029",
+        "prompt_id": "IMG-019",
         "asset": "assets/images/q091_kidney_cross_section.webp",
         "alt": "腎臓の前額断面（皮質・髄質・腎錐体・腎乳頭）を示す模式図",
         "marker": "③",
