@@ -43,7 +43,7 @@ Create an original embryology education schematic showing a simplified early emb
 
 **生成プロンプト**
 
-Create an original anatomy education illustration showing the anterior thorax of an adult human with the heart positioned within the chest behind the sternum and between the lungs. Emphasize the anatomical location of the cardiac apex at the inferior-left tip of the heart, corresponding approximately to the left fifth intercostal space. Use a simplified semi-transparent thoracic wall with ribs subtly visible and a clear heart silhouette. White background, medical textbook style, no text, no labels, no numbers, no arrows, no watermark. Leave clear space for marker ① at the cardiac apex.
+Create an original anatomy education illustration showing the anterior thorax of an adult human with the heart positioned within the chest behind the sternum and between the lungs. Emphasize the anatomical location of the cardiac apex at the inferior-left tip of the heart, corresponding approximately to the left fifth intercostal space near the left midclavicular line. Use a simplified semi-transparent thoracic wall with ribs subtly visible and a clear heart silhouette. White background, medical textbook style, no text, no labels, no numbers, no arrows, no watermark. Leave clear space for marker ① at the cardiac apex.
 
 **オーバーレイ指示**：心尖に①を重ねる。
 
@@ -107,9 +107,9 @@ Create an original physiology education schematic of a single alveolus surrounde
 
 **生成プロンプト**
 
-Create an original educational schematic tracing the airway from trachea to distal gas-exchanging structures. Show a progressive branching sequence including main bronchus, lobar bronchus, segmental bronchus, bronchioles, terminal bronchiole, respiratory bronchiole, alveolar duct, and alveolar sacs. The terminal bronchiole should be clearly identifiable as the last purely conducting airway before respiratory bronchioles begin to show alveoli in their walls. White background, simplified medical textbook illustration, no text, no labels, no numbers, no watermark. Leave room for marker ① on the terminal bronchiole.
+Create an original educational schematic tracing the airway from trachea to distal gas-exchanging structures. Show a progressive branching sequence including main bronchus, lobar bronchus, segmental bronchus, bronchioles, terminal bronchiole, respiratory bronchiole, alveolar duct, and alveolar sacs. The terminal bronchiole should be clearly identifiable as the last purely conducting airway before respiratory bronchioles begin to show alveoli in their walls. White background, simplified medical textbook illustration, no text, no labels, no numbers, no watermark. Leave room for marker ① on the respiratory bronchiole, immediately distal to the terminal bronchiole.
 
-**オーバーレイ指示**：終末細気管支に①を重ねる。
+**オーバーレイ指示**：呼吸細気管支に①を重ねる。
 
 ## IMG-014 / Q041：肺胞嚢
 
