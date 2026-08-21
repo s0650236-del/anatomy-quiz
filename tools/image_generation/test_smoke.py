@@ -57,6 +57,43 @@ def main() -> int:
     check("GeminiProvider.is_available() is False with no key", GeminiProvider.is_available() is False)
     check("OpenAIProvider.is_available() is False with no key", OpenAIProvider.is_available() is False)
 
+    check(
+        "GeminiProvider default model is gemini-3.1-flash-image",
+        GeminiProvider().model == "gemini-3.1-flash-image",
+    )
+    os.environ["GEMINI_IMAGE_MODEL"] = "gemini-smoke-test-override"
+    check(
+        "GEMINI_IMAGE_MODEL env var overrides the hardcoded default",
+        GeminiProvider().model == "gemini-smoke-test-override",
+    )
+    check(
+        "an explicit --model still wins over the env var",
+        GeminiProvider(model="gemini-explicit").model == "gemini-explicit",
+    )
+    os.environ.pop("GEMINI_IMAGE_MODEL", None)
+
+    # These SDK imports are only reached inside generate() *after* the
+    # is_available() key check, so a "raises ProviderError without a key"
+    # test alone would never catch a broken/incompatible SDK install
+    # (e.g. a native extension that fails to load on this Python/OS combo).
+    # Import them directly here so a broken environment fails loudly.
+    import_ok = True
+    try:
+        from google import genai  # noqa: F401
+        from google.genai import types  # noqa: F401
+    except ImportError as exc:
+        import_ok = False
+        print(f"       google-genai import error: {exc}")
+    check("google-genai SDK imports cleanly in this environment", import_ok)
+
+    import_ok = True
+    try:
+        from openai import OpenAI  # noqa: F401
+    except ImportError as exc:
+        import_ok = False
+        print(f"       openai import error: {exc}")
+    check("openai SDK imports cleanly in this environment", import_ok)
+
     raised = False
     try:
         GeminiProvider().generate("test prompt", 1)

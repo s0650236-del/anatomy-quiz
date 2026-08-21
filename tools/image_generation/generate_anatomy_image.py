@@ -121,7 +121,10 @@ def cmd_generate(args: argparse.Namespace) -> int:
     print(f"provider:    {provider_cls.name}")
 
     if args.dry_run:
-        model = args.model or provider_cls.default_model
+        # Instantiate (harmless -- no API call happens in __init__) so the
+        # printed model goes through the real CLI-flag > env-var > default
+        # resolution chain instead of skipping the env var.
+        model = provider_cls(model=args.model).model
         print(f"model:       {model}  (dry-run: not calling the API)")
         print(f"candidates:  {args.candidates}")
         print(f"output_dir:  {output_dir}")

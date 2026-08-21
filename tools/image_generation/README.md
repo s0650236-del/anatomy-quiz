@@ -29,6 +29,15 @@ python -m venv .venv
 # .venv/bin/python -m pip install -r requirements.txt         # macOS/Linux
 ```
 
+**Windowsでの既知の問題**：システムのデフォルトPythonがEOL（例: 3.9系）の場合、`cryptography`パッケージのRust拡張（`_rust.pyd`）がロードできず `ImportError: DLL load failed while importing _rust` で `google-genai` / `openai` のimportが失敗することがある（本プロジェクトで実際に発生し、`py`ランチャーで別の新しいPythonを指定して venv を作り直すことで解消した）。その場合は、利用可能な新しいPython（3.11以降）を明示して venv を作り直す：
+
+```bash
+py --list                 # 利用可能なバージョンを確認
+py -3.12 -m venv .venv     # 例: 3.12を明示して作り直す
+```
+
+`test_smoke.py` はこの種の環境不良（SDKのimport失敗）も検出するようになっている。
+
 リポジトリ直下に `.env` を作成し（`.env.example` をコピー）、使えるAPIキーを1つ以上設定してください。`.env` は `.gitignore` 対象で、CLIは起動時に自動で読み込みます。
 
 ## 使い方
