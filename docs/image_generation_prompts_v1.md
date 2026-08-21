@@ -143,3 +143,35 @@ Create an original anterior-view anatomy education illustration of the urinary s
 
 **オーバーレイ指示**：片側の尿管に①を重ねる。
 
+---
+
+## 〔第2版追記〕v2 100問拡張で新規に必要となった画像
+
+以下は、v2の100問拡張（Q051〜Q100）で新たに必要になった、既存17資産のいずれとも共有できない**新規unique asset**3件のみを追記する。
+
+Q053・Q054（人体の面）、Q064（心臓4腔）、Q067（血管断面）、Q077（気道分岐）、Q082（肺の裂）は、既存のIMG-003・IMG-006・IMG-008・IMG-013・IMG-011の画像をそのまま共有するため、新規プロンプトは不要（各問題のJSON側`image.prompt_id`も、新規に採番せず既存のcanonical prompt_idを参照する設計に統一済み）。
+
+## IMG-018 / Q073・Q074：冠状動脈走行
+
+**生成プロンプト**
+
+Create an original anatomy education illustration of the human heart viewed from the anterior (front) surface, showing the epicardial course of the two main coronary arteries: the left coronary artery (dividing into its anterior descending and circumflex branches) running over the front-left of the heart, and the right coronary artery running along the right side and inferior border of the heart. Depict the arteries as distinct branching vessels overlaid on a simplified heart silhouette, clearly distinguishable from each other by their separate origins and pathways, but do NOT color-fill or shade different heart regions to indicate perfusion territory — show only the vessels themselves, not a territory map. White background, clean medical textbook style, anatomically plausible branching pattern, no text, no labels, no numbers, no arrows, no watermark. Leave clear space to overlay marker ① on the left coronary artery trunk and marker ② on the right coronary artery trunk.
+
+**オーバーレイ指示**：左冠動脈本幹に①（Q073）、右冠動脈本幹に②（Q074）を重ねる。1枚をQ073・Q074で共有する。灌流領域の断定的な色分けはしない。
+
+## IMG-019 / Q091・Q092・Q093：腎臓前額断面
+
+**生成プロンプト**
+
+Create an original anatomy education illustration of a human kidney in coronal (frontal) cross-section for first-year nursing students. Clearly show the outer renal cortex as a continuous outer band, the renal medulla containing multiple distinct renal pyramids with their apices (renal papillae) pointing inward, minor calyces cupping each papilla, major calyces formed by the union of minor calyces, and a central renal pelvis narrowing into the ureter. Keep the number and arrangement of pyramids anatomically plausible (multiple pyramids, not one uniform medulla). White background, clean medical textbook style, no text, no labels, no numbers, no arrows, no watermark. Leave clear space to overlay marker ① on the renal cortex, marker ② on a renal pyramid, and marker ③ on a renal papilla.
+
+**オーバーレイ指示**：腎皮質に①（Q091）、腎錐体に②（Q092）、腎乳頭に③（Q093）を重ねる。1枚をQ091・Q092・Q093で共有する。
+
+## IMG-020 / Q068：心電図波形（1心拍）
+
+**生成プロンプト**
+
+Create an original medical education line-graph illustration of a single normal cardiac cycle ECG waveform, drawn as a clean black trace on a plain white background (a light, thin reference grid is acceptable but not required). The waveform must show one complete, clearly separated P wave (small rounded deflection), QRS complex (tall, narrow, sharp deflection), and T wave (broader rounded deflection), in correct temporal order and correct relative proportions, with a flat isoelectric baseline between segments. Do not draw axis labels, tick numbers, units, or any text — the waveform shape alone must make the three components visually distinguishable to someone who already knows ECG morphology. No watermark, no color-coding, no arrows. Leave clear space above the T wave for the app to overlay marker ①.
+
+**オーバーレイ指示**：T波に①を重ねる。
+

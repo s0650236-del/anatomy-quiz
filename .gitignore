@@ -1,0 +1,16 @@
+# Secrets -- never commit API keys.
+.env
+.env.local
+
+# Image-generation working files (raw candidates before QA/adoption).
+tmp/image_candidates/
+tmp/image_generation/
+
+# Python tooling (tools/image_generation/).
+tools/image_generation/.venv/
+__pycache__/
+*.pyc
+
+# OS/editor noise.
+.DS_Store
+Thumbs.db
