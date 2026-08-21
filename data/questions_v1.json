@@ -792,7 +792,7 @@
       "subcategory": "心電図",
       "type": "text_mcq",
       "difficulty": 1,
-      "question": "electrocardiogram（心電図；ECG）のP波が表すものはどれか。",
+      "question": "心電図のP波が表すものはどれか。",
       "choices": [
         {
           "id": "A",
