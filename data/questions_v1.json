@@ -80,7 +80,14 @@
         "asset": "assets/images/q002_hierarchy.webp",
         "alt": "人体の構成段階を示す5段階の模式図",
         "marker": "①〜⑤",
-        "marker_target": "細胞→組織→器官→器官系→個体の各段階"
+        "marker_target": "細胞→組織→器官→器官系→個体の各段階",
+        "overlays": [
+          { "x": 0.08, "y": 0.46, "label": "①" },
+          { "x": 0.28, "y": 0.46, "label": "②" },
+          { "x": 0.48, "y": 0.43, "label": "③" },
+          { "x": 0.70, "y": 0.45, "label": "④" },
+          { "x": 0.91, "y": 0.47, "label": "⑤" }
+        ]
       }
     },
     {
@@ -150,7 +157,8 @@
         "asset": "assets/images/q004_epithelium.webp",
         "alt": "上皮組織とその下の結合組織を示す模式図",
         "marker": "①",
-        "marker_target": "最表層の上皮組織"
+        "marker_target": "最表層の上皮組織",
+        "overlay": { "x": 0.5, "y": 0.46, "label": "①" }
       }
     },
     {
