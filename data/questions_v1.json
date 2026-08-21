@@ -599,7 +599,8 @@
         "asset": "assets/images/q017_heart_chambers.webp",
         "alt": "4つの心腔を示す心臓断面模式図",
         "marker": "①",
-        "marker_target": "左心室"
+        "marker_target": "左心室",
+        "overlay": { "x": 0.62, "y": 0.67, "label": "①" }
       }
     },
     {
@@ -1289,7 +1290,8 @@
         "asset": "assets/images/q037_alveolar_gas_exchange.webp",
         "alt": "肺胞と周囲毛細血管間のガス移動を示す模式図",
         "marker": "①",
-        "marker_target": "肺胞から血液へ向かう矢印"
+        "marker_target": "肺胞から血液へ向かう矢印",
+        "overlay": { "x": 0.385, "y": 0.57, "label": "①" }
       }
     },
     {
@@ -1677,7 +1679,8 @@
         "asset": "assets/images/q048_nephron.webp",
         "alt": "腎小体・尿細管・集合管を示すネフロン模式図",
         "marker": "①",
-        "marker_target": "腎小体"
+        "marker_target": "腎小体",
+        "overlay": { "x": 0.19, "y": 0.135, "label": "①" }
       }
     },
     {
