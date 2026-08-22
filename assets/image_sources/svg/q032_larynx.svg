@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1300">
+  <rect x="0" y="0" width="900" height="1300" fill="#ffffff"/>
+
+  <!-- anterior (front) view of the larynx, with a coronal cutaway window revealing the vocal
+       folds -- a standard, easy-to-read simplification used in many textbook diagrams. -->
+
+  <!-- epiglottis: a broad flap above the larynx, tipped slightly back -->
+  <path d="M 450 60 Q 340 90 300 220 Q 290 300 340 360 Q 400 400 460 390 Q 520 400 580 360 Q 630 300 620 220 Q 580 90 450 60 Z"
+        fill="#e8a8a0" stroke="#8a4a44" stroke-width="6"/>
+
+  <!-- thyroid cartilage: the main shield, with the laryngeal prominence (thyroid notch) at the top centre -->
+  <path d="M 260 420 Q 250 400 300 380 Q 380 350 450 355 Q 520 350 600 380 Q 650 400 640 420
+           Q 660 520 640 640 Q 630 700 570 720 L 330 720 Q 270 700 260 640 Q 240 520 260 420 Z"
+        fill="#e9d9b8" stroke="#a8905f" stroke-width="6"/>
+  <path d="M 430 355 L 450 390 L 470 355" fill="none" stroke="#a8905f" stroke-width="6" stroke-linejoin="round"/>
+
+  <!-- cricoid cartilage: complete ring below the thyroid cartilage -->
+  <path d="M 300 725 Q 290 760 320 800 Q 380 830 450 830 Q 520 830 580 800 Q 610 760 600 725
+           Q 520 745 450 745 Q 380 745 300 725 Z"
+        fill="#e9d9b8" stroke="#a8905f" stroke-width="6"/>
+
+  <!-- coronal cutaway window in the thyroid cartilage, revealing the vocal folds from above -->
+  <rect x="330" y="460" width="240" height="200" rx="16" fill="#ffffff" stroke="#a8905f" stroke-width="5" stroke-dasharray="14,10"/>
+
+  <!-- glottis / airway opening, narrowing between the two vocal folds -->
+  <path d="M 350 480 Q 450 500 550 480 L 550 500 Q 450 520 350 500 Z" fill="none"/>
+
+  <!-- vocal folds: a clear pair of pink bands meeting near the midline, with a narrow glottic gap -->
+  <path d="M 345 555 Q 420 535 445 555 Q 420 565 345 575 Z" fill="#c9584a" stroke="#6a2a20" stroke-width="5"/>
+  <path d="M 555 555 Q 480 535 455 555 Q 480 565 555 575 Z" fill="#c9584a" stroke="#6a2a20" stroke-width="5"/>
+
+  <!-- trachea continuing below, with cartilage rings -->
+  <path d="M 350 830 L 350 1180 Q 350 1220 400 1230 Q 450 1238 500 1230 Q 550 1220 550 1180 L 550 830 Z"
+        fill="#f0d2ca" stroke="#b89a90" stroke-width="6"/>
+  <g stroke="#b89a90" stroke-width="5">
+    <line x1="350" y1="890" x2="550" y2="890"/>
+    <line x1="350" y1="950" x2="550" y2="950"/>
+    <line x1="350" y1="1010" x2="550" y2="1010"/>
+    <line x1="350" y1="1070" x2="550" y2="1070"/>
+    <line x1="350" y1="1130" x2="550" y2="1130"/>
+  </g>
+</svg>

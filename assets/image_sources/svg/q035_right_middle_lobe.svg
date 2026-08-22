@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1200">
+  <rect x="0" y="0" width="1400" height="1200" fill="#ffffff"/>
+
+  <!-- anterior view of both lungs. Convention: patient's right = image-left (right lung, 3 lobes),
+       patient's left = image-right (left lung, 2 lobes; drawn narrower to leave room for the heart). -->
+
+  <!-- trachea + carina + main bronchi for context -->
+  <rect x="655" y="20" width="90" height="140" rx="20" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="5"/>
+  <path d="M 660 150 Q 560 190 480 260 L 520 300 Q 590 235 665 200 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="5"/>
+  <path d="M 740 150 Q 840 190 900 250 L 865 292 Q 810 235 735 200 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="5"/>
+
+  <!-- RIGHT lung (image-left): 3 lobes -- upper, middle, lower, separated by the horizontal and oblique fissures -->
+  <g stroke="#8a4a44" stroke-width="6">
+    <!-- upper lobe -->
+    <path d="M 470 260 Q 300 230 190 320 Q 130 400 130 520 L 470 520 L 470 260 Z" fill="#e8a8a0"/>
+    <!-- middle lobe (small, anterior-inferior to the upper lobe) -->
+    <path d="M 130 530 L 470 530 L 470 660 L 160 660 Q 130 600 130 530 Z" fill="#f0bcb2"/>
+    <!-- lower lobe -->
+    <path d="M 145 670 L 470 670 L 470 900 Q 420 990 320 1000 Q 210 990 160 900 Q 135 800 145 670 Z" fill="#d98a80"/>
+  </g>
+  <!-- fissure lines re-stroked on top for clarity -->
+  <line x1="130" y1="525" x2="470" y2="525" stroke="#6a2a20" stroke-width="6"/>
+  <path d="M 160 665 Q 320 640 470 665" fill="none" stroke="#6a2a20" stroke-width="6"/>
+
+  <!-- LEFT lung (image-right): 2 lobes -- upper, lower, separated by the oblique fissure only -->
+  <g stroke="#8a4a44" stroke-width="6">
+    <path d="M 900 260 Q 1080 225 1200 320 Q 1260 410 1258 560 L 900 590 L 900 260 Z" fill="#e8a8a0"/>
+    <path d="M 900 600 L 1255 570 Q 1250 800 1200 900 Q 1120 995 1020 1000 Q 930 985 905 890 Q 885 750 900 600 Z" fill="#d98a80"/>
+  </g>
+  <path d="M 900 595 Q 1080 570 1258 565" fill="none" stroke="#6a2a20" stroke-width="6"/>
+
+  <!-- ground reference -->
+  <line x1="60" y1="1080" x2="1340" y2="1080" stroke="#eeeeee" stroke-width="3"/>
+</svg>

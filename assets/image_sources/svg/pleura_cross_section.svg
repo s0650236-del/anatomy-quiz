@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 1000">
+  <rect x="0" y="0" width="1300" height="1000" fill="#ffffff"/>
+
+  <!-- transverse (axial) thoracic cross-section, simplified: chest wall -> parietal pleura ->
+       pleural cavity (thin space) -> visceral pleura -> lung tissue, with the mediastinum
+       (heart silhouette) in the middle for anatomical context. -->
+
+  <!-- chest wall / thoracic cage outline -->
+  <ellipse cx="650" cy="500" rx="580" ry="420" fill="#f2e2c4" stroke="#8a6a3a" stroke-width="6"/>
+
+  <!-- parietal pleura: thin lining just inside the chest wall -->
+  <ellipse cx="650" cy="500" rx="555" ry="398" fill="none" stroke="#4a6fa5" stroke-width="8"/>
+
+  <!-- pleural cavity: the thin potential space between parietal and visceral pleura -->
+  <ellipse cx="650" cy="500" rx="540" ry="386" fill="#eaf1fa" stroke="none"/>
+
+  <!-- mediastinum, central for context, dividing the two pleural cavities -->
+  <path d="M 650 130 L 650 870" stroke="#e9d9b8" stroke-width="140" stroke-linecap="round"/>
+  <ellipse cx="650" cy="520" rx="90" ry="150" fill="#c9584a" stroke="#6a2a20" stroke-width="6"/> <!-- heart silhouette -->
+
+  <!-- right lung (image-left) -->
+  <path d="M 200 250 Q 120 400 140 560 Q 160 700 320 760 Q 460 780 540 700 Q 570 560 540 400 Q 500 260 380 210 Q 280 190 200 250 Z"
+        fill="#e8a8a0" stroke="#8a4a44" stroke-width="6"/>
+  <!-- visceral pleura: thin line hugging the right lung surface -->
+  <path d="M 200 250 Q 120 400 140 560 Q 160 700 320 760 Q 460 780 540 700 Q 570 560 540 400 Q 500 260 380 210 Q 280 190 200 250 Z"
+        fill="none" stroke="#c9536a" stroke-width="6"/>
+
+  <!-- left lung (image-right) -->
+  <path d="M 1100 250 Q 1180 400 1160 560 Q 1140 700 980 760 Q 840 780 760 700 Q 730 560 760 400 Q 800 260 920 210 Q 1020 190 1100 250 Z"
+        fill="#e8a8a0" stroke="#8a4a44" stroke-width="6"/>
+  <path d="M 1100 250 Q 1180 400 1160 560 Q 1140 700 980 760 Q 840 780 760 700 Q 730 560 760 400 Q 800 260 920 210 Q 1020 190 1100 250 Z"
+        fill="none" stroke="#c9536a" stroke-width="6"/>
+
+  <!-- small legend-free key: blue = parietal pleura, red = visceral pleura, pale blue fill = pleural cavity -->
+  <circle cx="90" cy="70" r="14" fill="none" stroke="#4a6fa5" stroke-width="6"/>
+  <circle cx="90" cy="110" r="14" fill="none" stroke="#c9536a" stroke-width="6"/>
+  <rect x="76" y="145" width="28" height="28" fill="#eaf1fa" stroke="#c7d9ee" stroke-width="2"/>
+</svg>
