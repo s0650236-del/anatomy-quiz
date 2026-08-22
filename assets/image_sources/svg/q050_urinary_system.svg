@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400">
+  <rect x="0" y="0" width="900" height="1400" fill="#ffffff"/>
+
+  <!-- whole urinary system, anterior schematic view: two kidneys (right slightly lower than
+       left), two ureters running down to the bladder, and the urethra below. -->
+
+  <!-- right kidney (image-left), positioned slightly lower -->
+  <path d="M 260 220 Q 350 225 370 320 Q 385 400 350 440 Q 320 465 350 490 Q 385 530 370 610
+           Q 350 700 260 705 Q 175 700 160 610 Q 148 530 180 490 Q 205 465 180 440 Q 150 400 165 320
+           Q 180 225 260 220 Z"
+        fill="#c9584a" stroke="#6a2a20" stroke-width="6"/>
+
+  <!-- left kidney (image-right), positioned slightly higher -->
+  <path d="M 640 160 Q 730 165 750 260 Q 765 340 730 380 Q 700 405 730 430 Q 765 470 750 550
+           Q 730 640 640 645 Q 555 640 540 550 Q 528 470 560 430 Q 585 405 560 380 Q 530 340 545 260
+           Q 560 165 640 160 Z"
+        fill="#c9584a" stroke="#6a2a20" stroke-width="6"/>
+
+  <!-- ureters: from each kidney's hilum, running down to the bladder -->
+  <path d="M 330 480 Q 360 600 400 800 Q 430 950 460 1080 L 500 1075 Q 470 950 440 800 Q 400 600 372 470 Z"
+        fill="#e9d9b8" stroke="#a8905f" stroke-width="6"/>
+  <path d="M 580 420 Q 550 600 520 800 Q 495 950 475 1080 L 435 1078 Q 458 950 483 800 Q 515 600 545 410 Z"
+        fill="#e9d9b8" stroke="#a8905f" stroke-width="6"/>
+
+  <!-- bladder: midline, below the ureters -->
+  <path d="M 370 1080 Q 450 1050 530 1080 Q 590 1110 585 1180 Q 580 1260 450 1270 Q 320 1260 315 1180
+           Q 310 1110 370 1080 Z"
+        fill="#f2d9b0" stroke="#a68a3a" stroke-width="6"/>
+
+  <!-- urethra: from the bladder base, continuing down out of frame -->
+  <path d="M 425 1265 L 425 1370 L 475 1370 L 475 1265 Z" fill="#e9d9b8" stroke="#a8905f" stroke-width="6"/>
+
+  <!-- generic torso reference outline (very light, for orientation only) -->
+  <path d="M 60 40 Q 450 0 840 40 L 840 1390 Q 450 1400 60 1390 Z" fill="none" stroke="#eeeeee" stroke-width="4"/>
+</svg>

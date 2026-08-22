@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200">
+  <rect x="0" y="0" width="1000" height="1200" fill="#ffffff"/>
+
+  <!-- single kidney, bean-shaped, viewed from the medial (hilum) side -->
+  <path d="M 500 120
+           Q 700 130 760 320
+           Q 800 480 740 560
+           Q 690 610 740 660
+           Q 800 740 760 900
+           Q 700 1080 500 1090
+           Q 300 1080 250 900
+           Q 210 750 260 640
+           Q 300 560 260 480
+           Q 210 340 260 220
+           Q 320 130 500 120 Z"
+        fill="#c9584a" stroke="#6a2a20" stroke-width="7"/>
+
+  <!-- renal hilum: the medial indentation where vessels/ureter enter and exit -->
+  <path d="M 740 560 Q 690 610 740 660 L 700 660 Q 655 610 700 560 Z" fill="#ffffff"/>
+
+  <!-- renal vein: exits the hilum (drawn first/outermost at the hilum, largest calibre) -->
+  <path d="M 700 585 Q 800 570 900 540 L 905 580 Q 810 610 705 620 Z" fill="#4a6fa5" stroke="#233a5c" stroke-width="5"/>
+
+  <!-- renal artery: enters the hilum (behind the vein) -->
+  <path d="M 700 610 Q 800 620 900 640 L 900 605 Q 800 590 700 585 Z" fill="#c9536a" stroke="#8a3040" stroke-width="5"/>
+
+  <!-- ureter: exits the hilum, most posterior/inferior, continuing down out of frame -->
+  <path d="M 690 650 Q 720 720 700 850 Q 685 980 700 1150 L 740 1150 Q 725 980 740 850 Q 758 720 730 645 Z"
+        fill="#e9d9b8" stroke="#a8905f" stroke-width="6"/>
+
+  <!-- legend-free geometric key -->
+  <rect x="60" y="60" width="34" height="14" fill="#4a6fa5"/>
+  <rect x="60" y="100" width="34" height="14" fill="#c9536a"/>
+  <rect x="60" y="140" width="34" height="14" fill="#e9d9b8" stroke="#a8905f" stroke-width="2"/>
+</svg>

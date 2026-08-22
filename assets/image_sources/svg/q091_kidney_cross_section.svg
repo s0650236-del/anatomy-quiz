@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1300">
+  <rect x="0" y="0" width="1100" height="1300" fill="#ffffff"/>
+
+  <!-- coronal section of a single kidney: outer cortex, renal pyramids (medulla), papillae,
+       minor calyces, major calyces, renal pelvis, continuing into the ureter. -->
+
+  <!-- outer capsule / cortex, bean-shaped outline -->
+  <path d="M 560 100 Q 800 110 870 340 Q 920 520 850 620 Q 800 680 850 740 Q 920 840 870 1020
+           Q 800 1220 560 1230 Q 320 1220 250 1020 Q 200 840 270 740 Q 320 680 270 620
+           Q 200 520 250 340 Q 320 110 560 100 Z"
+        fill="#e8a8a0" stroke="#8a4a44" stroke-width="7"/>
+
+  <!-- medulla: four renal pyramids arranged radially around the central sinus (top / left / right /
+       bottom), each tapering to a papilla pointing inward toward its own minor calyx -->
+  <g fill="#c9584a" stroke="#7a3228" stroke-width="5">
+    <path d="M 560 205 Q 470 225 440 340 Q 500 385 620 340 Q 640 225 560 205 Z"/>
+    <path d="M 300 490 Q 260 555 300 640 Q 380 615 445 570 Q 400 500 300 490 Z"/>
+    <path d="M 820 490 Q 860 555 820 640 Q 740 615 675 570 Q 720 500 820 490 Z"/>
+    <path d="M 560 1125 Q 470 1105 440 990 Q 500 945 620 990 Q 640 1105 560 1125 Z"/>
+  </g>
+
+  <!-- renal papillae: the narrow tip of each pyramid, projecting into a minor calyx -->
+  <g fill="#a04a3a" stroke="#6a2015" stroke-width="3">
+    <circle cx="560" cy="355" r="17"/>
+    <circle cx="440" cy="600" r="17"/>
+    <circle cx="680" cy="600" r="17"/>
+    <circle cx="560" cy="975" r="17"/>
+  </g>
+
+  <!-- minor calyces: cup around each papilla -->
+  <g fill="none" stroke="#e0862f" stroke-width="8">
+    <path d="M 515 375 Q 560 410 605 375"/>
+    <path d="M 470 580 Q 500 630 465 660"/>
+    <path d="M 650 580 Q 620 630 655 660"/>
+    <path d="M 515 955 Q 560 920 605 955"/>
+  </g>
+
+  <!-- major calyces: converge from each minor calyx toward the pelvis -->
+  <g fill="none" stroke="#e0862f" stroke-width="11">
+    <path d="M 560 405 Q 560 470 560 545"/>
+    <path d="M 455 670 Q 500 665 545 645"/>
+    <path d="M 665 670 Q 620 665 575 645"/>
+    <path d="M 560 925 Q 560 850 560 775"/>
+  </g>
+
+  <!-- renal pelvis: funnel collecting the major calyces -->
+  <path d="M 500 590 Q 560 640 620 590 Q 660 660 620 720 Q 560 660 500 720 Q 460 660 500 590 Z"
+        fill="#f2b872" stroke="#a8641a" stroke-width="6"/>
+
+  <!-- ureter: narrowing away from the pelvis toward the hilum, continuing out of frame -->
+  <path d="M 540 720 Q 530 850 545 1000 Q 555 1120 570 1250 L 610 1250 Q 598 1120 590 1000
+           Q 578 850 590 720 Z"
+        fill="#e9d9b8" stroke="#a8905f" stroke-width="6"/>
+
+  <!-- legend-free geometric key: cortex / medulla / calyx-pelvis colour families -->
+  <rect x="40" y="50" width="34" height="30" fill="#e8a8a0" stroke="#8a4a44" stroke-width="3"/>
+  <rect x="40" y="100" width="34" height="30" fill="#c9584a" stroke="#7a3228" stroke-width="3"/>
+  <rect x="40" y="150" width="34" height="30" fill="#f2b872" stroke="#a8641a" stroke-width="3"/>
+</svg>
