@@ -2,10 +2,14 @@
 // - アプリ本体（HTML/CSS/JS/アイコン/manifest）と問題データはあらかじめキャッシュし、
 //   2回目以降のアクセスやオフライン時にも利用できるようにする。
 // - 問題データ(JSON)は更新が入る可能性があるため network-first（オンライン時は常に最新を取得）。
-// - 画像(assets/images/)はまだ用意されていないものも多いため、
-//   取得に失敗しても何もキャッシュしない（＝画面側の「画像準備中」表示に任せる）。
-var CACHE = 'anatomy-quiz-v2-2026-08-300q';
-var PRECACHE_ASSETS = [
+// - 300問版で全65 image_mcqの画像(27種類、合計約1.4MB)が出揃ったため、初回install時に
+//   まとめてprecacheし、初回オンライン起動後はオフラインでも全image_mcqを利用可能にする。
+//   ただしCORE_ASSETS（アプリ本体）とは別のPromise.allで、1枚ずつ個別にcatchする
+//   （＝どれか1枚の取得に失敗してもinstall全体を失敗させない。取得できなかった分は
+//   従来どおりimageCacheFirst()が実行時に個別取得を試み、それでも失敗すれば画面側の
+//   「画像準備中」表示に任せる）。
+var CACHE = 'anatomy-quiz-v2-2026-08-300q-img';
+var CORE_ASSETS = [
   './',
   './index.html',
   './app.js',
@@ -14,11 +18,50 @@ var PRECACHE_ASSETS = [
   './icon-512.png',
   './data/questions_v1.json'
 ];
+var IMAGE_ASSETS = [
+  './assets/images/anatomical_position.webp',
+  './assets/images/circulation_circuit.webp',
+  './assets/images/direction_terms.webp',
+  './assets/images/heart_exterior_anterior.webp',
+  './assets/images/heart_exterior_posterior.webp',
+  './assets/images/heart_valves_schematic.webp',
+  './assets/images/pleura_cross_section.webp',
+  './assets/images/q002_hierarchy.webp',
+  './assets/images/q004_epithelium.webp',
+  './assets/images/q008_body_planes.webp',
+  './assets/images/q011_germ_layers.webp',
+  './assets/images/q016_apex.webp',
+  './assets/images/q017_heart_chambers.webp',
+  './assets/images/q019_pulmonary_vein.webp',
+  './assets/images/q021_vessel_cross_sections.webp',
+  './assets/images/q025_conduction_system.webp',
+  './assets/images/q032_larynx.webp',
+  './assets/images/q035_right_middle_lobe.webp',
+  './assets/images/q037_alveolar_gas_exchange.webp',
+  './assets/images/q040_airway_branching.webp',
+  './assets/images/q041_alveolar_sac.webp',
+  './assets/images/q045_renal_hilum.webp',
+  './assets/images/q048_nephron.webp',
+  './assets/images/q050_urinary_system.webp',
+  './assets/images/q068_ecg_waveform.webp',
+  './assets/images/q073_coronary_arteries.webp',
+  './assets/images/q091_kidney_cross_section.webp'
+];
+// 後方互換のため残す（他コードから参照されていた場合に備え、CORE+IMAGEの合成とする）。
+var PRECACHE_ASSETS = CORE_ASSETS.concat(IMAGE_ASSETS);
 
 self.addEventListener('install', function (e) {
   e.waitUntil(
     caches.open(CACHE)
-      .then(function (c) { return c.addAll(PRECACHE_ASSETS); })
+      .then(function (c) {
+        // アプリ本体は従来どおりaddAll()で全件必須（1つでも欠けたらinstall失敗とする）。
+        return c.addAll(CORE_ASSETS).then(function () {
+          // 画像は1枚ずつbest-effortで取得し、失敗しても他の画像・install自体には影響しない。
+          return Promise.all(IMAGE_ASSETS.map(function (url) {
+            return c.add(url).catch(function () { /* 実行時のimageCacheFirst()に委ねる */ });
+          }));
+        });
+      })
       .then(function () { return self.skipWaiting(); })
   );
 });
