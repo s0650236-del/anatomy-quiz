@@ -38,8 +38,10 @@
   <!-- LV -> aorta -> body -->
   <path d="M 660 985 Q 640 1100 630 1200 Q 625 1240 630 1260 L 685 1260 Q 680 1220 685 1190 Q 695 1090 715 990 Z"
         fill="#c9536a" opacity="0.9" stroke="#8a3040" stroke-width="4"/>
-  <!-- body -> venae cavae -> RA -->
-  <path d="M 470 1260 Q 460 1150 480 1050 Q 495 970 500 900 L 445 890 Q 438 970 420 1045 Q 400 1150 415 1260 Z"
+  <!-- body -> venae cavae -> RA (routed up the left flank, clear of the RV box at x430-580/y795-985,
+       so the tube visibly terminates inside the RA box at y640-790 rather than against RV) -->
+  <path d="M 470 1260 Q 450 1150 420 1030 Q 390 900 385 800 Q 382 720 410 680 Q 440 650 500 645
+           L 460 690 Q 430 715 428 780 Q 420 900 425 1030 Q 428 1150 415 1260 Z"
         fill="#4a6fa5" opacity="0.9" stroke="#233a5c" stroke-width="4"/>
 
   <!-- legend-free geometric key: red = oxygenated flow, blue = deoxygenated flow -->
