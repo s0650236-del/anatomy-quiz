@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1300">
+  <rect x="0" y="0" width="1100" height="1300" fill="#ffffff"/>
+
+  <!-- anterior chest wall schematic: rib landmarks (geometric, unlabeled) with the heart
+       silhouette positioned so the apex falls at its correct surface landmark
+       (left 5th intercostal space, mid-clavicular line). Convention: patient's right =
+       image-left, consistent with the other heart assets. -->
+
+  <!-- chest wall outline -->
+  <path d="M 550 40 Q 850 60 920 300 Q 970 550 900 800 Q 850 1050 700 1220 L 400 1220
+           Q 250 1050 200 800 Q 130 550 180 300 Q 250 60 550 40 Z"
+        fill="#f6e6da" stroke="#c9a888" stroke-width="6"/>
+
+  <!-- clavicles -->
+  <path d="M 300 160 Q 420 130 540 155" fill="none" stroke="#c9a888" stroke-width="16" stroke-linecap="round"/>
+  <path d="M 560 155 Q 680 130 800 160" fill="none" stroke="#c9a888" stroke-width="16" stroke-linecap="round"/>
+
+  <!-- sternum, midline -->
+  <rect x="525" y="200" width="50" height="520" rx="14" fill="#efe0cf" stroke="#c9a888" stroke-width="5"/>
+
+  <!-- ribs 1-6, as paired arcs from the sternum, each pair marking one intercostal space between them -->
+  <g fill="none" stroke="#c9a888" stroke-width="10">
+    <path d="M 525 230 Q 380 240 300 320"/>
+    <path d="M 575 230 Q 720 240 800 320"/>
+    <path d="M 525 300 Q 360 315 270 410"/>
+    <path d="M 575 300 Q 740 315 830 410"/>
+    <path d="M 525 375 Q 345 395 250 500"/>
+    <path d="M 575 375 Q 755 395 850 500"/>
+    <path d="M 525 450 Q 335 475 240 590"/>
+    <path d="M 575 450 Q 765 475 860 590"/>
+    <path d="M 525 525 Q 330 555 235 675"/>
+    <path d="M 575 525 Q 770 555 865 675"/>
+    <path d="M 525 600 Q 330 635 240 755"/>
+    <path d="M 575 600 Q 770 635 860 755"/>
+  </g>
+
+  <!-- mid-clavicular line, on the image-RIGHT side (patient's LEFT -- the apex points toward the
+       patient's left, so both the line and the heart silhouette below sit on this side; geometric
+       reference only, no text) -->
+  <line x1="750" y1="230" x2="750" y2="1180" stroke="#e0862f" stroke-width="4" stroke-dasharray="14,12"/>
+
+  <!-- heart silhouette (two rounded lobes at the base, tapering to a single point at the apex).
+       Positioned so the apex lands on the image-right side, at the 5th intercostal space /
+       mid-clavicular line. No point/marker is baked in here -- the apex location itself is what
+       the app's overlay marks at question time. -->
+  <path d="M 590 390
+           Q 500 395 485 470
+           Q 472 540 525 580
+           Q 600 630 680 665
+           L 762 700
+           L 848 485
+           Q 858 395 770 375
+           Q 705 362 655 400
+           Q 615 385 590 390 Z"
+        fill="#c9584a" opacity="0.88" stroke="#6a2a20" stroke-width="7" stroke-linejoin="round"/>
+</svg>

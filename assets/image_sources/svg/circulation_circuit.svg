@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500">
+  <rect x="0" y="0" width="1200" height="1500" fill="#ffffff"/>
+
+  <!-- Classic "figure-8" double-circulation schematic: pulmonary circuit (heart<->lungs) on top,
+       systemic circuit (heart<->body) on the bottom. Red = oxygenated blood, blue = deoxygenated
+       blood, regardless of artery/vein -- the standard convention (so the pulmonary artery is
+       blue and the pulmonary vein is red, unlike vessels in the systemic circuit). -->
+
+  <!-- lungs (top) -->
+  <g fill="#e8a8a0" stroke="#8a4a44" stroke-width="5">
+    <ellipse cx="270" cy="230" rx="150" ry="180"/>
+    <ellipse cx="930" cy="230" rx="150" ry="180"/>
+  </g>
+
+  <!-- body / systemic tissue bed (bottom) -->
+  <rect x="300" y="1260" width="600" height="200" rx="40" fill="#f2d9b0" stroke="#a68a3a" stroke-width="5"/>
+
+  <!-- mini heart (center) -->
+  <rect x="430" y="640" width="150" height="150" rx="26" fill="#e79a92" stroke="#8a3a34" stroke-width="5"/> <!-- RA -->
+  <rect x="610" y="635" width="165" height="145" rx="26" fill="#e79a92" stroke="#8a3a34" stroke-width="5"/> <!-- LA -->
+  <rect x="430" y="795" width="150" height="190" rx="30" fill="#d97a6c" stroke="#7a3228" stroke-width="6"/> <!-- RV -->
+  <rect x="605" y="785" width="185" height="205" rx="34" fill="#c9584a" stroke="#6a2a20" stroke-width="8"/> <!-- LV -->
+  <rect x="580" y="635" width="30" height="360" fill="#e9d9b8"/> <!-- septum -->
+
+  <!-- ===================== PULMONARY CIRCUIT (deoxygenated out in blue, oxygenated back in red) ===================== -->
+  <!-- pulmonary veins drawn first (right lung -> LA, left lung -> LA) -->
+  <path d="M 330 390 Q 420 500 560 640 L 610 660 Q 460 540 375 400 Z"
+        fill="#c9536a" opacity="0.9" stroke="#8a3040" stroke-width="4"/>
+  <path d="M 870 390 Q 780 500 660 640 L 700 665 Q 810 530 910 405 Z"
+        fill="#c9536a" opacity="0.9" stroke="#8a3040" stroke-width="4"/>
+  <!-- pulmonary trunk branches drawn last so both stay fully visible on top (RV -> right lung, RV -> left lung) -->
+  <path d="M 460 795 Q 380 700 300 500 Q 260 400 270 410 L 320 430 Q 330 440 355 520 Q 410 690 500 785 Z"
+        fill="#4a6fa5" opacity="0.92" stroke="#233a5c" stroke-width="4"/>
+  <path d="M 500 795 Q 650 700 830 500 Q 900 420 890 410 L 840 430 Q 820 445 780 520 Q 690 690 555 790 Z"
+        fill="#4a6fa5" opacity="0.92" stroke="#233a5c" stroke-width="4"/>
+
+  <!-- ===================== SYSTEMIC CIRCUIT (oxygenated out in red, deoxygenated back in blue) ===================== -->
+  <!-- LV -> aorta -> body -->
+  <path d="M 660 985 Q 640 1100 630 1200 Q 625 1240 630 1260 L 685 1260 Q 680 1220 685 1190 Q 695 1090 715 990 Z"
+        fill="#c9536a" opacity="0.9" stroke="#8a3040" stroke-width="4"/>
+  <!-- body -> venae cavae -> RA -->
+  <path d="M 470 1260 Q 460 1150 480 1050 Q 495 970 500 900 L 445 890 Q 438 970 420 1045 Q 400 1150 415 1260 Z"
+        fill="#4a6fa5" opacity="0.9" stroke="#233a5c" stroke-width="4"/>
+
+  <!-- legend-free geometric key: red = oxygenated flow, blue = deoxygenated flow -->
+  <circle cx="70" cy="1400" r="16" fill="#c9536a" stroke="#8a3040" stroke-width="3"/>
+  <circle cx="70" cy="1450" r="16" fill="#4a6fa5" stroke="#233a5c" stroke-width="3"/>
+</svg>

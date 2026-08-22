@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000">
+  <rect x="0" y="0" width="1400" height="1000" fill="#ffffff"/>
+
+  <!-- two lungs flanking a simplified heart, showing the pulmonary vein path from lung to left atrium.
+       Convention kept consistent with the other heart assets: patient's right = image-left. -->
+
+  <!-- right lung (image-left), 3 lobes -->
+  <g fill="#e8a8a0" stroke="#8a4a44" stroke-width="5">
+    <path d="M 120 200 Q 90 260 95 340 L 260 340 L 260 200 Q 200 170 120 200 Z"/>
+    <path d="M 95 350 L 260 350 L 260 520 L 110 520 Q 85 440 95 350 Z"/>
+    <path d="M 115 530 L 255 530 L 250 660 Q 190 700 140 660 Q 110 600 115 530 Z"/>
+  </g>
+
+  <!-- left lung (image-right), 2 lobes -->
+  <g fill="#e8a8a0" stroke="#8a4a44" stroke-width="5">
+    <path d="M 1280 200 Q 1310 270 1300 350 L 1140 350 L 1140 200 Q 1200 168 1280 200 Z"/>
+    <path d="M 1300 360 L 1140 360 L 1145 640 Q 1200 695 1260 655 Q 1305 520 1300 360 Z"/>
+  </g>
+
+  <!-- simplified heart body (outline only, four-chamber silhouette) -->
+  <rect x="500" y="260" width="200" height="220" rx="36" fill="#e79a92" stroke="#8a3a34" stroke-width="6"/> <!-- RA -->
+  <rect x="720" y="255" width="230" height="215" rx="36" fill="#f0b8ae" stroke="#8a3a34" stroke-width="6"/> <!-- LA, slightly highlighted -->
+  <rect x="500" y="495" width="200" height="300" rx="46" fill="#d97a6c" stroke="#7a3228" stroke-width="6"/> <!-- RV -->
+  <rect x="700" y="480" width="270" height="320" rx="50" fill="#c9584a" stroke="#6a2a20" stroke-width="8"/> <!-- LV -->
+  <rect x="700" y="255" width="20" height="540" fill="#e9d9b8"/> <!-- septum sliver -->
+
+  <!-- pulmonary veins: right lung -> LA (two veins) -->
+  <path d="M 260 330 Q 400 300 500 320 L 495 360 Q 400 342 265 368 Z" fill="#c9536a" stroke="#8a3040" stroke-width="4"/>
+  <path d="M 255 440 Q 400 420 505 400 L 500 440 Q 400 458 250 478 Z" fill="#c9536a" stroke="#8a3040" stroke-width="4"/>
+
+  <!-- pulmonary veins: left lung -> LA (two veins) -->
+  <path d="M 1140 320 Q 1040 300 950 320 L 955 360 Q 1040 342 1145 358 Z" fill="#c9536a" stroke="#8a3040" stroke-width="4"/>
+  <path d="M 1140 430 Q 1040 415 945 400 L 950 440 Q 1040 452 1135 468 Z" fill="#c9536a" stroke="#8a3040" stroke-width="4"/>
+
+  <!-- SVC into RA only (kept as minimal context; the aorta/PA stubs were removed because their
+       short simplified geometry, at this zoomed-in composition, mis-read as originating from
+       the atria instead of the ventricles -- better to omit them than show them ambiguously) -->
+  <path d="M 580 260 L 580 150 L 630 150 L 630 260 Z" fill="#4a6fa5" opacity="0.8" stroke="#233a5c" stroke-width="4"/>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1400">
+  <rect x="0" y="0" width="1200" height="1400" fill="#ffffff"/>
+
+  <!-- anterior view of the heart's external surface, with the three main coronary artery
+       territories drawn as branching lines over the silhouette. Convention: patient's right =
+       image-left (so the RCA, supplying the right side, runs along the image-left/inferior
+       margin; the LAD runs down the anterior interventricular groove at the centre; the
+       circumflex curves toward the image-right/lateral border). -->
+
+  <!-- great vessel stubs at the base, for context (aorta/PA, where the coronary arteries arise) -->
+  <path d="M 480 60 L 480 200 L 560 200 L 560 60 Z" fill="#c9536a" opacity="0.85" stroke="#8a3040" stroke-width="5"/>
+  <path d="M 620 60 L 620 200 L 700 200 L 700 60 Z" fill="#4a6fa5" opacity="0.85" stroke="#233a5c" stroke-width="5"/>
+
+  <!-- heart silhouette: two rounded lobes at the base (RA/RV side wider on image-left, LA/LV side
+       on image-right), tapering to the apex which points down and toward image-right -->
+  <path d="M 560 220
+           Q 380 210 300 350
+           Q 230 480 280 620
+           Q 330 760 480 900
+           L 660 1150
+           L 880 640
+           Q 940 460 860 320
+           Q 780 210 660 220
+           Q 610 195 560 220 Z"
+        fill="#c9584a" stroke="#6a2a20" stroke-width="8"/>
+
+  <!-- coronary arteries are drawn in a strongly contrasting gold tone against the heart's red
+       surface (a dark-red-on-red vessel would be nearly unreadable) -->
+
+  <!-- RCA: right coronary artery, arises image-left near the aortic root, runs along the
+       right AV groove and inferior margin -->
+  <path d="M 500 250 Q 400 270 340 360 Q 290 450 300 560 Q 310 660 380 740"
+        fill="none" stroke="#f2c230" stroke-width="18" stroke-linecap="round"/>
+  <path d="M 380 740 Q 420 800 500 830" fill="none" stroke="#f2c230" stroke-width="11" stroke-linecap="round"/>
+  <path d="M 380 740 Q 400 810 390 880" fill="none" stroke="#f2c230" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- LAD: left anterior descending, runs down the anterior interventricular groove to the apex -->
+  <path d="M 600 260 Q 615 400 630 560 Q 645 750 660 950 Q 663 1050 660 1130"
+        fill="none" stroke="#f2c230" stroke-width="20" stroke-linecap="round"/>
+  <!-- diagonal branches off the LAD -->
+  <path d="M 620 480 Q 700 500 760 460" fill="none" stroke="#f2c230" stroke-width="9" stroke-linecap="round"/>
+  <path d="M 635 620 Q 720 640 780 600" fill="none" stroke="#f2c230" stroke-width="9" stroke-linecap="round"/>
+  <path d="M 650 780 Q 730 800 790 760" fill="none" stroke="#f2c230" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- circumflex: curves from the left main around the lateral (image-right) border -->
+  <path d="M 660 250 Q 760 250 830 330 Q 880 400 870 490 Q 855 580 800 640"
+        fill="none" stroke="#f2c230" stroke-width="17" stroke-linecap="round"/>
+  <path d="M 800 640 Q 770 700 720 730" fill="none" stroke="#f2c230" stroke-width="9" stroke-linecap="round"/>
+  <path d="M 830 460 Q 900 480 940 540" fill="none" stroke="#f2c230" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- legend-free geometric key: single vessel colour (all coronary branches share one colour
+       family; territories are distinguished only by position, matching the question's intent) -->
+  <circle cx="70" cy="60" r="15" fill="#f2c230" stroke="#8a6a10" stroke-width="3"/>
+</svg>

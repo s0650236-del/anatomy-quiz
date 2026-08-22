@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 700">
+  <rect x="0" y="0" width="1500" height="700" fill="#ffffff"/>
+
+  <!-- three vessel-wall cross-sections, same lumen scale, wall thickness drawn to correct relative
+       proportions: artery thickest/most muscular, vein thin with wide lumen, capillary a single thin layer -->
+
+  <!-- ARTERY: thick 3-layer wall (adventitia / media / intima), narrower lumen -->
+  <g transform="translate(230,350)">
+    <circle r="190" fill="#d9c5a0" stroke="#8a6a3a" stroke-width="4"/>   <!-- tunica adventitia -->
+    <circle r="150" fill="#c9584a" stroke="#7a3228" stroke-width="4"/>  <!-- tunica media (thick smooth muscle) -->
+    <circle r="95"  fill="#e8b8ac" stroke="#8a5a4c" stroke-width="4"/>  <!-- tunica intima -->
+    <circle r="60"  fill="#ffffff" stroke="#8a5a4c" stroke-width="4"/> <!-- lumen -->
+  </g>
+
+  <!-- VEIN: thin wall, wide lumen, with a simple valve cusp pair -->
+  <g transform="translate(750,350)">
+    <circle r="190" fill="#d9c5a0" stroke="#8a6a3a" stroke-width="4"/>
+    <circle r="172" fill="#8fa8c8" stroke="#4a6fa5" stroke-width="4"/>  <!-- thin tunica media -->
+    <circle r="160" fill="#c8d8ea" stroke="#4a6fa5" stroke-width="3"/> <!-- thin tunica intima -->
+    <circle r="145" fill="#ffffff" stroke="#4a6fa5" stroke-width="4"/> <!-- wide lumen -->
+    <!-- valve leaflets projecting into the lumen -->
+    <path d="M -145 -25 Q -60 20 0 -20 Q -40 -70 -145 -25 Z" fill="#c8d8ea" stroke="#4a6fa5" stroke-width="4"/>
+    <path d="M 145 25 Q 60 -20 0 20 Q 40 70 145 25 Z" fill="#c8d8ea" stroke="#4a6fa5" stroke-width="4"/>
+  </g>
+
+  <!-- CAPILLARY: single thin endothelial layer, smallest lumen (scaled up for legibility) -->
+  <g transform="translate(1230,350)">
+    <circle r="70" fill="#f2e6b0" stroke="#a68a3a" stroke-width="6"/>  <!-- single endothelial-cell layer -->
+    <circle r="52" fill="#ffffff" stroke="#a68a3a" stroke-width="4"/> <!-- lumen -->
+  </g>
+
+  <!-- baseline ground reference so relative sizes read clearly at a glance (no text) -->
+  <line x1="60" y1="600" x2="1440" y2="600" stroke="#e6e6e6" stroke-width="3"/>
+</svg>

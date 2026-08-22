@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1400">
+  <rect x="0" y="0" width="1200" height="1400" fill="#ffffff"/>
+
+  <!-- ANTERIOR (front) view of the heart's external surface. Convention: patient's right =
+       image-left (looking at the patient from the front). The right ventricle forms most of
+       the anterior surface; the left ventricle is a narrower strip on the image-right side,
+       forming the apex. -->
+
+  <!-- heart silhouette: right side (image-left) wide -- the RV forms most of the anterior
+       surface; left side (image-right) narrower -- only a strip of LV is visible anteriorly,
+       tapering to the apex. Drawn first so every vessel stub below stays fully visible on top. -->
+  <path d="M 560 240
+           Q 370 230 290 380
+           Q 220 510 270 650
+           Q 320 790 470 930
+           L 650 1160
+           L 810 700
+           Q 850 560 800 420
+           Q 750 250 660 240
+           Q 610 220 560 240 Z"
+        fill="#c9584a" stroke="#6a2a20" stroke-width="8"/>
+
+  <!-- interventricular groove (subtle reference line only) -->
+  <path d="M 640 380 Q 655 600 650 900" fill="none" stroke="#7a3228" stroke-width="3" opacity="0.45"/>
+
+  <!-- right auricle: small ear-like pouch of the right atrium, image-left, near the aortic root -->
+  <path d="M 470 270 Q 420 250 400 290 Q 390 330 430 350 Q 480 360 500 320 Q 505 285 470 270 Z"
+        fill="#e79a92" stroke="#8a3a34" stroke-width="5"/>
+
+  <!-- left auricle: smaller pouch of the left atrium, image-right, tucked beside the pulmonary trunk -->
+  <path d="M 690 260 Q 650 250 640 285 Q 635 315 670 325 Q 705 330 715 300 Q 715 270 690 260 Z"
+        fill="#e79a92" stroke="#8a3a34" stroke-width="5"/>
+
+  <!-- IVC into RA: short stub from below, image-left -->
+  <path d="M 380 610 L 300 700 L 340 740 L 415 655 Z" fill="#4a6fa5" opacity="0.92" stroke="#233a5c" stroke-width="5"/>
+
+  <!-- SVC into RA: from above, image-left -->
+  <path d="M 420 260 L 420 70 L 500 70 L 500 260 Z" fill="#4a6fa5" opacity="0.92" stroke="#233a5c" stroke-width="5"/>
+
+  <!-- pulmonary trunk, from RV, centre-left of the two great vessels (single stub, no branches
+       here -- branching detail belongs to q025_conduction_system / heart_valves_schematic) -->
+  <path d="M 555 260 L 555 100 L 620 100 L 620 260 Z" fill="#4a6fa5" opacity="0.92" stroke="#233a5c" stroke-width="5"/>
+
+  <!-- ascending aorta, centre-right of the two great vessels, arching -->
+  <path d="M 655 260 L 655 150 Q 655 80 730 70 Q 815 60 855 125 L 805 155
+           Q 782 112 735 122 Q 700 128 700 165 L 700 260 Z"
+        fill="#c9536a" opacity="0.92" stroke="#8a3040" stroke-width="5"/>
+</svg>

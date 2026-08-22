@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1400">
+  <rect x="0" y="0" width="1200" height="1400" fill="#ffffff"/>
+
+  <!-- POSTERIOR (back) view of the heart's external surface. IMPORTANT convention note: viewed
+       from behind the patient, left/right are MIRRORED relative to the anterior-view assets in
+       this app -- here patient's right = image-RIGHT (RA/coronary sinus outflow side), and
+       patient's left = image-LEFT (the dominant LA + LV surface, with the apex pointing down
+       toward image-left). This is the single most common left/right mix-up in cardiac anatomy,
+       so it is called out explicitly here and must not be "corrected" to match the anterior
+       assets' left/right layout. -->
+
+  <!-- heart silhouette: horizontal mirror of the anterior silhouette. Image-left is dominated by
+       LA (top) and LV (bottom, forming the apex); image-right is the smaller RA/RV margin. -->
+  <path d="M 640 240
+           Q 830 230 910 380
+           Q 980 510 930 650
+           Q 880 790 730 930
+           L 550 1160
+           L 390 700
+           Q 350 560 400 420
+           Q 450 250 540 240
+           Q 590 220 640 240 Z"
+        fill="#c9584a" stroke="#6a2a20" stroke-width="8"/>
+
+  <!-- left pulmonary veins (from the left lung): enter from image-LEFT into the LA -->
+  <path d="M 415 330 L 220 300 L 213 335 L 405 372 Z" fill="#c9536a" opacity="0.9" stroke="#8a3040" stroke-width="5"/>
+  <path d="M 400 415 L 235 415 L 234 450 L 397 452 Z" fill="#c9536a" opacity="0.9" stroke="#8a3040" stroke-width="5"/>
+
+  <!-- right pulmonary veins (from the right lung): enter from image-RIGHT into the LA -->
+  <path d="M 700 300 L 800 250 L 815 283 L 715 335 Z" fill="#c9536a" opacity="0.9" stroke="#8a3040" stroke-width="5"/>
+  <path d="M 715 380 L 820 360 L 825 395 L 720 418 Z" fill="#c9536a" opacity="0.9" stroke="#8a3040" stroke-width="5"/>
+
+  <!-- SVC / IVC into RA, on the image-RIGHT margin -->
+  <path d="M 830 420 L 900 340 L 930 365 L 862 448 Z" fill="#4a6fa5" opacity="0.9" stroke="#233a5c" stroke-width="5"/>
+  <path d="M 830 620 L 905 690 L 880 718 L 808 650 Z" fill="#4a6fa5" opacity="0.9" stroke="#233a5c" stroke-width="5"/>
+
+  <!-- coronary sinus: runs along the posterior AV groove toward the image-right, draining into RA -->
+  <path d="M 560 560 Q 680 600 800 590" fill="none" stroke="#4a6fa5" stroke-width="14" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- posterior AV groove (subtle reference line separating LA/RA above from LV/RV below) -->
+  <path d="M 420 540 Q 600 600 900 580" fill="none" stroke="#7a3228" stroke-width="3" opacity="0.35"/>
+
+  <!-- LA / RA divider (subtle reference line) -->
+  <path d="M 660 250 Q 680 380 700 500" fill="none" stroke="#7a3228" stroke-width="3" opacity="0.35"/>
+</svg>
