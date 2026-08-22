@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200">
+  <rect x="0" y="0" width="1200" height="1200" fill="#ffffff"/>
+
+  <!-- trilaminar body-plan cross-section, concentric layers: outer=外胚葉, middle=中胚葉, inner=内胚葉, center lumen=原始腸管 -->
+  <circle cx="600" cy="600" r="430" fill="#f2e2c4" stroke="#8a6a3a" stroke-width="6"/>
+  <circle cx="600" cy="600" r="300" fill="#e79a92" stroke="#a04a42" stroke-width="6"/>
+  <circle cx="600" cy="600" r="165" fill="#c9d97e" stroke="#6f8a2f" stroke-width="6"/>
+  <circle cx="600" cy="600" r="55" fill="#ffffff" stroke="#6f8a2f" stroke-width="5"/>
+
+  <!-- thin dashed guide rings only (no text/labels) to make the three boundaries easy to read at small size -->
+  <circle cx="600" cy="600" r="430" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="2,10" opacity="0.0"/>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200">
+  <rect x="0" y="0" width="1600" height="1200" fill="#ffffff"/>
+
+  <!-- divider between the two panels -->
+  <line x1="800" y1="60" x2="800" y2="1140" stroke="#e6e6e6" stroke-width="2" stroke-dasharray="8,10"/>
+
+  <!-- ===================== LEFT PANEL: front view, medial/lateral ===================== -->
+  <g id="front-view">
+    <line x1="400" y1="90" x2="400" y2="1120" stroke="#e6e6e6" stroke-width="2" stroke-dasharray="10,10"/>
+    <!-- head -->
+    <ellipse cx="400" cy="150" rx="70" ry="82" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="4"/>
+    <path d="M 368 220 L 368 258 Q 400 276 432 258 L 432 220 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="4"/>
+    <!-- torso -->
+    <path d="M 300 255 Q 400 236 500 255 L 522 540 Q 400 578 278 540 Z" fill="#f0c9be" stroke="#8a5a4c" stroke-width="5"/>
+    <!-- pelvis -->
+    <path d="M 285 535 Q 400 568 515 535 L 498 630 Q 400 654 302 630 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="5"/>
+    <!-- arms hanging -->
+    <path d="M 305 268 Q 262 315 250 410 Q 242 500 252 585 L 292 585 Q 288 500 296 415 Q 305 335 342 282 Z" fill="#f0c9be" stroke="#8a5a4c" stroke-width="5"/>
+    <path d="M 495 268 Q 538 315 550 410 Q 558 500 548 585 L 508 585 Q 512 500 504 415 Q 495 335 458 282 Z" fill="#f0c9be" stroke="#8a5a4c" stroke-width="5"/>
+    <!-- legs -->
+    <path d="M 310 625 Q 298 780 302 950 L 350 950 Q 348 780 358 628 Z" fill="#f0c9be" stroke="#8a5a4c" stroke-width="5"/>
+    <path d="M 490 625 Q 502 780 498 950 L 450 950 Q 452 780 442 628 Z" fill="#f0c9be" stroke="#8a5a4c" stroke-width="5"/>
+    <line x1="285" y1="960" x2="515" y2="960" stroke="#d8d8d8" stroke-width="3"/>
+
+    <!-- medial / lateral double-headed arrow pair at waist level, image-right side of figure -->
+    <g stroke="#2f6f4f" stroke-width="7" fill="none">
+      <line x1="400" y1="470" x2="330" y2="470"/>
+      <polyline points="345,458 330,470 345,482" fill="none"/>
+      <line x1="522" y1="470" x2="590" y2="470"/>
+      <polyline points="575,458 590,470 575,482" fill="none"/>
+    </g>
+    <!-- small dot markers, no text, indicating the two reference points the arrows run between -->
+    <circle cx="400" cy="470" r="6" fill="#2f6f4f"/>
+    <circle cx="522" cy="470" r="6" fill="#2f6f4f"/>
+  </g>
+
+  <!-- ===================== RIGHT PANEL: side view, anterior/posterior ===================== -->
+  <g id="side-view">
+    <!-- profile silhouette facing left (toward viewer's left = anatomical anterior direction on this panel) -->
+    <ellipse cx="1180" cy="150" rx="62" ry="80" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="4"/>
+    <!-- simple nose bump to indicate facing direction, geometric only -->
+    <path d="M 1122 155 Q 1108 162 1120 172 L 1128 165 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="3"/>
+    <path d="M 1150 222 L 1150 258 Q 1180 274 1210 258 L 1210 222 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="4"/>
+    <!-- torso, profile: slightly convex front (left) edge, flatter back (right) edge -->
+    <path d="M 1105 255 Q 1180 238 1245 258 Q 1270 400 1250 540 Q 1180 566 1120 540 Q 1096 400 1105 255 Z" fill="#f0c9be" stroke="#8a5a4c" stroke-width="5"/>
+    <!-- pelvis -->
+    <path d="M 1112 535 Q 1180 558 1242 535 L 1230 625 Q 1180 648 1128 625 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="5"/>
+    <!-- arm along the side -->
+    <path d="M 1240 268 Q 1270 330 1268 420 Q 1266 500 1258 580 L 1220 580 Q 1226 500 1226 420 Q 1226 340 1205 285 Z" fill="#f0c9be" stroke="#8a5a4c" stroke-width="5"/>
+    <!-- legs -->
+    <path d="M 1140 625 Q 1132 780 1138 950 L 1180 950 Q 1176 780 1184 628 Z" fill="#f0c9be" stroke="#8a5a4c" stroke-width="5"/>
+    <path d="M 1180 628 Q 1188 780 1184 950 L 1226 950 Q 1220 780 1212 625 Z" fill="#f0c9be" stroke="#8a5a4c" stroke-width="5"/>
+    <line x1="1110" y1="960" x2="1260" y2="960" stroke="#d8d8d8" stroke-width="3"/>
+
+    <!-- anterior arrow: pointing toward the front (left / nose side) -->
+    <g stroke="#a5462f" stroke-width="7" fill="none">
+      <line x1="1180" y1="400" x2="1090" y2="400"/>
+      <polyline points="1108,388 1090,400 1108,412" fill="none"/>
+    </g>
+    <!-- posterior arrow: pointing toward the back (right side) -->
+    <g stroke="#2f4f8f" stroke-width="7" fill="none">
+      <line x1="1180" y1="400" x2="1290" y2="400"/>
+      <polyline points="1272,388 1290,400 1272,412" fill="none"/>
+    </g>
+    <circle cx="1180" cy="400" r="6" fill="#555555"/>
+  </g>
+</svg>

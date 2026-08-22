@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+  <rect x="0" y="0" width="900" height="1200" fill="#ffffff"/>
+
+  <!-- ground reference line (no text) -->
+  <line x1="120" y1="1120" x2="780" y2="1120" stroke="#d8d8d8" stroke-width="3"/>
+
+  <!-- midline reference (subtle, for anatomical position symmetry) -->
+  <line x1="450" y1="90" x2="450" y2="1120" stroke="#e6e6e6" stroke-width="2" stroke-dasharray="10,10"/>
+
+  <!-- head -->
+  <ellipse cx="450" cy="150" rx="78" ry="92" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="4"/>
+  <!-- neck -->
+  <path d="M 415 225 L 415 265 Q 450 285 485 265 L 485 225 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="4"/>
+
+  <!-- torso -->
+  <path d="M 340 260 Q 450 240 560 260 L 585 560 Q 450 600 315 560 Z" fill="#f0c9be" stroke="#8a5a4c" stroke-width="5"/>
+
+  <!-- pelvis -->
+  <path d="M 320 555 Q 450 590 580 555 L 560 660 Q 450 685 340 660 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="5"/>
+
+  <!-- left arm (image-left = body-right), hanging at side, forearm supinated so palm faces forward -->
+  <path d="M 345 275 Q 300 320 285 420 Q 275 520 285 610 L 330 610 Q 325 520 335 425 Q 345 340 385 290 Z" fill="#f0c9be" stroke="#8a5a4c" stroke-width="5"/>
+  <!-- left hand, palm-forward: thumb splayed laterally -->
+  <path d="M 285 610 Q 270 650 280 690 Q 300 705 325 695 Q 335 655 330 610 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="4"/>
+  <path d="M 280 615 Q 258 620 250 645 Q 255 660 272 655 Q 282 635 285 618 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="3"/>
+
+  <!-- right arm (image-right = body-left) mirrored -->
+  <path d="M 555 275 Q 600 320 615 420 Q 625 520 615 610 L 570 610 Q 575 520 565 425 Q 555 340 515 290 Z" fill="#f0c9be" stroke="#8a5a4c" stroke-width="5"/>
+  <path d="M 615 610 Q 630 650 620 690 Q 600 705 575 695 Q 565 655 570 610 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="4"/>
+  <path d="M 620 615 Q 642 620 650 645 Q 645 660 628 655 Q 618 635 615 618 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="3"/>
+
+  <!-- left leg -->
+  <path d="M 350 655 Q 335 800 340 960 Q 342 1040 348 1110 L 400 1110 Q 398 1040 400 960 Q 405 800 415 660 Z" fill="#f0c9be" stroke="#8a5a4c" stroke-width="5"/>
+  <!-- left foot, toes forward -->
+  <path d="M 348 1110 L 400 1110 Q 425 1115 430 1132 L 340 1132 Q 340 1116 348 1110 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="4"/>
+
+  <!-- right leg -->
+  <path d="M 550 655 Q 565 800 560 960 Q 558 1040 552 1110 L 500 1110 Q 502 1040 500 960 Q 495 800 485 660 Z" fill="#f0c9be" stroke="#8a5a4c" stroke-width="5"/>
+  <path d="M 552 1110 L 500 1110 Q 475 1115 470 1132 L 560 1132 Q 560 1116 552 1110 Z" fill="#e8b8ac" stroke="#8a5a4c" stroke-width="4"/>
+
+  <!-- face-forward indicator: simple symmetric eye dots, no text -->
+  <circle cx="422" cy="145" r="6" fill="#5a3a30"/>
+  <circle cx="478" cy="145" r="6" fill="#5a3a30"/>
+</svg>
