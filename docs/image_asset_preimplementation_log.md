@@ -40,9 +40,9 @@ anatomy-quiz v2-development の300問実装に先立ち、`docs/questions_v2_ima
 |---|---|---|---|---|---|---|---|---|
 | q002_hierarchy | existing | なし(既存実写asset) | assets/images/q002_hierarchy.webp | 1448x1086 | 134.1KB | Q002 | 細胞→組織→器官→器官系→個体 | accepted |
 | q004_epithelium | existing | なし(既存実写asset) | assets/images/q004_epithelium.webp | 1448x1086 | 128.4KB | Q004 | 最表層の上皮組織 | accepted |
-| q017_heart_chambers | existing | なし(既存実写asset) | assets/images/q017_heart_chambers.webp | 1448x1086 | 120.2KB | Q017, Q064, Q129(判定は本ログで確定), Q230(新規), Q231(新規) | 左心室/4腔同時/腱索・乳頭筋/心室中隔/心房中隔 | accepted |
+| q017_heart_chambers | existing | なし(既存実写asset) | assets/images/q017_heart_chambers.webp | 1448x1086 | 120.2KB | Q017, Q064, Q230(新規), Q231(新規) | 左心室/4腔同時/心室中隔/心房中隔（Q129は最終的にheart_valves_schematic.webpへ採用。本assetは使用しない） | accepted |
 | q037_alveolar_gas_exchange | existing | なし(既存実写asset) | assets/images/q037_alveolar_gas_exchange.webp | 1448x1086 | 114.7KB | Q037, Q084(新規) | 肺胞から血液へ向かう矢印/血液空気関門3層 | accepted |
-| q048_nephron | existing | なし(既存実写asset) | assets/images/q048_nephron.webp | 1448x1086 | 96.3KB | Q048, Q176, Q177(新規), Q178(新規), Q199(新規), Q200(新規) | 腎小体/ボーマン嚢/近位尿細管/ヘンレ係蹄/順路overlay/輸入輸出細動脈 | accepted |
+| q048_nephron | existing | なし(既存実写asset) | assets/images/q048_nephron.webp | 1448x1086 | 96.3KB | Q048, Q176, Q177(新規), Q178(新規), Q199(新規) | 腎小体/ボーマン嚢/近位尿細管/ヘンレ係蹄/順路overlay | accepted |
 | anatomical_position | SVG | anatomical_position.svg | assets/images/anatomical_position.webp | 1200x1600 | 26.8KB | Q051 | (overlayなし。正位の定義選択問題) | accepted |
 | direction_terms | SVG | direction_terms.svg | assets/images/direction_terms.webp | 1600x1200 | 27.5KB | Q117, Q063 | 内側/外側を示す矢印(正面図)、前方/後方を示す矢印(側面図) | accepted |
 | q008_body_planes | SVG | q008_body_planes.svg | assets/images/q008_body_planes.webp | 1600x1371 | 22.3KB | Q008, Q053, Q054 | 冠状面/矢状面/水平面パネル | accepted |
@@ -52,7 +52,7 @@ anatomy-quiz v2-development の300問実装に先立ち、`docs/questions_v2_ima
 | q025_conduction_system | SVG | q025_conduction_system.svg | assets/images/q025_conduction_system.webp | 1600x1467 | 33.7KB | Q025, Q240 | 右心房上部の洞房結節/房室束 | accepted |
 | q068_ecg_waveform | SVG | q068_ecg_waveform.svg | assets/images/q068_ecg_waveform.webp | 1600x800 | 77.4KB | Q068, Q023(新規), Q024(新規) | T波/P波/QRS群 | accepted |
 | heart_valves_schematic | SVG | heart_valves_schematic.svg | assets/images/heart_valves_schematic.webp | 1600x1467 | 58.8KB | Q065(新規), Q066(新規), Q129(判定確定) | 三尖弁・僧帽弁(房室弁)/肺動脈弁・大動脈弁(半月弁)/腱索・乳頭筋 | accepted |
-| circulation_circuit | SVG | circulation_circuit.svg | assets/images/circulation_circuit.webp | 1280x1600 | 44.1KB | Q147(新規), Q148(新規) | 体循環経路(矢印列)/肺循環経路(矢印列) | accepted |
+| circulation_circuit | SVG | circulation_circuit.svg | assets/images/circulation_circuit.webp | 1280x1600 | 45.4KB | Q147(新規), Q148(新規) | 体循環経路(矢印列)/肺循環経路(矢印列) | accepted |
 | q032_larynx | SVG | q032_larynx.svg | assets/images/q032_larynx.webp | 1108x1600 | 25.2KB | Q032, Q255(新規), Q256(新規) | 喉頭/声帯/喉頭蓋 | accepted |
 | q035_right_middle_lobe | SVG | q035_right_middle_lobe.svg | assets/images/q035_right_middle_lobe.webp | 1600x1371 | 29.2KB | Q035, Q082, Q169, Q036(新規) | 右肺中葉/水平裂/肺尖/肺葉数(3葉・2葉) | accepted |
 | q040_airway_branching | SVG | q040_airway_branching.svg | assets/images/q040_airway_branching.webp | 1600x1486 | 32.4KB | Q040, Q077, Q152, Q153, Q259(新規候補として拡張可) | 呼吸細気管支/区域気管支/右主気管支/葉気管支 | accepted |
@@ -80,15 +80,15 @@ anatomy-quiz v2-development の300問実装に先立ち、`docs/questions_v2_ima
 
 ### q017_heart_chambers
 
-既存採用済み。今回はmarker追加のみ検討(Q230/Q231)。実装時にoverlay再実測。
+既存採用済み。Q230/Q231のmarker座標は300問実装フェーズで実測しdata/questions_v1.jsonへ反映済み。
 
 ### q037_alveolar_gas_exchange
 
-既存採用済み。今回変更なし。
+既存採用済み。Q084のmarker座標は300問実装フェーズで実測しdata/questions_v1.jsonへ反映済み。
 
 ### q048_nephron
 
-既存採用済み。今回変更なし。
+既存採用済み。Q177/Q178/Q199のmarker座標は300問実装フェーズで実測しdata/questions_v1.jsonへ反映済み（Q200は最終的な65問案には不採用のためtext_mcqのまま）。
 
 ### anatomical_position
 
