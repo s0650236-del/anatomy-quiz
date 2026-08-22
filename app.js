@@ -124,7 +124,7 @@
   function onDataReady() {
     app.ready = true;
     byId('initialLoading').style.display = 'none';
-    el.subtitle.textContent = '総論・循環器・呼吸器・泌尿器　全' + app.allQuestions.length + '問（初版）';
+    el.subtitle.textContent = '総論・循環器・呼吸器・泌尿器　全' + app.allQuestions.length + '問';
     setupChips();
     adjustCountOptions();
     el.orderSelect.disabled = false;

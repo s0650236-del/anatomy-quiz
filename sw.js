@@ -4,7 +4,7 @@
 // - 問題データ(JSON)は更新が入る可能性があるため network-first（オンライン時は常に最新を取得）。
 // - 画像(assets/images/)はまだ用意されていないものも多いため、
 //   取得に失敗しても何もキャッシュしない（＝画面側の「画像準備中」表示に任せる）。
-var CACHE = 'anatomy-quiz-v2-2026-08';
+var CACHE = 'anatomy-quiz-v2-2026-08-300q';
 var PRECACHE_ASSETS = [
   './',
   './index.html',
