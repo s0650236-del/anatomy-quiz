@@ -1,8 +1,8 @@
 {
-  "version": "1.0.0",
-  "title": "人体の構造と機能A クイズ 全100問",
+  "version": "2.0.0",
+  "title": "人体の構造と機能A クイズ 全300問",
   "language": "ja",
-  "question_count": 100,
+  "question_count": 300,
   "difficulty_scale": {
     "1": "基礎",
     "2": "標準",
@@ -317,9 +317,14 @@
       "image": {
         "prompt_id": "IMG-003",
         "asset": "assets/images/q008_body_planes.webp",
-        "alt": "人体の矢状面・冠状面・水平面を示す模式図",
-        "marker": "A",
-        "marker_target": "冠状面"
+        "alt": "人体の3断面（矢状面・冠状面・水平面）を示す模式図",
+        "marker": "①",
+        "marker_target": "冠状面",
+        "overlay": {
+          "x": 0.3929,
+          "y": 0.3333,
+          "label": "①"
+        }
       }
     },
     {
@@ -358,7 +363,7 @@
       "id": "Q010",
       "category": "総論",
       "subcategory": "発生",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 1,
       "question": "人体の発生における3つの胚葉はどれか。",
       "choices": [
@@ -385,7 +390,19 @@
         "外胚葉",
         "中胚葉",
         "内胚葉"
-      ]
+      ],
+      "image": {
+        "prompt_id": "IMG-004",
+        "asset": "assets/images/q011_germ_layers.webp",
+        "alt": "3胚葉（外胚葉・中胚葉・内胚葉）の同心円状の模式図",
+        "marker": "②",
+        "marker_target": "中胚葉（中層）",
+        "overlay": {
+          "x": 0.6875,
+          "y": 0.5,
+          "label": "②"
+        }
+      }
     },
     {
       "id": "Q011",
@@ -421,9 +438,14 @@
       "image": {
         "prompt_id": "IMG-004",
         "asset": "assets/images/q011_germ_layers.webp",
-        "alt": "外胚葉・中胚葉・内胚葉の3層を示す初期胚模式図",
+        "alt": "3胚葉（外胚葉・中胚葉・内胚葉）の同心円状の模式図",
         "marker": "①",
-        "marker_target": "最外層（外胚葉）"
+        "marker_target": "最外層（外胚葉）",
+        "overlay": {
+          "x": 0.8583,
+          "y": 0.5,
+          "label": "①"
+        }
       }
     },
     {
@@ -590,9 +612,14 @@
       "image": {
         "prompt_id": "IMG-005",
         "asset": "assets/images/q016_apex.webp",
-        "alt": "前胸部と心臓の位置関係を示す模式図",
+        "alt": "胸壁と肋間を背景に心臓の概形を示す模式図",
         "marker": "①",
-        "marker_target": "心尖"
+        "marker_target": "心尖",
+        "overlay": {
+          "x": 0.6927,
+          "y": 0.5385,
+          "label": "①"
+        }
       }
     },
     {
@@ -705,16 +732,21 @@
       "image": {
         "prompt_id": "IMG-007",
         "asset": "assets/images/q019_pulmonary_vein.webp",
-        "alt": "心臓と左右肺を示す肺循環の模式図",
+        "alt": "肺静脈が左心房へ入る経路を示す模式図",
         "marker": "①",
-        "marker_target": "肺から左心房へ入る肺静脈"
+        "marker_target": "肺から左心房へ入る肺静脈",
+        "overlay": {
+          "x": 0.2857,
+          "y": 0.32,
+          "label": "①"
+        }
       }
     },
     {
       "id": "Q020",
       "category": "循環器",
       "subcategory": "血管",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 1,
       "question": "静脈の特徴として適切なのはどれか。",
       "choices": [
@@ -740,7 +772,19 @@
       "tags": [
         "静脈",
         "血管"
-      ]
+      ],
+      "image": {
+        "prompt_id": "IMG-008",
+        "asset": "assets/images/q021_vessel_cross_sections.webp",
+        "alt": "動脈・静脈・毛細血管の断面を比較する模式図",
+        "marker": "③",
+        "marker_target": "静脈",
+        "overlay": {
+          "x": 0.61,
+          "y": 0.5,
+          "label": "③"
+        }
+      }
     },
     {
       "id": "Q021",
@@ -778,7 +822,12 @@
         "asset": "assets/images/q021_vessel_cross_sections.webp",
         "alt": "動脈・静脈・毛細血管の断面を比較する模式図",
         "marker": "①",
-        "marker_target": "毛細血管"
+        "marker_target": "毛細血管",
+        "overlay": {
+          "x": 0.8607,
+          "y": 0.5,
+          "label": "①"
+        }
       }
     },
     {
@@ -818,7 +867,7 @@
       "id": "Q023",
       "category": "循環器",
       "subcategory": "心電図",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 1,
       "question": "心電図のP波が表すものはどれか。",
       "choices": [
@@ -844,13 +893,25 @@
       "tags": [
         "心電図",
         "P波"
-      ]
+      ],
+      "image": {
+        "prompt_id": "IMG-020",
+        "asset": "assets/images/q068_ecg_waveform.webp",
+        "alt": "心電図の基本波形（P波・QRS群・T波）を示す模式図",
+        "marker": "②",
+        "marker_target": "P波",
+        "overlay": {
+          "x": 0.1286,
+          "y": 0.5357,
+          "label": "②"
+        }
+      }
     },
     {
       "id": "Q024",
       "category": "循環器",
       "subcategory": "心電図",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 1,
       "question": "心電図のQRS群が表すものはどれか。",
       "choices": [
@@ -876,7 +937,19 @@
       "tags": [
         "心電図",
         "QRS群"
-      ]
+      ],
+      "image": {
+        "prompt_id": "IMG-020",
+        "asset": "assets/images/q068_ecg_waveform.webp",
+        "alt": "心電図の基本波形（P波・QRS群・T波）を示す模式図",
+        "marker": "③",
+        "marker_target": "QRS群",
+        "overlay": {
+          "x": 0.2493,
+          "y": 0.3143,
+          "label": "③"
+        }
+      }
     },
     {
       "id": "Q025",
@@ -912,9 +985,14 @@
       "image": {
         "prompt_id": "IMG-009",
         "asset": "assets/images/q025_conduction_system.webp",
-        "alt": "心臓の刺激伝導系を示す模式図",
+        "alt": "刺激伝導系の経路を示す模式図",
         "marker": "①",
-        "marker_target": "右心房上部の洞房結節"
+        "marker_target": "右心房上部の洞房結節",
+        "overlay": {
+          "x": 0.2417,
+          "y": 0.1909,
+          "label": "①"
+        }
       }
     },
     {
@@ -1147,9 +1225,14 @@
       "image": {
         "prompt_id": "IMG-010",
         "asset": "assets/images/q032_larynx.webp",
-        "alt": "頭頸部から胸部までの呼吸器模式図",
+        "alt": "喉頭の前面図（冠状断面窓に声帯を表示）",
         "marker": "①",
-        "marker_target": "喉頭"
+        "marker_target": "喉頭",
+        "overlay": {
+          "x": 0.3111,
+          "y": 0.3692,
+          "label": "①"
+        }
       }
     },
     {
@@ -1251,16 +1334,21 @@
       "image": {
         "prompt_id": "IMG-011",
         "asset": "assets/images/q035_right_middle_lobe.webp",
-        "alt": "左右肺の葉間裂と肺葉を示す正面模式図",
+        "alt": "左右肺の肺葉構成を示す前面模式図",
         "marker": "①",
-        "marker_target": "右肺中葉"
+        "marker_target": "右肺中葉",
+        "overlay": {
+          "x": 0.2143,
+          "y": 0.4958,
+          "label": "①"
+        }
       }
     },
     {
       "id": "Q036",
       "category": "呼吸器",
       "subcategory": "肺葉",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 1,
       "question": "左右の肺葉数の組み合わせとして正しいものはどれか。",
       "choices": [
@@ -1287,7 +1375,26 @@
         "肺葉",
         "右肺",
         "左肺"
-      ]
+      ],
+      "image": {
+        "prompt_id": "IMG-011",
+        "asset": "assets/images/q035_right_middle_lobe.webp",
+        "alt": "左右肺の肺葉構成を示す前面模式図",
+        "marker": "④",
+        "marker_target": "肺葉数（右3葉・左2葉）",
+        "overlays": [
+          {
+            "x": 0.2143,
+            "y": 0.375,
+            "label": "④a"
+          },
+          {
+            "x": 0.7714,
+            "y": 0.375,
+            "label": "④b"
+          }
+        ]
+      }
     },
     {
       "id": "Q037",
@@ -1433,9 +1540,14 @@
       "image": {
         "prompt_id": "IMG-013",
         "asset": "assets/images/q040_airway_branching.webp",
-        "alt": "気管から肺胞までの気道分岐を示す模式図",
+        "alt": "気道分岐（気管〜終末細気管支）を示す模式図",
         "marker": "①",
-        "marker_target": "呼吸細気管支"
+        "marker_target": "呼吸細気管支",
+        "overlay": {
+          "x": 0.1571,
+          "y": 0.3769,
+          "label": "①"
+        }
       }
     },
     {
@@ -1472,9 +1584,14 @@
       "image": {
         "prompt_id": "IMG-014",
         "asset": "assets/images/q041_alveolar_sac.webp",
-        "alt": "呼吸細気管支から肺胞嚢までの末梢構造模式図",
+        "alt": "終末呼吸単位（肺胞管・肺胞嚢）を示す模式図",
         "marker": "①",
-        "marker_target": "肺胞嚢"
+        "marker_target": "肺胞嚢",
+        "overlay": {
+          "x": 0.4167,
+          "y": 0.5333,
+          "label": "①"
+        }
       }
     },
     {
@@ -1610,9 +1727,14 @@
       "image": {
         "prompt_id": "IMG-015",
         "asset": "assets/images/q045_renal_hilum.webp",
-        "alt": "腎臓外観と腎門を示す模式図",
+        "alt": "腎臓を内側（腎門側）から見た模式図",
         "marker": "①",
-        "marker_target": "腎門"
+        "marker_target": "腎門",
+        "overlay": {
+          "x": 0.705,
+          "y": 0.5083,
+          "label": "①"
+        }
       }
     },
     {
@@ -1793,16 +1915,21 @@
       "image": {
         "prompt_id": "IMG-017",
         "asset": "assets/images/q050_urinary_system.webp",
-        "alt": "腎臓・尿管・膀胱・尿道を示す泌尿器系模式図",
+        "alt": "泌尿器系全体（腎臓・尿管・膀胱）を示す模式図",
         "marker": "①",
-        "marker_target": "尿管"
+        "marker_target": "尿管",
+        "overlay": {
+          "x": 0.4333,
+          "y": 0.4643,
+          "label": "①"
+        }
       }
     },
     {
       "id": "Q051",
       "category": "総論",
       "subcategory": "解剖学的正位",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 1,
       "question": "解剖学的正位について正しいものはどれか。",
       "choices": [
@@ -1827,7 +1954,14 @@
       "explanation": "解剖学的正位は、直立し顔を正面に向け、上肢を体側に垂らして手掌を前方に向けた姿勢で、位置関係を記載する基準姿勢である。",
       "tags": [
         "解剖学的正位"
-      ]
+      ],
+      "image": {
+        "prompt_id": "IMG-021",
+        "asset": "assets/images/anatomical_position.webp",
+        "alt": "解剖学的正位（直立・正面視・手掌前方）を示す全身模式図",
+        "marker": "",
+        "marker_target": "(overlayなし。正位の定義選択問題)"
+      }
     },
     {
       "id": "Q052",
@@ -1895,9 +2029,14 @@
       "image": {
         "prompt_id": "IMG-003",
         "asset": "assets/images/q008_body_planes.webp",
-        "alt": "人体の矢状面・冠状面・水平面を示す模式図",
-        "marker": "①",
-        "marker_target": "矢状面パネル"
+        "alt": "人体の3断面（矢状面・冠状面・水平面）を示す模式図",
+        "marker": "②",
+        "marker_target": "矢状面パネル",
+        "overlay": {
+          "x": 0.5,
+          "y": 0.3333,
+          "label": "②"
+        }
       }
     },
     {
@@ -1934,9 +2073,14 @@
       "image": {
         "prompt_id": "IMG-003",
         "asset": "assets/images/q008_body_planes.webp",
-        "alt": "人体の矢状面・冠状面・水平面を示す模式図",
-        "marker": "①",
-        "marker_target": "水平面パネル"
+        "alt": "人体の3断面（矢状面・冠状面・水平面）を示す模式図",
+        "marker": "③",
+        "marker_target": "水平面パネル",
+        "overlay": {
+          "x": 0.6557,
+          "y": 0.3133,
+          "label": "③"
+        }
       }
     },
     {
@@ -2200,7 +2344,7 @@
       "id": "Q063",
       "category": "総論",
       "subcategory": "方向用語",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 1,
       "question": "前方と後方の説明として正しいものはどれか。",
       "choices": [
@@ -2228,7 +2372,19 @@
         "後方",
         "腹側",
         "背側"
-      ]
+      ],
+      "image": {
+        "prompt_id": "IMG-022",
+        "asset": "assets/images/direction_terms.webp",
+        "alt": "方向用語（内側・外側／前方・後方）を示す模式図",
+        "marker": "②",
+        "marker_target": "前方・後方を示す矢印（側面図）",
+        "overlay": {
+          "x": 0.7719,
+          "y": 0.3333,
+          "label": "②"
+        }
+      }
     },
     {
       "id": "Q064",
@@ -2298,7 +2454,7 @@
       "id": "Q065",
       "category": "循環器",
       "subcategory": "心臓弁",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 1,
       "question": "房室弁に含まれる組み合わせはどれか。",
       "choices": [
@@ -2325,13 +2481,32 @@
         "房室弁",
         "三尖弁",
         "僧帽弁"
-      ]
+      ],
+      "image": {
+        "prompt_id": "IMG-023",
+        "asset": "assets/images/heart_valves_schematic.webp",
+        "alt": "心臓弁と腱索・乳頭筋を示す模式図",
+        "marker": "①",
+        "marker_target": "三尖弁・僧帽弁（房室弁）",
+        "overlays": [
+          {
+            "x": 0.3833,
+            "y": 0.4091,
+            "label": "①a"
+          },
+          {
+            "x": 0.75,
+            "y": 0.3909,
+            "label": "①b"
+          }
+        ]
+      }
     },
     {
       "id": "Q066",
       "category": "循環器",
       "subcategory": "心臓弁",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 1,
       "question": "半月弁に含まれる組み合わせはどれか。",
       "choices": [
@@ -2358,7 +2533,26 @@
         "半月弁",
         "肺動脈弁",
         "大動脈弁"
-      ]
+      ],
+      "image": {
+        "prompt_id": "IMG-023",
+        "asset": "assets/images/heart_valves_schematic.webp",
+        "alt": "心臓弁と腱索・乳頭筋を示す模式図",
+        "marker": "②",
+        "marker_target": "肺動脈弁・大動脈弁（半月弁）",
+        "overlays": [
+          {
+            "x": 0.2958,
+            "y": 0.3864,
+            "label": "②a"
+          },
+          {
+            "x": 0.6792,
+            "y": 0.3682,
+            "label": "②b"
+          }
+        ]
+      }
     },
     {
       "id": "Q067",
@@ -2395,8 +2589,13 @@
         "prompt_id": "IMG-008",
         "asset": "assets/images/q021_vessel_cross_sections.webp",
         "alt": "動脈・静脈・毛細血管の断面を比較する模式図",
-        "marker": "①",
-        "marker_target": "動脈（3断面中の1つ）"
+        "marker": "②",
+        "marker_target": "動脈（3断面中の1つ）",
+        "overlay": {
+          "x": 0.2333,
+          "y": 0.5,
+          "label": "②"
+        }
       }
     },
     {
@@ -2434,9 +2633,14 @@
       "image": {
         "prompt_id": "IMG-020",
         "asset": "assets/images/q068_ecg_waveform.webp",
-        "alt": "P波・QRS群・T波を示す心電図波形の模式図",
+        "alt": "心電図の基本波形（P波・QRS群・T波）を示す模式図",
         "marker": "①",
-        "marker_target": "T波"
+        "marker_target": "T波",
+        "overlay": {
+          "x": 0.4429,
+          "y": 0.4286,
+          "label": "①"
+        }
       }
     },
     {
@@ -2606,9 +2810,14 @@
       "image": {
         "prompt_id": "IMG-018",
         "asset": "assets/images/q073_coronary_arteries.webp",
-        "alt": "心臓前面から見た左冠動脈・右冠動脈の走行を示す模式図",
+        "alt": "心臓前面の冠状動脈の走行を示す模式図",
         "marker": "①",
-        "marker_target": "左冠動脈"
+        "marker_target": "左冠動脈",
+        "overlay": {
+          "x": 0.5125,
+          "y": 0.2857,
+          "label": "①"
+        }
       }
     },
     {
@@ -2645,9 +2854,14 @@
       "image": {
         "prompt_id": "IMG-018",
         "asset": "assets/images/q073_coronary_arteries.webp",
-        "alt": "心臓前面から見た左冠動脈・右冠動脈の走行を示す模式図",
+        "alt": "心臓前面の冠状動脈の走行を示す模式図",
         "marker": "②",
-        "marker_target": "右冠動脈"
+        "marker_target": "右冠動脈",
+        "overlay": {
+          "x": 0.2833,
+          "y": 0.2571,
+          "label": "②"
+        }
       }
     },
     {
@@ -2750,9 +2964,14 @@
       "image": {
         "prompt_id": "IMG-013",
         "asset": "assets/images/q040_airway_branching.webp",
-        "alt": "気管から肺胞までの気道分岐を示す模式図",
+        "alt": "気道分岐（気管〜終末細気管支）を示す模式図",
         "marker": "②",
-        "marker_target": "区域気管支"
+        "marker_target": "区域気管支",
+        "overlay": {
+          "x": 0.2429,
+          "y": 0.3077,
+          "label": "②"
+        }
       }
     },
     {
@@ -2917,9 +3136,14 @@
       "image": {
         "prompt_id": "IMG-011",
         "asset": "assets/images/q035_right_middle_lobe.webp",
-        "alt": "左右肺の葉間裂と肺葉を示す正面模式図",
-        "marker": "①",
-        "marker_target": "水平裂"
+        "alt": "左右肺の肺葉構成を示す前面模式図",
+        "marker": "②",
+        "marker_target": "水平裂",
+        "overlay": {
+          "x": 0.2143,
+          "y": 0.4375,
+          "label": "②"
+        }
       }
     },
     {
@@ -2959,7 +3183,7 @@
       "id": "Q084",
       "category": "呼吸器",
       "subcategory": "ガス交換",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 2,
       "question": "血液空気関門を構成する組み合わせとして正しいものはどれか。",
       "choices": [
@@ -2986,7 +3210,19 @@
         "血液空気関門",
         "肺胞上皮細胞",
         "肺毛細血管"
-      ]
+      ],
+      "image": {
+        "prompt_id": "IMG-012",
+        "asset": "assets/images/q037_alveolar_gas_exchange.webp",
+        "alt": "肺胞と周囲毛細血管間のガス移動を示す模式図",
+        "marker": "②",
+        "marker_target": "血液空気関門（I型肺胞上皮細胞・基底膜・肺毛細血管内皮細胞）",
+        "overlay": {
+          "x": 0.5663,
+          "y": 0.686,
+          "label": "②"
+        }
+      }
     },
     {
       "id": "Q085",
@@ -3221,9 +3457,14 @@
       "image": {
         "prompt_id": "IMG-019",
         "asset": "assets/images/q091_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面（皮質・髄質・腎錐体・腎乳頭）を示す模式図",
+        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
         "marker": "①",
-        "marker_target": "腎皮質"
+        "marker_target": "腎皮質",
+        "overlay": {
+          "x": 0.7273,
+          "y": 0.5385,
+          "label": "①"
+        }
       }
     },
     {
@@ -3260,9 +3501,14 @@
       "image": {
         "prompt_id": "IMG-019",
         "asset": "assets/images/q091_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面（皮質・髄質・腎錐体・腎乳頭）を示す模式図",
+        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
         "marker": "②",
-        "marker_target": "腎錐体"
+        "marker_target": "腎錐体",
+        "overlay": {
+          "x": 0.4818,
+          "y": 0.2231,
+          "label": "②"
+        }
       }
     },
     {
@@ -3299,9 +3545,14 @@
       "image": {
         "prompt_id": "IMG-019",
         "asset": "assets/images/q091_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面（皮質・髄質・腎錐体・腎乳頭）を示す模式図",
+        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
         "marker": "③",
-        "marker_target": "腎乳頭"
+        "marker_target": "腎乳頭",
+        "overlay": {
+          "x": 0.5091,
+          "y": 0.2731,
+          "label": "③"
+        }
       }
     },
     {
@@ -3340,7 +3591,7 @@
       "id": "Q095",
       "category": "泌尿器",
       "subcategory": "尿管の生理的狭窄",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 2,
       "question": "尿管の特徴として正しいものはどれか。",
       "choices": [
@@ -3366,7 +3617,31 @@
       "tags": [
         "尿管",
         "生理的狭窄"
-      ]
+      ],
+      "image": {
+        "prompt_id": "IMG-017",
+        "asset": "assets/images/q050_urinary_system.webp",
+        "alt": "泌尿器系全体（腎臓・尿管・膀胱）を示す模式図",
+        "marker": "③",
+        "marker_target": "尿管の3か所の生理的狭窄部",
+        "overlays": [
+          {
+            "x": 0.3778,
+            "y": 0.3571,
+            "label": "③-1"
+          },
+          {
+            "x": 0.4444,
+            "y": 0.5714,
+            "label": "③-2"
+          },
+          {
+            "x": 0.5111,
+            "y": 0.7643,
+            "label": "③-3"
+          }
+        ]
+      }
     },
     {
       "id": "Q096",
@@ -3505,7 +3780,7 @@
       "id": "Q100",
       "category": "泌尿器",
       "subcategory": "尿路",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 2,
       "question": "尿の通り道として正しいものはどれか。",
       "choices": [
@@ -3533,6 +3808,6816 @@
         "小腎杯",
         "大腎杯",
         "腎盂"
+      ],
+      "image": {
+        "prompt_id": "IMG-019",
+        "asset": "assets/images/q091_kidney_cross_section.webp",
+        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "marker": "⑤",
+        "marker_target": "腎乳頭→小腎杯→大腎杯→腎盂（順路overlay）",
+        "overlays": [
+          {
+            "x": 0.5091,
+            "y": 0.2731,
+            "label": "⑤-1"
+          },
+          {
+            "x": 0.5091,
+            "y": 0.3015,
+            "label": "⑤-2"
+          },
+          {
+            "x": 0.5091,
+            "y": 0.3615,
+            "label": "⑤-3"
+          },
+          {
+            "x": 0.5091,
+            "y": 0.5038,
+            "label": "⑤-4"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q101",
+      "category": "総論",
+      "subcategory": "細胞の構造",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "細胞の基本構造について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "細胞膜・細胞質・核から構成される。"
+        },
+        {
+          "id": "B",
+          "text": "核をもたない細胞は人体に存在しない。"
+        },
+        {
+          "id": "C",
+          "text": "細胞質は核の内部にある液体成分である。"
+        },
+        {
+          "id": "D",
+          "text": "細胞膜はタンパク質のみで構成される。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "細胞は細胞膜で囲まれ、内部に細胞質と核をもつのが基本構造である。なお成熟した赤血球のように核を失う細胞も存在する。",
+      "tags": [
+        "細胞",
+        "細胞膜",
+        "核"
+      ]
+    },
+    {
+      "id": "Q102",
+      "category": "総論",
+      "subcategory": "細胞の構造",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "細胞膜の機能について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "物質の出入りを選択的に調節する(選択的透過性)。"
+        },
+        {
+          "id": "B",
+          "text": "すべての物質を自由に通過させる。"
+        },
+        {
+          "id": "C",
+          "text": "細胞膜は物質の出入りに関与しない。"
+        },
+        {
+          "id": "D",
+          "text": "細胞膜はDNAを含む構造である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "細胞膜はリン脂質二重層を基本構造とし、物質の種類によって通過のしやすさが異なる選択的透過性をもつ。これにより細胞内外の環境の違いが維持される。",
+      "tags": [
+        "細胞膜",
+        "選択的透過性"
+      ]
+    },
+    {
+      "id": "Q103",
+      "category": "総論",
+      "subcategory": "細胞の構造",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "細胞の核について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "遺伝情報を担うDNAを含む。"
+        },
+        {
+          "id": "B",
+          "text": "ATPを産生する主要な場である。"
+        },
+        {
+          "id": "C",
+          "text": "タンパク質を分解する酵素を蓄える。"
+        },
+        {
+          "id": "D",
+          "text": "細胞膜の外側に存在する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "核は遺伝情報を担うDNAを含み、細胞の働きを統制する中心的な構造である。",
+      "tags": [
+        "核",
+        "DNA"
+      ]
+    },
+    {
+      "id": "Q104",
+      "category": "総論",
+      "subcategory": "細胞小器官",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "細胞内でエネルギー(ATP)を産生する細胞小器官はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ミトコンドリア"
+        },
+        {
+          "id": "B",
+          "text": "リボソーム"
+        },
+        {
+          "id": "C",
+          "text": "ゴルジ装置"
+        },
+        {
+          "id": "D",
+          "text": "リソソーム"
+        }
+      ],
+      "answer": "A",
+      "explanation": "ミトコンドリアは酸素を用いた代謝によりATPを産生する細胞小器官であり、「細胞の発電所」と呼ばれる。",
+      "tags": [
+        "ミトコンドリア",
+        "ATP",
+        "細胞小器官"
+      ]
+    },
+    {
+      "id": "Q105",
+      "category": "総論",
+      "subcategory": "細胞小器官",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "タンパク質の合成・分泌に関わる細胞小器官の組み合わせとして正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "リボソーム・小胞体・ゴルジ装置"
+        },
+        {
+          "id": "B",
+          "text": "ミトコンドリア・リソソームのみ"
+        },
+        {
+          "id": "C",
+          "text": "核小体のみ"
+        },
+        {
+          "id": "D",
+          "text": "細胞膜のみ"
+        }
+      ],
+      "answer": "A",
+      "explanation": "リボソームでタンパク質が合成され、小胞体を経てゴルジ装置で加工・濃縮されたのち、細胞外へ分泌されるという経路をたどる。",
+      "tags": [
+        "リボソーム",
+        "小胞体",
+        "ゴルジ装置"
+      ]
+    },
+    {
+      "id": "Q106",
+      "category": "総論",
+      "subcategory": "基本的運動方向",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "屈曲と伸展の説明として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "隣接する2つの部位が近づく運動を屈曲、遠ざかる運動を伸展という。"
+        },
+        {
+          "id": "B",
+          "text": "隣接する2つの部位が遠ざかる運動を屈曲、近づく運動を伸展という。"
+        },
+        {
+          "id": "C",
+          "text": "正中から遠ざかる運動を屈曲という。"
+        },
+        {
+          "id": "D",
+          "text": "長軸を中心に回る運動を伸展という。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "屈曲は一般に隣接する2つの部位が近づく運動、伸展は遠ざかる運動で、基本的には矢状面でみる。",
+      "tags": [
+        "屈曲",
+        "伸展",
+        "基本的運動方向"
+      ]
+    },
+    {
+      "id": "Q107",
+      "category": "総論",
+      "subcategory": "筋組織",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "筋組織の分類について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "骨格筋・心筋・平滑筋の3種に分けられる。"
+        },
+        {
+          "id": "B",
+          "text": "心筋は平滑筋に分類される。"
+        },
+        {
+          "id": "C",
+          "text": "骨格筋のみが人体に存在する筋組織である。"
+        },
+        {
+          "id": "D",
+          "text": "平滑筋には骨格筋と同様の横紋がみられる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "筋組織は骨格筋・心筋・平滑筋の3種に分類される。心筋は独立した種類であり平滑筋には分類されない。骨格筋と心筋は横紋をもつが、平滑筋は横紋をもたない。",
+      "tags": [
+        "骨格筋",
+        "心筋",
+        "平滑筋"
+      ]
+    },
+    {
+      "id": "Q108",
+      "category": "総論",
+      "subcategory": "神経組織",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "神経組織の主な役割について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "情報の受容・伝達と調節を行う。"
+        },
+        {
+          "id": "B",
+          "text": "身体の表面を覆う。"
+        },
+        {
+          "id": "C",
+          "text": "骨格をつくる。"
+        },
+        {
+          "id": "D",
+          "text": "尿をつくる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "神経組織は情報の受容・伝達・統合と、それに基づく身体機能の調節を主な役割とする。",
+      "tags": [
+        "神経組織"
+      ]
+    },
+    {
+      "id": "Q109",
+      "category": "総論",
+      "subcategory": "基本的運動方向",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "外転と内転の説明として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "正中から遠ざかる運動を外転、正中へ近づく運動を内転という。"
+        },
+        {
+          "id": "B",
+          "text": "正中へ近づく運動を外転、遠ざかる運動を内転という。"
+        },
+        {
+          "id": "C",
+          "text": "前方への運動を外転、後方への運動を内転という。"
+        },
+        {
+          "id": "D",
+          "text": "外転・内転は前腕にのみ用いる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "外転は身体の正中から遠ざかる運動、内転は正中へ近づく運動である。",
+      "tags": [
+        "外転",
+        "内転",
+        "基本的運動方向"
+      ]
+    },
+    {
+      "id": "Q110",
+      "category": "総論",
+      "subcategory": "上皮組織",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "上皮組織の分類について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "細胞の層数により単層上皮と重層上皮に分けられる。"
+        },
+        {
+          "id": "B",
+          "text": "上皮組織はすべて単層で構成される。"
+        },
+        {
+          "id": "C",
+          "text": "上皮組織には血管が豊富に分布する。"
+        },
+        {
+          "id": "D",
+          "text": "上皮組織は身体の内部にのみ存在する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "上皮組織は細胞の層数(単層・重層)や細胞の形(扁平・立方・円柱)によって分類される。上皮組織自体には血管がなく、栄養は基底膜を介して供給される。",
+      "tags": [
+        "上皮組織",
+        "単層上皮",
+        "重層上皮"
+      ]
+    },
+    {
+      "id": "Q111",
+      "category": "総論",
+      "subcategory": "結合組織",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "結合組織に分類されるものの組み合わせとして適切なものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "軟骨・骨・血液"
+        },
+        {
+          "id": "B",
+          "text": "上皮組織・筋組織"
+        },
+        {
+          "id": "C",
+          "text": "神経組織のみ"
+        },
+        {
+          "id": "D",
+          "text": "表皮のみ"
+        }
+      ],
+      "answer": "A",
+      "explanation": "結合組織は細胞と細胞外基質からなる組織で、線維性結合組織のほか、軟骨・骨、および液状結合組織としての血液も広義の結合組織に含めて説明されることが多い。",
+      "tags": [
+        "結合組織",
+        "血液"
+      ]
+    },
+    {
+      "id": "Q112",
+      "category": "総論",
+      "subcategory": "生体の恒常性",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "生体が体温・血糖値・体液量などの体内環境を一定の範囲に保とうとするはたらきを何というか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "恒常性(ホメオスタシス)"
+        },
+        {
+          "id": "B",
+          "text": "代謝"
+        },
+        {
+          "id": "C",
+          "text": "適応"
+        },
+        {
+          "id": "D",
+          "text": "免疫"
+        }
+      ],
+      "answer": "A",
+      "explanation": "恒常性(ホメオスタシス)とは、体温・血糖値・体液量などの体内環境を一定範囲に保とうとする生体のはたらきである。",
+      "tags": [
+        "恒常性",
+        "ホメオスタシス"
+      ]
+    },
+    {
+      "id": "Q113",
+      "category": "総論",
+      "subcategory": "体液",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "体液の区分について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "細胞内液と細胞外液に大別される。"
+        },
+        {
+          "id": "B",
+          "text": "体液はすべて血液として存在する。"
+        },
+        {
+          "id": "C",
+          "text": "体液は細胞内液のみで構成される。"
+        },
+        {
+          "id": "D",
+          "text": "体液に電解質は含まれない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "体液は細胞の内部に存在する細胞内液と、細胞の外部(血漿・組織間液など)に存在する細胞外液に大別される。",
+      "tags": [
+        "体液",
+        "細胞内液",
+        "細胞外液"
+      ]
+    },
+    {
+      "id": "Q114",
+      "category": "総論",
+      "subcategory": "基本的運動方向",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "内旋と外旋の説明として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "長軸を中心に内側へ回る運動を内旋、外側へ回る運動を外旋という。"
+        },
+        {
+          "id": "B",
+          "text": "正中へ近づく運動を内旋という。"
+        },
+        {
+          "id": "C",
+          "text": "関節を曲げる運動を外旋という。"
+        },
+        {
+          "id": "D",
+          "text": "内旋・外旋は上下方向の位置関係を表す。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "内旋・外旋は、上腕や大腿などの長軸を中心とした回旋運動を表す。",
+      "tags": [
+        "内旋",
+        "外旋",
+        "基本的運動方向"
+      ]
+    },
+    {
+      "id": "Q115",
+      "category": "総論",
+      "subcategory": "体液",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "体液に含まれる電解質について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ナトリウムイオン(Na+)は主に細胞外液に多く分布する。"
+        },
+        {
+          "id": "B",
+          "text": "カリウムイオン(K+)は主に細胞外液に多く分布する。"
+        },
+        {
+          "id": "C",
+          "text": "電解質は体液中にほとんど存在しない。"
+        },
+        {
+          "id": "D",
+          "text": "電解質は水分の分布に影響しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "ナトリウムイオン(Na+)は主に細胞外液に、カリウムイオン(K+)は主に細胞内液に多く分布する。電解質の分布は体液の水分バランスに大きく影響する。",
+      "tags": [
+        "電解質",
+        "ナトリウム",
+        "カリウム"
+      ]
+    },
+    {
+      "id": "Q116",
+      "category": "総論",
+      "subcategory": "体液",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "体液の酸塩基平衡について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "体液のpHは狭い範囲(弱アルカリ性付近)に保たれるよう調節されている。"
+        },
+        {
+          "id": "B",
+          "text": "体液のpHは大きく変動しても生体機能に影響しない。"
+        },
+        {
+          "id": "C",
+          "text": "体液は強い酸性に保たれている。"
+        },
+        {
+          "id": "D",
+          "text": "酸塩基平衡の調節に呼吸器・腎臓は関与しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "体液のpHは正常では弱アルカリ性付近の狭い範囲に保たれるよう、呼吸器系や腎臓などによって調節されている。",
+      "tags": [
+        "酸塩基平衡",
+        "pH"
+      ]
+    },
+    {
+      "id": "Q117",
+      "category": "総論",
+      "subcategory": "方向用語",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "内側と外側の説明として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "正中面に近い側を内側、遠い側を外側という。"
+        },
+        {
+          "id": "B",
+          "text": "前面に近い側を内側、後面に近い側を外側という。"
+        },
+        {
+          "id": "C",
+          "text": "体表に近い側を内側、遠い側を外側という。"
+        },
+        {
+          "id": "D",
+          "text": "母指側が常に内側である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "内側・外側は正中面からの距離を基準とする方向用語であり、正中面に近い側が内側、遠い側が外側である。",
+      "tags": [
+        "内側",
+        "外側",
+        "方向用語"
+      ],
+      "image": {
+        "prompt_id": "IMG-022",
+        "asset": "assets/images/direction_terms.webp",
+        "alt": "方向用語（内側・外側／前方・後方）を示す模式図",
+        "marker": "①",
+        "marker_target": "内側・外側を示す矢印（正面図）",
+        "overlay": {
+          "x": 0.2281,
+          "y": 0.3917,
+          "label": "①"
+        }
+      }
+    },
+    {
+      "id": "Q118",
+      "category": "総論",
+      "subcategory": "基本的運動方向",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "前腕の回内・回外について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "回内では手掌が後方または下方を向き、回外では前方または上方を向く。"
+        },
+        {
+          "id": "B",
+          "text": "回内は肘を曲げる運動である。"
+        },
+        {
+          "id": "C",
+          "text": "回外は肘を伸ばす運動である。"
+        },
+        {
+          "id": "D",
+          "text": "回内・回外では橈骨と尺骨の位置関係は変化しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "前腕の回内・回外は前腕を回す運動であり、回内では手掌が後方または下方、回外では前方または上方を向く。",
+      "tags": [
+        "回内",
+        "回外",
+        "前腕",
+        "基本的運動方向"
+      ]
+    },
+    {
+      "id": "Q119",
+      "category": "総論",
+      "subcategory": "身体の大区分",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "体幹に含まれる部位として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腰部"
+        },
+        {
+          "id": "B",
+          "text": "上腕"
+        },
+        {
+          "id": "C",
+          "text": "前腕"
+        },
+        {
+          "id": "D",
+          "text": "下腿"
+        }
+      ],
+      "answer": "A",
+      "explanation": "体幹は頭部・頸部を除く胴体部分を指し、胸部・腹部・腰部・背部・殿部などが含まれる。上腕・前腕は上肢、下腿は下肢に含まれる。",
+      "tags": [
+        "体幹",
+        "身体の区分"
+      ]
+    },
+    {
+      "id": "Q120",
+      "category": "総論",
+      "subcategory": "身体の大区分",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "上肢の区分として正しい組み合わせはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "肩甲帯・上腕・前腕・手"
+        },
+        {
+          "id": "B",
+          "text": "股関節部・大腿・下腿・足"
+        },
+        {
+          "id": "C",
+          "text": "頭部・頸部・体幹"
+        },
+        {
+          "id": "D",
+          "text": "胸部・腹部・骨盤部"
+        }
+      ],
+      "answer": "A",
+      "explanation": "上肢は肩甲帯(肩)・上腕・前腕・手の各部に区分される。",
+      "tags": [
+        "上肢",
+        "身体の区分"
+      ]
+    },
+    {
+      "id": "Q121",
+      "category": "総論",
+      "subcategory": "身体の大区分",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "下肢の区分として正しい組み合わせはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "股関節部・大腿・下腿・足"
+        },
+        {
+          "id": "B",
+          "text": "肩甲帯・上腕・前腕・手"
+        },
+        {
+          "id": "C",
+          "text": "頭部・頸部・体幹"
+        },
+        {
+          "id": "D",
+          "text": "胸部・腹部・骨盤部"
+        }
+      ],
+      "answer": "A",
+      "explanation": "下肢は股関節部・大腿・下腿・足の各部に区分される。",
+      "tags": [
+        "下肢",
+        "身体の区分"
+      ]
+    },
+    {
+      "id": "Q122",
+      "category": "総論",
+      "subcategory": "身体の大区分",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "腹部の体表区分について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "臍を中心とする水平線・垂直線により4分画(右上腹部・左上腹部・右下腹部・左下腹部)に分けることができる。"
+        },
+        {
+          "id": "B",
+          "text": "腹部は左右2分画にのみ分けられる。"
+        },
+        {
+          "id": "C",
+          "text": "腹部の体表区分は胸部と同じ名称が用いられる。"
+        },
+        {
+          "id": "D",
+          "text": "腹部は体表から区分することができない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腹部は臍を中心とした水平線・垂直線により4分画に分けることができ、臓器の位置関係を表現する際などに用いられる基本的な体表区分である。",
+      "tags": [
+        "腹部",
+        "体表区分"
+      ]
+    },
+    {
+      "id": "Q123",
+      "category": "循環器",
+      "subcategory": "心周期",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "心周期について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心臓は収縮期と拡張期を周期的に繰り返す。"
+        },
+        {
+          "id": "B",
+          "text": "心臓は常に収縮した状態を維持する。"
+        },
+        {
+          "id": "C",
+          "text": "心房と心室は常に同時に収縮する。"
+        },
+        {
+          "id": "D",
+          "text": "心周期に規則性はない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心臓は収縮期(血液を送り出す)と拡張期(血液を受け入れる)を規則的に繰り返しており、この一連の流れを心周期という。心房と心室の収縮タイミングはわずかにずれている。",
+      "tags": [
+        "心周期",
+        "収縮期",
+        "拡張期"
+      ]
+    },
+    {
+      "id": "Q124",
+      "category": "循環器",
+      "subcategory": "心周期",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "心音について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "I音は房室弁の閉鎖、II音は動脈弁(半月弁)の閉鎖に伴って生じる。"
+        },
+        {
+          "id": "B",
+          "text": "I音は動脈弁の閉鎖に伴って生じる。"
+        },
+        {
+          "id": "C",
+          "text": "心音は弁の開放によって生じる。"
+        },
+        {
+          "id": "D",
+          "text": "心音は心筋の収縮そのものが直接の音源である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心音は弁の閉鎖に伴って生じる振動音であり、I音は房室弁(三尖弁・僧帽弁)の閉鎖、II音は動脈弁(肺動脈弁・大動脈弁)の閉鎖に対応する。",
+      "tags": [
+        "心音",
+        "弁の閉鎖"
+      ]
+    },
+    {
+      "id": "Q125",
+      "category": "循環器",
+      "subcategory": "心臓の位置",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "心臓外形模式図の①で示された、心臓の後上方に位置し、大血管が出入りする部分はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心底"
+        },
+        {
+          "id": "B",
+          "text": "心尖"
+        },
+        {
+          "id": "C",
+          "text": "右心耳"
+        },
+        {
+          "id": "D",
+          "text": "冠状溝"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心底は心臓の後上方に位置し、大静脈・肺静脈・大動脈・肺動脈などの大血管が出入りする部分である。既存Q016で扱う心尖とは対をなす部位である。",
+      "tags": [
+        "心底",
+        "心臓の位置"
+      ],
+      "image": {
+        "prompt_id": "IMG-026",
+        "asset": "assets/images/heart_exterior_posterior.webp",
+        "alt": "心臓を後面から見た外形模式図",
+        "marker": "①",
+        "marker_target": "心底",
+        "overlay": {
+          "x": 0.5417,
+          "y": 0.2286,
+          "label": "①"
+        }
+      }
+    },
+    {
+      "id": "Q126",
+      "category": "循環器",
+      "subcategory": "心膜",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "心膜について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "線維性心膜とその内側の漿膜性心膜(壁側・臓側)からなる。"
+        },
+        {
+          "id": "B",
+          "text": "心膜は心臓の内腔を覆う膜である。"
+        },
+        {
+          "id": "C",
+          "text": "心膜は血液のみで構成される。"
+        },
+        {
+          "id": "D",
+          "text": "心膜には心臓を保護する機能はない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心膜は外側の線維性心膜と、その内側の漿膜性心膜(壁側板・臓側板)から構成され、心臓を保護し、周囲組織との摩擦を軽減する。漿膜性心膜の臓側板は心外膜とも呼ばれる。",
+      "tags": [
+        "心膜",
+        "線維性心膜",
+        "漿膜性心膜"
+      ]
+    },
+    {
+      "id": "Q127",
+      "category": "循環器",
+      "subcategory": "心膜",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "心膜腔について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "漿膜性心膜の壁側板と臓側板の間の空間で、少量の心膜液を含む。"
+        },
+        {
+          "id": "B",
+          "text": "心膜腔は心臓の内部にある空間である。"
+        },
+        {
+          "id": "C",
+          "text": "心膜腔には血液が満たされている。"
+        },
+        {
+          "id": "D",
+          "text": "心膜腔は肺と心臓の間の空間である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心膜腔は漿膜性心膜の壁側板と臓側板の間にある狭い空間で、少量の心膜液を含み、心臓の拍動時の摩擦を軽減する潤滑作用をもつ。",
+      "tags": [
+        "心膜腔",
+        "心膜液"
+      ]
+    },
+    {
+      "id": "Q128",
+      "category": "循環器",
+      "subcategory": "心臓の内部構造",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "左心室と右心室の壁の厚さについて正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "左心室の壁は右心室より厚い。"
+        },
+        {
+          "id": "B",
+          "text": "右心室の壁は左心室より厚い。"
+        },
+        {
+          "id": "C",
+          "text": "左心室と右心室の壁の厚さは同じである。"
+        },
+        {
+          "id": "D",
+          "text": "心室の壁の厚さに左右差はみられない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "左心室は血液を高い圧力で全身(体循環)へ送り出す必要があるため、右心室(低圧の肺循環へ送る)よりも壁が厚く発達している。",
+      "tags": [
+        "左心室",
+        "右心室",
+        "心室壁"
+      ]
+    },
+    {
+      "id": "Q129",
+      "category": "循環器",
+      "subcategory": "心臓弁",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "心臓断面図の①で示された、房室弁の弁尖につながり、心室収縮時に弁が心房側へ反転するのを防ぐ構造はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腱索・乳頭筋"
+        },
+        {
+          "id": "B",
+          "text": "冠状動脈"
+        },
+        {
+          "id": "C",
+          "text": "刺激伝導系"
+        },
+        {
+          "id": "D",
+          "text": "心膜"
+        }
+      ],
+      "answer": "A",
+      "explanation": "房室弁の弁尖は腱索によって心室壁の乳頭筋につながっており、心室収縮時に弁が心房側へめくれ返る(逸脱する)のを防いでいる。",
+      "tags": [
+        "腱索",
+        "乳頭筋",
+        "房室弁"
+      ],
+      "image": {
+        "prompt_id": "IMG-023",
+        "asset": "assets/images/heart_valves_schematic.webp",
+        "alt": "心臓弁と腱索・乳頭筋を示す模式図",
+        "marker": "⑤",
+        "marker_target": "腱索・乳頭筋",
+        "overlays": [
+          {
+            "x": 0.275,
+            "y": 0.6045,
+            "label": "⑤a"
+          },
+          {
+            "x": 0.6833,
+            "y": 0.5618,
+            "label": "⑤b"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q130",
+      "category": "循環器",
+      "subcategory": "心臓の機能",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "心拍出量について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "一回拍出量と心拍数の積で表される。"
+        },
+        {
+          "id": "B",
+          "text": "血圧そのものと同じ意味である。"
+        },
+        {
+          "id": "C",
+          "text": "心拍出量は常に一定で変動しない。"
+        },
+        {
+          "id": "D",
+          "text": "心拍出量は左心室からの拍出のみを指し、右心室は含まれない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心拍出量(1分間に心臓が送り出す血液量)は、一回拍出量(1回の収縮で送り出す血液量)と心拍数の積で表される。",
+      "tags": [
+        "心拍出量",
+        "一回拍出量"
+      ]
+    },
+    {
+      "id": "Q131",
+      "category": "循環器",
+      "subcategory": "心臓の機能",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "一回拍出量に影響する要因として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心室に戻ってくる血液量(前負荷)が増えると、一回拍出量は増加する傾向がある。"
+        },
+        {
+          "id": "B",
+          "text": "心室への血液の戻りは一回拍出量に影響しない。"
+        },
+        {
+          "id": "C",
+          "text": "一回拍出量は心臓の大きさのみで決まり、血液量とは無関係である。"
+        },
+        {
+          "id": "D",
+          "text": "一回拍出量は常に一定である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心室に戻る血液量(前負荷)が増えると心筋の伸展が高まり、それに応じて収縮力が増す(フランク・スターリングの法則)ため、一回拍出量は増加する傾向がある。",
+      "tags": [
+        "一回拍出量",
+        "前負荷"
+      ]
+    },
+    {
+      "id": "Q132",
+      "category": "循環器",
+      "subcategory": "血圧",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "血圧について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心室収縮時の最高値を収縮期血圧、拡張時の最低値を拡張期血圧という。"
+        },
+        {
+          "id": "B",
+          "text": "血圧は常に一定の値を示す。"
+        },
+        {
+          "id": "C",
+          "text": "収縮期血圧は拡張期血圧より低い。"
+        },
+        {
+          "id": "D",
+          "text": "血圧は静脈のみで測定される値である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "血圧は動脈壁にかかる圧力であり、心室収縮時の最高値を収縮期血圧(最高血圧)、心室拡張時の最低値を拡張期血圧(最低血圧)という。",
+      "tags": [
+        "血圧",
+        "収縮期血圧",
+        "拡張期血圧"
+      ]
+    },
+    {
+      "id": "Q133",
+      "category": "循環器",
+      "subcategory": "血圧",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "血圧を規定する要因として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心拍出量と末梢血管抵抗によって規定される。"
+        },
+        {
+          "id": "B",
+          "text": "血圧は心臓の大きさのみで決まる。"
+        },
+        {
+          "id": "C",
+          "text": "血圧は血液の色によって決まる。"
+        },
+        {
+          "id": "D",
+          "text": "末梢血管抵抗は血圧に影響しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "血圧は、心臓が送り出す血液量(心拍出量)と、血管がその血流に対して示す抵抗(末梢血管抵抗)の両方によって規定される。",
+      "tags": [
+        "血圧",
+        "末梢血管抵抗"
+      ]
+    },
+    {
+      "id": "Q134",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "大動脈などの弾性動脈について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "弾性線維に富み、心室収縮時に拡張し、拡張期に収縮して血流を維持する。"
+        },
+        {
+          "id": "B",
+          "text": "弾性動脈には弾性線維が存在しない。"
+        },
+        {
+          "id": "C",
+          "text": "弾性動脈は静脈と同じ構造をもつ。"
+        },
+        {
+          "id": "D",
+          "text": "弾性動脈は血流を完全に停止させる機能をもつ。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "大動脈などの弾性動脈は弾性線維に富み、心室収縮時の圧力を受けて拡張し、拡張期にはその弾性によって収縮することで、血流を持続的に保つ働きをもつ。",
+      "tags": [
+        "弾性動脈",
+        "大動脈"
+      ]
+    },
+    {
+      "id": "Q135",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "静脈還流について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "下肢の骨格筋の収縮(筋ポンプ作用)が静脈血を心臓へ戻す助けとなる。"
+        },
+        {
+          "id": "B",
+          "text": "静脈還流は心臓の吸引力のみによって行われる。"
+        },
+        {
+          "id": "C",
+          "text": "静脈還流には血管の収縮は一切関与しない。"
+        },
+        {
+          "id": "D",
+          "text": "静脈還流は動脈の拍動によって直接生み出される。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "下肢などの静脈血は重力に逆らって心臓へ戻る必要があり、周囲の骨格筋の収縮(筋ポンプ作用)や呼吸運動による胸腔内圧の変化が、静脈還流を助けている。",
+      "tags": [
+        "静脈還流",
+        "筋ポンプ"
+      ]
+    },
+    {
+      "id": "Q136",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "静脈弁について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "血液の逆流を防ぎ、特に下肢の静脈に多くみられる。"
+        },
+        {
+          "id": "B",
+          "text": "静脈弁は動脈にのみ存在する。"
+        },
+        {
+          "id": "C",
+          "text": "静脈弁は血液の逆流を促進する。"
+        },
+        {
+          "id": "D",
+          "text": "静脈弁はすべての血管に均等に存在する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "静脈には血液の逆流を防ぐ静脈弁が存在し、特に重力の影響を受けやすい下肢の静脈に多くみられる。",
+      "tags": [
+        "静脈弁"
+      ]
+    },
+    {
+      "id": "Q137",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "毛細血管での物質交換について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "薄い血管壁を介して酸素・栄養素・老廃物などが拡散により交換される。"
+        },
+        {
+          "id": "B",
+          "text": "毛細血管では物質交換は行われない。"
+        },
+        {
+          "id": "C",
+          "text": "毛細血管は厚い平滑筋層をもつ。"
+        },
+        {
+          "id": "D",
+          "text": "毛細血管での物質交換にはエネルギーを要する能動輸送のみが用いられる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "毛細血管は非常に薄い壁(一層の内皮細胞)をもち、この薄い壁を介して酸素・栄養素・老廃物などの物質が主に拡散によって血液と組織の間で交換される。",
+      "tags": [
+        "毛細血管",
+        "物質交換"
+      ]
+    },
+    {
+      "id": "Q138",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "心臓外形模式図の②で示された、上半身からの静脈血を右心房へ運ぶ血管はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "上大静脈"
+        },
+        {
+          "id": "B",
+          "text": "下大静脈"
+        },
+        {
+          "id": "C",
+          "text": "肺静脈"
+        },
+        {
+          "id": "D",
+          "text": "冠状静脈洞"
+        }
+      ],
+      "answer": "A",
+      "explanation": "上大静脈は頭部・頸部・上肢などからの静脈血を集めて右心房へ運ぶ。下半身からの静脈血は下大静脈が運ぶ。",
+      "tags": [
+        "上大静脈",
+        "下大静脈",
+        "静脈還流"
+      ],
+      "image": {
+        "prompt_id": "IMG-025",
+        "asset": "assets/images/heart_exterior_anterior.webp",
+        "alt": "心臓を前面から見た外形模式図",
+        "marker": "①",
+        "marker_target": "上大静脈",
+        "overlay": {
+          "x": 0.3833,
+          "y": 0.1179,
+          "label": "①"
+        }
+      }
+    },
+    {
+      "id": "Q139",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "腹部大動脈から分岐する血管について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腹腔動脈・上腸間膜動脈・腎動脈・下腸間膜動脈などが分岐する。"
+        },
+        {
+          "id": "B",
+          "text": "腹部大動脈からは血管は分岐しない。"
+        },
+        {
+          "id": "C",
+          "text": "腹部大動脈は直接、下肢の骨に血液を送る。"
+        },
+        {
+          "id": "D",
+          "text": "腹部大動脈は心臓に直接戻る血管である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腹部大動脈からは、腹部臓器へ血液を送る腹腔動脈・上腸間膜動脈・腎動脈・下腸間膜動脈などの主要な血管が分岐する。",
+      "tags": [
+        "腹部大動脈",
+        "腎動脈"
+      ]
+    },
+    {
+      "id": "Q140",
+      "category": "循環器",
+      "subcategory": "冠状動脈",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "心臓外形模式図の③で示された、心臓を還流した静脈血が集まり右心房へ注ぐ部位はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "冠状静脈洞"
+        },
+        {
+          "id": "B",
+          "text": "上大静脈"
+        },
+        {
+          "id": "C",
+          "text": "肺動脈"
+        },
+        {
+          "id": "D",
+          "text": "心膜腔"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心筋を還流した静脈血の多くは冠状静脈洞に集まり、右心房へ注ぐ。既存の冠状動脈(Q027,073,074)が心筋へ血液を送る経路であるのに対し、冠状静脈洞はその血液が心臓へ戻る経路にあたる。",
+      "tags": [
+        "冠状静脈洞",
+        "冠循環"
+      ],
+      "image": {
+        "prompt_id": "IMG-026",
+        "asset": "assets/images/heart_exterior_posterior.webp",
+        "alt": "心臓を後面から見た外形模式図",
+        "marker": "②",
+        "marker_target": "冠状静脈洞",
+        "overlay": {
+          "x": 0.5833,
+          "y": 0.425,
+          "label": "②"
+        }
+      }
+    },
+    {
+      "id": "Q141",
+      "category": "循環器",
+      "subcategory": "刺激伝導系",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "心臓の自動能について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心臓は神経からの指令がなくても、刺激伝導系が自ら興奮を発生し、規則的に収縮できる。"
+        },
+        {
+          "id": "B",
+          "text": "心臓は神経からの指令がなければ全く収縮しない。"
+        },
+        {
+          "id": "C",
+          "text": "自動能は骨格筋にもみられる一般的な性質である。"
+        },
+        {
+          "id": "D",
+          "text": "自動能により心拍数は常に一定で変化しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心臓は刺激伝導系(洞房結節など)が自ら周期的に興奮を発生させる自動能をもち、神経からの指令がなくても規則的に収縮できる。自律神経系はこの自動能のリズムを促進・抑制的に調節する。",
+      "tags": [
+        "自動能",
+        "刺激伝導系"
+      ]
+    },
+    {
+      "id": "Q142",
+      "category": "循環器",
+      "subcategory": "刺激伝導系",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "房室結節での興奮伝導について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "興奮の伝導がわずかに遅延し、心房の収縮が完了してから心室が収縮するための時間を確保する。"
+        },
+        {
+          "id": "B",
+          "text": "房室結節では興奮伝導が加速される。"
+        },
+        {
+          "id": "C",
+          "text": "房室結節は心室の興奮を心房へ伝える構造である。"
+        },
+        {
+          "id": "D",
+          "text": "房室結節での伝導遅延は心電図に反映されない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "房室結節では興奮の伝導がわずかに遅延することで、心房の収縮が完了してから心室が収縮するための時間的余裕が生まれる。この遅延は心電図のPQ間隔(既存Q075)に反映される。",
+      "tags": [
+        "房室結節",
+        "伝導遅延"
+      ]
+    },
+    {
+      "id": "Q143",
+      "category": "循環器",
+      "subcategory": "刺激伝導系",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "心室全体にほぼ同時に興奮を伝える構造はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "プルキンエ線維"
+        },
+        {
+          "id": "B",
+          "text": "洞房結節"
+        },
+        {
+          "id": "C",
+          "text": "房室結節"
+        },
+        {
+          "id": "D",
+          "text": "心膜"
+        }
+      ],
+      "answer": "A",
+      "explanation": "プルキンエ線維は心室の心内膜下に広く分布し、房室束・脚を経て伝わった興奮を心室全体にほぼ同時に伝えることで、心室の協調した収縮を可能にする。",
+      "tags": [
+        "プルキンエ線維",
+        "刺激伝導系"
+      ]
+    },
+    {
+      "id": "Q144",
+      "category": "循環器",
+      "subcategory": "心電図",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "心電図の一連の波形(P波・QRS群・T波)と心臓の動きの対応として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "P波(心房興奮)→QRS群(心室興奮)→T波(心室の興奮からの回復)の順に対応する。"
+        },
+        {
+          "id": "B",
+          "text": "P波は心室の興奮を、QRS群は心房の興奮を表す。"
+        },
+        {
+          "id": "C",
+          "text": "T波は心房の興奮を表す。"
+        },
+        {
+          "id": "D",
+          "text": "心電図の波形は心臓の電気的活動とは無関係である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心電図は、P波(心房の脱分極=興奮)→QRS群(心室の脱分極=興奮)→T波(心室の再分極=興奮からの回復)という一連の電気的活動を反映する。既存のQ023・024・068で個別に学んだ内容を、時間的な流れとして統合的に理解する。",
+      "tags": [
+        "心電図",
+        "P波",
+        "QRS群",
+        "T波"
+      ]
+    },
+    {
+      "id": "Q145",
+      "category": "循環器",
+      "subcategory": "血圧",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "脈拍について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心室収縮に伴う動脈の拍動を体表から触知したものである。"
+        },
+        {
+          "id": "B",
+          "text": "脈拍は静脈の拍動を触知したものである。"
+        },
+        {
+          "id": "C",
+          "text": "脈拍と心拍数は常に無関係である。"
+        },
+        {
+          "id": "D",
+          "text": "脈拍は血圧とは無関係の現象である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "脈拍は、心室の収縮によって生じる動脈の拍動を、体表の浅い部位で触知したものであり、通常は心拍数と一致する。",
+      "tags": [
+        "脈拍"
+      ]
+    },
+    {
+      "id": "Q146",
+      "category": "循環器",
+      "subcategory": "肺循環",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "動脈血・静脈血について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "酸素を多く含む血液を動脈血、二酸化炭素を多く含む血液を静脈血といい、血管の種類とは必ずしも一致しない。"
+        },
+        {
+          "id": "B",
+          "text": "動脈を流れる血液は常に動脈血である。"
+        },
+        {
+          "id": "C",
+          "text": "静脈を流れる血液は常に静脈血である。"
+        },
+        {
+          "id": "D",
+          "text": "動脈血・静脈血という区別は血管の名称と完全に一致する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "動脈血(酸素に富む血液)・静脈血(二酸化炭素に富む血液)という分類は血液の性状による区別であり、血管の種類(動脈・静脈)とは異なる。肺動脈には静脈血が、肺静脈には動脈血が流れる点に注意が必要である。",
+      "tags": [
+        "動脈血",
+        "静脈血",
+        "肺循環"
+      ]
+    },
+    {
+      "id": "Q147",
+      "category": "循環器",
+      "subcategory": "体循環",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "体循環の血液が通る経路として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "左心室→大動脈→全身の毛細血管→上大静脈・下大静脈→右心房"
+        },
+        {
+          "id": "B",
+          "text": "右心室→肺動脈→肺→肺静脈→左心房"
+        },
+        {
+          "id": "C",
+          "text": "左心房→僧帽弁→左心室→大動脈"
+        },
+        {
+          "id": "D",
+          "text": "右心房→三尖弁→右心室→大動脈"
+        }
+      ],
+      "answer": "A",
+      "explanation": "体循環は、左心室から拍出された血液が大動脈を経て全身の毛細血管でガス交換・物質交換を行い、上大静脈・下大静脈を経て右心房へ戻る経路である。選択肢Bは肺循環の経路である。",
+      "tags": [
+        "体循環",
+        "全身循環"
+      ],
+      "image": {
+        "prompt_id": "IMG-024",
+        "asset": "assets/images/circulation_circuit.webp",
+        "alt": "体循環・肺循環の全経路を示す「8の字」模式図",
+        "marker": "①",
+        "marker_target": "体循環経路（矢印列）",
+        "overlays": [
+          {
+            "x": 0.5583,
+            "y": 0.7333,
+            "label": "①a"
+          },
+          {
+            "x": 0.5,
+            "y": 0.9067,
+            "label": "①b"
+          },
+          {
+            "x": 0.34,
+            "y": 0.62,
+            "label": "①c"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q148",
+      "category": "循環器",
+      "subcategory": "肺循環",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "肺循環の血液が通る経路として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "右心室→肺動脈→肺の毛細血管→肺静脈→左心房"
+        },
+        {
+          "id": "B",
+          "text": "左心室→大動脈→全身→大静脈→右心房"
+        },
+        {
+          "id": "C",
+          "text": "右心房→肺動脈→肺→肺静脈→左心室"
+        },
+        {
+          "id": "D",
+          "text": "左心房→肺静脈→肺→肺動脈→右心室"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺循環は、右心室から拍出された血液が肺動脈を経て肺の毛細血管でガス交換を行い、肺静脈を経て左心房へ戻る経路である。既存Q014・Q019の内容を経路全体として統合する。",
+      "tags": [
+        "肺循環"
+      ],
+      "image": {
+        "prompt_id": "IMG-024",
+        "asset": "assets/images/circulation_circuit.webp",
+        "alt": "体循環・肺循環の全経路を示す「8の字」模式図",
+        "marker": "②",
+        "marker_target": "肺循環経路（矢印列）",
+        "overlays": [
+          {
+            "x": 0.2917,
+            "y": 0.4,
+            "label": "②a"
+          },
+          {
+            "x": 0.225,
+            "y": 0.1533,
+            "label": "②b"
+          },
+          {
+            "x": 0.3917,
+            "y": 0.3533,
+            "label": "②c"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q149",
+      "category": "循環器",
+      "subcategory": "刺激伝導系",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "心拍数の自律神経による調節について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "交感神経は心拍数を増加させ、副交感神経(迷走神経)は心拍数を減少させる。"
+        },
+        {
+          "id": "B",
+          "text": "交感神経は心拍数を減少させる。"
+        },
+        {
+          "id": "C",
+          "text": "心拍数は自律神経の影響を受けない。"
+        },
+        {
+          "id": "D",
+          "text": "副交感神経は心拍数を増加させる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心拍数は自律神経系によって調節されており、交感神経の興奮は心拍数を増加させ、副交感神経(迷走神経)の興奮は心拍数を減少させる。",
+      "tags": [
+        "自律神経",
+        "心拍数"
+      ]
+    },
+    {
+      "id": "Q150",
+      "category": "循環器",
+      "subcategory": "心臓の内部構造",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "心臓における心房と心室の位置関係として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心房は心臓の上後方に、心室は下前方に位置する。"
+        },
+        {
+          "id": "B",
+          "text": "心房は心臓の下前方に、心室は上後方に位置する。"
+        },
+        {
+          "id": "C",
+          "text": "心房と心室は左右に並んで位置する。"
+        },
+        {
+          "id": "D",
+          "text": "心房と心室の位置関係に規則性はない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心臓において、心房は上後方に、心室は下前方に位置する。既存Q064の4腔image問題で学んだ左右の位置関係に加え、上下・前後の位置関係を確認する。",
+      "tags": [
+        "心房",
+        "心室",
+        "心臓の位置"
+      ]
+    },
+    {
+      "id": "Q151",
+      "category": "呼吸器",
+      "subcategory": "上気道",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "鼻腔の機能について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "吸入した空気を加温・加湿し、異物を除去する。"
+        },
+        {
+          "id": "B",
+          "text": "鼻腔はガス交換を行う場である。"
+        },
+        {
+          "id": "C",
+          "text": "鼻腔は消化液を分泌する。"
+        },
+        {
+          "id": "D",
+          "text": "鼻腔に線毛は存在しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "鼻腔は吸入した空気を加温・加湿するとともに、鼻毛や粘液・線毛運動によって異物を捕捉・除去する、上気道の防御機構の要である。",
+      "tags": [
+        "鼻腔",
+        "上気道"
+      ]
+    },
+    {
+      "id": "Q152",
+      "category": "呼吸器",
+      "subcategory": "気管支",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "気道分岐図の①で示された、より太く短く、垂直に近い角度で分岐する気管支はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "右主気管支"
+        },
+        {
+          "id": "B",
+          "text": "左主気管支"
+        },
+        {
+          "id": "C",
+          "text": "葉気管支"
+        },
+        {
+          "id": "D",
+          "text": "終末細気管支"
+        }
+      ],
+      "answer": "A",
+      "explanation": "右主気管支は左主気管支に比べて太く短く、気管からより垂直に近い角度で分岐するため、誤嚥した異物は右主気管支に入りやすい。",
+      "tags": [
+        "主気管支",
+        "右主気管支"
+      ],
+      "image": {
+        "prompt_id": "IMG-013",
+        "asset": "assets/images/q040_airway_branching.webp",
+        "alt": "気道分岐（気管〜終末細気管支）を示す模式図",
+        "marker": "③",
+        "marker_target": "右主気管支",
+        "overlay": {
+          "x": 0.4,
+          "y": 0.1692,
+          "label": "③"
+        }
+      }
+    },
+    {
+      "id": "Q153",
+      "category": "呼吸器",
+      "subcategory": "気管支",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "気道分岐図の②で示された、肺葉ごとに分布する気管支はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "葉気管支"
+        },
+        {
+          "id": "B",
+          "text": "主気管支"
+        },
+        {
+          "id": "C",
+          "text": "終末細気管支"
+        },
+        {
+          "id": "D",
+          "text": "呼吸細気管支"
+        }
+      ],
+      "answer": "A",
+      "explanation": "主気管支は肺葉ごとに枝分かれし、葉気管支となる(右肺は3本、左肺は2本)。さらに葉気管支は区域気管支(既存Q077)へと枝分かれする。",
+      "tags": [
+        "葉気管支"
+      ],
+      "image": {
+        "prompt_id": "IMG-013",
+        "asset": "assets/images/q040_airway_branching.webp",
+        "alt": "気道分岐（気管〜終末細気管支）を示す模式図",
+        "marker": "④",
+        "marker_target": "葉気管支",
+        "overlay": {
+          "x": 0.2857,
+          "y": 0.2615,
+          "label": "④"
+        }
+      }
+    },
+    {
+      "id": "Q154",
+      "category": "呼吸器",
+      "subcategory": "肺胞",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "肺胞嚢周辺の模式図の①で示された、呼吸細気管支に続き肺胞嚢へ至る管状の構造はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "肺胞管"
+        },
+        {
+          "id": "B",
+          "text": "終末細気管支"
+        },
+        {
+          "id": "C",
+          "text": "主気管支"
+        },
+        {
+          "id": "D",
+          "text": "喉頭"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺胞管は呼吸細気管支に続く管状構造で、その周囲や末端に多数の肺胞が開口し、肺胞嚢へとつながる。",
+      "tags": [
+        "肺胞管",
+        "肺胞嚢"
+      ],
+      "image": {
+        "prompt_id": "IMG-014",
+        "asset": "assets/images/q041_alveolar_sac.webp",
+        "alt": "終末呼吸単位（肺胞管・肺胞嚢）を示す模式図",
+        "marker": "②",
+        "marker_target": "肺胞管",
+        "overlay": {
+          "x": 0.25,
+          "y": 0.3333,
+          "label": "②"
+        }
+      }
+    },
+    {
+      "id": "Q155",
+      "category": "呼吸器",
+      "subcategory": "胸膜",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "胸腔断面模式図の①・②は、肺と胸壁の間にある2層の膜を示している。①・②の組み合わせとして正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "①臓側胸膜 ②壁側胸膜"
+        },
+        {
+          "id": "B",
+          "text": "①壁側胸膜 ②臓側胸膜"
+        },
+        {
+          "id": "C",
+          "text": "①横隔膜 ②心膜"
+        },
+        {
+          "id": "D",
+          "text": "①気管支 ②肺胞"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺の表面を直接覆う膜を臓側胸膜、胸壁の内側を覆う膜を壁側胸膜という。両者の間の空間を胸膜腔という。",
+      "tags": [
+        "胸膜",
+        "臓側胸膜",
+        "壁側胸膜"
+      ],
+      "image": {
+        "prompt_id": "IMG-027",
+        "asset": "assets/images/pleura_cross_section.webp",
+        "alt": "胸部横断面における胸膜（壁側・臓側）の層構造模式図",
+        "marker": "①②",
+        "marker_target": "①臓側胸膜→②壁側胸膜の順にoverlaysを設定",
+        "overlays": [
+          {
+            "x": 0.1538,
+            "y": 0.25,
+            "label": "①"
+          },
+          {
+            "x": 0.5,
+            "y": 0.102,
+            "label": "②"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q156",
+      "category": "呼吸器",
+      "subcategory": "胸膜",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "胸膜腔について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "陰圧に保たれており、肺の拡張を助けている。"
+        },
+        {
+          "id": "B",
+          "text": "胸膜腔は空気で満たされ、常に大気圧と等しい。"
+        },
+        {
+          "id": "C",
+          "text": "胸膜腔は心臓の内部にある空間である。"
+        },
+        {
+          "id": "D",
+          "text": "胸膜腔には常に大量の液体が貯留している。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "胸膜腔は正常時、大気圧より低い陰圧に保たれており、この陰圧が肺を胸郭内で拡張した状態に保つのを助けている。少量の胸膜液が潤滑の役割を果たす。",
+      "tags": [
+        "胸膜腔",
+        "陰圧"
+      ],
+      "image": {
+        "prompt_id": "IMG-027",
+        "asset": "assets/images/pleura_cross_section.webp",
+        "alt": "胸部横断面における胸膜（壁側・臓側）の層構造模式図",
+        "marker": "③",
+        "marker_target": "胸膜腔",
+        "overlay": {
+          "x": 0.0862,
+          "y": 0.5,
+          "label": "③"
+        }
+      }
+    },
+    {
+      "id": "Q157",
+      "category": "呼吸器",
+      "subcategory": "呼吸筋",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "呼気の仕組みについて正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "安静時の呼気は主に胸郭・肺の弾性による受動的な過程である。"
+        },
+        {
+          "id": "B",
+          "text": "呼気は常に呼気筋の能動的な収縮によってのみ生じる。"
+        },
+        {
+          "id": "C",
+          "text": "呼気時には横隔膜がさらに収縮する。"
+        },
+        {
+          "id": "D",
+          "text": "呼気は吸気と全く同じ仕組みで生じる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "安静時の呼気は、吸気筋(横隔膜など)の弛緩と、胸郭・肺の弾性による受動的な過程である。努力呼気時には呼気筋(内肋間筋・腹筋群など)が能動的に働く。",
+      "tags": [
+        "呼気",
+        "呼吸筋"
+      ]
+    },
+    {
+      "id": "Q158",
+      "category": "呼吸器",
+      "subcategory": "呼吸筋",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "努力呼気時に働く筋として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "内肋間筋・腹筋群"
+        },
+        {
+          "id": "B",
+          "text": "横隔膜・外肋間筋"
+        },
+        {
+          "id": "C",
+          "text": "僧帽筋のみ"
+        },
+        {
+          "id": "D",
+          "text": "呼気に働く筋は存在しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "努力呼気時には、内肋間筋が肋骨を引き下げ、腹筋群の収縮が腹圧を高めて横隔膜を押し上げることで、より強く息を吐き出す。既存Q038の吸気筋(横隔膜・外肋間筋)と対をなす。",
+      "tags": [
+        "呼気筋",
+        "内肋間筋"
+      ]
+    },
+    {
+      "id": "Q159",
+      "category": "呼吸器",
+      "subcategory": "換気",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "1回換気量について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "安静時の呼吸で1回に出入りする空気の量である。"
+        },
+        {
+          "id": "B",
+          "text": "最大限に吸い込める空気の総量である。"
+        },
+        {
+          "id": "C",
+          "text": "呼出しきれずに肺に残る空気の量である。"
+        },
+        {
+          "id": "D",
+          "text": "気道内に存在する空気の総量である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "1回換気量は、安静時の呼吸で1回の吸息・呼息の際に出入りする空気の量を指す。",
+      "tags": [
+        "肺気量",
+        "1回換気量"
+      ]
+    },
+    {
+      "id": "Q160",
+      "category": "呼吸器",
+      "subcategory": "換気",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "肺活量について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "最大に息を吸った状態から、最大限に吐き出せる空気の量である。"
+        },
+        {
+          "id": "B",
+          "text": "肺に含まれる空気の全容量を指す。"
+        },
+        {
+          "id": "C",
+          "text": "1回換気量と同じ意味である。"
+        },
+        {
+          "id": "D",
+          "text": "呼出しきれずに残る空気の量である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺活量は、最大に息を吸い込んだ状態から、最大限に吐き出すことのできる空気の量であり、1回換気量に予備吸気量・予備呼気量を加えたものに相当する。",
+      "tags": [
+        "肺気量",
+        "肺活量"
+      ]
+    },
+    {
+      "id": "Q161",
+      "category": "呼吸器",
+      "subcategory": "換気",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "残気量について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "最大限に呼出した後でも、肺内に残っている空気の量である。"
+        },
+        {
+          "id": "B",
+          "text": "残気量はゼロになりうる。"
+        },
+        {
+          "id": "C",
+          "text": "残気量は肺活量に含まれる。"
+        },
+        {
+          "id": "D",
+          "text": "残気量は1回換気量と同じ量である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "残気量は、最大限に呼出した後でも肺の虚脱を防ぐために肺内に残っている空気の量であり、肺活量には含まれない。",
+      "tags": [
+        "肺気量",
+        "残気量"
+      ]
+    },
+    {
+      "id": "Q162",
+      "category": "呼吸器",
+      "subcategory": "ガス交換",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "血液中の酸素の運搬について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "その大部分がヘモグロビンと結合して運ばれる。"
+        },
+        {
+          "id": "B",
+          "text": "酸素はすべて血漿に溶解した状態で運ばれる。"
+        },
+        {
+          "id": "C",
+          "text": "酸素は白血球によって運ばれる。"
+        },
+        {
+          "id": "D",
+          "text": "酸素は血液中では運搬されない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "血液中の酸素は、その大部分が赤血球中のヘモグロビンと結合した状態で全身の組織へ運搬される。血漿に溶解する酸素はごくわずかである。",
+      "tags": [
+        "酸素運搬",
+        "ヘモグロビン"
+      ]
+    },
+    {
+      "id": "Q163",
+      "category": "呼吸器",
+      "subcategory": "ガス交換",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "血液中の二酸化炭素の運搬について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "その多くは重炭酸イオンの形に変換されて血漿中を運ばれる。"
+        },
+        {
+          "id": "B",
+          "text": "二酸化炭素はすべてヘモグロビンとのみ結合して運ばれる。"
+        },
+        {
+          "id": "C",
+          "text": "二酸化炭素は血液中を運搬されない。"
+        },
+        {
+          "id": "D",
+          "text": "二酸化炭素は酸素と全く同じ形で運搬される。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "血液中の二酸化炭素の多くは、赤血球内で酵素の働きにより重炭酸イオンに変換され、血漿中を運ばれる。一部はヘモグロビンと結合した形や、溶解した形でも運ばれる。",
+      "tags": [
+        "二酸化炭素運搬",
+        "重炭酸イオン"
+      ]
+    },
+    {
+      "id": "Q164",
+      "category": "呼吸器",
+      "subcategory": "呼吸調節",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "呼吸の化学的調節について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "血中の二酸化炭素濃度の上昇は、呼吸中枢を刺激して換気を増加させる。"
+        },
+        {
+          "id": "B",
+          "text": "血中の二酸化炭素濃度は呼吸の調節に関与しない。"
+        },
+        {
+          "id": "C",
+          "text": "呼吸は化学的な要因によって調節されない。"
+        },
+        {
+          "id": "D",
+          "text": "血中の二酸化炭素濃度が上昇すると換気は減少する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "血中の二酸化炭素濃度の上昇は、化学受容器を介して呼吸中枢(既存Q039)を刺激し、換気量を増加させる、呼吸の化学的調節の中心的な仕組みである。",
+      "tags": [
+        "化学受容器",
+        "呼吸調節"
+      ]
+    },
+    {
+      "id": "Q165",
+      "category": "呼吸器",
+      "subcategory": "肺胞",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "肺サーファクタントについて正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "肺胞の表面張力を低下させ、肺胞がつぶれるのを防ぐ。"
+        },
+        {
+          "id": "B",
+          "text": "サーファクタントは気道の異物を除去する。"
+        },
+        {
+          "id": "C",
+          "text": "サーファクタントは血液中の酸素を運搬する。"
+        },
+        {
+          "id": "D",
+          "text": "サーファクタントは消化酵素の一種である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺サーファクタントは肺胞上皮細胞から分泌される物質で、肺胞内面の表面張力を低下させ、呼息時に肺胞がつぶれてしまうのを防いでいる。",
+      "tags": [
+        "サーファクタント",
+        "肺胞"
+      ]
+    },
+    {
+      "id": "Q166",
+      "category": "呼吸器",
+      "subcategory": "下気道",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "気道の線毛運動について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "粘液に捕捉された異物を、咽頭側へ向かって送り出す。"
+        },
+        {
+          "id": "B",
+          "text": "線毛運動は異物を肺の奥へ送り込む。"
+        },
+        {
+          "id": "C",
+          "text": "線毛運動はガス交換を直接行う。"
+        },
+        {
+          "id": "D",
+          "text": "線毛は肺胞にのみ存在する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "気道上皮の線毛は規則的に運動し、粘液とともに捕捉した異物を咽頭側(体外へ排出されやすい方向)へ向かって送り出す、下気道の防御機構である。",
+      "tags": [
+        "線毛運動",
+        "気道の防御"
+      ]
+    },
+    {
+      "id": "Q167",
+      "category": "呼吸器",
+      "subcategory": "下気道",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "咳嗽反射について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "気道内の異物や刺激を検知し、強い呼気によって排出しようとする防御反射である。"
+        },
+        {
+          "id": "B",
+          "text": "咳嗽反射は消化管の防御反射である。"
+        },
+        {
+          "id": "C",
+          "text": "咳嗽反射は随意的にのみ生じる。"
+        },
+        {
+          "id": "D",
+          "text": "咳嗽反射は肺胞で生じる反射である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "咳嗽反射は、気道内の異物や刺激物を感知した際に、強い呼気によってそれを排出しようとする防御反射である。",
+      "tags": [
+        "咳嗽反射",
+        "気道の防御"
+      ]
+    },
+    {
+      "id": "Q168",
+      "category": "呼吸器",
+      "subcategory": "胸膜",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "縦隔について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "左右の肺に挟まれた、心臓や気管などを含む空間である。"
+        },
+        {
+          "id": "B",
+          "text": "縦隔は肺の内部にある構造である。"
+        },
+        {
+          "id": "C",
+          "text": "縦隔には何も存在しない空間である。"
+        },
+        {
+          "id": "D",
+          "text": "縦隔は腹腔の一部である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "縦隔は左右の肺に挟まれた胸腔の中央部分で、心臓・大血管・気管・食道などを含む空間である。",
+      "tags": [
+        "縦隔"
+      ]
+    },
+    {
+      "id": "Q169",
+      "category": "呼吸器",
+      "subcategory": "肺葉",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "肺の図の①で示された、肺の最上部(鎖骨の上方まで達する部分)はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "肺尖"
+        },
+        {
+          "id": "B",
+          "text": "肺底"
+        },
+        {
+          "id": "C",
+          "text": "肺門"
+        },
+        {
+          "id": "D",
+          "text": "肺葉"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺尖は肺の最上部を指し、鎖骨の上方まで達する。肺の下面で横隔膜に接する部分は肺底という。",
+      "tags": [
+        "肺尖",
+        "肺底"
+      ],
+      "image": {
+        "prompt_id": "IMG-011",
+        "asset": "assets/images/q035_right_middle_lobe.webp",
+        "alt": "左右肺の肺葉構成を示す前面模式図",
+        "marker": "③",
+        "marker_target": "肺尖",
+        "overlay": {
+          "x": 0.2143,
+          "y": 0.25,
+          "label": "③"
+        }
+      }
+    },
+    {
+      "id": "Q170",
+      "category": "呼吸器",
+      "subcategory": "呼吸筋",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "横隔膜について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "最も重要な吸気筋であり、収縮するとドーム状の形が平坦になり胸腔容積が増加する。"
+        },
+        {
+          "id": "B",
+          "text": "横隔膜は呼気筋である。"
+        },
+        {
+          "id": "C",
+          "text": "横隔膜は骨格筋ではなく平滑筋である。"
+        },
+        {
+          "id": "D",
+          "text": "横隔膜は胸腔と腹腔を隔てていない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "横隔膜は最も重要な吸気筋であり、収縮するとドーム状の形が平坦になり、胸腔の容積が増加することで肺が拡張し、空気が吸い込まれる。既存Q038・Q083の内容を踏まえたまとめ。",
+      "tags": [
+        "横隔膜",
+        "吸気筋"
+      ]
+    },
+    {
+      "id": "Q171",
+      "category": "呼吸器",
+      "subcategory": "換気",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "成人の安静時における呼吸数の目安について、最も近いものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "1分間に約12〜18回"
+        },
+        {
+          "id": "B",
+          "text": "1分間に約60〜80回"
+        },
+        {
+          "id": "C",
+          "text": "1分間に約1〜2回"
+        },
+        {
+          "id": "D",
+          "text": "1分間に約100回以上"
+        }
+      ],
+      "answer": "A",
+      "explanation": "成人の安静時の呼吸数は、おおむね1分間に12〜18回程度とされる。",
+      "tags": [
+        "呼吸数"
+      ]
+    },
+    {
+      "id": "Q172",
+      "category": "呼吸器",
+      "subcategory": "ガス交換",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "肺胞でのガス交換を成立させる駆動力について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "肺胞気と血液の間の酸素・二酸化炭素の分圧差により、拡散によって移動する。"
+        },
+        {
+          "id": "B",
+          "text": "ガス交換にはエネルギーを要する能動輸送が用いられる。"
+        },
+        {
+          "id": "C",
+          "text": "ガス交換は分圧差とは無関係に一定速度で進む。"
+        },
+        {
+          "id": "D",
+          "text": "ガス交換は肺胞の筋収縮によって直接引き起こされる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺胞でのガス交換は、肺胞気と血液の間に生じる酸素・二酸化炭素の分圧差を駆動力として、拡散によって受動的に進む。既存のQ037・Q084の内容を、駆動力という観点から統合的に理解する。",
+      "tags": [
+        "ガス交換",
+        "拡散",
+        "分圧差"
+      ]
+    },
+    {
+      "id": "Q173",
+      "category": "呼吸器",
+      "subcategory": "換気",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "死腔について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "気道のうち、ガス交換に直接関与しない部分をいう。"
+        },
+        {
+          "id": "B",
+          "text": "死腔は肺胞のみを指す。"
+        },
+        {
+          "id": "C",
+          "text": "死腔ではガス交換が最も盛んに行われる。"
+        },
+        {
+          "id": "D",
+          "text": "死腔は消化管の一部である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "死腔は、吸入した空気が通過するもののガス交換に直接関与しない気道部分(主に導気部)をいう。",
+      "tags": [
+        "死腔",
+        "導気部"
+      ]
+    },
+    {
+      "id": "Q174",
+      "category": "呼吸器",
+      "subcategory": "ガス交換",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "肺胞と肺循環の関係について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "肺胞は毛細血管に取り囲まれており、その薄い壁を介してガス交換が行われる。"
+        },
+        {
+          "id": "B",
+          "text": "肺胞と血管は直接接していない。"
+        },
+        {
+          "id": "C",
+          "text": "肺胞を取り巻くのはリンパ管のみである。"
+        },
+        {
+          "id": "D",
+          "text": "肺胞は肺静脈の内部に存在する構造である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺胞は肺循環の毛細血管網に密に取り囲まれており、肺胞壁と毛細血管壁を合わせた薄い膜(血液空気関門、既存Q084)を介してガス交換が行われる。",
+      "tags": [
+        "肺胞",
+        "肺循環"
+      ]
+    },
+    {
+      "id": "Q175",
+      "category": "呼吸器",
+      "subcategory": "呼吸器系の構造分類",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "導気部から呼吸部への移行について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "終末細気管支を境に、それより末梢の呼吸細気管支からガス交換に関わる呼吸部が始まる。"
+        },
+        {
+          "id": "B",
+          "text": "導気部と呼吸部の間に明確な境界は存在しない。"
+        },
+        {
+          "id": "C",
+          "text": "呼吸部は気管から始まる。"
+        },
+        {
+          "id": "D",
+          "text": "導気部でもガス交換が活発に行われる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "導気部は終末細気管支までで、それより末梢の呼吸細気管支・肺胞管・肺胞嚢・肺胞からなる呼吸部でガス交換が行われる。既存のQ034・Q040・Q085・Q087の内容を統合し、呼吸器系全体の構造分類を完成させる。",
+      "tags": [
+        "導気部",
+        "呼吸部",
+        "終末細気管支"
+      ]
+    },
+    {
+      "id": "Q176",
+      "category": "泌尿器",
+      "subcategory": "ネフロン",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "ネフロンの模式図の①で示された、毛細血管の塊(糸球体)を包む構造はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ボーマン嚢"
+        },
+        {
+          "id": "B",
+          "text": "近位尿細管"
+        },
+        {
+          "id": "C",
+          "text": "集合管"
+        },
+        {
+          "id": "D",
+          "text": "ヘンレ係蹄"
+        }
+      ],
+      "answer": "A",
+      "explanation": "ボーマン嚢は糸球体(毛細血管の塊)を包む袋状の構造で、糸球体とボーマン嚢を合わせて腎小体という(既存Q048/091)。",
+      "tags": [
+        "ボーマン嚢",
+        "糸球体",
+        "腎小体"
+      ],
+      "image": {
+        "prompt_id": "IMG-016",
+        "asset": "assets/images/q048_nephron.webp",
+        "alt": "ネフロン（腎小体・尿細管・集合管）を示す模式図",
+        "marker": "②",
+        "marker_target": "ボーマン嚢",
+        "overlay": {
+          "x": 0.19,
+          "y": 0.135,
+          "label": "②"
+        }
+      }
+    },
+    {
+      "id": "Q177",
+      "category": "泌尿器",
+      "subcategory": "ネフロン",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "近位尿細管について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腎小体に続く部分で、原尿中の水・グルコース・電解質などの大部分を再吸収する。"
+        },
+        {
+          "id": "B",
+          "text": "近位尿細管は尿を最終的に濃縮する部位である。"
+        },
+        {
+          "id": "C",
+          "text": "近位尿細管では再吸収は行われない。"
+        },
+        {
+          "id": "D",
+          "text": "近位尿細管は膀胱に直接つながる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "近位尿細管は腎小体(ボーマン嚢)に続く部分で、原尿中の水・グルコース・アミノ酸・電解質などの大部分がここで再吸収される。",
+      "tags": [
+        "近位尿細管",
+        "再吸収"
+      ],
+      "image": {
+        "prompt_id": "IMG-016",
+        "asset": "assets/images/q048_nephron.webp",
+        "alt": "ネフロン（腎小体・尿細管・集合管）を示す模式図",
+        "marker": "③",
+        "marker_target": "近位尿細管",
+        "overlay": {
+          "x": 0.4006,
+          "y": 0.2394,
+          "label": "③"
+        }
+      }
+    },
+    {
+      "id": "Q178",
+      "category": "泌尿器",
+      "subcategory": "ネフロン",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "ヘンレ係蹄について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腎髄質へ向かってU字型に伸び、尿の濃縮に関わる。"
+        },
+        {
+          "id": "B",
+          "text": "ヘンレ係蹄は腎皮質のみに存在する。"
+        },
+        {
+          "id": "C",
+          "text": "ヘンレ係蹄では糸球体濾過が行われる。"
+        },
+        {
+          "id": "D",
+          "text": "ヘンレ係蹄は膀胱の一部である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "ヘンレ係蹄は近位尿細管に続き、腎髄質へ向かってU字型に伸びる構造で、水・電解質の再吸収を通じて尿の濃縮に重要な役割を果たす。",
+      "tags": [
+        "ヘンレ係蹄",
+        "尿の濃縮"
+      ],
+      "image": {
+        "prompt_id": "IMG-016",
+        "asset": "assets/images/q048_nephron.webp",
+        "alt": "ネフロン（腎小体・尿細管・集合管）を示す模式図",
+        "marker": "④",
+        "marker_target": "ヘンレ係蹄",
+        "overlay": {
+          "x": 0.549,
+          "y": 0.9208,
+          "label": "④"
+        }
+      }
+    },
+    {
+      "id": "Q179",
+      "category": "泌尿器",
+      "subcategory": "ネフロン",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "遠位尿細管について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ヘンレ係蹄に続き、集合管へ原尿を送る部分で、再吸収に加え分泌も行う。"
+        },
+        {
+          "id": "B",
+          "text": "遠位尿細管は腎小体に直接つながる。"
+        },
+        {
+          "id": "C",
+          "text": "遠位尿細管では再吸収も分泌も行われない。"
+        },
+        {
+          "id": "D",
+          "text": "遠位尿細管は膀胱と同義である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "遠位尿細管はヘンレ係蹄に続き、集合管へ原尿を送る部分で、電解質の再吸収に加え、血液から尿細管腔への物質の分泌も行う。",
+      "tags": [
+        "遠位尿細管",
+        "分泌"
+      ]
+    },
+    {
+      "id": "Q180",
+      "category": "泌尿器",
+      "subcategory": "ネフロン",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "腎臓断面図の④で示された、複数のネフロンから原尿を集め、腎乳頭へ導く構造はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "集合管"
+        },
+        {
+          "id": "B",
+          "text": "糸球体"
+        },
+        {
+          "id": "C",
+          "text": "腎動脈"
+        },
+        {
+          "id": "D",
+          "text": "尿管"
+        }
+      ],
+      "answer": "A",
+      "explanation": "集合管は複数のネフロンの遠位尿細管から原尿を集め、腎乳頭(既存Q093)へと導く。この過程でも水の再吸収が調節される。",
+      "tags": [
+        "集合管"
+      ],
+      "image": {
+        "prompt_id": "IMG-019",
+        "asset": "assets/images/q091_kidney_cross_section.webp",
+        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "marker": "④",
+        "marker_target": "集合管",
+        "overlay": {
+          "x": 0.4545,
+          "y": 0.7923,
+          "label": "④"
+        }
+      }
+    },
+    {
+      "id": "Q181",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "糸球体濾過について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "糸球体内の血圧により、血漿成分の一部がボーマン嚢腔へ濾過される。"
+        },
+        {
+          "id": "B",
+          "text": "糸球体濾過は尿細管で行われる。"
+        },
+        {
+          "id": "C",
+          "text": "糸球体濾過には血圧は関与しない。"
+        },
+        {
+          "id": "D",
+          "text": "糸球体濾過では血球もそのままボーマン嚢腔へ通過する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "糸球体濾過は、糸球体内の血圧によって血漿中の水・電解質・老廃物などがボーマン嚢腔へ押し出される現象である。血球やほとんどのタンパク質は通常、濾過されない。",
+      "tags": [
+        "糸球体濾過",
+        "血圧"
+      ]
+    },
+    {
+      "id": "Q182",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "原尿と尿の違いについて正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "原尿の大部分は尿細管・集合管で再吸収され、残りが尿として排泄される。"
+        },
+        {
+          "id": "B",
+          "text": "原尿と尿は同じ量・同じ成分である。"
+        },
+        {
+          "id": "C",
+          "text": "尿は原尿よりも常に量が多い。"
+        },
+        {
+          "id": "D",
+          "text": "原尿はそのまま膀胱へ送られる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "糸球体で濾過された原尿は1日あたり多量に生成されるが、その大部分が尿細管・集合管で再吸収され、残りのわずかな量が尿として排泄される。",
+      "tags": [
+        "原尿",
+        "尿生成"
+      ]
+    },
+    {
+      "id": "Q183",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "尿細管での再吸収について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "グルコース・水・電解質などが、尿細管腔から血液側へ戻される。"
+        },
+        {
+          "id": "B",
+          "text": "再吸収は血液から尿細管腔への移動を指す。"
+        },
+        {
+          "id": "C",
+          "text": "再吸収では老廃物のみが選択的に戻される。"
+        },
+        {
+          "id": "D",
+          "text": "再吸収は腎臓では行われない過程である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "再吸収とは、尿細管腔にろ過された成分のうち、グルコース・水・電解質などの必要な物質が尿細管の細胞を介して血液側へ戻される過程である。",
+      "tags": [
+        "再吸収"
+      ]
+    },
+    {
+      "id": "Q184",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "尿細管での分泌について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "血液側から尿細管腔へ、不要な物質や水素イオンなどが排出される過程である。"
+        },
+        {
+          "id": "B",
+          "text": "分泌は尿細管腔から血液側への移動を指す。"
+        },
+        {
+          "id": "C",
+          "text": "分泌は再吸収と全く同じ現象である。"
+        },
+        {
+          "id": "D",
+          "text": "尿細管での分泌は生じない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "分泌とは、再吸収とは逆方向に、血液側から尿細管腔へ不要な物質や水素イオンなどが排出される過程であり、体液の恒常性維持に関わる。",
+      "tags": [
+        "分泌"
+      ]
+    },
+    {
+      "id": "Q185",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "抗利尿ホルモンの腎臓への作用について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "集合管での水の再吸収を促進し、尿量を減少させる。"
+        },
+        {
+          "id": "B",
+          "text": "集合管での水の再吸収を抑制し、尿量を増加させる。"
+        },
+        {
+          "id": "C",
+          "text": "抗利尿ホルモンは糸球体濾過を停止させる。"
+        },
+        {
+          "id": "D",
+          "text": "抗利尿ホルモンは腎臓に作用しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "抗利尿ホルモン(バソプレシン)は集合管に作用して水の再吸収を促進し、尿量を減少させることで体液量を保持する。",
+      "tags": [
+        "抗利尿ホルモン",
+        "水分調節"
+      ]
+    },
+    {
+      "id": "Q186",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "腎臓による電解質調節について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ナトリウムイオン(Na+)の再吸収量を調節することで、体液量にも影響を与える。"
+        },
+        {
+          "id": "B",
+          "text": "腎臓は電解質の調節に関与しない。"
+        },
+        {
+          "id": "C",
+          "text": "ナトリウムイオンは腎臓で全く再吸収されない。"
+        },
+        {
+          "id": "D",
+          "text": "電解質調節は膀胱で行われる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎臓はナトリウムイオン(Na+)などの電解質の再吸収量を調節しており、Na+は水を伴って再吸収されるため、この調節は体液量の調節にも直結する。",
+      "tags": [
+        "電解質調節",
+        "ナトリウム"
+      ]
+    },
+    {
+      "id": "Q187",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "腎臓による酸塩基平衡の調節について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "水素イオンの排泄や重炭酸イオンの再吸収を通じて、体液のpHを調節する。"
+        },
+        {
+          "id": "B",
+          "text": "腎臓は酸塩基平衡の調節に関与しない。"
+        },
+        {
+          "id": "C",
+          "text": "腎臓はすべての水素イオンを再吸収する。"
+        },
+        {
+          "id": "D",
+          "text": "酸塩基平衡は肺のみで調節される。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎臓は水素イオンの排泄や重炭酸イオンの再吸収を通じて、呼吸器系とともに体液の酸塩基平衡(既存総論Q116)を調節している。",
+      "tags": [
+        "酸塩基平衡",
+        "腎臓"
+      ]
+    },
+    {
+      "id": "Q188",
+      "category": "泌尿器",
+      "subcategory": "腎臓の内分泌機能",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "腎臓から分泌されるレニンの作用について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "血圧調節に関わるホルモン系(レニン-アンジオテンシン系)の引き金となる。"
+        },
+        {
+          "id": "B",
+          "text": "レニンは赤血球の産生を促進する。"
+        },
+        {
+          "id": "C",
+          "text": "レニンはカルシウムの吸収を促進する。"
+        },
+        {
+          "id": "D",
+          "text": "レニンは尿を直接生成する酵素である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "レニンは腎臓から分泌される酵素で、血圧調節に関わるレニン-アンジオテンシン系という一連のホルモン反応の引き金となる。既存Q098(腎臓の内分泌機能)で存在が示されるレニンの具体的作用を確認する。",
+      "tags": [
+        "レニン",
+        "血圧調節"
+      ]
+    },
+    {
+      "id": "Q189",
+      "category": "泌尿器",
+      "subcategory": "腎臓の内分泌機能",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "腎臓から分泌されるエリスロポエチンの作用について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "骨髄での赤血球の産生を促進する。"
+        },
+        {
+          "id": "B",
+          "text": "血圧を直接低下させる。"
+        },
+        {
+          "id": "C",
+          "text": "カルシウムの吸収を促進する。"
+        },
+        {
+          "id": "D",
+          "text": "尿の濃縮を直接行う。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "エリスロポエチンは腎臓から分泌されるホルモンで、骨髄に作用して赤血球の産生を促進する。既存Q098で存在が示されるエリスロポエチンの具体的作用を確認する。",
+      "tags": [
+        "エリスロポエチン",
+        "赤血球"
+      ]
+    },
+    {
+      "id": "Q190",
+      "category": "泌尿器",
+      "subcategory": "腎臓の内分泌機能",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "腎臓で活性化されるビタミンDの作用について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腸管でのカルシウム吸収を促進する。"
+        },
+        {
+          "id": "B",
+          "text": "赤血球の産生を促進する。"
+        },
+        {
+          "id": "C",
+          "text": "血圧を直接上昇させる。"
+        },
+        {
+          "id": "D",
+          "text": "尿量を直接増加させる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎臓で活性化されたビタミンD(活性型ビタミンD)は、主に腸管でのカルシウム吸収を促進する。既存Q098の内容を具体化する。",
+      "tags": [
+        "活性型ビタミンD",
+        "カルシウム吸収"
+      ]
+    },
+    {
+      "id": "Q191",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "腎臓への血流について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心拍出量のうち、比較的大きな割合(全身の血流の約4分の1程度)が腎臓に供給される。"
+        },
+        {
+          "id": "B",
+          "text": "腎臓への血流は心拍出量のごく一部に限られる。"
+        },
+        {
+          "id": "C",
+          "text": "腎臓は血流を全く必要としない臓器である。"
+        },
+        {
+          "id": "D",
+          "text": "腎臓への血流は他の臓器よりも常に少ない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎臓は体重に占める割合は小さいものの、心拍出量のうち比較的大きな割合(安静時でおよそ4分の1程度)を受け取っており、豊富な血流のもとで尿生成を行っている。",
+      "tags": [
+        "腎血流量"
+      ]
+    },
+    {
+      "id": "Q192",
+      "category": "泌尿器",
+      "subcategory": "尿路",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "泌尿器系の図中②で示された、尿を一時的に貯留する袋状の器官はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "膀胱"
+        },
+        {
+          "id": "B",
+          "text": "腎臓"
+        },
+        {
+          "id": "C",
+          "text": "尿管"
+        },
+        {
+          "id": "D",
+          "text": "尿道"
+        }
+      ],
+      "answer": "A",
+      "explanation": "膀胱は尿を一時的に貯留する袋状の器官で、平滑筋(排尿筋)の壁は伸展性に富み、尿量の増加に応じて大きく拡張することができる。",
+      "tags": [
+        "膀胱",
+        "伸展性"
+      ],
+      "image": {
+        "prompt_id": "IMG-017",
+        "asset": "assets/images/q050_urinary_system.webp",
+        "alt": "泌尿器系全体（腎臓・尿管・膀胱）を示す模式図",
+        "marker": "②",
+        "marker_target": "膀胱",
+        "overlay": {
+          "x": 0.5,
+          "y": 0.8393,
+          "label": "②"
+        }
+      }
+    },
+    {
+      "id": "Q193",
+      "category": "泌尿器",
+      "subcategory": "尿路",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "尿道の男女差について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "男性の尿道は女性より長い。"
+        },
+        {
+          "id": "B",
+          "text": "女性の尿道は男性より長い。"
+        },
+        {
+          "id": "C",
+          "text": "男女で尿道の長さに差はない。"
+        },
+        {
+          "id": "D",
+          "text": "尿道は女性にのみ存在する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "男性の尿道は精路の一部としても機能するため女性より長く、女性の尿道は短いため、一般に尿路感染を起こしやすいとされる。",
+      "tags": [
+        "尿道",
+        "男女差"
+      ]
+    },
+    {
+      "id": "Q194",
+      "category": "泌尿器",
+      "subcategory": "腎臓の内部構造",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "腎盂について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "大腎杯が集まって形成され、下方へ続いて尿管に移行する。"
+        },
+        {
+          "id": "B",
+          "text": "腎盂は腎皮質に存在する構造である。"
+        },
+        {
+          "id": "C",
+          "text": "腎盂は膀胱の一部である。"
+        },
+        {
+          "id": "D",
+          "text": "腎盂では尿の生成が行われる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎盂は大腎杯が集まって形成される漏斗状の構造で、下方へ続いて尿管に移行する。既存Q093（腎乳頭）・Q100（尿の通り道）の内容を接続する。",
+      "tags": [
+        "腎盂",
+        "尿管"
+      ]
+    },
+    {
+      "id": "Q195",
+      "category": "泌尿器",
+      "subcategory": "尿路",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "尿管の走行について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腎盂に続き、後腹膜を下行して膀胱の後外側から膀胱壁を貫いて開口する。"
+        },
+        {
+          "id": "B",
+          "text": "尿管は腎臓から直接、体外へ開口する。"
+        },
+        {
+          "id": "C",
+          "text": "尿管は腹腔内を自由に浮遊している。"
+        },
+        {
+          "id": "D",
+          "text": "尿管は左右の腎臓の間をつなぐ管である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "尿管は腎盂に続き、後腹膜を下行して骨盤内に入り、膀胱の後外側から膀胱壁を斜めに貫いて膀胱内腔に開口する。この斜めの走行が尿の逆流防止に役立つ。",
+      "tags": [
+        "尿管",
+        "走行"
+      ]
+    },
+    {
+      "id": "Q196",
+      "category": "泌尿器",
+      "subcategory": "腎臓の外形",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "腎臓を包む構造について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "線維被膜に加え、周囲を脂肪被膜が包み、腎臓の位置を保持する。"
+        },
+        {
+          "id": "B",
+          "text": "腎臓は被膜をもたない臓器である。"
+        },
+        {
+          "id": "C",
+          "text": "腎臓の被膜は骨組織である。"
+        },
+        {
+          "id": "D",
+          "text": "腎臓の被膜は尿を生成する構造である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎臓は直接その表面を覆う線維被膜と、その外側の脂肪被膜(脂肪組織)によって包まれており、脂肪被膜は腎臓を正常な位置に保持する役割も果たす。",
+      "tags": [
+        "腎臓",
+        "線維被膜",
+        "脂肪被膜"
+      ]
+    },
+    {
+      "id": "Q197",
+      "category": "泌尿器",
+      "subcategory": "排尿反射",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "排尿時の神経性調節について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "副交感神経の興奮により排尿筋が収縮し、尿が排出される。"
+        },
+        {
+          "id": "B",
+          "text": "交感神経の興奮により排尿筋が収縮する。"
+        },
+        {
+          "id": "C",
+          "text": "排尿は神経性の調節を受けない。"
+        },
+        {
+          "id": "D",
+          "text": "排尿時には排尿筋が弛緩する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "排尿時には副交感神経(骨盤内臓神経)の興奮により膀胱壁の排尿筋が収縮し、同時に内尿道括約筋が弛緩することで尿が排出される。",
+      "tags": [
+        "排尿反射",
+        "副交感神経",
+        "排尿筋"
+      ]
+    },
+    {
+      "id": "Q198",
+      "category": "泌尿器",
+      "subcategory": "排尿反射",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "蓄尿から排尿への一連の変化として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "蓄尿時は交感神経が優位で排尿筋が弛緩し、排尿時は副交感神経が優位となり排尿筋が収縮する。"
+        },
+        {
+          "id": "B",
+          "text": "蓄尿時・排尿時とも同じ神経が同じように作用する。"
+        },
+        {
+          "id": "C",
+          "text": "蓄尿時に排尿筋は収縮し続けている。"
+        },
+        {
+          "id": "D",
+          "text": "排尿は外尿道括約筋の随意的な調節を一切受けない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "蓄尿時は交感神経が優位で排尿筋が弛緩し内尿道括約筋が収縮する一方、排尿時は副交感神経が優位となり排尿筋が収縮し内尿道括約筋が弛緩する。さらに外尿道括約筋(骨格筋)は随意的に調節できる。既存Q089・Q090・Q094の内容を統合する。",
+      "tags": [
+        "蓄尿",
+        "排尿",
+        "排尿反射"
+      ]
+    },
+    {
+      "id": "Q199",
+      "category": "泌尿器",
+      "subcategory": "ネフロン",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "ネフロンにおける原尿(尿)の流れとして正しい順序はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腎小体→近位尿細管→ヘンレ係蹄→遠位尿細管→集合管"
+        },
+        {
+          "id": "B",
+          "text": "腎小体→集合管→近位尿細管→遠位尿細管→ヘンレ係蹄"
+        },
+        {
+          "id": "C",
+          "text": "近位尿細管→腎小体→ヘンレ係蹄→集合管→遠位尿細管"
+        },
+        {
+          "id": "D",
+          "text": "腎小体→遠位尿細管→近位尿細管→ヘンレ係蹄→集合管"
+        }
+      ],
+      "answer": "A",
+      "explanation": "ネフロンにおいて原尿は、腎小体(糸球体・ボーマン嚢)→近位尿細管→ヘンレ係蹄→遠位尿細管→集合管の順に流れる。既存Q046やQ176〜180で個別に学んだ各部位を、一連の流れとして統合する。",
+      "tags": [
+        "ネフロン",
+        "尿の流れ"
+      ],
+      "image": {
+        "prompt_id": "IMG-016",
+        "asset": "assets/images/q048_nephron.webp",
+        "alt": "ネフロン（腎小体・尿細管・集合管）を示す模式図",
+        "marker": "⑤",
+        "marker_target": "腎小体→近位尿細管→ヘンレ係蹄→遠位尿細管→集合管（順路overlay）",
+        "overlays": [
+          {
+            "x": 0.19,
+            "y": 0.135,
+            "label": "⑤-1"
+          },
+          {
+            "x": 0.4006,
+            "y": 0.2394,
+            "label": "⑤-2"
+          },
+          {
+            "x": 0.549,
+            "y": 0.9208,
+            "label": "⑤-3"
+          },
+          {
+            "x": 0.6975,
+            "y": 0.2026,
+            "label": "⑤-4"
+          },
+          {
+            "x": 0.8909,
+            "y": 0.4604,
+            "label": "⑤-5"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q200",
+      "category": "泌尿器",
+      "subcategory": "腎血流",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "糸球体を通る血液の流れとして正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "輸入細動脈→糸球体→輸出細動脈"
+        },
+        {
+          "id": "B",
+          "text": "輸出細動脈→糸球体→輸入細動脈"
+        },
+        {
+          "id": "C",
+          "text": "腎静脈→糸球体→腎動脈"
+        },
+        {
+          "id": "D",
+          "text": "尿管→糸球体→腎盂"
+        }
+      ],
+      "answer": "A",
+      "explanation": "糸球体は輸入細動脈から血液を受け、糸球体毛細血管を通った血液は輸出細動脈へ流れる。",
+      "tags": [
+        "糸球体",
+        "輸入細動脈",
+        "輸出細動脈"
+      ]
+    },
+    {
+      "id": "Q201",
+      "category": "総論",
+      "subcategory": "細胞の構造",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "細胞膜の構成について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "リン脂質二重層に、機能をもつタンパク質が組み込まれた構造をもつ。"
+        },
+        {
+          "id": "B",
+          "text": "細胞膜はタンパク質を全く含まない。"
+        },
+        {
+          "id": "C",
+          "text": "細胞膜は炭水化物のみで構成される。"
+        },
+        {
+          "id": "D",
+          "text": "細胞膜は核酸でできている。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "細胞膜はリン脂質二重層を基本骨格とし、そこに物質輸送や情報受容などの機能をもつ膜タンパク質が組み込まれた構造をしている。",
+      "tags": [
+        "細胞膜",
+        "リン脂質",
+        "膜タンパク質"
+      ]
+    },
+    {
+      "id": "Q202",
+      "category": "総論",
+      "subcategory": "細胞の輸送",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "拡散(受動輸送)について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "物質が濃度の高い側から低い側へ、エネルギーを使わずに移動する現象である。"
+        },
+        {
+          "id": "B",
+          "text": "拡散にはエネルギー(ATP)を必要とする。"
+        },
+        {
+          "id": "C",
+          "text": "拡散は濃度の低い側から高い側へ物質を移動させる。"
+        },
+        {
+          "id": "D",
+          "text": "拡散は細胞膜では起こらない現象である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "拡散は、物質が濃度の高い側から低い側へ、エネルギーを使わずに自然に移動する現象(受動輸送)である。毛細血管での物質交換や肺胞でのガス交換は拡散によって成り立っている。",
+      "tags": [
+        "拡散",
+        "受動輸送"
+      ]
+    },
+    {
+      "id": "Q203",
+      "category": "総論",
+      "subcategory": "細胞の輸送",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "能動輸送について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "濃度勾配に逆らって物質を輸送するため、エネルギー(ATP)を必要とする。"
+        },
+        {
+          "id": "B",
+          "text": "能動輸送は濃度の高い側から低い側への移動のみを指す。"
+        },
+        {
+          "id": "C",
+          "text": "能動輸送にエネルギーは不要である。"
+        },
+        {
+          "id": "D",
+          "text": "能動輸送は細胞外でのみ起こる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "能動輸送は、物質を濃度の低い側から高い側へ、濃度勾配に逆らって運ぶためエネルギー(ATP)を必要とする輸送様式である。尿細管での再吸収・分泌の一部にはこの能動輸送が関わる。",
+      "tags": [
+        "能動輸送",
+        "ATP"
+      ]
+    },
+    {
+      "id": "Q204",
+      "category": "総論",
+      "subcategory": "細胞の輸送",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "浸透について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "水が、溶質濃度の低い側から高い側へ半透膜を通って移動する現象である。"
+        },
+        {
+          "id": "B",
+          "text": "浸透は溶質が移動する現象である。"
+        },
+        {
+          "id": "C",
+          "text": "浸透は水が高濃度側から低濃度側へ移動する現象である。"
+        },
+        {
+          "id": "D",
+          "text": "浸透にはエネルギーを必要とする。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "浸透は、水が半透膜を介して溶質濃度の低い側から高い側へ移動する現象であり、体液の水分バランスや尿の濃縮(泌尿器領域)を理解するうえで重要な概念である。",
+      "tags": [
+        "浸透",
+        "浸透圧"
+      ]
+    },
+    {
+      "id": "Q205",
+      "category": "総論",
+      "subcategory": "上皮組織",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "上皮組織の機能として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "体表や管腔の保護、物質の吸収・分泌など多様な機能を担う。"
+        },
+        {
+          "id": "B",
+          "text": "上皮組織の機能は保護のみである。"
+        },
+        {
+          "id": "C",
+          "text": "上皮組織は収縮する機能をもつ。"
+        },
+        {
+          "id": "D",
+          "text": "上皮組織は情報を伝達する機能をもつ。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "上皮組織は体表や消化管・気道・尿路などの内腔を覆い、保護に加えて物質の吸収・分泌など多様な機能を担う。既存の呼吸器上皮・尿路上皮の防御機能はこの一例である。",
+      "tags": [
+        "上皮組織",
+        "保護",
+        "吸収",
+        "分泌"
+      ]
+    },
+    {
+      "id": "Q206",
+      "category": "総論",
+      "subcategory": "結合組織",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "結合組織の機能として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "組織や器官を連結・支持し、細胞外基質を豊富にもつ。"
+        },
+        {
+          "id": "B",
+          "text": "結合組織は情報の伝達を専門とする。"
+        },
+        {
+          "id": "C",
+          "text": "結合組織は収縮運動を専門とする。"
+        },
+        {
+          "id": "D",
+          "text": "結合組織には細胞外基質が存在しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "結合組織は細胞に加えて豊富な細胞外基質(線維成分と基質)をもち、組織や器官を連結・支持する機能を担う。",
+      "tags": [
+        "結合組織",
+        "細胞外基質"
+      ]
+    },
+    {
+      "id": "Q207",
+      "category": "総論",
+      "subcategory": "筋組織",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "筋組織に共通する性質として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "興奮性と収縮性をもち、刺激に応じて収縮する。"
+        },
+        {
+          "id": "B",
+          "text": "筋組織はいずれも意識的にのみ収縮できる。"
+        },
+        {
+          "id": "C",
+          "text": "筋組織は情報を伝達する機能を専門とする。"
+        },
+        {
+          "id": "D",
+          "text": "筋組織に共通する性質は存在しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "骨格筋・心筋・平滑筋はいずれも興奮性(刺激に反応する性質)と収縮性をもつという共通点があり、これは循環器の心筋・血管平滑筋にも共通する基本的性質である。",
+      "tags": [
+        "筋組織",
+        "興奮性",
+        "収縮性"
+      ]
+    },
+    {
+      "id": "Q208",
+      "category": "総論",
+      "subcategory": "筋組織",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "興奮性(刺激に反応して活動電位を発生する性質)をもつ組織として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "神経組織と筋組織"
+        },
+        {
+          "id": "B",
+          "text": "上皮組織のみ"
+        },
+        {
+          "id": "C",
+          "text": "結合組織のみ"
+        },
+        {
+          "id": "D",
+          "text": "どの組織も興奮性をもたない"
+        }
+      ],
+      "answer": "A",
+      "explanation": "神経組織と筋組織は、刺激に反応して活動電位(電気的な興奮)を発生させる興奮性という共通の性質をもち、これが情報伝達や収縮の基盤となる。心臓の刺激伝導系(既存の循環器領域)もこの性質を利用している。",
+      "tags": [
+        "興奮性",
+        "活動電位"
+      ]
+    },
+    {
+      "id": "Q209",
+      "category": "総論",
+      "subcategory": "発生",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "呼吸器・泌尿器の発生学的由来について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "呼吸器の上皮は主に内胚葉に由来する。"
+        },
+        {
+          "id": "B",
+          "text": "呼吸器の上皮は外胚葉に由来する。"
+        },
+        {
+          "id": "C",
+          "text": "泌尿器はすべて外胚葉に由来する。"
+        },
+        {
+          "id": "D",
+          "text": "発生学的由来は器官の機能と無関係である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "呼吸器の上皮は主に内胚葉に由来する(既存Q012)。腎臓・尿路の多くは中胚葉に由来するとされる。発生学的由来を知ることは、器官の分類上の位置づけを理解する助けとなる。",
+      "tags": [
+        "胚葉",
+        "発生"
+      ]
+    },
+    {
+      "id": "Q210",
+      "category": "総論",
+      "subcategory": "体腔",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "体腔とその内容の組み合わせとして正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "胸腔―心臓・肺、腹腔―胃・肝臓・腎臓の一部、骨盤腔―膀胱"
+        },
+        {
+          "id": "B",
+          "text": "胸腔―腎臓、腹腔―心臓、骨盤腔―肺"
+        },
+        {
+          "id": "C",
+          "text": "すべての体腔は同じ臓器を収める。"
+        },
+        {
+          "id": "D",
+          "text": "体腔は互いに完全に独立し、隔壁は存在しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "胸腔には心臓・肺、腹腔には胃・肝臓・腎臓の一部などの臓器、骨盤腔には膀胱などが収められる。既存Q055〜058の体腔問題を統合する。",
+      "tags": [
+        "体腔",
+        "胸腔",
+        "腹腔",
+        "骨盤腔"
+      ]
+    },
+    {
+      "id": "Q211",
+      "category": "総論",
+      "subcategory": "体腔",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "漿膜について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "臓器の表面や体腔の内面を覆う薄い膜で、心膜・胸膜はいずれも漿膜の一種である。"
+        },
+        {
+          "id": "B",
+          "text": "漿膜は骨格を構成する組織である。"
+        },
+        {
+          "id": "C",
+          "text": "漿膜は筋組織の一種である。"
+        },
+        {
+          "id": "D",
+          "text": "漿膜は消化管の内腔を覆う粘膜と同じものである。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "漿膜は臓器表面や体腔内面を覆う薄い膜で、循環器の心膜(既存Q126)、呼吸器の胸膜(既存Q155/156)はいずれも漿膜の一種であり、共通して摩擦を軽減する液体を分泌する。",
+      "tags": [
+        "漿膜",
+        "心膜",
+        "胸膜"
+      ]
+    },
+    {
+      "id": "Q212",
+      "category": "総論",
+      "subcategory": "体液",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "体液の酸塩基平衡を保つ仕組みについて正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "重炭酸イオンなどの緩衝系が、体液のpH変化を最小限に抑える。"
+        },
+        {
+          "id": "B",
+          "text": "体液のpHは緩衝系なしに常に一定である。"
+        },
+        {
+          "id": "C",
+          "text": "緩衝系は酸塩基平衡に関与しない。"
+        },
+        {
+          "id": "D",
+          "text": "緩衝系は体液中に存在しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "体液には重炭酸イオンなどの緩衝系が存在し、酸や塩基が加わった際のpH変化を最小限に抑える。既存Q116の酸塩基平衡の概念を、その調節機構の一端として深化する。",
+      "tags": [
+        "酸塩基平衡",
+        "緩衝系"
+      ]
+    },
+    {
+      "id": "Q213",
+      "category": "総論",
+      "subcategory": "体液",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "電解質と細胞の興奮性の関係について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "細胞内外のナトリウムイオン・カリウムイオンの濃度差が、神経や筋の興奮の基盤となる。"
+        },
+        {
+          "id": "B",
+          "text": "電解質は興奮性と無関係である。"
+        },
+        {
+          "id": "C",
+          "text": "興奮性は電解質濃度が完全に均一な場合にのみ生じる。"
+        },
+        {
+          "id": "D",
+          "text": "カリウムイオンは興奮性に関与しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "細胞内外のナトリウムイオン・カリウムイオンなどの濃度差(電気化学的勾配)が、神経・筋の興奮性(Q208)の基盤となる。既存の循環器の刺激伝導系・心電図の理解を支える基礎知識である。",
+      "tags": [
+        "電解質",
+        "興奮性"
+      ]
+    },
+    {
+      "id": "Q214",
+      "category": "総論",
+      "subcategory": "生体の恒常性",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "体温調節について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "発汗や皮膚血管の拡張・収縮などにより、体温を一定範囲に保とうとする。"
+        },
+        {
+          "id": "B",
+          "text": "体温は常に外気温と同じになる。"
+        },
+        {
+          "id": "C",
+          "text": "体温調節に皮膚の血管は関与しない。"
+        },
+        {
+          "id": "D",
+          "text": "体温はホメオスタシスの対象に含まれない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "体温調節は、発汗・皮膚血管の拡張(放熱)や収縮(保温)などにより体温を一定範囲に保つ恒常性(既存Q112)の代表例である。",
+      "tags": [
+        "体温調節",
+        "恒常性"
+      ]
+    },
+    {
+      "id": "Q215",
+      "category": "総論",
+      "subcategory": "器官系",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "器官系どうしの協調について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "循環器系と呼吸器系は協調して酸素を全身に供給する。"
+        },
+        {
+          "id": "B",
+          "text": "器官系はそれぞれ独立して機能し、互いに影響しない。"
+        },
+        {
+          "id": "C",
+          "text": "器官系の協調は存在しない。"
+        },
+        {
+          "id": "D",
+          "text": "1つの器官系のみで恒常性が維持される。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "循環器系(血液の運搬)と呼吸器系(ガス交換)は協調してはたらき、酸素を全身の組織に供給し、二酸化炭素を排出する。器官系どうしの協調は恒常性(既存Q112)を支える重要な仕組みである。",
+      "tags": [
+        "器官系",
+        "協調"
+      ]
+    },
+    {
+      "id": "Q216",
+      "category": "総論",
+      "subcategory": "方向用語",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "上方(頭側)と下方(尾側)の説明として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "頭部に近い方向を上方(頭側)、足の方向に近い側を下方(尾側)という。"
+        },
+        {
+          "id": "B",
+          "text": "上方は身体の前面を指す方向用語である。"
+        },
+        {
+          "id": "C",
+          "text": "上方と下方は左右の位置関係を表す用語である。"
+        },
+        {
+          "id": "D",
+          "text": "上方・下方という用語は人体には用いられない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "上方(頭側)・下方(尾側)は、頭部に近いか足に近いかを表す方向用語であり、既存の内外側・前後・近位遠位などの方向用語体系を完成させる。",
+      "tags": [
+        "方向用語",
+        "上方",
+        "下方"
+      ]
+    },
+    {
+      "id": "Q217",
+      "category": "総論",
+      "subcategory": "身体の大区分",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "胸部の体表からの区分について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "鎖骨・肋骨・胸骨などを目印に、心臓や肺の位置をおおまかに体表から把握できる。"
+        },
+        {
+          "id": "B",
+          "text": "胸部は体表から一切区分できない。"
+        },
+        {
+          "id": "C",
+          "text": "胸部の体表区分は腹部と全く同じ名称が用いられる。"
+        },
+        {
+          "id": "D",
+          "text": "胸部の体表区分は骨の位置と無関係である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "胸部は鎖骨・肋骨・胸骨などの骨性目印を基準に、心臓や肺の体表投影位置をおおまかに把握することができる。既存の腹部4分画(Q122)と対になる胸部の視点である。",
+      "tags": [
+        "胸部",
+        "体表区分"
+      ]
+    },
+    {
+      "id": "Q218",
+      "category": "総論",
+      "subcategory": "体液",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "細胞内液と細胞外液の組成の違いについて正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "細胞内液はカリウムイオンに富み、細胞外液はナトリウムイオンに富む。"
+        },
+        {
+          "id": "B",
+          "text": "細胞内液と細胞外液の電解質組成は完全に同じである。"
+        },
+        {
+          "id": "C",
+          "text": "細胞外液にはカリウムイオンのみが存在する。"
+        },
+        {
+          "id": "D",
+          "text": "細胞内液にはナトリウムイオンのみが存在する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "細胞内液はカリウムイオン(K+)に富み、細胞外液はナトリウムイオン(Na+)に富むという組成差があり、この濃度勾配が細胞の興奮性(Q208,213)の基盤となる。",
+      "tags": [
+        "細胞内液",
+        "細胞外液",
+        "電解質"
+      ]
+    },
+    {
+      "id": "Q219",
+      "category": "総論",
+      "subcategory": "上皮組織",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "上皮組織の再生能力について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "上皮組織は一般に再生能力が高く、損傷後に比較的速やかに修復される。"
+        },
+        {
+          "id": "B",
+          "text": "上皮組織は一度損傷すると再生しない。"
+        },
+        {
+          "id": "C",
+          "text": "上皮組織の再生能力は他の組織より低い。"
+        },
+        {
+          "id": "D",
+          "text": "上皮組織は再生する際に別の組織に置き換わる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "上皮組織は一般に再生能力が高く、損傷後に比較的速やかに新しい細胞に置き換わる。気道粘膜・尿路上皮など、常に外部環境や尿にさらされる上皮でこの性質は特に重要である。",
+      "tags": [
+        "上皮組織",
+        "再生能力"
+      ]
+    },
+    {
+      "id": "Q220",
+      "category": "総論",
+      "subcategory": "基本的運動方向",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "足関節で足背を下腿に近づける運動はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "背屈"
+        },
+        {
+          "id": "B",
+          "text": "底屈"
+        },
+        {
+          "id": "C",
+          "text": "回内"
+        },
+        {
+          "id": "D",
+          "text": "外転"
+        }
+      ],
+      "answer": "A",
+      "explanation": "足関節では足背を下腿に近づける方向を背屈、足底方向へ向ける運動を底屈という。",
+      "tags": [
+        "背屈",
+        "底屈",
+        "足関節",
+        "基本的運動方向"
+      ]
+    },
+    {
+      "id": "Q221",
+      "category": "総論",
+      "subcategory": "体液",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "体内の水分出納について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "水分の摂取量と排出量(尿・不感蒸泄など)がつり合うことで、体液量が一定に保たれる。"
+        },
+        {
+          "id": "B",
+          "text": "水分は摂取されるのみで、排出されることはない。"
+        },
+        {
+          "id": "C",
+          "text": "体液量の調節に水分出納は関与しない。"
+        },
+        {
+          "id": "D",
+          "text": "水分の排出は尿のみによって行われる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "体内の水分は、飲水・食物などによる摂取と、尿・不感蒸泄(皮膚・呼気からの蒸発)・便などによる排出がつり合うことで、体液量が一定に保たれる。既存の泌尿器領域(尿生成)と接続する総論的な視点である。",
+      "tags": [
+        "水分出納",
+        "体液量"
+      ]
+    },
+    {
+      "id": "Q222",
+      "category": "総論",
+      "subcategory": "体液",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "細胞外液の区分について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "血管内の血漿と、細胞と細胞の間を満たす組織間液(間質液)などに分けられる。"
+        },
+        {
+          "id": "B",
+          "text": "細胞外液は血漿のみを指す。"
+        },
+        {
+          "id": "C",
+          "text": "細胞外液は細胞内にのみ存在する。"
+        },
+        {
+          "id": "D",
+          "text": "組織間液は血管内に存在する液体である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "細胞外液は、血管内を流れる血漿と、細胞と細胞の間を満たす組織間液(間質液)などに区分される。既存Q113(体液の区分)を一段階深化する。",
+      "tags": [
+        "細胞外液",
+        "血漿",
+        "組織間液"
+      ]
+    },
+    {
+      "id": "Q223",
+      "category": "総論",
+      "subcategory": "生体の恒常性",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "人体の構成レベルと恒常性の関係について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "細胞→組織→器官→器官系という各レベルが協調してはたらくことで、個体としての恒常性が維持される。"
+        },
+        {
+          "id": "B",
+          "text": "恒常性は細胞レベルのみで完結し、器官系は関与しない。"
+        },
+        {
+          "id": "C",
+          "text": "人体の構成レベルと恒常性は無関係である。"
+        },
+        {
+          "id": "D",
+          "text": "器官系が協調することで、かえって恒常性は乱れる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "細胞→組織→器官→器官系という各構成レベルが階層的に協調してはたらくことで、個体としての恒常性(既存Q112)が維持される。既存Q002(人体の構成)とQ112(恒常性)を統合する、総論領域の最終まとめ問題。",
+      "tags": [
+        "恒常性",
+        "人体の構成"
+      ]
+    },
+    {
+      "id": "Q224",
+      "category": "循環器",
+      "subcategory": "心臓の機能",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "後負荷について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心室が血液を送り出す際に打ち勝たなければならない抵抗(動脈圧など)である。"
+        },
+        {
+          "id": "B",
+          "text": "心室に戻ってくる血液量そのものである。"
+        },
+        {
+          "id": "C",
+          "text": "後負荷は心臓の重さを表す指標である。"
+        },
+        {
+          "id": "D",
+          "text": "後負荷は心拍数と同じ意味である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "後負荷は、心室が収縮して血液を送り出す際に打ち勝たなければならない抵抗であり、主に動脈圧(血圧)によって規定される。既存Q131の前負荷と対をなす概念である。",
+      "tags": [
+        "後負荷",
+        "前負荷"
+      ]
+    },
+    {
+      "id": "Q225",
+      "category": "循環器",
+      "subcategory": "血圧",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "末梢血管抵抗を規定する要因として、最も影響が大きいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "血管(特に細動脈)の内腔の半径"
+        },
+        {
+          "id": "B",
+          "text": "血液の色"
+        },
+        {
+          "id": "C",
+          "text": "心臓の位置"
+        },
+        {
+          "id": "D",
+          "text": "静脈弁の数"
+        }
+      ],
+      "answer": "A",
+      "explanation": "末梢血管抵抗は、血管、特に細動脈の内腔の半径の変化によって大きく規定される。血管が収縮し半径が小さくなると抵抗は大きく増加する。",
+      "tags": [
+        "末梢血管抵抗",
+        "細動脈"
+      ]
+    },
+    {
+      "id": "Q226",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "微小循環について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "細動脈から毛細血管を経て細静脈に至る、組織との物質交換の場である。"
+        },
+        {
+          "id": "B",
+          "text": "微小循環は大動脈と大静脈の間を直接つなぐ循環である。"
+        },
+        {
+          "id": "C",
+          "text": "微小循環に毛細血管は含まれない。"
+        },
+        {
+          "id": "D",
+          "text": "微小循環は心臓の内部のみで完結する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "微小循環は、細動脈から毛細血管を経て細静脈に至る血流の経路であり、組織との物質交換(既存Q137)が行われる場である。",
+      "tags": [
+        "微小循環",
+        "細動脈",
+        "細静脈"
+      ]
+    },
+    {
+      "id": "Q227",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "細動脈の役割について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "血管平滑筋の収縮・弛緩により内腔を変化させ、組織への血流量を調節する。"
+        },
+        {
+          "id": "B",
+          "text": "細動脈には平滑筋が存在しない。"
+        },
+        {
+          "id": "C",
+          "text": "細動脈は血流量の調節に関与しない。"
+        },
+        {
+          "id": "D",
+          "text": "細動脈は静脈の一種である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "細動脈は豊富な血管平滑筋をもち、その収縮・弛緩によって内腔の太さを変化させることで、末梢血管抵抗(Q225)や組織への血流量を調節する「抵抗血管」としての役割を担う。",
+      "tags": [
+        "細動脈",
+        "血管平滑筋"
+      ]
+    },
+    {
+      "id": "Q228",
+      "category": "循環器",
+      "subcategory": "心臓の位置",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "成人の心臓の大きさの目安について、最も近いものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "本人のにぎりこぶしとほぼ同じ大きさ"
+        },
+        {
+          "id": "B",
+          "text": "頭部とほぼ同じ大きさ"
+        },
+        {
+          "id": "C",
+          "text": "手のひら1枚分より大きく、頭部ほどの大きさ"
+        },
+        {
+          "id": "D",
+          "text": "米粒ほどの大きさ"
+        }
+      ],
+      "answer": "A",
+      "explanation": "成人の心臓の大きさは、本人のにぎりこぶしとほぼ同じ程度とされることが多い。",
+      "tags": [
+        "心臓の大きさ"
+      ]
+    },
+    {
+      "id": "Q229",
+      "category": "循環器",
+      "subcategory": "心臓の位置",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "解剖学的正位における心臓の向きについて正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心尖は左前下方を、心底は右後上方を向く。"
+        },
+        {
+          "id": "B",
+          "text": "心尖は右前下方を、心底は左後上方を向く。"
+        },
+        {
+          "id": "C",
+          "text": "心臓は完全に左右対称に位置する。"
+        },
+        {
+          "id": "D",
+          "text": "心尖は上方を向く。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心臓は胸腔内でやや斜めに位置し、心尖(既存Q016)は左前下方を、心底(既存Q125)は右後上方を向く。",
+      "tags": [
+        "心尖",
+        "心底",
+        "心臓の位置"
+      ]
+    },
+    {
+      "id": "Q230",
+      "category": "循環器",
+      "subcategory": "心臓の内部構造",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "心室中隔について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "左心室と右心室を隔てる壁である。"
+        },
+        {
+          "id": "B",
+          "text": "左心房と右心房を隔てる壁である。"
+        },
+        {
+          "id": "C",
+          "text": "心臓の外側を包む膜である。"
+        },
+        {
+          "id": "D",
+          "text": "心室中隔は存在しない構造である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心室中隔は左心室と右心室を隔てる筋性の壁であり、既存Q064(4腔image)・Q128(心室壁の厚さ)の内容を補完する。",
+      "tags": [
+        "心室中隔"
+      ],
+      "image": {
+        "prompt_id": "IMG-006",
+        "asset": "assets/images/q017_heart_chambers.webp",
+        "alt": "心臓の4腔を示す前額断面模式図",
+        "marker": "⑤",
+        "marker_target": "心室中隔",
+        "overlay": {
+          "x": 0.48,
+          "y": 0.5985,
+          "label": "⑤"
+        }
+      }
+    },
+    {
+      "id": "Q231",
+      "category": "循環器",
+      "subcategory": "心臓の内部構造",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "心房中隔について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "左心房と右心房を隔てる壁である。"
+        },
+        {
+          "id": "B",
+          "text": "左心室と右心室を隔てる壁である。"
+        },
+        {
+          "id": "C",
+          "text": "心房中隔は存在しない構造である。"
+        },
+        {
+          "id": "D",
+          "text": "心房中隔は血液を通す構造である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心房中隔は左心房と右心房を隔てる壁であり、心室中隔(Q230)と対をなす構造である。",
+      "tags": [
+        "心房中隔"
+      ],
+      "image": {
+        "prompt_id": "IMG-006",
+        "asset": "assets/images/q017_heart_chambers.webp",
+        "alt": "心臓の4腔を示す前額断面模式図",
+        "marker": "⑥",
+        "marker_target": "心房中隔",
+        "overlay": {
+          "x": 0.5249,
+          "y": 0.442,
+          "label": "⑥"
+        }
+      }
+    },
+    {
+      "id": "Q232",
+      "category": "循環器",
+      "subcategory": "心臓の内部構造",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "右心房へ直接流入する血管の組み合わせとして正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "上大静脈・下大静脈・冠状静脈洞"
+        },
+        {
+          "id": "B",
+          "text": "肺静脈・上大静脈・大動脈"
+        },
+        {
+          "id": "C",
+          "text": "肺動脈・下大静脈・冠状動脈"
+        },
+        {
+          "id": "D",
+          "text": "大動脈・肺静脈・冠状静脈洞"
+        }
+      ],
+      "answer": "A",
+      "explanation": "右心房には上大静脈・下大静脈から体循環の静脈血が流入し、心筋を還流した静脈血の多くは冠状静脈洞から流入する。",
+      "tags": [
+        "右心房",
+        "上大静脈",
+        "下大静脈",
+        "冠状静脈洞"
+      ]
+    },
+    {
+      "id": "Q233",
+      "category": "循環器",
+      "subcategory": "心臓弁",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "大動脈弁の位置として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "左心室と大動脈の間"
+        },
+        {
+          "id": "B",
+          "text": "右心室と肺動脈の間"
+        },
+        {
+          "id": "C",
+          "text": "左心房と左心室の間"
+        },
+        {
+          "id": "D",
+          "text": "右心房と右心室の間"
+        }
+      ],
+      "answer": "A",
+      "explanation": "大動脈弁は左心室と大動脈の間に位置する半月弁(動脈弁)である。既存Q070(肺動脈弁の位置)と対をなす。",
+      "tags": [
+        "大動脈弁",
+        "半月弁"
+      ]
+    },
+    {
+      "id": "Q234",
+      "category": "循環器",
+      "subcategory": "冠状動脈",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "冠動脈による心筋への血流について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心室が拡張する時期に、より多くの血流が心筋に供給される。"
+        },
+        {
+          "id": "B",
+          "text": "心室が収縮する時期に、より多くの血流が心筋に供給される。"
+        },
+        {
+          "id": "C",
+          "text": "冠動脈の血流は心周期の影響を受けない。"
+        },
+        {
+          "id": "D",
+          "text": "冠動脈は心房にのみ血流を供給する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心室収縮期には心筋内の血管が圧迫されるため、冠動脈による心筋への血流は主に心室拡張期に多く供給される。既存の心周期(Q123)と冠状動脈(既存Q027,073,074)を統合する。",
+      "tags": [
+        "冠状動脈",
+        "心周期"
+      ]
+    },
+    {
+      "id": "Q235",
+      "category": "循環器",
+      "subcategory": "血圧",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "脈圧について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "収縮期血圧と拡張期血圧の差である。"
+        },
+        {
+          "id": "B",
+          "text": "収縮期血圧と拡張期血圧の平均である。"
+        },
+        {
+          "id": "C",
+          "text": "脈圧は心拍数と同じ意味である。"
+        },
+        {
+          "id": "D",
+          "text": "脈圧は血圧とは無関係の指標である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "脈圧は収縮期血圧(既存Q132)と拡張期血圧の差であり、一回拍出量や動脈の弾性(既存Q134)を反映する指標の一つである。",
+      "tags": [
+        "脈圧",
+        "血圧"
+      ]
+    },
+    {
+      "id": "Q236",
+      "category": "循環器",
+      "subcategory": "血圧",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "平均血圧の考え方について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心周期全体を通じた血圧の平均であり、拡張期血圧の影響を強く受ける。"
+        },
+        {
+          "id": "B",
+          "text": "平均血圧は収縮期血圧と同じ値である。"
+        },
+        {
+          "id": "C",
+          "text": "平均血圧は脈圧と同じ意味である。"
+        },
+        {
+          "id": "D",
+          "text": "平均血圧は心周期と無関係に決まる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心周期のうち拡張期の時間が収縮期より長いため、平均血圧は拡張期血圧の影響を強く受ける値となり、臓器灌流を規定する重要な指標とされる。",
+      "tags": [
+        "平均血圧"
+      ]
+    },
+    {
+      "id": "Q237",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "循環血液量の目安について、最も近いものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "体重のおよそ8%(体重1kgあたり約80mL)"
+        },
+        {
+          "id": "B",
+          "text": "体重のおよそ60%"
+        },
+        {
+          "id": "C",
+          "text": "体重のおよそ1%"
+        },
+        {
+          "id": "D",
+          "text": "体重とは無関係に一定である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "循環血液量はおおむね体重の8%程度(体重1kgあたり約80mL)とされる。既存Q114(体液の水分割合、体重の約60%)とは区別して理解する必要がある。",
+      "tags": [
+        "循環血液量"
+      ]
+    },
+    {
+      "id": "Q238",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "血液の粘性が血流に与える影響について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "血液の粘性が高いほど、血流に対する抵抗は大きくなる。"
+        },
+        {
+          "id": "B",
+          "text": "血液の粘性は血流抵抗に影響しない。"
+        },
+        {
+          "id": "C",
+          "text": "血液の粘性が高いほど血流抵抗は小さくなる。"
+        },
+        {
+          "id": "D",
+          "text": "血液に粘性は存在しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "血液の粘性(ねばりの度合い)が高いほど、血管内を流れる際の抵抗は大きくなり、血圧や血流量に影響する。",
+      "tags": [
+        "血液の粘性",
+        "血流"
+      ]
+    },
+    {
+      "id": "Q239",
+      "category": "循環器",
+      "subcategory": "血圧",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "圧受容器による血圧調節について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "頸動脈洞・大動脈弓の圧受容器が血圧の変化を感知し、自律神経を介して調節する。"
+        },
+        {
+          "id": "B",
+          "text": "圧受容器は血糖値を感知する受容器である。"
+        },
+        {
+          "id": "C",
+          "text": "血圧の調節に圧受容器は関与しない。"
+        },
+        {
+          "id": "D",
+          "text": "圧受容器は腎臓にのみ存在する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "頸動脈洞・大動脈弓には血圧の変化を感知する圧受容器が存在し、その情報が自律神経系(既存Q149)を介して心拍数や血管の収縮・拡張を調節し、血圧を一定範囲に保つ。",
+      "tags": [
+        "圧受容器",
+        "血圧調節"
+      ]
+    },
+    {
+      "id": "Q240",
+      "category": "循環器",
+      "subcategory": "刺激伝導系",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "刺激伝導系の模式図の①で示された、房室結節からの興奮を心室中隔へ伝え、左右の脚へ続く構造はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "洞房結節"
+        },
+        {
+          "id": "B",
+          "text": "房室結節"
+        },
+        {
+          "id": "C",
+          "text": "房室束"
+        },
+        {
+          "id": "D",
+          "text": "プルキンエ線維"
+        }
+      ],
+      "answer": "C",
+      "explanation": "房室束は房室結節からの興奮を心室中隔へ伝え、左右の脚へ続く刺激伝導系の構造である。",
+      "tags": [
+        "刺激伝導系",
+        "房室束"
+      ],
+      "image": {
+        "prompt_id": "IMG-009",
+        "asset": "assets/images/q025_conduction_system.webp",
+        "alt": "刺激伝導系の経路を示す模式図",
+        "marker": "②",
+        "marker_target": "房室束",
+        "overlay": {
+          "x": 0.48,
+          "y": 0.4727,
+          "label": "②"
+        }
+      }
+    },
+    {
+      "id": "Q241",
+      "category": "循環器",
+      "subcategory": "冠状動脈",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "洞房結節への血液供給について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "多くの場合、右冠動脈の枝から血液供給を受ける。"
+        },
+        {
+          "id": "B",
+          "text": "洞房結節には血液供給がない。"
+        },
+        {
+          "id": "C",
+          "text": "洞房結節は肺動脈から直接血液を受ける。"
+        },
+        {
+          "id": "D",
+          "text": "洞房結節への血液供給は左冠動脈のみによる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "洞房結節は多くの場合、右冠動脈の枝から血液供給を受ける。既存の冠状動脈(Q027,073,074)と刺激伝導系(Q025,240)を接続する。",
+      "tags": [
+        "洞房結節",
+        "冠状動脈"
+      ]
+    },
+    {
+      "id": "Q242",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "重力が静脈還流に与える影響について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "立位では下肢からの静脈還流が重力の影響を受けて不利になる。"
+        },
+        {
+          "id": "B",
+          "text": "重力は静脈還流に影響しない。"
+        },
+        {
+          "id": "C",
+          "text": "臥位では静脈還流が困難になる。"
+        },
+        {
+          "id": "D",
+          "text": "重力は動脈血流にのみ影響する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "立位では下肢からの静脈血が重力に逆らって心臓へ戻る必要があり、既存Q135の筋ポンプ作用や静脈弁(Q136)がこれを助けている。",
+      "tags": [
+        "静脈還流",
+        "重力"
+      ]
+    },
+    {
+      "id": "Q243",
+      "category": "循環器",
+      "subcategory": "リンパ系",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "リンパ管に回収されたリンパ液が最終的に静脈系へ戻る部位はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "静脈角"
+        },
+        {
+          "id": "B",
+          "text": "大動脈弓"
+        },
+        {
+          "id": "C",
+          "text": "肺静脈"
+        },
+        {
+          "id": "D",
+          "text": "冠状静脈洞"
+        }
+      ],
+      "answer": "A",
+      "explanation": "リンパ管に回収されたリンパ液は、主なリンパ本幹を経て静脈角で静脈系へ還流する。",
+      "tags": [
+        "リンパ系",
+        "リンパ管",
+        "静脈角"
+      ]
+    },
+    {
+      "id": "Q244",
+      "category": "循環器",
+      "subcategory": "血圧",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "血圧測定に一般的に用いられる部位はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "上腕動脈"
+        },
+        {
+          "id": "B",
+          "text": "頸動脈"
+        },
+        {
+          "id": "C",
+          "text": "大腿動脈"
+        },
+        {
+          "id": "D",
+          "text": "橈骨動脈のみ"
+        }
+      ],
+      "answer": "A",
+      "explanation": "血圧測定には一般に上腕動脈が用いられる。既存Q145(脈拍の触知部位)と関連づけて理解する。",
+      "tags": [
+        "血圧測定",
+        "上腕動脈"
+      ]
+    },
+    {
+      "id": "Q245",
+      "category": "循環器",
+      "subcategory": "心臓弁",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "三尖弁・僧帽弁の位置関係の統合として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "三尖弁は右心房・右心室間、僧帽弁は左心房・左心室間に位置し、いずれも房室弁である。"
+        },
+        {
+          "id": "B",
+          "text": "三尖弁・僧帽弁はどちらも右心系に位置する。"
+        },
+        {
+          "id": "C",
+          "text": "三尖弁は左心系、僧帽弁は右心系に位置する。"
+        },
+        {
+          "id": "D",
+          "text": "三尖弁・僧帽弁は半月弁に分類される。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "既存Q069（三尖弁）とQ232（僧帽弁）を統合し、両者がともに房室弁であり、それぞれ右心系・左心系に対応することを確認する。",
+      "tags": [
+        "三尖弁",
+        "僧帽弁",
+        "房室弁"
+      ]
+    },
+    {
+      "id": "Q246",
+      "category": "循環器",
+      "subcategory": "心臓弁",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "肺動脈弁・大動脈弁が半月弁(動脈弁)と呼ばれる由来として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "三日月形をした3枚の弁尖からなることに由来する。"
+        },
+        {
+          "id": "B",
+          "text": "心房と心室の間に位置することに由来する。"
+        },
+        {
+          "id": "C",
+          "text": "腱索・乳頭筋によって支えられることに由来する。"
+        },
+        {
+          "id": "D",
+          "text": "房室結節に隣接することに由来する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺動脈弁・大動脈弁は三日月形（半月形）をした3枚の弁尖から構成されることから半月弁と呼ばれる。腱索・乳頭筋による支持は房室弁の特徴であり、半月弁にはみられない。",
+      "tags": [
+        "半月弁",
+        "肺動脈弁",
+        "大動脈弁"
+      ]
+    },
+    {
+      "id": "Q247",
+      "category": "循環器",
+      "subcategory": "心臓の機能",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "心臓のポンプ機能から組織への酸素供給までの一連の流れとして正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心拍出量に応じた血液が動脈を経て毛細血管に至り、拡散によって組織へ酸素が供給される。"
+        },
+        {
+          "id": "B",
+          "text": "組織への酸素供給は静脈血によって直接行われる。"
+        },
+        {
+          "id": "C",
+          "text": "心拍出量は組織への酸素供給と無関係である。"
+        },
+        {
+          "id": "D",
+          "text": "毛細血管では酸素の受け渡しは行われない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "心拍出量(既存Q130)に応じて送り出された血液は動脈を経て毛細血管(既存Q137)に至り、拡散によって組織へ酸素が供給される。循環器領域全体を貫く一連の流れを統合する。",
+      "tags": [
+        "心拍出量",
+        "組織灌流"
+      ]
+    },
+    {
+      "id": "Q248",
+      "category": "循環器",
+      "subcategory": "心臓の位置",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "心臓の位置についての統合的理解として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "心尖は左第5肋間・鎖骨中線付近に、心底は上後方の大血管の出入り口として位置する。"
+        },
+        {
+          "id": "B",
+          "text": "心尖と心底は同じ位置を指す。"
+        },
+        {
+          "id": "C",
+          "text": "心尖は右側に、心底は左側に位置する。"
+        },
+        {
+          "id": "D",
+          "text": "心臓の位置に規則性はない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "既存Q016（心尖の位置）とQ125（心底の位置）を統合し、心臓全体の位置関係を整理する。",
+      "tags": [
+        "心尖",
+        "心底"
+      ]
+    },
+    {
+      "id": "Q249",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "体循環全体の血管抵抗について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "末梢血管抵抗の大部分は細動脈が担う。"
+        },
+        {
+          "id": "B",
+          "text": "末梢血管抵抗の大部分は大動脈が担う。"
+        },
+        {
+          "id": "C",
+          "text": "静脈が末梢血管抵抗の大部分を担う。"
+        },
+        {
+          "id": "D",
+          "text": "毛細血管が末梢血管抵抗の大部分を担う。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "体循環全体の末梢血管抵抗のうち、大部分は平滑筋に富み内腔を大きく変化させられる細動脈(既存Q227)が担っている。",
+      "tags": [
+        "末梢血管抵抗",
+        "細動脈"
+      ]
+    },
+    {
+      "id": "Q250",
+      "category": "循環器",
+      "subcategory": "血圧",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "臥位から立位への体位変換時に生じる循環の反応について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "下肢に血液が移動しやすくなるため、圧受容器を介して心拍数増加などの代償反応が生じる。"
+        },
+        {
+          "id": "B",
+          "text": "体位変換は循環にいかなる影響も与えない。"
+        },
+        {
+          "id": "C",
+          "text": "立位になると静脈還流は増加する。"
+        },
+        {
+          "id": "D",
+          "text": "体位変換時の循環調節に自律神経は関与しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "立位になると重力により下肢に血液が移動しやすくなり静脈還流が一時的に減少するが、圧受容器(既存Q239)を介した自律神経の反射により心拍数増加などの代償反応が生じ、血圧が維持される。",
+      "tags": [
+        "体位変換",
+        "圧受容器"
+      ]
+    },
+    {
+      "id": "Q251",
+      "category": "循環器",
+      "subcategory": "血圧",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "血圧の調節機構について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "自律神経による速やかな調節と、レニン-アンジオテンシン系などによる比較的緩やかな体液性調節の両方が存在する。"
+        },
+        {
+          "id": "B",
+          "text": "血圧は神経性の調節のみを受ける。"
+        },
+        {
+          "id": "C",
+          "text": "血圧はホルモンによる調節のみを受ける。"
+        },
+        {
+          "id": "D",
+          "text": "血圧の調節機構は存在しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "血圧は、圧受容器を介した自律神経による速やかな調節と、レニン-アンジオテンシン系などによる比較的緩やかな体液性調節によって維持される。レニン自体は腎臓から分泌される酵素である。",
+      "tags": [
+        "血圧調節",
+        "自律神経",
+        "ホルモン"
+      ]
+    },
+    {
+      "id": "Q252",
+      "category": "循環器",
+      "subcategory": "冠状動脈",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "冠循環全体の血液の流れとして正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "冠状動脈が心筋に血液を供給し、多くは冠状静脈洞を経て右心房へ還流する。"
+        },
+        {
+          "id": "B",
+          "text": "冠状動脈は心筋に血液を供給しない。"
+        },
+        {
+          "id": "C",
+          "text": "冠循環の血液はすべて肺静脈へ還流する。"
+        },
+        {
+          "id": "D",
+          "text": "冠状静脈洞は動脈血を心筋へ供給する構造である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "冠状動脈(既存Q027,073,074)が心筋に血液を供給し、心筋を還流した血液の多くは冠状静脈洞(既存Q140)を経て右心房へ還流する。冠循環の往復経路を統合する。",
+      "tags": [
+        "冠状動脈",
+        "冠状静脈洞",
+        "冠循環"
+      ]
+    },
+    {
+      "id": "Q253",
+      "category": "呼吸器",
+      "subcategory": "上気道",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "鼻中隔について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "鼻腔を左右に分ける構造である。"
+        },
+        {
+          "id": "B",
+          "text": "鼻腔と口腔を隔てる構造である。"
+        },
+        {
+          "id": "C",
+          "text": "鼻中隔は喉頭の一部である。"
+        },
+        {
+          "id": "D",
+          "text": "鼻中隔は肺の一部である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "鼻中隔は鼻腔を左右に分ける構造であり、既存Q151（鼻腔の機能）を構造面から補完する。",
+      "tags": [
+        "鼻中隔",
+        "鼻腔"
+      ]
+    },
+    {
+      "id": "Q254",
+      "category": "呼吸器",
+      "subcategory": "上気道",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "副鼻腔について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "頭蓋骨内にある、鼻腔とつながる空洞である。"
+        },
+        {
+          "id": "B",
+          "text": "副鼻腔は肺の一部である。"
+        },
+        {
+          "id": "C",
+          "text": "副鼻腔は喉頭に存在する。"
+        },
+        {
+          "id": "D",
+          "text": "副鼻腔には空洞は存在しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "副鼻腔は頭蓋骨内にあり、鼻腔とつながる空洞で、吸気の加温・加湿や声の共鳴などに関与するとされる。",
+      "tags": [
+        "副鼻腔"
+      ]
+    },
+    {
+      "id": "Q255",
+      "category": "呼吸器",
+      "subcategory": "喉頭",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "声帯について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "喉頭内に位置し、発声に直接関わる構造である。"
+        },
+        {
+          "id": "B",
+          "text": "声帯は気管の末端に位置する。"
+        },
+        {
+          "id": "C",
+          "text": "声帯は肺胞の一部である。"
+        },
+        {
+          "id": "D",
+          "text": "声帯は嚥下にのみ関わり、発声には関与しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "声帯は喉頭内に位置し、呼気によって振動することで発声に直接関わる構造である。既存Q080（喉頭）の機能を具体化する。",
+      "tags": [
+        "声帯",
+        "喉頭"
+      ],
+      "image": {
+        "prompt_id": "IMG-010",
+        "asset": "assets/images/q032_larynx.webp",
+        "alt": "喉頭の前面図（冠状断面窓に声帯を表示）",
+        "marker": "②",
+        "marker_target": "声帯",
+        "overlay": {
+          "x": 0.5,
+          "y": 0.4269,
+          "label": "②"
+        }
+      }
+    },
+    {
+      "id": "Q256",
+      "category": "呼吸器",
+      "subcategory": "喉頭",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "喉頭蓋の機能について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "嚥下時に気道の入口を閉鎖し、食物や液体が気管に入るのを防ぐ。"
+        },
+        {
+          "id": "B",
+          "text": "喉頭蓋は常に気道を閉鎖している。"
+        },
+        {
+          "id": "C",
+          "text": "喉頭蓋は声帯の一部である。"
+        },
+        {
+          "id": "D",
+          "text": "喉頭蓋は肺胞の防御を担う。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "喉頭蓋は嚥下時に反射的に気道の入口を閉鎖し、食物や液体が気管に入る(誤嚥)のを防ぐ、呼吸器の重要な防御機構である。",
+      "tags": [
+        "喉頭蓋",
+        "気道の防御"
+      ],
+      "image": {
+        "prompt_id": "IMG-010",
+        "asset": "assets/images/q032_larynx.webp",
+        "alt": "喉頭の前面図（冠状断面窓に声帯を表示）",
+        "marker": "③",
+        "marker_target": "喉頭蓋",
+        "overlay": {
+          "x": 0.5,
+          "y": 0.1692,
+          "label": "③"
+        }
+      }
+    },
+    {
+      "id": "Q257",
+      "category": "呼吸器",
+      "subcategory": "気管",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "気管の走行について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "喉頭に続き、頸部から胸部へ下行し、気管分岐部で左右の主気管支に分かれる。"
+        },
+        {
+          "id": "B",
+          "text": "気管は腹部まで下行する。"
+        },
+        {
+          "id": "C",
+          "text": "気管は喉頭より上方に位置する。"
+        },
+        {
+          "id": "D",
+          "text": "気管は分岐せず、そのまま肺胞に至る。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "気管は喉頭に続いて頸部から胸部へ下行し、気管分岐部(既存Q259参照)で左右の主気管支に分かれる。既存Q081（気管）の走行を補完する。",
+      "tags": [
+        "気管",
+        "気管分岐部"
+      ]
+    },
+    {
+      "id": "Q258",
+      "category": "呼吸器",
+      "subcategory": "気管",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "気管の壁の構造について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "C字型の気管軟骨が前面・側面を支え、後壁は膜性壁(平滑筋を含む)である。"
+        },
+        {
+          "id": "B",
+          "text": "気管の壁全体が硬い骨組織でできている。"
+        },
+        {
+          "id": "C",
+          "text": "気管には軟骨が存在しない。"
+        },
+        {
+          "id": "D",
+          "text": "気管の後壁も前面と同じ硬い軟骨でできている。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "気管はC字型の気管軟骨が前面・側面を支えることで内腔の虚脱を防ぎ、食道に接する後壁は軟骨を欠く膜性壁(平滑筋を含む)となっている。",
+      "tags": [
+        "気管軟骨",
+        "気管"
+      ]
+    },
+    {
+      "id": "Q259",
+      "category": "呼吸器",
+      "subcategory": "気管支",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "気管分岐部について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "気管が左右の主気管支に分かれる部位である。"
+        },
+        {
+          "id": "B",
+          "text": "気管分岐部は喉頭に位置する。"
+        },
+        {
+          "id": "C",
+          "text": "気管分岐部は肺胞の末端に位置する。"
+        },
+        {
+          "id": "D",
+          "text": "気管分岐部では気管支がさらに区域気管支に分かれる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "気管分岐部は気管が左右の主気管支に分かれる部位であり、既存Q152（主気管支の左右差）の位置的な基準点となる。",
+      "tags": [
+        "気管分岐部",
+        "主気管支"
+      ]
+    },
+    {
+      "id": "Q260",
+      "category": "呼吸器",
+      "subcategory": "肺葉",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "肺門について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "主気管支・肺動脈・肺静脈などが出入りする、肺の内側面の部位である。"
+        },
+        {
+          "id": "B",
+          "text": "肺門は肺の最外側に位置する。"
+        },
+        {
+          "id": "C",
+          "text": "肺門は肺胞が集まる部位である。"
+        },
+        {
+          "id": "D",
+          "text": "肺門には血管も気管支も存在しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺門は肺の内側面(縦隔側)に位置し、主気管支・肺動脈・肺静脈・気管支動脈などが出入りする部位である。呼吸器（気管支）と循環器（肺動脈・肺静脈）が交わる要所である。",
+      "tags": [
+        "肺門"
+      ]
+    },
+    {
+      "id": "Q261",
+      "category": "呼吸器",
+      "subcategory": "肺葉",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "肺自体を栄養する血管について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "気管支動脈が、肺組織自体に酸素・栄養を供給する。"
+        },
+        {
+          "id": "B",
+          "text": "肺動脈が肺組織自体を栄養する。"
+        },
+        {
+          "id": "C",
+          "text": "肺静脈が肺組織自体を栄養する。"
+        },
+        {
+          "id": "D",
+          "text": "肺は血液による栄養を必要としない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺動脈(既存の肺循環)はガス交換のために血液を肺胞へ運ぶ血管であるのに対し、気管支動脈は肺組織自体(気管支壁など)に酸素・栄養を供給する、別系統の血管である。",
+      "tags": [
+        "気管支動脈"
+      ]
+    },
+    {
+      "id": "Q262",
+      "category": "呼吸器",
+      "subcategory": "呼吸筋",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "努力吸気時に働く呼吸補助筋として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "胸鎖乳突筋・斜角筋群"
+        },
+        {
+          "id": "B",
+          "text": "横隔膜のみ"
+        },
+        {
+          "id": "C",
+          "text": "内肋間筋のみ"
+        },
+        {
+          "id": "D",
+          "text": "腹筋群のみ"
+        }
+      ],
+      "answer": "A",
+      "explanation": "安静時の吸気は主に横隔膜・外肋間筋(既存Q038)が担うが、努力吸気時にはこれに加えて胸鎖乳突筋・斜角筋群などの呼吸補助筋が動員される。",
+      "tags": [
+        "呼吸補助筋"
+      ]
+    },
+    {
+      "id": "Q263",
+      "category": "呼吸器",
+      "subcategory": "換気",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "肺コンプライアンスについて正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "肺の伸展しやすさを表す指標であり、サーファクタントなどにより維持される。"
+        },
+        {
+          "id": "B",
+          "text": "肺コンプライアンスは肺活量と同じ意味である。"
+        },
+        {
+          "id": "C",
+          "text": "肺コンプライアンスは気道抵抗と同じ意味である。"
+        },
+        {
+          "id": "D",
+          "text": "肺コンプライアンスは呼吸数を表す指標である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺コンプライアンスは肺の伸展しやすさを表す指標であり、既存Q165（肺サーファクタント）による表面張力の低下などによって適切に維持される。",
+      "tags": [
+        "肺コンプライアンス"
+      ]
+    },
+    {
+      "id": "Q264",
+      "category": "呼吸器",
+      "subcategory": "換気",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "気道抵抗について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "気道(特に気管支)の内腔の太さによって変化し、狭くなるほど抵抗は増加する。"
+        },
+        {
+          "id": "B",
+          "text": "気道抵抗は気道の太さと無関係である。"
+        },
+        {
+          "id": "C",
+          "text": "気道抵抗は肺の弾性のみで決まる。"
+        },
+        {
+          "id": "D",
+          "text": "気道抵抗は呼吸筋の力によってのみ決まる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "気道抵抗は気道内腔の太さによって変化し、気管支平滑筋(既存Q268)の収縮などにより内腔が狭くなると抵抗は増加する。循環器の末梢血管抵抗（既存Q225）と類似した考え方である。",
+      "tags": [
+        "気道抵抗"
+      ]
+    },
+    {
+      "id": "Q265",
+      "category": "呼吸器",
+      "subcategory": "ガス交換",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "換気血流比について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "肺胞換気量と肺毛細血管血流量のバランスを表し、効率的なガス交換に重要である。"
+        },
+        {
+          "id": "B",
+          "text": "換気血流比は呼吸数のみを表す指標である。"
+        },
+        {
+          "id": "C",
+          "text": "換気血流比は血圧を表す指標である。"
+        },
+        {
+          "id": "D",
+          "text": "換気血流比は消化管の血流を表す。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "換気血流比は、肺胞への換気量と、それを取り巻く毛細血管の血流量とのバランスを表す概念で、両者が適切に釣り合うことで効率的なガス交換(既存Q172)が成立する。",
+      "tags": [
+        "換気血流比",
+        "ガス交換"
+      ]
+    },
+    {
+      "id": "Q266",
+      "category": "呼吸器",
+      "subcategory": "換気",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "肺胞換気量について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "1回換気量から死腔の分を除いた、実際にガス交換に関わる換気量である。"
+        },
+        {
+          "id": "B",
+          "text": "肺胞換気量は1回換気量と全く同じ量である。"
+        },
+        {
+          "id": "C",
+          "text": "肺胞換気量は死腔の換気量のみを指す。"
+        },
+        {
+          "id": "D",
+          "text": "肺胞換気量は肺活量と同じ意味である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺胞換気量は、1回換気量(既存Q159)のうち死腔(既存Q173)を除いた、実際に肺胞でのガス交換に関わる換気量を指す。",
+      "tags": [
+        "肺胞換気量",
+        "死腔"
+      ]
+    },
+    {
+      "id": "Q267",
+      "category": "呼吸器",
+      "subcategory": "ガス交換",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "動脈血酸素飽和度について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "血液中のヘモグロビンのうち、酸素と結合している割合を表す。"
+        },
+        {
+          "id": "B",
+          "text": "血液中に溶解した酸素の量のみを表す。"
+        },
+        {
+          "id": "C",
+          "text": "動脈血酸素飽和度は二酸化炭素の量を表す指標である。"
+        },
+        {
+          "id": "D",
+          "text": "動脈血酸素飽和度は血圧を表す指標である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "動脈血酸素飽和度は、血液中のヘモグロビン(既存Q162)のうち、実際に酸素と結合しているものの割合を表す指標である。",
+      "tags": [
+        "酸素飽和度",
+        "ヘモグロビン"
+      ]
+    },
+    {
+      "id": "Q268",
+      "category": "呼吸器",
+      "subcategory": "気管支",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "気管支平滑筋について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "気管支壁に存在し、収縮・弛緩によって気道の内腔を調節する。"
+        },
+        {
+          "id": "B",
+          "text": "気管支平滑筋は骨格筋の一種である。"
+        },
+        {
+          "id": "C",
+          "text": "気管支平滑筋は肺胞にのみ存在する。"
+        },
+        {
+          "id": "D",
+          "text": "気管支平滑筋は気道の内腔調節に関与しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "気管支平滑筋は気管支壁に存在し、その収縮・弛緩によって気道の内腔の太さを変化させ、気道抵抗(既存Q264)に影響を与える。",
+      "tags": [
+        "気管支平滑筋",
+        "気道抵抗"
+      ]
+    },
+    {
+      "id": "Q269",
+      "category": "呼吸器",
+      "subcategory": "呼吸筋",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "呼吸筋の神経支配について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "横隔膜は横隔神経、肋間筋は肋間神経の支配を受ける。"
+        },
+        {
+          "id": "B",
+          "text": "すべての呼吸筋は同一の神経に支配される。"
+        },
+        {
+          "id": "C",
+          "text": "呼吸筋は神経支配を受けない不随意筋である。"
+        },
+        {
+          "id": "D",
+          "text": "横隔膜は肋間神経に支配される。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "横隔膜は横隔神経(既存Q083)、肋間筋は肋間神経によってそれぞれ支配されている。呼吸筋は体性神経系に支配される骨格筋である。",
+      "tags": [
+        "横隔神経",
+        "肋間神経",
+        "呼吸筋"
+      ]
+    },
+    {
+      "id": "Q270",
+      "category": "呼吸器",
+      "subcategory": "ガス交換",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "肺循環の血管抵抗の特徴について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "体循環に比べて低圧・低抵抗の系である。"
+        },
+        {
+          "id": "B",
+          "text": "肺循環は体循環より高圧・高抵抗の系である。"
+        },
+        {
+          "id": "C",
+          "text": "肺循環と体循環の血管抵抗は等しい。"
+        },
+        {
+          "id": "D",
+          "text": "肺循環には血管抵抗が存在しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺循環(既存Q014,019)は体循環に比べて低圧・低抵抗の系であり、これは右心室の壁が左心室より薄い(既存Q128)こととも対応している。",
+      "tags": [
+        "肺循環",
+        "血管抵抗"
+      ]
+    },
+    {
+      "id": "Q271",
+      "category": "呼吸器",
+      "subcategory": "下気道",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "気道の粘液線毛エスカレーターについて正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "粘液が異物を捕捉し、線毛運動によって咽頭側へ運ばれる、一連の防御機構である。"
+        },
+        {
+          "id": "B",
+          "text": "粘液線毛エスカレーターは異物を肺胞へ運ぶ機構である。"
+        },
+        {
+          "id": "C",
+          "text": "線毛運動のみで異物除去が完結し、粘液は関与しない。"
+        },
+        {
+          "id": "D",
+          "text": "粘液線毛エスカレーターは消化管に存在する機構である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "気道上皮から分泌される粘液が異物を捕捉し、既存Q166の線毛運動によって咽頭側へ運ばれるという一連の仕組みを、粘液線毛エスカレーターという。",
+      "tags": [
+        "粘液線毛エスカレーター",
+        "線毛運動"
+      ]
+    },
+    {
+      "id": "Q272",
+      "category": "呼吸器",
+      "subcategory": "肺葉",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "肺葉と気管支肺区域の関係について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "各肺葉はさらにいくつかの気管支肺区域に分けられる。"
+        },
+        {
+          "id": "B",
+          "text": "肺葉は分割されない最小単位である。"
+        },
+        {
+          "id": "C",
+          "text": "気管支肺区域は肺葉より大きい単位である。"
+        },
+        {
+          "id": "D",
+          "text": "気管支肺区域は左右の肺全体を指す。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "各肺葉(既存Q035,036)はさらにいくつかの気管支肺区域に分けられる。個々の区域名・番号までは本アプリの基礎範囲を超えるため扱わない。",
+      "tags": [
+        "肺葉",
+        "気管支肺区域"
+      ]
+    },
+    {
+      "id": "Q273",
+      "category": "呼吸器",
+      "subcategory": "呼吸筋",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "呼吸筋の使い分けについて正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "安静時は横隔膜が主体となり、努力時には呼吸補助筋・呼気筋が追加で動員される。"
+        },
+        {
+          "id": "B",
+          "text": "安静時・努力時とも全く同じ筋のみが働く。"
+        },
+        {
+          "id": "C",
+          "text": "呼気には筋の関与が一切ない。"
+        },
+        {
+          "id": "D",
+          "text": "努力時には吸気筋のみが働き、呼気筋は働かない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "安静時の呼吸は横隔膜(既存Q170)を主体とした受動的な過程が中心だが、運動時など換気量を増やす必要がある努力呼吸では、呼吸補助筋(Q262)や呼気筋(既存Q158)が追加で動員される。",
+      "tags": [
+        "呼吸筋",
+        "呼吸調節"
+      ]
+    },
+    {
+      "id": "Q274",
+      "category": "呼吸器",
+      "subcategory": "呼吸器系の構造分類",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "上気道・下気道の区分として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "上気道は鼻腔から喉頭まで、下気道は気管から末梢の気道を指す。"
+        },
+        {
+          "id": "B",
+          "text": "上気道と下気道の境界は肺胞である。"
+        },
+        {
+          "id": "C",
+          "text": "下気道は鼻腔のみを指す。"
+        },
+        {
+          "id": "D",
+          "text": "上気道・下気道という区分は存在しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "上気道は鼻腔から喉頭まで、下気道は気管から気管支・細気管支などの末梢の気道を指す。既存Q031（上気道）・Q079（下気道）を統合する。",
+      "tags": [
+        "上気道",
+        "下気道"
+      ]
+    },
+    {
+      "id": "Q275",
+      "category": "呼吸器",
+      "subcategory": "肺胞",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "肺の弾性とサーファクタントの関係について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "サーファクタントが表面張力を下げることで、肺の適度な伸展性(コンプライアンス)が保たれる。"
+        },
+        {
+          "id": "B",
+          "text": "サーファクタントは肺の弾性を完全に消失させる。"
+        },
+        {
+          "id": "C",
+          "text": "肺の弾性はサーファクタントと無関係である。"
+        },
+        {
+          "id": "D",
+          "text": "サーファクタントは肺胞を虚脱させる方向にはたらく。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "既存Q165（サーファクタント）とQ263（肺コンプライアンス）を統合し、サーファクタントが表面張力を下げることで肺胞の虚脱を防ぎ、適度な伸展性が保たれることを確認する。",
+      "tags": [
+        "サーファクタント",
+        "肺コンプライアンス"
+      ]
+    },
+    {
+      "id": "Q276",
+      "category": "呼吸器",
+      "subcategory": "ガス交換",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "外気から組織までの酸素の流れとして正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "外気→肺胞→拡散により血液→ヘモグロビンと結合→組織で解離という流れをたどる。"
+        },
+        {
+          "id": "B",
+          "text": "酸素は肺胞から直接組織へ移動し、血液は関与しない。"
+        },
+        {
+          "id": "C",
+          "text": "酸素は常に血漿に溶解した状態のみで運ばれる。"
+        },
+        {
+          "id": "D",
+          "text": "酸素は組織で産生され、肺から排出される。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "外気中の酸素は肺胞に達し、拡散(既存Q172)により血液に取り込まれ、ヘモグロビン(既存Q162)と結合して全身へ運ばれ、組織で解離して利用される。呼吸器領域全体を貫く酸素の流れを統合する。",
+      "tags": [
+        "ガス交換",
+        "酸素運搬"
+      ]
+    },
+    {
+      "id": "Q277",
+      "category": "呼吸器",
+      "subcategory": "呼吸調節",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "呼吸調節の全体像として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "呼吸中枢が化学受容器からの情報を受け、横隔神経・肋間神経を介して呼吸筋の活動を調節する。"
+        },
+        {
+          "id": "B",
+          "text": "呼吸調節は化学受容器のみで完結し、呼吸中枢は関与しない。"
+        },
+        {
+          "id": "C",
+          "text": "呼吸筋は神経の指令を受けずに自律的に動く。"
+        },
+        {
+          "id": "D",
+          "text": "呼吸調節に呼吸筋への神経支配は関与しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "呼吸中枢(既存Q039)は化学受容器(既存Q164)からの血中二酸化炭素濃度などの情報を受け取り、横隔神経・肋間神経(Q269)を介して呼吸筋の活動を調節するという一連の仕組みで、呼吸を調節している。",
+      "tags": [
+        "呼吸調節",
+        "呼吸中枢",
+        "化学受容器"
+      ]
+    },
+    {
+      "id": "Q278",
+      "category": "泌尿器",
+      "subcategory": "腎臓の外形",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "成人の腎臓の大きさの目安について、最も近いものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "握りこぶし大、長さ約10cm程度"
+        },
+        {
+          "id": "B",
+          "text": "手のひらより大きく、長さ約30cm"
+        },
+        {
+          "id": "C",
+          "text": "米粒程度の大きさ"
+        },
+        {
+          "id": "D",
+          "text": "肺と同程度の大きさ"
+        }
+      ],
+      "answer": "A",
+      "explanation": "成人の腎臓は握りこぶし大程度、長さはおよそ10cm程度とされる。",
+      "tags": [
+        "腎臓の大きさ"
+      ]
+    },
+    {
+      "id": "Q279",
+      "category": "泌尿器",
+      "subcategory": "腎臓の外形",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "腎臓の被膜構造について、既存の線維被膜・脂肪被膜に加えて正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "最外層には腎筋膜があり、腎臓を後腹壁に固定する。"
+        },
+        {
+          "id": "B",
+          "text": "腎臓を包む被膜は線維被膜のみである。"
+        },
+        {
+          "id": "C",
+          "text": "脂肪被膜が最も外側の層である。"
+        },
+        {
+          "id": "D",
+          "text": "腎筋膜は腎臓の内部構造の一部である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎臓は内側から線維被膜・脂肪被膜・腎筋膜という順に包まれており、腎筋膜は腎臓を後腹壁に固定する役割を果たす。既存Q196(線維被膜・脂肪被膜)を完成させる。",
+      "tags": [
+        "腎筋膜",
+        "被膜"
+      ]
+    },
+    {
+      "id": "Q280",
+      "category": "泌尿器",
+      "subcategory": "腎臓の内部構造",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "腎柱について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腎皮質の一部が腎髄質(腎錐体)の間に入り込んだ部分である。"
+        },
+        {
+          "id": "B",
+          "text": "腎柱は腎盂の一部である。"
+        },
+        {
+          "id": "C",
+          "text": "腎柱は尿管の一部である。"
+        },
+        {
+          "id": "D",
+          "text": "腎柱は膀胱に存在する構造である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎柱は腎皮質の一部が隣り合う腎錐体(既存Q092)の間に入り込んだ部分であり、腎臓内部構造の理解を補完する。",
+      "tags": [
+        "腎柱",
+        "腎皮質"
+      ]
+    },
+    {
+      "id": "Q281",
+      "category": "泌尿器",
+      "subcategory": "腎臓の内部構造",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "小腎杯・大腎杯について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "小腎杯が腎乳頭を包み、複数の小腎杯が集まって大腎杯を形成する。"
+        },
+        {
+          "id": "B",
+          "text": "大腎杯が集まって小腎杯を形成する。"
+        },
+        {
+          "id": "C",
+          "text": "小腎杯は腎盂よりも下流(尿管側)に位置する。"
+        },
+        {
+          "id": "D",
+          "text": "小腎杯・大腎杯は糸球体の一部である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "小腎杯は腎乳頭(既存Q093)を包む構造で、複数の小腎杯が集まって大腎杯を形成し、大腎杯がさらに集まって腎盂(既存Q194)を形成する。既存Q100(尿の通り道)の階層構造を明確化する。",
+      "tags": [
+        "小腎杯",
+        "大腎杯"
+      ]
+    },
+    {
+      "id": "Q282",
+      "category": "泌尿器",
+      "subcategory": "腎血流・再吸収",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "尿細管周囲毛細血管の主な役割として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "尿細管から再吸収された水や溶質を血液へ戻す。"
+        },
+        {
+          "id": "B",
+          "text": "尿を膀胱へ運ぶ。"
+        },
+        {
+          "id": "C",
+          "text": "糸球体濾液を腎盂へ直接送る。"
+        },
+        {
+          "id": "D",
+          "text": "尿を一時的に貯留する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "尿細管周囲毛細血管は尿細管に沿って分布し、尿細管から再吸収された水や溶質を血液へ戻す役割をもつ。",
+      "tags": [
+        "尿細管周囲毛細血管",
+        "再吸収"
+      ]
+    },
+    {
+      "id": "Q283",
+      "category": "泌尿器",
+      "subcategory": "腎臓の内分泌機能",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "傍糸球体装置について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "糸球体の近くに存在し、レニンを分泌する部位である。"
+        },
+        {
+          "id": "B",
+          "text": "傍糸球体装置は膀胱に存在する。"
+        },
+        {
+          "id": "C",
+          "text": "傍糸球体装置はエリスロポエチンのみを分泌する。"
+        },
+        {
+          "id": "D",
+          "text": "傍糸球体装置は尿の通路である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "傍糸球体装置は糸球体の近傍に存在し、既存Q188のレニンを分泌する部位である。",
+      "tags": [
+        "傍糸球体装置",
+        "レニン"
+      ]
+    },
+    {
+      "id": "Q284",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "糸球体濾過量(GFR)について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "単位時間あたりに糸球体で濾過される血漿量を表す、腎機能の指標である。"
+        },
+        {
+          "id": "B",
+          "text": "糸球体濾過量は尿の色を表す指標である。"
+        },
+        {
+          "id": "C",
+          "text": "糸球体濾過量は血圧そのものを指す。"
+        },
+        {
+          "id": "D",
+          "text": "糸球体濾過量は膀胱の容量を表す。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "糸球体濾過量(GFR)は、単位時間あたりに糸球体(既存Q181)で濾過される血漿量を表し、腎機能を評価する代表的な生理学的指標である。",
+      "tags": [
+        "糸球体濾過量",
+        "GFR"
+      ]
+    },
+    {
+      "id": "Q285",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "腎血流の自己調節能について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "血圧が一定範囲で変動しても、腎血流量をほぼ一定に保つ仕組みが備わっている。"
+        },
+        {
+          "id": "B",
+          "text": "腎血流は血圧の変化にそのまま比例して変動する。"
+        },
+        {
+          "id": "C",
+          "text": "腎臓には血流を調節する仕組みが存在しない。"
+        },
+        {
+          "id": "D",
+          "text": "腎血流は心拍数のみによって決まる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎臓には、血圧が一定範囲で変動しても腎血流量(既存Q191)をほぼ一定に保つ自己調節能が備わっており、安定した尿生成を支えている。",
+      "tags": [
+        "腎血流",
+        "自己調節能"
+      ]
+    },
+    {
+      "id": "Q286",
+      "category": "泌尿器",
+      "subcategory": "ネフロン",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "ヘンレ係蹄による尿濃縮の仕組みについて正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "下行脚と上行脚の間で対向流の仕組みがはたらき、腎髄質の浸透圧勾配を形成して尿を濃縮する。"
+        },
+        {
+          "id": "B",
+          "text": "ヘンレ係蹄では尿の濃縮は行われない。"
+        },
+        {
+          "id": "C",
+          "text": "ヘンレ係蹄は水のみを分泌する構造である。"
+        },
+        {
+          "id": "D",
+          "text": "ヘンレ係蹄は糸球体濾過を行う構造である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "ヘンレ係蹄(既存Q178)は下行脚・上行脚からなり、両者の間で対向流の仕組みがはたらくことで腎髄質に浸透圧勾配を形成し、尿を濃縮する。",
+      "tags": [
+        "ヘンレ係蹄",
+        "対向流増幅系",
+        "尿濃縮"
+      ]
+    },
+    {
+      "id": "Q287",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "尿浸透圧について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "尿中に溶けている溶質の濃度を反映し、体内の水分状態によって変動する。"
+        },
+        {
+          "id": "B",
+          "text": "尿浸透圧は常に一定である。"
+        },
+        {
+          "id": "C",
+          "text": "尿浸透圧は血圧を直接表す指標である。"
+        },
+        {
+          "id": "D",
+          "text": "尿浸透圧は尿の色そのものである。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "尿浸透圧は尿中の溶質濃度を反映し、体内の水分状態(既存の浸透Q204、抗利尿ホルモンQ185)によって変動する。",
+      "tags": [
+        "尿浸透圧"
+      ]
+    },
+    {
+      "id": "Q288",
+      "category": "泌尿器",
+      "subcategory": "尿路上皮",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "膀胱の内腔を覆う粘膜について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "尿路上皮(移行上皮)に覆われ、伸展に対応できる構造をもつ。"
+        },
+        {
+          "id": "B",
+          "text": "膀胱の内腔は骨格筋で覆われる。"
+        },
+        {
+          "id": "C",
+          "text": "膀胱の内腔は単層の扁平上皮で覆われる。"
+        },
+        {
+          "id": "D",
+          "text": "膀胱の内腔に上皮は存在しない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "膀胱の内腔は尿路上皮(既存Q049,097)に覆われ、この上皮は伸展・収縮に応じて形を変えられる移行上皮としての特徴をもつ。既存Q192(膀胱の伸展性)と接続する。",
+      "tags": [
+        "尿路上皮",
+        "膀胱"
+      ]
+    },
+    {
+      "id": "Q289",
+      "category": "泌尿器",
+      "subcategory": "排尿反射",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "内尿道括約筋について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "平滑筋からなり、不随意的に蓄尿時に収縮し排尿時に弛緩する。"
+        },
+        {
+          "id": "B",
+          "text": "内尿道括約筋は骨格筋であり随意的に調節できる。"
+        },
+        {
+          "id": "C",
+          "text": "内尿道括約筋は常に弛緩している。"
+        },
+        {
+          "id": "D",
+          "text": "内尿道括約筋は外尿道括約筋と同じ構造である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "内尿道括約筋は平滑筋からなり、既存Q089・090のとおり不随意的に蓄尿時に収縮し排尿時に弛緩する。骨格筋であり随意的に調節できる外尿道括約筋(既存Q094)とは対照的である。",
+      "tags": [
+        "内尿道括約筋",
+        "外尿道括約筋"
+      ]
+    },
+    {
+      "id": "Q290",
+      "category": "泌尿器",
+      "subcategory": "排尿反射",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "膀胱の排尿筋について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "平滑筋からなり、収縮することで膀胱内の尿を排出する。"
+        },
+        {
+          "id": "B",
+          "text": "排尿筋は骨格筋であり随意的に収縮する。"
+        },
+        {
+          "id": "C",
+          "text": "排尿筋は膀胱の粘膜を構成する組織である。"
+        },
+        {
+          "id": "D",
+          "text": "排尿筋は尿管に存在する構造である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "排尿筋は膀胱壁を構成する平滑筋であり、副交感神経の作用(既存Q197)により収縮して膀胱内の尿を排出する。",
+      "tags": [
+        "排尿筋"
+      ]
+    },
+    {
+      "id": "Q291",
+      "category": "泌尿器",
+      "subcategory": "尿路",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "尿管における尿の移送について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "尿管平滑筋の蠕動運動によって、尿は腎盂から膀胱へ運ばれる。"
+        },
+        {
+          "id": "B",
+          "text": "尿は重力のみによって尿管を移動する。"
+        },
+        {
+          "id": "C",
+          "text": "尿管に平滑筋は存在しない。"
+        },
+        {
+          "id": "D",
+          "text": "尿管では尿の逆流が常に起こっている。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "尿管の壁には平滑筋があり、その蠕動運動によって尿は腎盂から膀胱へ能動的に運ばれる。既存Q195(尿管の走行)を機能面から補完する。",
+      "tags": [
+        "尿管",
+        "蠕動運動"
+      ]
+    },
+    {
+      "id": "Q292",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 1,
+      "question": "腎臓の老廃物排泄機能について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "血液中の老廃物を濾過・排泄し、体内の恒常性を維持する。"
+        },
+        {
+          "id": "B",
+          "text": "腎臓は老廃物の排泄に関与しない。"
+        },
+        {
+          "id": "C",
+          "text": "老廃物の排泄は膀胱のみで行われる。"
+        },
+        {
+          "id": "D",
+          "text": "腎臓はすべての老廃物を再吸収する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎臓は血液中の老廃物(尿素など)を濾過・排泄することで、総論の恒常性(既存Q112)の維持に貢献している。",
+      "tags": [
+        "老廃物",
+        "恒常性"
+      ]
+    },
+    {
+      "id": "Q293",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "尿の主な成分について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "水分に、尿素などの老廃物や電解質が溶けている。"
+        },
+        {
+          "id": "B",
+          "text": "尿はグルコースを主成分とする。"
+        },
+        {
+          "id": "C",
+          "text": "尿にはタンパク質が大量に含まれるのが正常である。"
+        },
+        {
+          "id": "D",
+          "text": "尿は血液そのものである。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "正常な尿は水分を主体とし、尿素などの老廃物や電解質が溶けている。健常時、グルコースやタンパク質は糸球体で濾過されても大部分が再吸収され、尿中にはほとんど排出されない。",
+      "tags": [
+        "尿の成分"
+      ]
+    },
+    {
+      "id": "Q294",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "尿量の調節に関わるホルモンの組み合わせとして適切なものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "抗利尿ホルモンとレニン-アンジオテンシン系"
+        },
+        {
+          "id": "B",
+          "text": "インスリンとグルカゴンのみ"
+        },
+        {
+          "id": "C",
+          "text": "甲状腺ホルモンのみ"
+        },
+        {
+          "id": "D",
+          "text": "尿量はホルモンの影響を受けない。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "尿量は、集合管での水の再吸収を促進する抗利尿ホルモン(既存Q185)と、Na+再吸収などを介するレニン-アンジオテンシン系(既存Q188)によって統合的に調節される。",
+      "tags": [
+        "抗利尿ホルモン",
+        "レニン-アンジオテンシン系",
+        "尿量調節"
+      ]
+    },
+    {
+      "id": "Q295",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "腎臓による主な電解質・ミネラル調節の組み合わせとして正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "ナトリウムの再吸収調節、カリウムの分泌調節、活性型ビタミンDを介したカルシウム吸収の調節"
+        },
+        {
+          "id": "B",
+          "text": "腎臓はナトリウムの調節にのみ関与する。"
+        },
+        {
+          "id": "C",
+          "text": "腎臓はカルシウム代謝に一切関与しない。"
+        },
+        {
+          "id": "D",
+          "text": "腎臓は電解質調節を行わない臓器である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎臓はナトリウムの再吸収調節(既存Q186)、カリウムの分泌調節、活性型ビタミンD(既存Q190)を介したカルシウム吸収の調節など、複数の電解質・ミネラル調節に関与する統合的な臓器である。",
+      "tags": [
+        "電解質調節",
+        "活性型ビタミンD"
+      ]
+    },
+    {
+      "id": "Q296",
+      "category": "泌尿器",
+      "subcategory": "尿生成",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "体液の酸塩基平衡調節における腎臓と呼吸器の役割分担として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "呼吸器は二酸化炭素の排出により速やかに、腎臓は水素イオン排泄・重炭酸イオン再吸収により緩やかに調節する。"
+        },
+        {
+          "id": "B",
+          "text": "腎臓のみが酸塩基平衡を調節し、呼吸器は関与しない。"
+        },
+        {
+          "id": "C",
+          "text": "呼吸器のみが酸塩基平衡を調節し、腎臓は関与しない。"
+        },
+        {
+          "id": "D",
+          "text": "腎臓と呼吸器は同じ速さで酸塩基平衡を調節する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "呼吸器は二酸化炭素の排出量を調節することで比較的速やかに、腎臓は水素イオンの排泄や重炭酸イオンの再吸収(既存Q187)を通じて比較的緩やかに、体液の酸塩基平衡(総論Q116,212)を調節する。両者の時間スケールの違いを統合的に理解する。",
+      "tags": [
+        "酸塩基平衡",
+        "呼吸器",
+        "腎臓"
+      ]
+    },
+    {
+      "id": "Q297",
+      "category": "泌尿器",
+      "subcategory": "腎臓の位置",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "腎臓の位置と体表指標の関係について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腎臓は後腹膜に位置し、第12肋骨がその後面の目安となる。"
+        },
+        {
+          "id": "B",
+          "text": "腎臓は腹腔の中央前面に位置する。"
+        },
+        {
+          "id": "C",
+          "text": "腎臓の位置は体表から全く把握できない。"
+        },
+        {
+          "id": "D",
+          "text": "腎臓は骨盤腔の中央に位置する。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎臓は後腹膜に位置し、その後面は第12肋骨あたりが体表からの目安となる。既存Q044・Q099・Q200（腎臓の位置）を、体表指標という観点から統合する。",
+      "tags": [
+        "腎臓の位置",
+        "体表指標"
+      ]
+    },
+    {
+      "id": "Q298",
+      "category": "泌尿器",
+      "subcategory": "ネフロン",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "ネフロンの各部位とその主なはたらきの組み合わせとして正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "糸球体―血液の濾過、近位尿細管―大部分の再吸収、集合管―最終的な水の調節"
+        },
+        {
+          "id": "B",
+          "text": "糸球体―水の再吸収、近位尿細管―血液の濾過、集合管―血液の濾過"
+        },
+        {
+          "id": "C",
+          "text": "すべての部位が同じはたらきをする。"
+        },
+        {
+          "id": "D",
+          "text": "集合管でのみ血液の濾過が行われる。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "ネフロンの各部位はそれぞれ異なる役割を担う：糸球体(既存Q181)は血液の濾過、近位尿細管(既存Q177,183)は大部分の再吸収、集合管(既存Q180,185)は最終的な水の調節を行う。既存Q199（尿の流れの順序）とは異なる、機能面での対応づけを問う。",
+      "tags": [
+        "ネフロン",
+        "糸球体",
+        "近位尿細管",
+        "集合管"
+      ]
+    },
+    {
+      "id": "Q299",
+      "category": "泌尿器",
+      "subcategory": "尿路",
+      "type": "text_mcq",
+      "difficulty": 2,
+      "question": "泌尿器系全体の構成について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腎臓で尿が生成され、腎杯・腎盂・尿管を経て膀胱に貯留し、尿道から排泄される。"
+        },
+        {
+          "id": "B",
+          "text": "尿は膀胱で生成される。"
+        },
+        {
+          "id": "C",
+          "text": "尿は腎臓から直接体外へ排泄される。"
+        },
+        {
+          "id": "D",
+          "text": "尿管は腎臓と肺をつなぐ管である。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "泌尿器系は、腎臓で生成された尿が腎杯・腎盂を経て尿管を通り膀胱に一時貯留され、蓄尿・排尿反射(既存Q089,090,197,198)を経て尿道から体外へ排泄される、という一連の系統である。",
+      "tags": [
+        "泌尿器系",
+        "尿路"
+      ]
+    },
+    {
+      "id": "Q300",
+      "category": "泌尿器",
+      "subcategory": "泌尿器系の総合",
+      "type": "text_mcq",
+      "difficulty": 3,
+      "question": "循環器系・呼吸器系・泌尿器系の連携による恒常性の維持について正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "循環器系が物質を運搬し、呼吸器系がガス交換を行い、泌尿器系が老廃物・水分・電解質を排泄することで、体内環境の恒常性が維持される。"
+        },
+        {
+          "id": "B",
+          "text": "循環器系・呼吸器系・泌尿器系はそれぞれ完全に独立し、互いに影響しない。"
+        },
+        {
+          "id": "C",
+          "text": "恒常性の維持には循環器系のみが関与し、他の系統は関与しない。"
+        },
+        {
+          "id": "D",
+          "text": "呼吸器系と泌尿器系は互いに全く無関係な機能を担う。"
+        }
+      ],
+      "answer": "A",
+      "explanation": "循環器系(血液による物質の運搬)・呼吸器系(ガス交換)・泌尿器系(老廃物・水分・電解質の排泄)は、総論で学んだ恒常性(既存Q112,223)を実現するために互いに連携してはたらいている。本アプリが扱う総論・循環器・呼吸器・泌尿器の4領域全体を貫く、300問の最終的な統合理解である。",
+      "tags": [
+        "恒常性",
+        "器官系の協調"
       ]
     }
   ]
