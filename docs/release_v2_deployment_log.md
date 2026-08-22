@@ -42,7 +42,7 @@ anatomy-quiz v2（300問・65 image_mcq）を`main`へ統合し、GitHub Pages�
 | 統合方法 | `git merge --ff-only v2-development`（fast-forward。non-ff merge/rebase/reset --hardは未使用） |
 | 事前確認 | `git merge-base --is-ancestor main v2-development` → true（mainにv2-development側へ無い独自コミットは0件） |
 | 統合前main HEAD | `f7b05ecf33c06a103b57223811c9c922e30d90b1` |
-| 統合後main HEAD（= v2-development HEAD） | `b4bb3b05f37805e7944f848c3887deedbbcea4fa` |
+| 統合後main HEAD（= v2-development HEAD） | `0f196717f29cbef70d26a83ff98b793f6b388c6d` |
 | 変更ファイル数 | 90 files changed |
 | push | `git push origin main`（force push未使用）→ 成功 |
 
@@ -52,7 +52,7 @@ merge直後・push直後の両方で`tools/dataset_validate.js`（300問/ID連�
 
 | 項目 | 値 |
 |---|---|
-| 最終main HEAD（release log追記後） | `0f196717f29cbef70d26a83ff98b793f6b388c6d` |
+| v2.0.0 release検証完了時main HEAD（tag対象） | `0c8527b54bd06bb83a7c5d4add9e7caa4fb06163` |
 
 ---
 
@@ -155,7 +155,7 @@ merge直後・push直後の両方で`tools/dataset_validate.js`（300問/ID連�
 | 項目 | 値 |
 |---|---|
 | tag名 | `v2.0.0` |
-| tagコミット | `0f196717f29cbef70d26a83ff98b793f6b388c6d`（本release log最終版を含む、production検証後に再確認したmain HEAD） |
+| tagコミット | `0c8527b54bd06bb83a7c5d4add9e7caa4fb06163`（本release log最終版を含む、production検証後に再確認したmain HEAD） |
 | tagメッセージ | `Release anatomy quiz v2.0.0: 300 questions and 65 image questions` |
 | push | `git push origin v2.0.0` |
 | 既存バージョン規約 | リポジトリ内に既存tagなし（`git show-ref --tags`が空）。`v2.0.0`が初回tagとなる |
@@ -166,3 +166,9 @@ merge直後・push直後の両方で`tools/dataset_validate.js`（300問/ID連�
 
 - 旧cache→新cacheの切り替わりを本番環境上でライブ再現するテスト手段が未整備（ローカル簡易サーバでは不十分、実productionでの意図的な旧バージョン誘発は非現実的）。今後、実際にstaging用の別Pages環境等を用意できれば、より直接的な検証が可能。
 - Codex post-implementation auditが実行可能な環境が復旧していない。
+
+---
+
+## 訂正記録
+
+v2.0.0公開後のGit基準点再確認により、release log内のhash転記ミス3箇所をdocumentation-onlyで修正した。v2.0.0 tagおよびリリースされたアプリ内容には変更なし。
