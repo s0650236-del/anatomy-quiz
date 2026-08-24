@@ -23,10 +23,9 @@
   // 画像再制作candidate（docs/v2.0.1_candidate_assets.jsonと対応）。
   // data/questions_v1.jsonはここを一切参照しない -- candidateはreview modeでの
   // 見比べにのみ使われ、正式採用（accepted）されるまで学生向け通常クイズには
-  // 一切影響しない。
-  var CANDIDATE_ASSETS = {
-    'assets/images/circulation_circuit.webp': 'assets/images/circulation_circuit_candidate.webp'
-  };
+  // 一切影響しない。現時点でcandidate状態のassetは無し
+  // （circulation_circuit.webpは高品質差し替えが完了しaccepted済み）。
+  var CANDIDATE_ASSETS = {};
 
   var el = {};
 
