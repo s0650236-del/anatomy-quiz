@@ -41,10 +41,11 @@ function note(msg) { notes.push(msg); }
 // (a) source pool: exact image_mcq count must be 65, never silently drift
 // ---------------------------------------------------------------------
 const imageMcq = qs.filter(q => q.type === 'image_mcq');
-// v2.0.1: Q140 converted to text_mcq (no verifiable open-license image of the
-// coronary sinus found) -- 65 -> 64. See docs/v2.0.1_asset_source_log.md.
-if (imageMcq.length !== 64) {
-  fail(`expected 64 image_mcq in source pool, found ${imageMcq.length}`);
+// v2.0.1: Q140 converted to text_mcq (65 -> 64), then +11 new image_mcq
+// (Q301-Q311) extracted from existing high-quality assets (64 -> 75). See
+// docs/v2.0.1_asset_source_log.md and docs/v2.0.1_expansion_log.md.
+if (imageMcq.length !== 75) {
+  fail(`expected 75 image_mcq in source pool, found ${imageMcq.length}`);
 } else {
   note(`source pool: ${imageMcq.length}/${qs.length} questions are image_mcq (OK)`);
 }

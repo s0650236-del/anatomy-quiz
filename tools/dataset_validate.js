@@ -28,15 +28,18 @@ function warn(msg) { warnings.push(msg); }
 const qs = data.questions;
 
 // -- total / id sequence --------------------------------------------------
-if (qs.length !== 300) fail(`total questions = ${qs.length}, expected 300`);
-if (data.question_count !== 300) fail(`question_count = ${data.question_count}, expected 300`);
+// v2.0.1: 11 new image_mcq (Q301-Q311) added, extracted from existing
+// high-quality open-license assets rather than forced onto unrelated text
+// questions -- see docs/v2.0.1_expansion_log.md. 300 -> 311.
+if (qs.length !== 311) fail(`total questions = ${qs.length}, expected 311`);
+if (data.question_count !== 311) fail(`question_count = ${data.question_count}, expected 311`);
 
 const idSet = new Set();
 qs.forEach(q => {
   if (idSet.has(q.id)) fail(`duplicate id ${q.id}`);
   idSet.add(q.id);
 });
-for (let n = 1; n <= 300; n++) {
+for (let n = 1; n <= 311; n++) {
   const id = 'Q' + String(n).padStart(3, '0');
   if (!idSet.has(id)) fail(`missing id ${id}`);
 }
@@ -48,7 +51,7 @@ qs.forEach(q => {
   if (!validCats.includes(q.category)) fail(`${q.id}: invalid category "${q.category}"`);
   catCount[q.category] = (catCount[q.category] || 0) + 1;
 });
-const expectCat = { '総論': 70, '循環器': 85, '呼吸器': 75, '泌尿器': 70 };
+const expectCat = { '総論': 70, '循環器': 88, '呼吸器': 80, '泌尿器': 73 };
 Object.keys(expectCat).forEach(c => {
   if (catCount[c] !== expectCat[c]) fail(`category ${c} count = ${catCount[c]}, expected ${expectCat[c]}`);
 });
@@ -58,7 +61,7 @@ qs.forEach(q => {
   if (![1, 2, 3].includes(q.difficulty)) fail(`${q.id}: invalid difficulty ${q.difficulty}`);
   diffCount[q.difficulty] = (diffCount[q.difficulty] || 0) + 1;
 });
-const expectDiff = { 1: 170, 2: 107, 3: 23 };
+const expectDiff = { 1: 176, 2: 112, 3: 23 };
 Object.keys(expectDiff).forEach(d => {
   if ((diffCount[d] || 0) !== expectDiff[d]) fail(`difficulty ${d} count = ${diffCount[d] || 0}, expected ${expectDiff[d]}`);
 });
@@ -95,12 +98,15 @@ qs.forEach(q => {
 // image was found that actually depicts the coronary sinus as an identifiable
 // structure (see docs/v2.0.1_asset_source_log.md), so the question was moved
 // off image_mcq rather than keep an approximate/unverifiable marker.
+// v2.0.1 (expansion pass): +11 new image_mcq (Q301-Q311), each extracted from
+// a structure already visible and markable in an existing asset -- see
+// docs/v2.0.1_expansion_log.md. 64 -> 75.
 if ((typeCount.text_mcq || 0) !== 236) fail(`text_mcq count = ${typeCount.text_mcq}, expected 236`);
-if ((typeCount.image_mcq || 0) !== 64) fail(`image_mcq count = ${typeCount.image_mcq}, expected 64`);
+if ((typeCount.image_mcq || 0) !== 75) fail(`image_mcq count = ${typeCount.image_mcq}, expected 75`);
 
 const catImgCount = {};
 qs.forEach(q => { if (q.type === 'image_mcq') catImgCount[q.category] = (catImgCount[q.category] || 0) + 1; });
-const expectCatImg = { '総論': 10, '循環器': 23, '呼吸器': 17, '泌尿器': 14 };
+const expectCatImg = { '総論': 10, '循環器': 26, '呼吸器': 22, '泌尿器': 17 };
 Object.keys(expectCatImg).forEach(c => {
   if ((catImgCount[c] || 0) !== expectCatImg[c]) fail(`category ${c} image_mcq count = ${catImgCount[c] || 0}, expected ${expectCatImg[c]}`);
 });

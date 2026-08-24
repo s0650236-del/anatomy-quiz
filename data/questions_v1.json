@@ -2,7 +2,7 @@
   "version": "2.0.1",
   "title": "人体の構造と機能A クイズ 全300問",
   "language": "ja",
-  "question_count": 300,
+  "question_count": 311,
   "difficulty_scale": {
     "1": "基礎",
     "2": "標準",
@@ -10607,6 +10607,281 @@
         "恒常性",
         "器官系の協調"
       ]
+    },
+    {
+      "id": "Q301",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "心臓外形模式図（前面）で示された、右心室から肺へ向かう血液を送り出す血管はどれか。",
+      "choices": [
+        { "id": "A", "text": "肺動脈幹" },
+        { "id": "B", "text": "上大静脈" },
+        { "id": "C", "text": "大動脈" },
+        { "id": "D", "text": "冠状動脈" }
+      ],
+      "answer": "A",
+      "explanation": "肺動脈幹は右心室から拍出された静脈血（低酸素血）を肺へ運ぶ血管であり、動脈でありながら静脈血が流れる点が特徴である。",
+      "tags": ["肺動脈幹", "肺循環"],
+      "image": {
+        "prompt_id": "IMG-025",
+        "asset": "assets/images/heart_exterior_anterior.webp",
+        "alt": "心臓を前面から見た外形模式図",
+        "marker": "①",
+        "marker_target": "肺動脈幹",
+        "overlay": { "x": 0.55, "y": 0.35, "label": "①" }
+      }
+    },
+    {
+      "id": "Q302",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "心臓外形模式図（後面）で示された、下半身からの静脈血を右心房へ運ぶ血管はどれか。",
+      "choices": [
+        { "id": "A", "text": "下大静脈" },
+        { "id": "B", "text": "上大静脈" },
+        { "id": "C", "text": "肺静脈" },
+        { "id": "D", "text": "肺動脈幹" }
+      ],
+      "answer": "A",
+      "explanation": "下大静脈は下半身・腹部からの静脈血を集めて右心房へ運ぶ。上大静脈が上半身からの還流を担うのと対をなす。",
+      "tags": ["下大静脈", "静脈還流"],
+      "image": {
+        "prompt_id": "IMG-026",
+        "asset": "assets/images/heart_exterior_posterior.webp",
+        "alt": "心臓を後面から見た外形模式図",
+        "marker": "①",
+        "marker_target": "下大静脈",
+        "overlay": { "x": 0.78, "y": 0.95, "label": "①" }
+      }
+    },
+    {
+      "id": "Q303",
+      "category": "循環器",
+      "subcategory": "刺激伝導系",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "刺激伝導系の模式図で示された、洞房結節からの興奮を受け取り、房室束（ヒス束）へ伝える中継点はどれか。",
+      "choices": [
+        { "id": "A", "text": "房室結節" },
+        { "id": "B", "text": "洞房結節" },
+        { "id": "C", "text": "プルキンエ線維" },
+        { "id": "D", "text": "右脚" }
+      ],
+      "answer": "A",
+      "explanation": "房室結節は心房中隔下部に位置し、洞房結節からの興奮を一時的に遅延させたうえで房室束へ伝える中継点である。この遅延により心房収縮後に心室が収縮するタイミングが確保される。",
+      "tags": ["房室結節", "刺激伝導系"],
+      "image": {
+        "prompt_id": "IMG-009",
+        "asset": "assets/images/q025_conduction_system.webp",
+        "alt": "心臓断面内の刺激伝導系（洞房結節・房室結節・房室束）を示す模式図",
+        "marker": "①",
+        "marker_target": "房室結節",
+        "overlay": { "x": 0.3, "y": 0.57, "label": "①" }
+      }
+    },
+    {
+      "id": "Q304",
+      "category": "呼吸器",
+      "subcategory": "喉頭",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "喉頭の模式図で示された、喉頭の外形の大部分を占める最大の軟骨はどれか。",
+      "choices": [
+        { "id": "A", "text": "甲状軟骨" },
+        { "id": "B", "text": "輪状軟骨" },
+        { "id": "C", "text": "披裂軟骨" },
+        { "id": "D", "text": "喉頭蓋軟骨" }
+      ],
+      "answer": "A",
+      "explanation": "甲状軟骨は喉頭の中で最も大きい軟骨で、喉頭の外形の大部分を形成する。前方への突出は「のどぼとけ」として触知できる。",
+      "tags": ["甲状軟骨", "喉頭"],
+      "image": {
+        "prompt_id": "IMG-010",
+        "asset": "assets/images/q032_larynx.webp",
+        "alt": "喉頭の後面図（喉頭蓋・甲状軟骨・輪状軟骨・気管上部）",
+        "marker": "①",
+        "marker_target": "甲状軟骨",
+        "overlay": { "x": 0.5, "y": 0.4, "label": "①" }
+      }
+    },
+    {
+      "id": "Q305",
+      "category": "呼吸器",
+      "subcategory": "喉頭",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "喉頭の模式図で示された、甲状軟骨の下方に位置し、気管とつながる輪状の軟骨はどれか。",
+      "choices": [
+        { "id": "A", "text": "輪状軟骨" },
+        { "id": "B", "text": "甲状軟骨" },
+        { "id": "C", "text": "喉頭蓋軟骨" },
+        { "id": "D", "text": "披裂軟骨" }
+      ],
+      "answer": "A",
+      "explanation": "輪状軟骨は喉頭軟骨の中で唯一、完全な輪状構造をもち、甲状軟骨の下方で気管の最上部に連続する。",
+      "tags": ["輪状軟骨", "喉頭"],
+      "image": {
+        "prompt_id": "IMG-010",
+        "asset": "assets/images/q032_larynx.webp",
+        "alt": "喉頭の後面図（喉頭蓋・甲状軟骨・輪状軟骨・気管上部）",
+        "marker": "①",
+        "marker_target": "輪状軟骨",
+        "overlay": { "x": 0.5, "y": 0.65, "label": "①" }
+      }
+    },
+    {
+      "id": "Q306",
+      "category": "呼吸器",
+      "subcategory": "気道",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "喉頭の模式図で示された、輪状軟骨の下方に続く、軟骨輪をもつ管状の構造はどれか。",
+      "choices": [
+        { "id": "A", "text": "気管" },
+        { "id": "B", "text": "喉頭" },
+        { "id": "C", "text": "食道" },
+        { "id": "D", "text": "気管支" }
+      ],
+      "answer": "A",
+      "explanation": "気管は輪状軟骨の下方から続く管で、馬蹄形の気管軟骨によって内腔が保たれている。下方で左右の主気管支に分岐する。",
+      "tags": ["気管", "気道"],
+      "image": {
+        "prompt_id": "IMG-010",
+        "asset": "assets/images/q032_larynx.webp",
+        "alt": "喉頭の後面図（喉頭蓋・甲状軟骨・輪状軟骨・気管上部）",
+        "marker": "①",
+        "marker_target": "気管",
+        "overlay": { "x": 0.5, "y": 0.9, "label": "①" }
+      }
+    },
+    {
+      "id": "Q307",
+      "category": "呼吸器",
+      "subcategory": "喉頭",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "喉頭鏡視野の模式図で示された、左右の声帯に囲まれた開口部はどれか。",
+      "choices": [
+        { "id": "A", "text": "声門" },
+        { "id": "B", "text": "咽頭" },
+        { "id": "C", "text": "喉頭蓋" },
+        { "id": "D", "text": "気管分岐部" }
+      ],
+      "answer": "A",
+      "explanation": "声門は左右の声帯（ヒダ）に囲まれた開口部で、呼吸時には開大し、発声時には声帯が近づいて狭まる。",
+      "tags": ["声門", "声帯"],
+      "image": {
+        "prompt_id": "IMG-007",
+        "asset": "assets/images/q032_vocal_folds.webp",
+        "alt": "喉頭鏡視野（声帯を上方から見た模式図）",
+        "marker": "①",
+        "marker_target": "声門（左右の声帯に囲まれた開口部）",
+        "overlay": { "x": 0.5, "y": 0.48, "label": "①" }
+      }
+    },
+    {
+      "id": "Q308",
+      "category": "呼吸器",
+      "subcategory": "肺胞",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "終末呼吸単位の模式図で、断面が示された肺胞嚢の内部に見える、ガス交換の場となる1つ1つの袋状構造はどれか。",
+      "choices": [
+        { "id": "A", "text": "肺胞" },
+        { "id": "B", "text": "肺胞管" },
+        { "id": "C", "text": "呼吸細気管支" },
+        { "id": "D", "text": "肺胞嚢" }
+      ],
+      "answer": "A",
+      "explanation": "肺胞は肺胞嚢を構成する1つ1つの小さな袋状構造で、ここで血液とのガス交換が行われる。多数の肺胞が集まって肺胞嚢を形成する。",
+      "tags": ["肺胞", "ガス交換"],
+      "image": {
+        "prompt_id": "IMG-014",
+        "asset": "assets/images/q041_alveolar_sac.webp",
+        "alt": "終末呼吸単位（肺胞管・肺胞嚢）を示す模式図",
+        "marker": "①",
+        "marker_target": "肺胞（肺胞嚢断面内の個々の袋状構造）",
+        "overlay": { "x": 0.78, "y": 0.87, "label": "①" }
+      }
+    },
+    {
+      "id": "Q309",
+      "category": "泌尿器",
+      "subcategory": "腎臓の内部構造",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "腎臓断面図で示された、腎臓の表面を包む線維性の膜はどれか。",
+      "choices": [
+        { "id": "A", "text": "腎被膜" },
+        { "id": "B", "text": "腎皮質" },
+        { "id": "C", "text": "腎盂" },
+        { "id": "D", "text": "腎筋膜" }
+      ],
+      "answer": "A",
+      "explanation": "腎被膜は腎臓表面を直接包む線維性の膜であり、その内側に腎皮質・腎髄質が続く。腎臓全体をさらに包む脂肪被膜・腎筋膜とは別の構造である。",
+      "tags": ["腎被膜", "腎臓"],
+      "image": {
+        "prompt_id": "IMG-019",
+        "asset": "assets/images/q091_kidney_cross_section.webp",
+        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "marker": "①",
+        "marker_target": "腎被膜",
+        "overlay": { "x": 0.03, "y": 0.5, "label": "①" }
+      }
+    },
+    {
+      "id": "Q310",
+      "category": "泌尿器",
+      "subcategory": "ネフロン",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "ネフロンの模式図で示された、ヘンレ係蹄に続き、集合管の手前に位置する尿細管はどれか。",
+      "choices": [
+        { "id": "A", "text": "遠位尿細管" },
+        { "id": "B", "text": "近位尿細管" },
+        { "id": "C", "text": "ボーマン嚢" },
+        { "id": "D", "text": "集合管" }
+      ],
+      "answer": "A",
+      "explanation": "遠位尿細管はヘンレ係蹄に続く部分で、集合管へ原尿を送る前の最終調節を担う。近位尿細管より再吸収の調節性が高く、ホルモンによる水・電解質の調節に関わる。",
+      "tags": ["遠位尿細管", "ネフロン"],
+      "image": {
+        "prompt_id": "IMG-016",
+        "asset": "assets/images/q048_nephron.webp",
+        "alt": "腎小体・尿細管・集合管を示すネフロン模式図",
+        "marker": "①",
+        "marker_target": "遠位尿細管",
+        "overlay": { "x": 0.693, "y": 0.212, "label": "①" }
+      }
+    },
+    {
+      "id": "Q311",
+      "category": "泌尿器",
+      "subcategory": "ネフロン",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "ネフロンの模式図で示された、糸球体へ血液を送り込む細動脈はどれか。",
+      "choices": [
+        { "id": "A", "text": "輸入細動脈" },
+        { "id": "B", "text": "輸出細動脈" },
+        { "id": "C", "text": "腎動脈" },
+        { "id": "D", "text": "弓状動脈" }
+      ],
+      "answer": "A",
+      "explanation": "輸入細動脈は糸球体へ血液を送り込む細動脈で、糸球体を出たあとの輸出細動脈より一般に太い。この太さの差が糸球体内の血圧（ろ過圧）を生み出す。",
+      "tags": ["輸入細動脈", "糸球体"],
+      "image": {
+        "prompt_id": "IMG-016",
+        "asset": "assets/images/q048_nephron.webp",
+        "alt": "腎小体・尿細管・集合管を示すネフロン模式図",
+        "marker": "①",
+        "marker_target": "輸入細動脈",
+        "overlay": { "x": 0.11, "y": 0.15, "label": "①" }
+      }
     }
   ]
 }
