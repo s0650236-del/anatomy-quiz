@@ -15,6 +15,10 @@
   var STORAGE_KEY = 'anatomyQuizV2History';
   var CATEGORY_ALL = '__ALL__';
   var COUNT_STEPS = [5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 150, 200, 250, 300];
+  // アプリ本体（このapp.js/index.html）自体のビルド識別子。data/questions_v1.jsonの
+  // versionとは別物 -- 「古いapp.jsのキャッシュ＋新しいdataset」のようなずれを
+  // 画面右下の表示で即座に見分けられるようにするための値。リリース時に更新する。
+  var APP_BUILD = 'v2.0.1-dev';
 
   var el = {};
 
@@ -56,6 +60,11 @@
   }
 
   function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
+
+  function getQueryParam(name) {
+    var m = new RegExp('[?&]' + name + '=([^&]*)').exec(location.search);
+    return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : null;
+  }
 
   function pct(correct, total) {
     if (!total) return 0;
@@ -125,6 +134,14 @@
     app.ready = true;
     byId('initialLoading').style.display = 'none';
     el.subtitle.textContent = '総論・循環器・呼吸器・泌尿器　全' + app.allQuestions.length + '問';
+    updateVersionBadge();
+
+    // レビュー用モード（開発・教員向け、学生向け通常クイズとは分離）。
+    // URLクエリで直接指定された場合のみ発動し、通常導線には一切影響しない。
+    var reviewMode = getQueryParam('review');
+    if (reviewMode === 'images') { renderImageReview(); return; }
+    if (reviewMode === 'assets') { renderAssetReview(); return; }
+
     setupChips();
     adjustCountOptions();
     el.orderSelect.disabled = false;
@@ -132,6 +149,13 @@
     el.startBtn.textContent = 'この条件で開始';
     renderIdle();
     renderHistoryPanel();
+  }
+
+  function updateVersionBadge() {
+    if (!el.versionBadge) return;
+    var datasetVersion = (app.meta && app.meta.version) ? app.meta.version : '?';
+    el.versionBadge.textContent = 'app ' + APP_BUILD + ' ／ dataset ' + datasetVersion;
+    el.versionBadge.style.display = 'block';
   }
 
   // ---------- settings ----------
@@ -507,6 +531,134 @@
     if (e.key === 'Escape') closeZoom();
   }
 
+  // ---------- review modes (開発・教員用。学生向け通常クイズとは別導線) ----------
+  //
+  // ?review=images : 65問のimage_mcqを1問ずつ前後送りで確認する。
+  // ?review=assets  : 27種のunique asset単位で、そのassetを使う全QIDとmarker配置を確認する。
+  //
+  // どちらも renderImageBlock()/renderMarkers()/attachImageHandlers() をそのまま呼び出す
+  // （通常クイズと完全に同じ関数）ため、レビュー画面だけmarker位置がずれる、といったことは
+  // 起こり得ない。zoom拡大時も既存の #zoomModal をそのまま使う。
+
+  function reviewBackLink() {
+    return '<div style="margin-bottom:10px"><a href="./" style="font-size:13px;color:var(--muted)">← 通常クイズに戻る</a></div>';
+  }
+
+  function renderImageReview() {
+    app.mode = 'review-images';
+    if (el.settingsFull) el.settingsFull.style.display = 'none';
+    if (el.settingsCollapsed) el.settingsCollapsed.style.display = 'none';
+    el.progressWrap.style.display = 'none';
+    if (!app.reviewList) {
+      app.reviewList = app.allQuestions
+        .filter(function (q) { return q.type === 'image_mcq'; })
+        .slice()
+        .sort(function (a, b) { return a.id < b.id ? -1 : a.id > b.id ? 1 : 0; });
+      app.reviewIndex = 0;
+    }
+    renderReviewImageCard();
+  }
+
+  function renderReviewImageCard() {
+    var list = app.reviewList;
+    var i = app.reviewIndex;
+    var q = list[i];
+    var labels = ['A', 'B', 'C', 'D', 'E', 'F'];
+    el.miniScore.textContent = 'image_mcq review ' + (i + 1) + ' / ' + list.length;
+
+    var correctChoice = q.choices.filter(function (c) { return c.id === q.answer; })[0];
+    var choicesHtml = q.choices.map(function (c, idx) {
+      var isCorrect = c.id === q.answer;
+      return '<div class="option' + (isCorrect ? ' correct' : '') + '" style="cursor:default">' +
+        '<span class="badge">' + labels[idx] + '</span>' +
+        '<span class="option-text">' + escapeHtml(c.text) + '</span>' +
+        (isCorrect ? '<span class="state-icon" aria-hidden="true">✓</span>' : '') +
+        '</div>';
+    }).join('');
+
+    var overlays = overlaysOf(q.image);
+    var html = reviewBackLink() + '<section class="card" id="questionCard">';
+    html += '<div class="qtop"><span>image_mcq review：' + (i + 1) + ' / ' + list.length + '</span><span>QID：' + escapeHtml(q.id) + '</span></div>';
+    html += '<div class="qcount">分野：' + escapeHtml(q.category) + (q.subcategory ? '（' + escapeHtml(q.subcategory) + '）' : '') +
+      '　｜　asset：' + escapeHtml(q.image.asset) + '　｜　marker数：' + overlays.length + '</div>';
+    html += '<p class="question">' + escapeHtml(q.question) + '</p>';
+    html += renderImageBlock(q);
+    html += '<div class="options">' + choicesHtml + '</div>';
+    html += '<div id="feedbackArea"><div class="feedback ok">' +
+      '<div class="feedback-head">正答：' + escapeHtml(correctChoice ? correctChoice.text : '') + '</div>' +
+      '<div>' + escapeHtml(q.explanation || '') + '</div></div></div>';
+    html += '<div class="actions" id="actionArea">' +
+      '<button type="button" class="btn secondary" id="reviewPrevBtn"' + (i === 0 ? ' disabled' : '') + '>← 前へ</button>' +
+      '<button type="button" class="btn primary" id="reviewNextBtn"' + (i >= list.length - 1 ? ' disabled' : '') + '>次へ →</button>' +
+      '</div>';
+    html += '</section>';
+    el.mainArea.innerHTML = html;
+
+    attachImageHandlers(byId('questionCard'), q.image);
+    var prevBtn = byId('reviewPrevBtn');
+    if (prevBtn) prevBtn.addEventListener('click', function () { app.reviewIndex = Math.max(0, app.reviewIndex - 1); renderReviewImageCard(); scrollQuestionTop(); });
+    var nextBtn = byId('reviewNextBtn');
+    if (nextBtn) nextBtn.addEventListener('click', function () { app.reviewIndex = Math.min(list.length - 1, app.reviewIndex + 1); renderReviewImageCard(); scrollQuestionTop(); });
+  }
+
+  function renderAssetReview() {
+    app.mode = 'review-assets';
+    if (el.settingsFull) el.settingsFull.style.display = 'none';
+    if (el.settingsCollapsed) el.settingsCollapsed.style.display = 'none';
+    el.progressWrap.style.display = 'none';
+    if (!app.assetReviewList) {
+      var byAsset = {};
+      app.allQuestions.filter(function (q) { return q.type === 'image_mcq'; }).forEach(function (q) {
+        var key = q.image.asset;
+        if (!byAsset[key]) byAsset[key] = [];
+        byAsset[key].push(q);
+      });
+      app.assetReviewList = Object.keys(byAsset).sort().map(function (asset) {
+        return { asset: asset, questions: byAsset[asset] };
+      });
+      app.assetReviewIndex = 0;
+    }
+    renderAssetReviewCard();
+  }
+
+  function renderAssetReviewCard() {
+    var list = app.assetReviewList;
+    var i = app.assetReviewIndex;
+    var entry = list[i];
+    el.miniScore.textContent = 'asset review ' + (i + 1) + ' / ' + list.length;
+
+    // 同じassetを使う全QIDのoverlay/overlaysを1枚の画像上に統合表示する
+    // （renderMarkers()自体は変更せず、同じ関数にそのまま渡すだけ）。
+    var combinedImage = { asset: entry.asset, alt: entry.questions[0].image.alt, overlays: [] };
+    entry.questions.forEach(function (q) {
+      overlaysOf(q.image).forEach(function (o) {
+        combinedImage.overlays.push({ x: o.x, y: o.y, label: (o.label || '?') + '(' + q.id + ')' });
+      });
+    });
+
+    var qListHtml = entry.questions.map(function (q) {
+      return '<li><strong>' + escapeHtml(q.id) + '</strong>｜' + escapeHtml(q.category) + '｜' + escapeHtml(q.question) + '</li>';
+    }).join('');
+
+    var html = reviewBackLink() + '<section class="card" id="questionCard">';
+    html += '<div class="qtop"><span>asset review：' + (i + 1) + ' / ' + list.length + '</span><span>filename：' + escapeHtml(entry.asset) + '</span></div>';
+    html += '<div class="qcount">この画像を使用するQID：' + entry.questions.length + '問（差し替え時の影響範囲）</div>';
+    html += renderImageBlock({ type: 'image_mcq', image: combinedImage });
+    html += '<div style="margin-top:14px"><div class="settings-title">使用QID一覧</div><ul style="margin:0;padding-left:20px;font-size:14px;line-height:1.8">' + qListHtml + '</ul></div>';
+    html += '<div class="actions" id="actionArea">' +
+      '<button type="button" class="btn secondary" id="assetPrevBtn"' + (i === 0 ? ' disabled' : '') + '>← 前へ</button>' +
+      '<button type="button" class="btn primary" id="assetNextBtn"' + (i >= list.length - 1 ? ' disabled' : '') + '>次へ →</button>' +
+      '</div>';
+    html += '</section>';
+    el.mainArea.innerHTML = html;
+
+    attachImageHandlers(byId('questionCard'), combinedImage);
+    var prevBtn = byId('assetPrevBtn');
+    if (prevBtn) prevBtn.addEventListener('click', function () { app.assetReviewIndex = Math.max(0, app.assetReviewIndex - 1); renderAssetReviewCard(); scrollQuestionTop(); });
+    var nextBtn = byId('assetNextBtn');
+    if (nextBtn) nextBtn.addEventListener('click', function () { app.assetReviewIndex = Math.min(list.length - 1, app.assetReviewIndex + 1); renderAssetReviewCard(); scrollQuestionTop(); });
+  }
+
   // ---------- history (localStorage) ----------
 
   function defaultHistory() {
@@ -624,6 +776,9 @@
     el.zoomImgWrap = byId('zoomImgWrap');
     el.zoomCaption = byId('zoomCaption');
     el.zoomClose = byId('zoomClose');
+    el.versionBadge = byId('versionBadge');
+    el.updateBanner = byId('updateBanner');
+    el.updateReloadBtn = byId('updateReloadBtn');
   }
 
   function bindStaticEvents() {
@@ -643,13 +798,56 @@
     }
   }
 
+  // installed PWA（特にiOS Safariのホーム画面追加）では、新しいsw.js/index.html/app.jsが
+  // 実際にはproductionへ公開済みでも、ブラウザ側の更新チェックが走るまで古い版が表示され続ける
+  // ことがある。ここでは既存のキャッシュ戦略（sw.jsのCORE_ASSETS/IMAGE_ASSETS precache、
+  // networkFirst/cacheFirst）には一切手を触れず、「新しい版が用意できた」ことをユーザーへ
+  // 知らせる軽量な通知バーのみを追加する。自動リロードは行わない
+  // （進行中のクイズ回答が消える事故を避けるため。無限リロードループの回避にもなる）。
+  function showUpdateBanner() {
+    if (!el.updateBanner) return;
+    el.updateBanner.style.display = 'flex';
+  }
+
+  function watchForServiceWorkerUpdate(registration) {
+    if (!registration) return;
+    // すでにinstalling中のワーカーがいる場合（ページ読込直後にupdatefoundが先に発火していた場合）にも対応
+    function trackInstalling(worker) {
+      if (!worker) return;
+      worker.addEventListener('statechange', function () {
+        // controllerが既に存在する = 初回インストールではなく「更新」であるケースのみ通知する
+        if (worker.state === 'installed' && navigator.serviceWorker.controller) {
+          showUpdateBanner();
+        }
+      });
+    }
+    trackInstalling(registration.installing);
+    registration.addEventListener('updatefound', function () {
+      trackInstalling(registration.installing);
+    });
+
+    // 起動時と、タブがバックグラウンドから復帰したタイミングで能動的に更新確認する
+    // （sw.jsのfetchハンドラやCache Storageの中身には一切影響しない、registration.update()のみ）。
+    registration.update().catch(function () { /* オフライン等で失敗しても致命的ではない */ });
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'visible') {
+        registration.update().catch(function () { /* noop */ });
+      }
+    });
+  }
+
   function registerServiceWorker() {
     if (!('serviceWorker' in navigator)) return;
     var isLocalhost = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
     if (location.protocol !== 'https:' && !isLocalhost) return;
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('./sw.js').catch(function () { /* PWA機能が使えないだけで、アプリ自体は動作継続 */ });
+      navigator.serviceWorker.register('./sw.js')
+        .then(function (registration) { watchForServiceWorkerUpdate(registration); })
+        .catch(function () { /* PWA機能が使えないだけで、アプリ自体は動作継続 */ });
     });
+    if (el.updateReloadBtn) {
+      el.updateReloadBtn.addEventListener('click', function () { location.reload(); });
+    }
   }
 
   function init() {
