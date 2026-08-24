@@ -1512,7 +1512,7 @@
       "subcategory": "気道分岐",
       "type": "image_mcq",
       "difficulty": 2,
-      "question": "気道分岐図の①で示された「呼吸部の始まり」にあたる部位はどれか。",
+      "question": "肺胞嚢周辺の模式図の③で示された「呼吸部の始まり」にあたる部位はどれか。",
       "choices": [
         {
           "id": "A",
@@ -1538,15 +1538,15 @@
         "気道分岐"
       ],
       "image": {
-        "prompt_id": "IMG-013",
-        "asset": "assets/images/q040_airway_branching.webp",
-        "alt": "実際の気管支の枝分かれ形状に基づく気道分岐図（気管〜末梢気管支。Servier Medical Art, CC BY 4.0）",
-        "marker": "①",
+        "prompt_id": "IMG-014",
+        "asset": "assets/images/q041_alveolar_sac.webp",
+        "alt": "終末呼吸単位（肺胞管・肺胞嚢）を示す模式図",
+        "marker": "③",
         "marker_target": "呼吸細気管支",
         "overlay": {
-          "x": 0.1244,
-          "y": 0.9719,
-          "label": "①"
+          "x": 0.2959,
+          "y": 0.5206,
+          "label": "③"
         }
       }
     },
