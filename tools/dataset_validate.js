@@ -164,19 +164,24 @@ qs.forEach(q => {
   });
 });
 
-// v2.0.1: heart_valve_plane.webp (Q065/Q066, superior valve-plane view) was
-// added alongside the unchanged heart_valves_schematic.webp (kept for Q129's
-// chordae tendineae/papillary muscle view only) -- two distinct views serving
-// two distinct teaching purposes, not a duplicate.
-if (referencedAssets.size !== 28) fail(`unique referenced assets = ${referencedAssets.size}, expected 28`);
+// v2.0.1 image-quality re-evaluation pass: heart_valves_schematic.webp
+// (self-made SVG) was retired -- its only user, Q129 (chordae tendineae /
+// papillary muscle), was repointed to the real-photo q017_heart_chambers.webp,
+// which already shows the same structures clearly. q016_apex.webp (self-made
+// SVG) was likewise retired in favour of reusing heart_exterior_anterior.webp
+// (Q016's apex marker added alongside Q138's existing marker on that asset).
+// 28 -> 26 unique assets is the deliberate result (two self-made assets
+// discarded, zero new ones added).
+if (referencedAssets.size !== 26) fail(`unique referenced assets = ${referencedAssets.size}, expected 26`);
 
 const allFiles = fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir).filter(f => f.endsWith('.webp')) : [];
 allFiles.forEach(f => { if (!referencedAssets.has(f)) warn(`asset file not referenced by any question: ${f}`); });
 
-// Q129 must use the schematic, not the real photo.
+// Q129 now shares q017_heart_chambers.webp (real photo) instead of the
+// retired heart_valves_schematic.webp self-made SVG.
 const q129 = qs.find(q => q.id === 'Q129');
-if (!q129 || !q129.image || q129.image.asset !== 'assets/images/heart_valves_schematic.webp') {
-  fail(`Q129 must use assets/images/heart_valves_schematic.webp, got: ${q129 && q129.image && q129.image.asset}`);
+if (!q129 || !q129.image || q129.image.asset !== 'assets/images/q017_heart_chambers.webp') {
+  fail(`Q129 must use assets/images/q017_heart_chambers.webp, got: ${q129 && q129.image && q129.image.asset}`);
 }
 
 // The 5 pre-existing real-photo assets' Q001-Q100 overlays must never drift.

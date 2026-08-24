@@ -570,7 +570,7 @@
   var IMAGE_CREDITS = [
     {
       title: 'Servier Medical Art',
-      meta: 'License: CC BY 4.0　｜　喉頭・声帯・心臓外形（前面／後面）・刺激伝導系・腎臓（断面／腎門）・泌尿器系・心臓弁（弁輪面）・肺胞嚢 の各画像に使用',
+      meta: 'License: CC BY 4.0　｜　喉頭・声帯・心臓外形（前面／後面）・刺激伝導系・腎臓（断面／腎門）・泌尿器系・心臓弁（弁輪面）・肺胞嚢・血管壁（動脈／静脈）・肺（肺葉）・気管支分岐 の各画像に使用',
       url: 'https://smart.servier.com/'
     },
     {
@@ -582,6 +582,11 @@
       title: 'Patrick J. Lynch（医学イラストレーター）／ C. Carl Jaffe, MD',
       meta: 'License: CC BY-SA 4.0　｜　冠状動脈の走行を示す画像に使用（AnatomyTOOL.org経由）',
       url: 'https://anatomytool.org/'
+    },
+    {
+      title: 'OpenStax（Anatomy and Physiology 2e）',
+      meta: 'License: CC BY 4.0　｜　人体の3断面（矢状面・冠状面・水平面）を示す画像に使用（元図の文字ラベルは除去のうえ改変。AnatomyTOOL.org経由で取得）',
+      url: 'https://openstax.org/details/books/anatomy-and-physiology-2e'
     }
   ];
 
@@ -611,8 +616,8 @@
 
   // ---------- review modes (開発・教員用。学生向け通常クイズとは別導線) ----------
   //
-  // ?review=images : 65問のimage_mcqを1問ずつ前後送りで確認する。
-  // ?review=assets  : 27種のunique asset単位で、そのassetを使う全QIDとmarker配置を確認する。
+  // ?review=images : 75問のimage_mcqを1問ずつ前後送りで確認する。
+  // ?review=assets  : 26種のunique asset単位で、そのassetを使う全QIDとmarker配置を確認する。
   //
   // どちらも renderImageBlock()/renderMarkers()/attachImageHandlers() をそのまま呼び出す
   // （通常クイズと完全に同じ関数）ため、レビュー画面だけmarker位置がずれる、といったことは

@@ -317,12 +317,12 @@
       "image": {
         "prompt_id": "IMG-003",
         "asset": "assets/images/q008_body_planes.webp",
-        "alt": "人体の3断面（矢状面・冠状面・水平面）を示す模式図",
+        "alt": "実際の人体モデルに矢状面・冠状面・水平面の3断面を重ねた図（OpenStax Anatomy and Physiology, CC BY 4.0）",
         "marker": "①",
         "marker_target": "冠状面",
         "overlay": {
-          "x": 0.3929,
-          "y": 0.3333,
+          "x": 0.6218,
+          "y": 0.375,
           "label": "①"
         }
       }
@@ -610,15 +610,15 @@
         "心臓"
       ],
       "image": {
-        "prompt_id": "IMG-005",
-        "asset": "assets/images/q016_apex.webp",
-        "alt": "胸壁と肋間を背景に心臓の概形を示す模式図",
-        "marker": "①",
+        "prompt_id": "IMG-025",
+        "asset": "assets/images/heart_exterior_anterior.webp",
+        "alt": "心臓を前面から見た外形模式図（Servier Medical Art, CC BY 4.0）",
+        "marker": "②",
         "marker_target": "心尖",
         "overlay": {
-          "x": 0.6927,
-          "y": 0.5385,
-          "label": "①"
+          "x": 0.4188,
+          "y": 0.9125,
+          "label": "②"
         }
       }
     },
@@ -1334,12 +1334,12 @@
       "image": {
         "prompt_id": "IMG-011",
         "asset": "assets/images/q035_right_middle_lobe.webp",
-        "alt": "左右肺の肺葉構成を示す前面模式図",
+        "alt": "実際の肺の形状に基づく前面模式図（水平裂・肺尖が確認できる。Servier Medical Art, CC BY 4.0）",
         "marker": "①",
         "marker_target": "右肺中葉",
         "overlay": {
-          "x": 0.2143,
-          "y": 0.4958,
+          "x": 0.1875,
+          "y": 0.6575,
           "label": "①"
         }
       }
@@ -1379,18 +1379,18 @@
       "image": {
         "prompt_id": "IMG-011",
         "asset": "assets/images/q035_right_middle_lobe.webp",
-        "alt": "左右肺の肺葉構成を示す前面模式図",
+        "alt": "実際の肺の形状に基づく前面模式図（水平裂・肺尖が確認できる。Servier Medical Art, CC BY 4.0）",
         "marker": "④",
         "marker_target": "肺葉数（右3葉・左2葉）",
         "overlays": [
           {
-            "x": 0.2143,
-            "y": 0.375,
+            "x": 0.25,
+            "y": 0.263,
             "label": "④a"
           },
           {
-            "x": 0.7714,
-            "y": 0.375,
+            "x": 0.7188,
+            "y": 0.263,
             "label": "④b"
           }
         ]
@@ -1540,12 +1540,12 @@
       "image": {
         "prompt_id": "IMG-013",
         "asset": "assets/images/q040_airway_branching.webp",
-        "alt": "気道分岐（気管〜終末細気管支）を示す模式図",
+        "alt": "実際の気管支の枝分かれ形状に基づく気道分岐図（気管〜末梢気管支。Servier Medical Art, CC BY 4.0）",
         "marker": "①",
         "marker_target": "呼吸細気管支",
         "overlay": {
-          "x": 0.1571,
-          "y": 0.3769,
+          "x": 0.1244,
+          "y": 0.9719,
           "label": "①"
         }
       }
@@ -2029,12 +2029,12 @@
       "image": {
         "prompt_id": "IMG-003",
         "asset": "assets/images/q008_body_planes.webp",
-        "alt": "人体の3断面（矢状面・冠状面・水平面）を示す模式図",
+        "alt": "実際の人体モデルに矢状面・冠状面・水平面の3断面を重ねた図（OpenStax Anatomy and Physiology, CC BY 4.0）",
         "marker": "②",
         "marker_target": "矢状面パネル",
         "overlay": {
-          "x": 0.5,
-          "y": 0.3333,
+          "x": 0.1923,
+          "y": 0.375,
           "label": "②"
         }
       }
@@ -2073,12 +2073,12 @@
       "image": {
         "prompt_id": "IMG-003",
         "asset": "assets/images/q008_body_planes.webp",
-        "alt": "人体の3断面（矢状面・冠状面・水平面）を示す模式図",
+        "alt": "実際の人体モデルに矢状面・冠状面・水平面の3断面を重ねた図（OpenStax Anatomy and Physiology, CC BY 4.0）",
         "marker": "③",
         "marker_target": "水平面パネル",
         "overlay": {
-          "x": 0.6557,
-          "y": 0.3133,
+          "x": 0.7372,
+          "y": 0.3875,
           "label": "③"
         }
       }
@@ -2964,12 +2964,12 @@
       "image": {
         "prompt_id": "IMG-013",
         "asset": "assets/images/q040_airway_branching.webp",
-        "alt": "気道分岐（気管〜終末細気管支）を示す模式図",
+        "alt": "実際の気管支の枝分かれ形状に基づく気道分岐図（気管〜末梢気管支。Servier Medical Art, CC BY 4.0）",
         "marker": "②",
         "marker_target": "区域気管支",
         "overlay": {
-          "x": 0.2429,
-          "y": 0.3077,
+          "x": 0.2488,
+          "y": 0.5719,
           "label": "②"
         }
       }
@@ -3136,12 +3136,12 @@
       "image": {
         "prompt_id": "IMG-011",
         "asset": "assets/images/q035_right_middle_lobe.webp",
-        "alt": "左右肺の肺葉構成を示す前面模式図",
+        "alt": "実際の肺の形状に基づく前面模式図（水平裂・肺尖が確認できる。Servier Medical Art, CC BY 4.0）",
         "marker": "②",
         "marker_target": "水平裂",
         "overlay": {
-          "x": 0.2143,
-          "y": 0.4375,
+          "x": 0.2188,
+          "y": 0.5306,
           "label": "②"
         }
       }
@@ -4807,21 +4807,21 @@
         "房室弁"
       ],
       "image": {
-        "prompt_id": "IMG-023",
-        "asset": "assets/images/heart_valves_schematic.webp",
-        "alt": "心臓弁と腱索・乳頭筋を示す模式図",
-        "marker": "⑤",
+        "prompt_id": "IMG-006",
+        "asset": "assets/images/q017_heart_chambers.webp",
+        "alt": "4つの心腔を示す心臓断面模式図（腱索・乳頭筋も確認できる）",
+        "marker": "⑦",
         "marker_target": "腱索・乳頭筋",
         "overlays": [
           {
-            "x": 0.275,
-            "y": 0.6045,
-            "label": "⑤a"
+            "x": 0.3432,
+            "y": 0.5589,
+            "label": "⑦a"
           },
           {
-            "x": 0.6833,
-            "y": 0.5618,
-            "label": "⑤b"
+            "x": 0.6146,
+            "y": 0.5092,
+            "label": "⑦b"
           }
         ]
       }
@@ -5117,7 +5117,7 @@
       "image": {
         "prompt_id": "IMG-025",
         "asset": "assets/images/heart_exterior_anterior.webp",
-        "alt": "心臓を前面から見た外形模式図",
+        "alt": "心臓を前面から見た外形模式図（Servier Medical Art, CC BY 4.0）",
         "marker": "①",
         "marker_target": "上大静脈",
         "overlay": {
@@ -5627,12 +5627,12 @@
       "image": {
         "prompt_id": "IMG-013",
         "asset": "assets/images/q040_airway_branching.webp",
-        "alt": "気道分岐（気管〜終末細気管支）を示す模式図",
+        "alt": "実際の気管支の枝分かれ形状に基づく気道分岐図（気管〜末梢気管支。Servier Medical Art, CC BY 4.0）",
         "marker": "③",
         "marker_target": "右主気管支",
         "overlay": {
-          "x": 0.4,
-          "y": 0.1692,
+          "x": 0.4122,
+          "y": 0.4062,
           "label": "③"
         }
       }
@@ -5670,12 +5670,12 @@
       "image": {
         "prompt_id": "IMG-013",
         "asset": "assets/images/q040_airway_branching.webp",
-        "alt": "気道分岐（気管〜終末細気管支）を示す模式図",
+        "alt": "実際の気管支の枝分かれ形状に基づく気道分岐図（気管〜末梢気管支。Servier Medical Art, CC BY 4.0）",
         "marker": "④",
         "marker_target": "葉気管支",
         "overlay": {
-          "x": 0.2857,
-          "y": 0.2615,
+          "x": 0.2985,
+          "y": 0.45,
           "label": "④"
         }
       }
@@ -6237,12 +6237,12 @@
       "image": {
         "prompt_id": "IMG-011",
         "asset": "assets/images/q035_right_middle_lobe.webp",
-        "alt": "左右肺の肺葉構成を示す前面模式図",
+        "alt": "実際の肺の形状に基づく前面模式図（水平裂・肺尖が確認できる。Servier Medical Art, CC BY 4.0）",
         "marker": "③",
         "marker_target": "肺尖",
         "overlay": {
-          "x": 0.2143,
-          "y": 0.25,
+          "x": 0.3125,
+          "y": 0.0723,
           "label": "③"
         }
       }
@@ -10627,7 +10627,7 @@
       "image": {
         "prompt_id": "IMG-025",
         "asset": "assets/images/heart_exterior_anterior.webp",
-        "alt": "心臓を前面から見た外形模式図",
+        "alt": "心臓を前面から見た外形模式図（Servier Medical Art, CC BY 4.0）",
         "marker": "①",
         "marker_target": "肺動脈幹",
         "overlay": { "x": 0.55, "y": 0.35, "label": "①" }
