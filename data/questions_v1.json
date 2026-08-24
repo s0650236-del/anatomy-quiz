@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.1",
   "title": "人体の構造と機能A クイズ 全300問",
   "language": "ja",
   "question_count": 300,
@@ -1588,8 +1588,8 @@
         "marker": "①",
         "marker_target": "肺胞嚢",
         "overlay": {
-          "x": 0.4167,
-          "y": 0.5333,
+          "x": 0.769,
+          "y": 0.708,
           "label": "①"
         }
       }
@@ -2483,20 +2483,20 @@
         "僧帽弁"
       ],
       "image": {
-        "prompt_id": "IMG-023",
-        "asset": "assets/images/heart_valves_schematic.webp",
-        "alt": "心臓弁と腱索・乳頭筋を示す模式図",
+        "prompt_id": "IMG-028",
+        "asset": "assets/images/heart_valve_plane.webp",
+        "alt": "心臓弁を弁輪の高さで上方から見た模式図（三尖弁・僧帽弁・肺動脈弁・大動脈弁）",
         "marker": "①",
         "marker_target": "三尖弁・僧帽弁（房室弁）",
         "overlays": [
           {
-            "x": 0.3833,
-            "y": 0.4091,
+            "x": 0.25,
+            "y": 0.29,
             "label": "①a"
           },
           {
-            "x": 0.75,
-            "y": 0.3909,
+            "x": 0.675,
+            "y": 0.29,
             "label": "①b"
           }
         ]
@@ -2535,20 +2535,20 @@
         "大動脈弁"
       ],
       "image": {
-        "prompt_id": "IMG-023",
-        "asset": "assets/images/heart_valves_schematic.webp",
-        "alt": "心臓弁と腱索・乳頭筋を示す模式図",
+        "prompt_id": "IMG-028",
+        "asset": "assets/images/heart_valve_plane.webp",
+        "alt": "心臓弁を弁輪の高さで上方から見た模式図（三尖弁・僧帽弁・肺動脈弁・大動脈弁）",
         "marker": "②",
         "marker_target": "肺動脈弁・大動脈弁（半月弁）",
         "overlays": [
           {
-            "x": 0.2958,
-            "y": 0.3864,
+            "x": 0.55,
+            "y": 0.041,
             "label": "②a"
           },
           {
-            "x": 0.6792,
-            "y": 0.3682,
+            "x": 0.44,
+            "y": 0.62,
             "label": "②b"
           }
         ]
@@ -2814,8 +2814,8 @@
         "marker": "①",
         "marker_target": "左冠動脈",
         "overlay": {
-          "x": 0.5125,
-          "y": 0.2857,
+          "x": 0.45,
+          "y": 0.62,
           "label": "①"
         }
       }
@@ -2858,8 +2858,8 @@
         "marker": "②",
         "marker_target": "右冠動脈",
         "overlay": {
-          "x": 0.2833,
-          "y": 0.2571,
+          "x": 0.13,
+          "y": 0.72,
           "label": "②"
         }
       }
@@ -5163,9 +5163,9 @@
       "id": "Q140",
       "category": "循環器",
       "subcategory": "冠状動脈",
-      "type": "image_mcq",
+      "type": "text_mcq",
       "difficulty": 1,
-      "question": "心臓外形模式図の③で示された、心臓を還流した静脈血が集まり右心房へ注ぐ部位はどれか。",
+      "question": "心臓を還流した静脈血が集まり、右心房へ注ぐ部位はどれか。",
       "choices": [
         {
           "id": "A",
@@ -5189,19 +5189,7 @@
       "tags": [
         "冠状静脈洞",
         "冠循環"
-      ],
-      "image": {
-        "prompt_id": "IMG-026",
-        "asset": "assets/images/heart_exterior_posterior.webp",
-        "alt": "心臓を後面から見た外形模式図",
-        "marker": "②",
-        "marker_target": "冠状静脈洞",
-        "overlay": {
-          "x": 0.29,
-          "y": 0.675,
-          "label": "②"
-        }
-      }
+      ]
     },
     {
       "id": "Q141",
@@ -5730,8 +5718,8 @@
         "marker": "②",
         "marker_target": "肺胞管",
         "overlay": {
-          "x": 0.25,
-          "y": 0.3333,
+          "x": 0.253,
+          "y": 0.65,
           "label": "②"
         }
       }

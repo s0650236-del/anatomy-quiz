@@ -41,8 +41,10 @@ function note(msg) { notes.push(msg); }
 // (a) source pool: exact image_mcq count must be 65, never silently drift
 // ---------------------------------------------------------------------
 const imageMcq = qs.filter(q => q.type === 'image_mcq');
-if (imageMcq.length !== 65) {
-  fail(`expected 65 image_mcq in source pool, found ${imageMcq.length}`);
+// v2.0.1: Q140 converted to text_mcq (no verifiable open-license image of the
+// coronary sinus found) -- 65 -> 64. See docs/v2.0.1_asset_source_log.md.
+if (imageMcq.length !== 64) {
+  fail(`expected 64 image_mcq in source pool, found ${imageMcq.length}`);
 } else {
   note(`source pool: ${imageMcq.length}/${qs.length} questions are image_mcq (OK)`);
 }

@@ -91,12 +91,16 @@ qs.forEach(q => {
   if (!['text_mcq', 'image_mcq'].includes(q.type)) fail(`${q.id}: invalid type "${q.type}"`);
   typeCount[q.type] = (typeCount[q.type] || 0) + 1;
 });
-if ((typeCount.text_mcq || 0) !== 235) fail(`text_mcq count = ${typeCount.text_mcq}, expected 235`);
-if ((typeCount.image_mcq || 0) !== 65) fail(`image_mcq count = ${typeCount.image_mcq}, expected 65`);
+// v2.0.1: Q140 (冠状静脈洞) converted image_mcq -> text_mcq -- no open-license
+// image was found that actually depicts the coronary sinus as an identifiable
+// structure (see docs/v2.0.1_asset_source_log.md), so the question was moved
+// off image_mcq rather than keep an approximate/unverifiable marker.
+if ((typeCount.text_mcq || 0) !== 236) fail(`text_mcq count = ${typeCount.text_mcq}, expected 236`);
+if ((typeCount.image_mcq || 0) !== 64) fail(`image_mcq count = ${typeCount.image_mcq}, expected 64`);
 
 const catImgCount = {};
 qs.forEach(q => { if (q.type === 'image_mcq') catImgCount[q.category] = (catImgCount[q.category] || 0) + 1; });
-const expectCatImg = { '総論': 10, '循環器': 24, '呼吸器': 17, '泌尿器': 14 };
+const expectCatImg = { '総論': 10, '循環器': 23, '呼吸器': 17, '泌尿器': 14 };
 Object.keys(expectCatImg).forEach(c => {
   if ((catImgCount[c] || 0) !== expectCatImg[c]) fail(`category ${c} image_mcq count = ${catImgCount[c] || 0}, expected ${expectCatImg[c]}`);
 });
@@ -154,7 +158,11 @@ qs.forEach(q => {
   });
 });
 
-if (referencedAssets.size !== 27) fail(`unique referenced assets = ${referencedAssets.size}, expected 27`);
+// v2.0.1: heart_valve_plane.webp (Q065/Q066, superior valve-plane view) was
+// added alongside the unchanged heart_valves_schematic.webp (kept for Q129's
+// chordae tendineae/papillary muscle view only) -- two distinct views serving
+// two distinct teaching purposes, not a duplicate.
+if (referencedAssets.size !== 28) fail(`unique referenced assets = ${referencedAssets.size}, expected 28`);
 
 const allFiles = fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir).filter(f => f.endsWith('.webp')) : [];
 allFiles.forEach(f => { if (!referencedAssets.has(f)) warn(`asset file not referenced by any question: ${f}`); });
