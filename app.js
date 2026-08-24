@@ -18,7 +18,7 @@
   // アプリ本体（このapp.js/index.html）自体のビルド識別子。data/questions_v1.jsonの
   // versionとは別物 -- 「古いapp.jsのキャッシュ＋新しいdataset」のようなずれを
   // 画面右下の表示で即座に見分けられるようにするための値。リリース時に更新する。
-  var APP_BUILD = 'v2.0.1-dev';
+  var APP_BUILD = 'v2.0.1-rc';
 
   // 画像再制作candidate（docs/v2.0.1_candidate_assets.jsonと対応）。
   // data/questions_v1.jsonはここを一切参照しない -- candidateはreview modeでの
@@ -41,7 +41,13 @@
     correct: 0,
     answered: false,
     wrong: [],
-    sessionByCategory: {}
+    sessionByCategory: {},
+    // 「順番どおり」モードの継続位置。カテゴリごとに独立して保持する
+    // （例: {"__ALL__": 40, "循環器": 15}）。同一条件で再挑戦すると前回の
+    // 続きから出題し、末尾に達したら先頭へ循環する。ページ内メモリのみで
+    // 保持し、リロードやlocalStorageへの永続化はしない
+    // （selectedCategory等、他のセッション状態と同じ扱い）。
+    sequentialCursor: {}
   };
 
   // ---------- utilities ----------
@@ -229,10 +235,29 @@
     var pool = sourceOverride ? sourceOverride.slice() : getPool();
     var order = el.orderSelect.value;
     var count = getRequestedCount(pool.length);
-    var picked = order === 'random' ? shuffle(pool) : pool.slice().sort(function (a, b) {
-      return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
-    });
-    picked = picked.slice(0, Math.min(count, picked.length));
+    var picked;
+    if (order === 'random') {
+      picked = shuffle(pool).slice(0, Math.min(count, pool.length));
+    } else {
+      var sorted = pool.slice().sort(function (a, b) {
+        return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
+      });
+      if (sourceOverride) {
+        // 「間違えた問題だけ復習」等の固定リストには継続位置の概念を適用しない
+        // （毎回そのリスト全体を、常に先頭から出題する）。
+        picked = sorted.slice(0, Math.min(count, sorted.length));
+      } else {
+        // 「順番どおり」は、同一カテゴリで再挑戦したとき前回の続きから出題し、
+        // 末尾に達したら先頭へ循環する。カテゴリごとに継続位置を独立管理する。
+        var cursorKey = app.selectedCategory;
+        var start = app.sequentialCursor[cursorKey] || 0;
+        if (start >= sorted.length) start = 0;
+        var n = Math.min(count, sorted.length);
+        picked = sorted.slice(start, start + n);
+        if (picked.length < n) picked = picked.concat(sorted.slice(0, n - picked.length));
+        app.sequentialCursor[cursorKey] = (start + n) % sorted.length;
+      }
+    }
     app.queue = picked.map(function (q) {
       return {
         source: q,
@@ -538,6 +563,52 @@
     if (e.key === 'Escape') closeZoom();
   }
 
+  // ---------- image credits（v2.0.1で導入したオープンライセンス画像の出典表示） ----------
+  // CC BY / CC BY-SA の帰属表示要件を満たすための最小限の一覧。
+  // 詳細な出典URL・取得経緯は docs/v2.0.1_asset_source_log.md を正本とする
+  // （このアプリ内表示は要約であり、両者は内容を一致させて保守すること）。
+  var IMAGE_CREDITS = [
+    {
+      title: 'Servier Medical Art',
+      meta: 'License: CC BY 4.0　｜　喉頭・声帯・心臓外形（前面／後面）・刺激伝導系・腎臓（断面／腎門）・泌尿器系・心臓弁（弁輪面）・肺胞嚢 の各画像に使用',
+      url: 'https://smart.servier.com/'
+    },
+    {
+      title: 'AnatomyTOOL.org（Servier Medical Art の "no labels" 版の再配布）',
+      meta: 'License: CC BY 4.0　｜　上記Servier由来画像の一部は本サイト経由で取得',
+      url: 'https://anatomytool.org/'
+    },
+    {
+      title: 'Patrick J. Lynch（医学イラストレーター）／ C. Carl Jaffe, MD',
+      meta: 'License: CC BY-SA 4.0　｜　冠状動脈の走行を示す画像に使用（AnatomyTOOL.org経由）',
+      url: 'https://anatomytool.org/'
+    }
+  ];
+
+  function renderCreditsList() {
+    if (!el.creditsList) return;
+    el.creditsList.innerHTML = IMAGE_CREDITS.map(function (c) {
+      return '<div class="credit-item"><div class="credit-title">' + escapeHtml(c.title) + '</div>' +
+        '<div class="credit-meta">' + escapeHtml(c.meta) + '　｜　<a href="' + escapeHtml(c.url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(c.url) + '</a></div></div>';
+    }).join('');
+  }
+
+  function openCredits() {
+    renderCreditsList();
+    el.creditsModal.style.display = 'flex';
+    el.creditsClose.focus();
+    document.addEventListener('keydown', onCreditsKeydown);
+  }
+
+  function closeCredits() {
+    el.creditsModal.style.display = 'none';
+    document.removeEventListener('keydown', onCreditsKeydown);
+  }
+
+  function onCreditsKeydown(e) {
+    if (e.key === 'Escape') closeCredits();
+  }
+
   // ---------- review modes (開発・教員用。学生向け通常クイズとは別導線) ----------
   //
   // ?review=images : 65問のimage_mcqを1問ずつ前後送りで確認する。
@@ -806,6 +877,10 @@
     el.versionBadge = byId('versionBadge');
     el.updateBanner = byId('updateBanner');
     el.updateReloadBtn = byId('updateReloadBtn');
+    el.creditsOpenBtn = byId('creditsOpenBtn');
+    el.creditsModal = byId('creditsModal');
+    el.creditsClose = byId('creditsClose');
+    el.creditsList = byId('creditsList');
   }
 
   function bindStaticEvents() {
@@ -815,6 +890,11 @@
     el.zoomClose.addEventListener('click', closeZoom);
     el.zoomModal.addEventListener('click', function (e) {
       if (e.target === el.zoomModal) closeZoom();
+    });
+    if (el.creditsOpenBtn) el.creditsOpenBtn.addEventListener('click', openCredits);
+    if (el.creditsClose) el.creditsClose.addEventListener('click', closeCredits);
+    if (el.creditsModal) el.creditsModal.addEventListener('click', function (e) {
+      if (e.target === el.creditsModal) closeCredits();
     });
     document.addEventListener('keydown', onGlobalKeydown);
 

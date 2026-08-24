@@ -115,6 +115,15 @@
     #versionBadge{display:none;position:fixed;right:8px;bottom:calc(6px + env(safe-area-inset-bottom));font-size:10px;color:#98a2b3;background:rgba(255,255,255,.85);border:1px solid #eaecf0;border-radius:999px;padding:3px 9px;pointer-events:none;z-index:500}
     #updateBanner{display:none;position:sticky;top:0;z-index:900;align-items:center;justify-content:space-between;gap:10px;background:#155eef;color:#fff;padding:10px 14px;font-size:13px;border-radius:0 0 12px 12px;margin:0 0 14px}
     #updateBanner .btn{width:auto;min-height:36px;padding:6px 14px;font-size:13px;background:#fff;color:#155eef;border-color:#fff}
+    .credits-link{background:none;border:none;padding:0;color:#98a2b3;font-size:11px;text-decoration:underline;cursor:pointer}
+    .credits-content{max-width:min(92vw,640px);max-height:86vh;overflow-y:auto;background:#fff;border-radius:14px;padding:20px}
+    .credits-panel h2{font-size:17px;margin:0 0 10px}
+    .credits-panel p{font-size:13px;color:#475467;margin:0 0 14px}
+    .credit-item{border-top:1px solid #eaecf0;padding:10px 0;font-size:13px}
+    .credit-item:first-child{border-top:none}
+    .credit-item .credit-title{font-weight:700;color:var(--text)}
+    .credit-item .credit-meta{color:#667085;margin-top:2px}
+    .credit-item .credit-meta a{color:#155eef}
   </style>
 </head>
 <body>
@@ -154,7 +163,7 @@
     <div class="card loading-card" id="initialLoading">問題データを読み込んでいます…</div>
   </main>
   <div class="homehint">iPhone／iPad：Safariで開き、共有 →「ホーム画面に追加」でアプリのように利用できます。</div>
-  <div class="footer">学習用Webアプリ｜問題・解説データは data/questions_v1.json を利用</div>
+  <div class="footer">学習用Webアプリ｜問題・解説データは data/questions_v1.json を利用｜<button type="button" class="credits-link" id="creditsOpenBtn">画像の出典・ライセンス</button></div>
 </div>
 <div id="versionBadge" aria-hidden="true"></div>
 
@@ -163,6 +172,17 @@
     <button type="button" class="modal-close" id="zoomClose" aria-label="拡大表示を閉じる">✕</button>
     <div class="img-wrap" id="zoomImgWrap"></div>
     <div class="modal-caption" id="zoomCaption"></div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="creditsModal" style="display:none" role="dialog" aria-modal="true" aria-label="画像の出典・ライセンス">
+  <div class="modal-content credits-content">
+    <button type="button" class="modal-close" id="creditsClose" aria-label="閉じる">✕</button>
+    <div class="credits-panel">
+      <h2>画像の出典・ライセンス</h2>
+      <p>このアプリの解剖学イラストの一部は、以下のオープンライセンス素材を利用しています（改変・トリミング・WebP変換のうえ使用）。</p>
+      <div id="creditsList"></div>
+    </div>
   </div>
 </div>
 
