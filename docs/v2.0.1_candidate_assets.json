@@ -1,0 +1,15 @@
+{
+  "_comment": "Tracks image assets that have a re-created candidate file sitting alongside the accepted production file. Nothing in data/questions_v1.json references a *_candidate.webp path -- these are review-only and never served to students until explicitly promoted (candidate file renamed over the accepted one, in a separate future change). See docs/v2.0.1_image_replacement_brief.md for the full spec each candidate was built against.",
+  "candidates": [
+    {
+      "asset": "assets/images/circulation_circuit.webp",
+      "candidate": "assets/images/circulation_circuit_candidate.webp",
+      "svg_source": "assets/image_sources/svg/circulation_circuit.svg",
+      "status": "candidate",
+      "method": "SVG-PRO",
+      "used_by": ["Q147", "Q148"],
+      "brief": "docs/v2.0.1_image_replacement_brief.md#1-circulation_circuitwebp-svg-pro--本フェーズで制作済みcandidate",
+      "notes": "Old ellipse-lungs + rounded-rect-grid-heart geometric placeholder replaced with a real heart silhouette (color-split left/right) and lung silhouettes with a concave mediastinal border, plus a capillary-mesh body shape. Old SVG is preserved in git history at commit c4fc4b7."
+    }
+  ]
+}

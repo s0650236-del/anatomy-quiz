@@ -20,6 +20,14 @@
   // 画面右下の表示で即座に見分けられるようにするための値。リリース時に更新する。
   var APP_BUILD = 'v2.0.1-dev';
 
+  // 画像再制作candidate（docs/v2.0.1_candidate_assets.jsonと対応）。
+  // data/questions_v1.jsonはここを一切参照しない -- candidateはreview modeでの
+  // 見比べにのみ使われ、正式採用（accepted）されるまで学生向け通常クイズには
+  // 一切影響しない。
+  var CANDIDATE_ASSETS = {
+    'assets/images/circulation_circuit.webp': 'assets/images/circulation_circuit_candidate.webp'
+  };
+
   var el = {};
 
   var app = {
@@ -627,9 +635,20 @@
     var entry = list[i];
     el.miniScore.textContent = 'asset review ' + (i + 1) + ' / ' + list.length;
 
+    // 再制作candidateがあるassetのみ、旧画像／candidateを切り替えて見比べられる
+    // ボタンを出す。data/questions_v1.jsonはcandidateパスを一切参照しないため、
+    // ここで何を選んでも通常クイズには影響しない。
+    var candidatePath = CANDIDATE_ASSETS[entry.asset];
+    if (app.assetReviewShowCandidate === undefined) app.assetReviewShowCandidate = false;
+    var showCandidate = !!candidatePath && app.assetReviewShowCandidate;
+    var displayAsset = showCandidate ? candidatePath : entry.asset;
+
     // 同じassetを使う全QIDのoverlay/overlaysを1枚の画像上に統合表示する
     // （renderMarkers()自体は変更せず、同じ関数にそのまま渡すだけ）。
-    var combinedImage = { asset: entry.asset, alt: entry.questions[0].image.alt, overlays: [] };
+    // candidate表示時もmarker座標は現行データのものをそのまま重ねる
+    // （正式採用前の見比べ目的であり、まだ座標調整は行っていないため
+    // ズレがあり得る点に留意 -- 座標再調整はcandidate正式採用時の別作業）。
+    var combinedImage = { asset: displayAsset, alt: entry.questions[0].image.alt, overlays: [] };
     entry.questions.forEach(function (q) {
       overlaysOf(q.image).forEach(function (o) {
         combinedImage.overlays.push({ x: o.x, y: o.y, label: (o.label || '?') + '(' + q.id + ')' });
@@ -640,9 +659,16 @@
       return '<li><strong>' + escapeHtml(q.id) + '</strong>｜' + escapeHtml(q.category) + '｜' + escapeHtml(q.question) + '</li>';
     }).join('');
 
+    var candidateToggleHtml = candidatePath
+      ? '<button type="button" class="btn secondary" id="assetCandidateToggle" style="margin-bottom:10px">' +
+        (showCandidate ? '← 現行版（accepted）を表示' : 'candidate版を表示 →') + '</button>'
+      : '';
+
     var html = reviewBackLink() + '<section class="card" id="questionCard">';
-    html += '<div class="qtop"><span>asset review：' + (i + 1) + ' / ' + list.length + '</span><span>filename：' + escapeHtml(entry.asset) + '</span></div>';
+    html += '<div class="qtop"><span>asset review：' + (i + 1) + ' / ' + list.length + '</span><span>filename：' + escapeHtml(displayAsset) +
+      (showCandidate ? '（candidate）' : '') + '</span></div>';
     html += '<div class="qcount">この画像を使用するQID：' + entry.questions.length + '問（差し替え時の影響範囲）</div>';
+    html += candidateToggleHtml;
     html += renderImageBlock({ type: 'image_mcq', image: combinedImage });
     html += '<div style="margin-top:14px"><div class="settings-title">使用QID一覧</div><ul style="margin:0;padding-left:20px;font-size:14px;line-height:1.8">' + qListHtml + '</ul></div>';
     html += '<div class="actions" id="actionArea">' +
@@ -654,9 +680,11 @@
 
     attachImageHandlers(byId('questionCard'), combinedImage);
     var prevBtn = byId('assetPrevBtn');
-    if (prevBtn) prevBtn.addEventListener('click', function () { app.assetReviewIndex = Math.max(0, app.assetReviewIndex - 1); renderAssetReviewCard(); scrollQuestionTop(); });
+    if (prevBtn) prevBtn.addEventListener('click', function () { app.assetReviewIndex = Math.max(0, app.assetReviewIndex - 1); app.assetReviewShowCandidate = false; renderAssetReviewCard(); scrollQuestionTop(); });
     var nextBtn = byId('assetNextBtn');
-    if (nextBtn) nextBtn.addEventListener('click', function () { app.assetReviewIndex = Math.min(list.length - 1, app.assetReviewIndex + 1); renderAssetReviewCard(); scrollQuestionTop(); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { app.assetReviewIndex = Math.min(list.length - 1, app.assetReviewIndex + 1); app.assetReviewShowCandidate = false; renderAssetReviewCard(); scrollQuestionTop(); });
+    var toggleBtn = byId('assetCandidateToggle');
+    if (toggleBtn) toggleBtn.addEventListener('click', function () { app.assetReviewShowCandidate = !app.assetReviewShowCandidate; renderAssetReviewCard(); });
   }
 
   // ---------- history (localStorage) ----------
