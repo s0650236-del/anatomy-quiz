@@ -776,12 +776,12 @@
       "image": {
         "prompt_id": "IMG-008",
         "asset": "assets/images/q021_vessel_cross_sections.webp",
-        "alt": "動脈・静脈・毛細血管の断面を比較する模式図",
+        "alt": "動脈・静脈・毛細血管の血管壁の厚さを比較する断面図(左から動脈・静脈・毛細血管)",
         "marker": "③",
         "marker_target": "静脈",
         "overlay": {
-          "x": 0.61,
-          "y": 0.5,
+          "x": 0.4701,
+          "y": 0.3636,
           "label": "③"
         }
       }
@@ -820,11 +820,11 @@
       "image": {
         "prompt_id": "IMG-008",
         "asset": "assets/images/q021_vessel_cross_sections.webp",
-        "alt": "動脈・静脈・毛細血管の断面を比較する模式図",
+        "alt": "動脈・静脈・毛細血管の血管壁の厚さを比較する断面図(左から動脈・静脈・毛細血管)",
         "marker": "①",
         "marker_target": "毛細血管",
         "overlay": {
-          "x": 0.8607,
+          "x": 0.8842,
           "y": 0.5,
           "label": "①"
         }
@@ -2588,12 +2588,12 @@
       "image": {
         "prompt_id": "IMG-008",
         "asset": "assets/images/q021_vessel_cross_sections.webp",
-        "alt": "動脈・静脈・毛細血管の断面を比較する模式図",
+        "alt": "動脈・静脈・毛細血管の血管壁の厚さを比較する断面図(左から動脈・静脈・毛細血管)",
         "marker": "②",
         "marker_target": "動脈（3断面中の1つ）",
         "overlay": {
-          "x": 0.2333,
-          "y": 0.5,
+          "x": 0.0932,
+          "y": 0.3636,
           "label": "②"
         }
       }
@@ -5419,23 +5419,23 @@
       "image": {
         "prompt_id": "IMG-024",
         "asset": "assets/images/circulation_circuit.webp",
-        "alt": "体循環・肺循環の全経路を示す「8の字」模式図",
+        "alt": "体循環・肺循環の全経路を矢印付きで示す「8の字」模式図（心臓は心房・心室と4つの弁の位置も示す）",
         "marker": "①",
         "marker_target": "体循環経路（矢印列）",
         "overlays": [
           {
-            "x": 0.65,
-            "y": 0.577,
+            "x": 0.668,
+            "y": 0.6154,
             "label": "①a"
           },
           {
-            "x": 0.5,
-            "y": 0.808,
+            "x": 0.7,
+            "y": 0.9385,
             "label": "①b"
           },
           {
-            "x": 0.37,
-            "y": 0.5,
+            "x": 0.3,
+            "y": 0.6154,
             "label": "①c"
           }
         ]
@@ -5474,23 +5474,23 @@
       "image": {
         "prompt_id": "IMG-024",
         "asset": "assets/images/circulation_circuit.webp",
-        "alt": "体循環・肺循環の全経路を示す「8の字」模式図",
+        "alt": "体循環・肺循環の全経路を矢印付きで示す「8の字」模式図（心臓は心房・心室と4つの弁の位置も示す）",
         "marker": "②",
         "marker_target": "肺循環経路（矢印列）",
         "overlays": [
           {
-            "x": 0.39,
-            "y": 0.462,
+            "x": 0.365,
+            "y": 0.3231,
             "label": "②a"
           },
           {
-            "x": 0.3,
-            "y": 0.192,
+            "x": 0.75,
+            "y": 0.1538,
             "label": "②b"
           },
           {
-            "x": 0.59,
-            "y": 0.431,
+            "x": 0.63,
+            "y": 0.3231,
             "label": "②c"
           }
         ]
