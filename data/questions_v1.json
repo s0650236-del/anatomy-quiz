@@ -394,12 +394,12 @@
       "image": {
         "prompt_id": "IMG-004",
         "asset": "assets/images/q011_germ_layers.webp",
-        "alt": "3胚葉（外胚葉・中胚葉・内胚葉）の同心円状の模式図",
+        "alt": "三胚葉の胚盤断面模式図（外胚葉・中胚葉・内胚葉の3層構造）",
         "marker": "②",
         "marker_target": "中胚葉（中層）",
         "overlay": {
-          "x": 0.6875,
-          "y": 0.5,
+          "x": 0.15,
+          "y": 0.55,
           "label": "②"
         }
       }
@@ -438,12 +438,12 @@
       "image": {
         "prompt_id": "IMG-004",
         "asset": "assets/images/q011_germ_layers.webp",
-        "alt": "3胚葉（外胚葉・中胚葉・内胚葉）の同心円状の模式図",
+        "alt": "三胚葉の胚盤断面模式図（外胚葉・中胚葉・内胚葉の3層構造）",
         "marker": "①",
         "marker_target": "最外層（外胚葉）",
         "overlay": {
-          "x": 0.8583,
-          "y": 0.5,
+          "x": 0.5,
+          "y": 0.25,
           "label": "①"
         }
       }
