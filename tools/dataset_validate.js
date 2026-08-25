@@ -105,12 +105,16 @@ qs.forEach(q => {
 // text_mcq -> image_mcq once a real open-license-quality asset made its
 // marker target (終末細気管支, a genuinely smooth alveoli-free segment)
 // uniquely identifiable. 75 -> 76.
-if ((typeCount.text_mcq || 0) !== 235) fail(`text_mcq count = ${typeCount.text_mcq}, expected 235`);
-if ((typeCount.image_mcq || 0) !== 76) fail(`image_mcq count = ${typeCount.image_mcq}, expected 76`);
+// v2.0.1 (common illustration library batch 1): Q140 (冠状静脈洞) converted
+// text_mcq -> image_mcq once the new C02 posterior heart view made the
+// coronary sinus (running the AV groove, distinct from every neighboring
+// vessel) uniquely identifiable for the first time. 76 -> 77.
+if ((typeCount.text_mcq || 0) !== 234) fail(`text_mcq count = ${typeCount.text_mcq}, expected 234`);
+if ((typeCount.image_mcq || 0) !== 77) fail(`image_mcq count = ${typeCount.image_mcq}, expected 77`);
 
 const catImgCount = {};
 qs.forEach(q => { if (q.type === 'image_mcq') catImgCount[q.category] = (catImgCount[q.category] || 0) + 1; });
-const expectCatImg = { '総論': 10, '循環器': 26, '呼吸器': 23, '泌尿器': 17 };
+const expectCatImg = { '総論': 10, '循環器': 27, '呼吸器': 23, '泌尿器': 17 };
 Object.keys(expectCatImg).forEach(c => {
   if ((catImgCount[c] || 0) !== expectCatImg[c]) fail(`category ${c} image_mcq count = ${catImgCount[c] || 0}, expected ${expectCatImg[c]}`);
 });
@@ -189,14 +193,22 @@ if (!q129 || !q129.image || q129.image.asset !== 'assets/illustrations/v1/assets
   fail(`Q129 must use C03 heart chambers master, got: ${q129 && q129.image && q129.image.asset}`);
 }
 
-// The 5 pre-existing real-photo assets' Q001-Q100 overlays must never drift.
+// The 5 pre-existing real-photo assets' Q001-Q100 overlays must never drift
+// -- EXCEPT when an asset is deliberately upgraded, in which case this
+// baseline is updated in the same commit as the intentional change (same
+// pattern used throughout this project's history). Q017/Q064 baseline was
+// updated for the "common illustration library batch 1" pass: c03's
+// underlying image was replaced with a higher-quality custom-generated
+// chamber cutaway, and all 4/5 chamber-marker coordinates were re-measured
+// on the new file by pixel sampling (previous baseline, now historical:
+// Q017 {x:0.62,y:0.67}; Q064 {x:0.32,y:0.46}/{x:0.38,y:0.73}/{x:0.63,y:0.38}/{x:0.62,y:0.67}).
 const BASELINE_OVERLAYS = {
   Q002: [{ x: 0.08, y: 0.46, label: '①' }, { x: 0.28, y: 0.46, label: '②' }, { x: 0.48, y: 0.43, label: '③' }, { x: 0.7, y: 0.45, label: '④' }, { x: 0.91, y: 0.47, label: '⑤' }],
   Q004: [{ x: 0.5, y: 0.46, label: '①' }],
-  Q017: [{ x: 0.62, y: 0.67, label: '①' }],
+  Q017: [{ x: 0.7007, y: 0.7188, label: '①' }],
   Q037: [{ x: 0.385, y: 0.57, label: '①' }],
   Q048: [{ x: 0.19, y: 0.135, label: '①' }],
-  Q064: [{ x: 0.32, y: 0.46, label: '①' }, { x: 0.38, y: 0.73, label: '②' }, { x: 0.63, y: 0.38, label: '③' }, { x: 0.62, y: 0.67, label: '④' }],
+  Q064: [{ x: 0.2925, y: 0.3438, label: '①' }, { x: 0.3061, y: 0.7812, label: '②' }, { x: 0.7007, y: 0.325, label: '③' }, { x: 0.7007, y: 0.7188, label: '④' }],
 };
 Object.keys(BASELINE_OVERLAYS).forEach(id => {
   const q = qs.find(x => x.id === id);

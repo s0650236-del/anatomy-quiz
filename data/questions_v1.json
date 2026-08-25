@@ -612,12 +612,12 @@
       "image": {
         "prompt_id": "IMG-025",
         "asset": "assets/illustrations/v1/assets/c01_heart_exterior_anterior.webp",
-        "alt": "心臓を前面から見た外形模式図（Servier Medical Art, CC BY 4.0）",
+        "alt": "心臓を前面から見た外形模式図（心尖・上大静脈・肺動脈幹・冠状動脈まで確認できる高精細イラスト）",
         "marker": "②",
         "marker_target": "心尖",
         "overlay": {
-          "x": 0.4188,
-          "y": 0.9125,
+          "x": 0.6135,
+          "y": 0.9688,
           "label": "②"
         }
       }
@@ -656,12 +656,12 @@
       "image": {
         "prompt_id": "IMG-006",
         "asset": "assets/illustrations/v1/assets/c03_heart_chambers.webp",
-        "alt": "4つの心腔を示す心臓断面模式図",
+        "alt": "4つの心腔を断面で示す高精細な心臓断面模式図（腱索・乳頭筋・心室中隔も確認できる）",
         "marker": "①",
         "marker_target": "左心室",
         "overlay": {
-          "x": 0.62,
-          "y": 0.67,
+          "x": 0.7007,
+          "y": 0.7188,
           "label": "①"
         }
       }
@@ -732,12 +732,12 @@
       "image": {
         "prompt_id": "IMG-026",
         "asset": "assets/illustrations/v1/assets/c02_heart_exterior_posterior.webp",
-        "alt": "心臓を後面から見た外形模式図（肺静脈が左心房へ入る部分を含む）",
+        "alt": "心臓を後面から見た外形模式図（左右肺静脈4本・下大静脈・冠状静脈洞まで確認できる高精細イラスト）",
         "marker": "①",
         "marker_target": "肺から左心房へ入る肺静脈",
         "overlay": {
-          "x": 0.83,
-          "y": 0.45,
+          "x": 0.4172,
+          "y": 0.1562,
           "label": "①"
         }
       }
@@ -985,12 +985,12 @@
       "image": {
         "prompt_id": "IMG-009",
         "asset": "assets/illustrations/v1/assets/c05_conduction_system.webp",
-        "alt": "心臓断面内の刺激伝導系（洞房結節・房室結節・房室束）を示す模式図",
+        "alt": "心臓断面内の刺激伝導系（洞房結節・房室結節・房室束・左右脚・プルキンエ線維）を示す高精細模式図",
         "marker": "①",
         "marker_target": "右心房上部の洞房結節",
         "overlay": {
-          "x": 0.12,
-          "y": 0.38,
+          "x": 0.1992,
+          "y": 0.325,
           "label": "①"
         }
       }
@@ -2435,28 +2435,28 @@
       "image": {
         "prompt_id": "IMG-006",
         "asset": "assets/illustrations/v1/assets/c03_heart_chambers.webp",
-        "alt": "4つの心腔を示す心臓断面模式図",
+        "alt": "4つの心腔を断面で示す高精細な心臓断面模式図（腱索・乳頭筋・心室中隔も確認できる）",
         "marker": "①②③④",
         "marker_target": "右心房・右心室・左心房・左心室（4か所）",
         "overlays": [
           {
-            "x": 0.32,
-            "y": 0.46,
+            "x": 0.2925,
+            "y": 0.3438,
             "label": "①"
           },
           {
-            "x": 0.38,
-            "y": 0.73,
+            "x": 0.3061,
+            "y": 0.7812,
             "label": "②"
           },
           {
-            "x": 0.63,
-            "y": 0.38,
+            "x": 0.7007,
+            "y": 0.325,
             "label": "③"
           },
           {
-            "x": 0.62,
-            "y": 0.67,
+            "x": 0.7007,
+            "y": 0.7188,
             "label": "④"
           }
         ]
@@ -2794,7 +2794,7 @@
       "subcategory": "冠状動脈",
       "type": "image_mcq",
       "difficulty": 2,
-      "question": "冠動脈走行図の①で示された血管が主に栄養することが多い部位として正しいものはどれか。",
+      "question": "冠動脈走行図の④で示された血管が主に栄養することが多い部位として正しいものはどれか。",
       "choices": [
         {
           "id": "A",
@@ -2820,15 +2820,15 @@
         "左冠動脈"
       ],
       "image": {
-        "prompt_id": "IMG-018",
-        "asset": "assets/illustrations/v1/assets/c08_coronary_arteries.webp",
-        "alt": "心臓前面の冠状動脈の走行を示す模式図",
-        "marker": "①",
-        "marker_target": "左冠動脈",
+        "prompt_id": "IMG-025",
+        "asset": "assets/illustrations/v1/assets/c01_heart_exterior_anterior.webp",
+        "alt": "心臓を前面から見た外形模式図（心尖・上大静脈・肺動脈幹・冠状動脈まで確認できる高精細イラスト）",
+        "marker": "④",
+        "marker_target": "左冠動脈（前室間枝）",
         "overlay": {
-          "x": 0.45,
-          "y": 0.62,
-          "label": "①"
+          "x": 0.5112,
+          "y": 0.5625,
+          "label": "④"
         }
       }
     },
@@ -2838,7 +2838,7 @@
       "subcategory": "冠状動脈",
       "type": "image_mcq",
       "difficulty": 2,
-      "question": "冠動脈走行図の②で示された血管が主に栄養することが多い部位として正しいものはどれか。",
+      "question": "冠動脈走行図の⑤で示された血管が主に栄養することが多い部位として正しいものはどれか。",
       "choices": [
         {
           "id": "A",
@@ -2864,15 +2864,15 @@
         "右冠動脈"
       ],
       "image": {
-        "prompt_id": "IMG-018",
-        "asset": "assets/illustrations/v1/assets/c08_coronary_arteries.webp",
-        "alt": "心臓前面の冠状動脈の走行を示す模式図",
-        "marker": "②",
+        "prompt_id": "IMG-025",
+        "asset": "assets/illustrations/v1/assets/c01_heart_exterior_anterior.webp",
+        "alt": "心臓を前面から見た外形模式図（心尖・上大静脈・肺動脈幹・冠状動脈まで確認できる高精細イラスト）",
+        "marker": "⑤",
         "marker_target": "右冠動脈",
         "overlay": {
-          "x": 0.13,
-          "y": 0.72,
-          "label": "②"
+          "x": 0.2045,
+          "y": 0.5875,
+          "label": "⑤"
         }
       }
     },
@@ -4650,7 +4650,7 @@
       "subcategory": "心臓の位置",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "心臓外形模式図の①で示された、心臓の後上方に位置し、大血管が出入りする部分はどれか。",
+      "question": "心臓外形模式図の②で示された、心臓の後上方に位置し、大血管が出入りする部分はどれか。",
       "choices": [
         {
           "id": "A",
@@ -4678,13 +4678,13 @@
       "image": {
         "prompt_id": "IMG-026",
         "asset": "assets/illustrations/v1/assets/c02_heart_exterior_posterior.webp",
-        "alt": "心臓を後面から見た外形模式図",
-        "marker": "①",
+        "alt": "心臓を後面から見た外形模式図（左右肺静脈4本・下大静脈・冠状静脈洞まで確認できる高精細イラスト）",
+        "marker": "②",
         "marker_target": "心底",
         "overlay": {
-          "x": 0.5,
-          "y": 0.15,
-          "label": "①"
+          "x": 0.4104,
+          "y": 0.3125,
+          "label": "②"
         }
       }
     },
@@ -4821,18 +4821,18 @@
       "image": {
         "prompt_id": "IMG-006",
         "asset": "assets/illustrations/v1/assets/c03_heart_chambers.webp",
-        "alt": "4つの心腔を示す心臓断面模式図（腱索・乳頭筋も確認できる）",
+        "alt": "4つの心腔を断面で示す高精細な心臓断面模式図（腱索・乳頭筋・心室中隔も確認できる）",
         "marker": "⑦",
         "marker_target": "腱索・乳頭筋",
         "overlays": [
           {
-            "x": 0.3432,
-            "y": 0.5589,
+            "x": 0.2789,
+            "y": 0.55,
             "label": "⑦a"
           },
           {
-            "x": 0.6146,
-            "y": 0.5092,
+            "x": 0.6871,
+            "y": 0.5125,
             "label": "⑦b"
           }
         ]
@@ -5100,7 +5100,7 @@
       "subcategory": "血管",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "心臓外形模式図の②で示された、上半身からの静脈血を右心房へ運ぶ血管はどれか。",
+      "question": "心臓外形模式図の①で示された、上半身からの静脈血を右心房へ運ぶ血管はどれか。",
       "choices": [
         {
           "id": "A",
@@ -5129,12 +5129,12 @@
       "image": {
         "prompt_id": "IMG-025",
         "asset": "assets/illustrations/v1/assets/c01_heart_exterior_anterior.webp",
-        "alt": "心臓を前面から見た外形模式図（Servier Medical Art, CC BY 4.0）",
+        "alt": "心臓を前面から見た外形模式図（心尖・上大静脈・肺動脈幹・冠状動脈まで確認できる高精細イラスト）",
         "marker": "①",
         "marker_target": "上大静脈",
         "overlay": {
-          "x": 0.13,
-          "y": 0.25,
+          "x": 0.259,
+          "y": 0.1562,
           "label": "①"
         }
       }
@@ -5175,9 +5175,9 @@
       "id": "Q140",
       "category": "循環器",
       "subcategory": "冠状動脈",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 1,
-      "question": "心臓を還流した静脈血が集まり、右心房へ注ぐ部位はどれか。",
+      "question": "心臓外形模式図（後面）の④で示された、心臓を還流した静脈血が集まり、右心房へ注ぐ部位はどれか。",
       "choices": [
         {
           "id": "A",
@@ -5201,7 +5201,19 @@
       "tags": [
         "冠状静脈洞",
         "冠循環"
-      ]
+      ],
+      "image": {
+        "prompt_id": "IMG-026",
+        "asset": "assets/illustrations/v1/assets/c02_heart_exterior_posterior.webp",
+        "alt": "心臓を後面から見た外形模式図（左右肺静脈4本・下大静脈・冠状静脈洞まで確認できる高精細イラスト）",
+        "marker": "④",
+        "marker_target": "冠状静脈洞",
+        "overlay": {
+          "x": 0.4104,
+          "y": 0.4688,
+          "label": "④"
+        }
+      }
     },
     {
       "id": "Q141",
@@ -8321,12 +8333,12 @@
       "image": {
         "prompt_id": "IMG-006",
         "asset": "assets/illustrations/v1/assets/c03_heart_chambers.webp",
-        "alt": "心臓の4腔を示す前額断面模式図",
+        "alt": "4つの心腔を断面で示す高精細な心臓断面模式図（腱索・乳頭筋・心室中隔も確認できる）",
         "marker": "⑤",
         "marker_target": "心室中隔",
         "overlay": {
-          "x": 0.48,
-          "y": 0.5985,
+          "x": 0.5034,
+          "y": 0.7188,
           "label": "⑤"
         }
       }
@@ -8363,8 +8375,8 @@
       ],
       "image": {
         "prompt_id": "IMG-006",
-        "asset": "assets/illustrations/v1/assets/c03_heart_chambers.webp",
-        "alt": "心臓の4腔を示す前額断面模式図",
+        "asset": "assets/illustrations/v1/assets/c10_heart_chambers_septum.webp",
+        "alt": "心臓の4腔を示す前額断面模式図（心房中隔が確認できる）",
         "marker": "⑥",
         "marker_target": "心房中隔",
         "overlay": {
@@ -8636,7 +8648,7 @@
       "subcategory": "刺激伝導系",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "刺激伝導系の模式図の①で示された、房室結節からの興奮を心室中隔へ伝え、左右の脚へ続く構造はどれか。",
+      "question": "刺激伝導系の模式図の②で示された、房室結節からの興奮を心室中隔へ伝え、左右の脚へ続く構造はどれか。",
       "choices": [
         {
           "id": "A",
@@ -8664,12 +8676,12 @@
       "image": {
         "prompt_id": "IMG-009",
         "asset": "assets/illustrations/v1/assets/c05_conduction_system.webp",
-        "alt": "刺激伝導系の経路を示す模式図",
+        "alt": "心臓断面内の刺激伝導系（洞房結節・房室結節・房室束・左右脚・プルキンエ線維）を示す高精細模式図",
         "marker": "②",
         "marker_target": "房室束",
         "overlay": {
-          "x": 0.465,
-          "y": 0.589,
+          "x": 0.4609,
+          "y": 0.4875,
           "label": "②"
         }
       }
@@ -10639,10 +10651,10 @@
       "image": {
         "prompt_id": "IMG-025",
         "asset": "assets/illustrations/v1/assets/c01_heart_exterior_anterior.webp",
-        "alt": "心臓を前面から見た外形模式図（Servier Medical Art, CC BY 4.0）",
-        "marker": "①",
+        "alt": "心臓を前面から見た外形模式図（心尖・上大静脈・肺動脈幹・冠状動脈まで確認できる高精細イラスト）",
+        "marker": "③",
         "marker_target": "肺動脈幹",
-        "overlay": { "x": 0.55, "y": 0.35, "label": "①" }
+        "overlay": { "x": 0.5794, "y": 0.2375, "label": "③" }
       }
     },
     {
@@ -10664,10 +10676,10 @@
       "image": {
         "prompt_id": "IMG-026",
         "asset": "assets/illustrations/v1/assets/c02_heart_exterior_posterior.webp",
-        "alt": "心臓を後面から見た外形模式図",
-        "marker": "①",
+        "alt": "心臓を後面から見た外形模式図（左右肺静脈4本・下大静脈・冠状静脈洞まで確認できる高精細イラスト）",
+        "marker": "③",
         "marker_target": "下大静脈",
-        "overlay": { "x": 0.78, "y": 0.95, "label": "①" }
+        "overlay": { "x": 0.7182, "y": 0.5938, "label": "③" }
       }
     },
     {
@@ -10689,10 +10701,10 @@
       "image": {
         "prompt_id": "IMG-009",
         "asset": "assets/illustrations/v1/assets/c05_conduction_system.webp",
-        "alt": "心臓断面内の刺激伝導系（洞房結節・房室結節・房室束）を示す模式図",
-        "marker": "①",
+        "alt": "心臓断面内の刺激伝導系（洞房結節・房室結節・房室束・左右脚・プルキンエ線維）を示す高精細模式図",
+        "marker": "③",
         "marker_target": "房室結節",
-        "overlay": { "x": 0.3, "y": 0.57, "label": "①" }
+        "overlay": { "x": 0.3945, "y": 0.4531, "label": "③" }
       }
     },
     {
