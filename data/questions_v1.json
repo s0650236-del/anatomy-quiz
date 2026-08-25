@@ -1271,9 +1271,9 @@
       "id": "Q034",
       "category": "呼吸器",
       "subcategory": "導気部",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 2,
-      "question": "導気部の終点にあたるものはどれか。",
+      "question": "末梢気道の連続図の①で示された、導気部の終点にあたる部位はどれか。",
       "choices": [
         {
           "id": "A",
@@ -1294,6 +1294,18 @@
       ],
       "answer": "C",
       "explanation": "終末細気管支までが導気部で、その先の呼吸細気管支から呼吸部が始まる。",
+      "image": {
+        "prompt_id": "IMG-014",
+        "asset": "assets/images/peripheral_airway_continuum.webp",
+        "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
+        "marker": "①",
+        "marker_target": "終末細気管支",
+        "overlay": {
+          "x": 0.1874,
+          "y": 0.1125,
+          "label": "①"
+        }
+      },
       "tags": [
         "終末細気管支",
         "導気部"
@@ -1512,7 +1524,7 @@
       "subcategory": "気道分岐",
       "type": "image_mcq",
       "difficulty": 2,
-      "question": "肺胞嚢周辺の模式図の③で示された「呼吸部の始まり」にあたる部位はどれか。",
+      "question": "末梢気道の連続図の②で示された「呼吸部の始まり」にあたる部位はどれか。",
       "choices": [
         {
           "id": "A",
@@ -1539,14 +1551,14 @@
       ],
       "image": {
         "prompt_id": "IMG-014",
-        "asset": "assets/images/q041_alveolar_sac.webp",
-        "alt": "終末呼吸単位（肺胞管・肺胞嚢）を示す模式図",
-        "marker": "③",
+        "asset": "assets/images/peripheral_airway_continuum.webp",
+        "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
+        "marker": "②",
         "marker_target": "呼吸細気管支",
         "overlay": {
-          "x": 0.2959,
-          "y": 0.5206,
-          "label": "③"
+          "x": 0.4171,
+          "y": 0.3063,
+          "label": "②"
         }
       }
     },
@@ -1556,7 +1568,7 @@
       "subcategory": "肺胞",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "図中①で示された、複数の肺胞が集合した最末端部はどれか。",
+      "question": "末梢気道の連続図の④で示された、複数の肺胞が集合した最末端部はどれか。",
       "choices": [
         {
           "id": "A",
@@ -1583,14 +1595,14 @@
       ],
       "image": {
         "prompt_id": "IMG-014",
-        "asset": "assets/images/q041_alveolar_sac.webp",
-        "alt": "終末呼吸単位（肺胞管・肺胞嚢）を示す模式図",
-        "marker": "①",
+        "asset": "assets/images/peripheral_airway_continuum.webp",
+        "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
+        "marker": "④",
         "marker_target": "肺胞嚢",
         "overlay": {
-          "x": 0.769,
-          "y": 0.708,
-          "label": "①"
+          "x": 0.15,
+          "y": 0.7688,
+          "label": "④"
         }
       }
     },
@@ -5686,7 +5698,7 @@
       "subcategory": "肺胞",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "肺胞嚢周辺の模式図の①で示された、呼吸細気管支に続き肺胞嚢へ至る管状の構造はどれか。",
+      "question": "末梢気道の連続図の③で示された、呼吸細気管支に続き肺胞嚢へ至る管状の構造はどれか。",
       "choices": [
         {
           "id": "A",
@@ -5713,14 +5725,14 @@
       ],
       "image": {
         "prompt_id": "IMG-014",
-        "asset": "assets/images/q041_alveolar_sac.webp",
-        "alt": "終末呼吸単位（肺胞管・肺胞嚢）を示す模式図",
-        "marker": "②",
+        "asset": "assets/images/peripheral_airway_continuum.webp",
+        "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
+        "marker": "③",
         "marker_target": "肺胞管",
         "overlay": {
-          "x": 0.253,
-          "y": 0.65,
-          "label": "②"
+          "x": 0.5998,
+          "y": 0.6062,
+          "label": "③"
         }
       }
     },
@@ -10801,11 +10813,11 @@
       "tags": ["肺胞", "ガス交換"],
       "image": {
         "prompt_id": "IMG-014",
-        "asset": "assets/images/q041_alveolar_sac.webp",
-        "alt": "終末呼吸単位（肺胞管・肺胞嚢）を示す模式図",
-        "marker": "①",
+        "asset": "assets/images/peripheral_airway_continuum.webp",
+        "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
+        "marker": "⑤",
         "marker_target": "肺胞（肺胞嚢断面内の個々の袋状構造）",
-        "overlay": { "x": 0.78, "y": 0.87, "label": "①" }
+        "overlay": { "x": 0.7966, "y": 0.7688, "label": "⑤" }
       }
     },
     {

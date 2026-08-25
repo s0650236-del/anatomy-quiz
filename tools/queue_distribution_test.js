@@ -42,10 +42,12 @@ function note(msg) { notes.push(msg); }
 // ---------------------------------------------------------------------
 const imageMcq = qs.filter(q => q.type === 'image_mcq');
 // v2.0.1: Q140 converted to text_mcq (65 -> 64), then +11 new image_mcq
-// (Q301-Q311) extracted from existing high-quality assets (64 -> 75). See
+// (Q301-Q311) extracted from existing high-quality assets (64 -> 75), then
+// Q034 converted text_mcq -> image_mcq once peripheral_airway_continuum.webp
+// made its marker target uniquely identifiable (75 -> 76). See
 // docs/v2.0.1_asset_source_log.md and docs/v2.0.1_expansion_log.md.
-if (imageMcq.length !== 75) {
-  fail(`expected 75 image_mcq in source pool, found ${imageMcq.length}`);
+if (imageMcq.length !== 76) {
+  fail(`expected 76 image_mcq in source pool, found ${imageMcq.length}`);
 } else {
   note(`source pool: ${imageMcq.length}/${qs.length} questions are image_mcq (OK)`);
 }

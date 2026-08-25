@@ -101,12 +101,16 @@ qs.forEach(q => {
 // v2.0.1 (expansion pass): +11 new image_mcq (Q301-Q311), each extracted from
 // a structure already visible and markable in an existing asset -- see
 // docs/v2.0.1_expansion_log.md. 64 -> 75.
-if ((typeCount.text_mcq || 0) !== 236) fail(`text_mcq count = ${typeCount.text_mcq}, expected 236`);
-if ((typeCount.image_mcq || 0) !== 75) fail(`image_mcq count = ${typeCount.image_mcq}, expected 75`);
+// v2.0.1 (R4 peripheral_airway_continuum pass): Q034 (導気部の終点) converted
+// text_mcq -> image_mcq once a real open-license-quality asset made its
+// marker target (終末細気管支, a genuinely smooth alveoli-free segment)
+// uniquely identifiable. 75 -> 76.
+if ((typeCount.text_mcq || 0) !== 235) fail(`text_mcq count = ${typeCount.text_mcq}, expected 235`);
+if ((typeCount.image_mcq || 0) !== 76) fail(`image_mcq count = ${typeCount.image_mcq}, expected 76`);
 
 const catImgCount = {};
 qs.forEach(q => { if (q.type === 'image_mcq') catImgCount[q.category] = (catImgCount[q.category] || 0) + 1; });
-const expectCatImg = { '総論': 10, '循環器': 26, '呼吸器': 22, '泌尿器': 17 };
+const expectCatImg = { '総論': 10, '循環器': 26, '呼吸器': 23, '泌尿器': 17 };
 Object.keys(expectCatImg).forEach(c => {
   if ((catImgCount[c] || 0) !== expectCatImg[c]) fail(`category ${c} image_mcq count = ${catImgCount[c] || 0}, expected ${expectCatImg[c]}`);
 });
