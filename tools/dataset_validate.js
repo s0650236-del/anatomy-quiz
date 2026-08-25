@@ -121,7 +121,8 @@ Object.keys(expectCatImg).forEach(c => {
 // whole image *is* the answer (a posture to recognize), not a "point at this
 // structure" question. Do not treat "no overlay" as an error; only warn, and
 // only for QIDs that don't explicitly document why (see marker_target).
-const assetsDir = path.join(REPO, 'assets', 'images');
+const ASSET_PREFIX = 'assets/illustrations/v1/assets/';
+const assetsDir = path.join(REPO, 'assets', 'illustrations', 'v1', 'assets');
 const referencedAssets = new Set();
 let overlayCount = { withOverlay: 0, withoutOverlay: 0, singleOverlay: 0, multiOverlay: 0, markerTotal: 0 };
 const withoutOverlayIds = [];
@@ -137,8 +138,8 @@ qs.forEach(q => {
     if (!img[f] && img[f] !== '') fail(`${q.id}: image.${f} missing`);
   });
   if (!/^IMG-[0-9]{3}$/.test(img.prompt_id)) fail(`${q.id}: invalid prompt_id "${img.prompt_id}"`);
-  if (!img.asset || !img.asset.startsWith('assets/images/')) fail(`${q.id}: image.asset does not start with assets/images/: "${img.asset}"`);
-  const assetFile = img.asset.replace('assets/images/', '');
+  if (!img.asset || !img.asset.startsWith(ASSET_PREFIX)) fail(`${q.id}: image.asset does not start with ${ASSET_PREFIX}: "${img.asset}"`);
+  const assetFile = img.asset.replace(ASSET_PREFIX, '');
   referencedAssets.add(assetFile);
   const fullPath = path.join(assetsDir, assetFile);
   if (!fs.existsSync(fullPath)) fail(`${q.id}: asset file missing on disk: ${fullPath}`);
@@ -184,8 +185,8 @@ allFiles.forEach(f => { if (!referencedAssets.has(f)) warn(`asset file not refer
 // Q129 now shares q017_heart_chambers.webp (real photo) instead of the
 // retired heart_valves_schematic.webp self-made SVG.
 const q129 = qs.find(q => q.id === 'Q129');
-if (!q129 || !q129.image || q129.image.asset !== 'assets/images/q017_heart_chambers.webp') {
-  fail(`Q129 must use assets/images/q017_heart_chambers.webp, got: ${q129 && q129.image && q129.image.asset}`);
+if (!q129 || !q129.image || q129.image.asset !== 'assets/illustrations/v1/assets/c03_heart_chambers.webp') {
+  fail(`Q129 must use C03 heart chambers master, got: ${q129 && q129.image && q129.image.asset}`);
 }
 
 // The 5 pre-existing real-photo assets' Q001-Q100 overlays must never drift.
@@ -208,7 +209,7 @@ Object.keys(BASELINE_OVERLAYS).forEach(id => {
     fail(`${id}: overlay drifted from the preserved baseline. current=${JSON.stringify(overlays)} baseline=${JSON.stringify(BASELINE_OVERLAYS[id])}`);
   }
 });
-const PRESERVED_5 = ['q002_hierarchy.webp', 'q004_epithelium.webp', 'q017_heart_chambers.webp', 'q037_alveolar_gas_exchange.webp', 'q048_nephron.webp'];
+const PRESERVED_5 = ['g01_organization_levels.webp', 'g02_epithelium.webp', 'c03_heart_chambers.webp', 'r06_alveolar_gas_exchange.webp', 'u02_nephron.webp'];
 PRESERVED_5.forEach(f => {
   if (!fs.existsSync(path.join(assetsDir, f))) fail(`preserved asset missing on disk: ${f}`);
 });

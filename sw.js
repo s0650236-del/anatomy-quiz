@@ -2,13 +2,13 @@
 // - アプリ本体（HTML/CSS/JS/アイコン/manifest）と問題データはあらかじめキャッシュし、
 //   2回目以降のアクセスやオフライン時にも利用できるようにする。
 // - 問題データ(JSON)は更新が入る可能性があるため network-first（オンライン時は常に最新を取得）。
-// - 300問版で全65 image_mcqの画像(27種類、合計約1.4MB)が出揃ったため、初回install時に
+// - 311問版で全76 image_mcqの共通master画像（26種類）が出揃ったため、初回install時に
 //   まとめてprecacheし、初回オンライン起動後はオフラインでも全image_mcqを利用可能にする。
 //   ただしCORE_ASSETS（アプリ本体）とは別のPromise.allで、1枚ずつ個別にcatchする
 //   （＝どれか1枚の取得に失敗してもinstall全体を失敗させない。取得できなかった分は
 //   従来どおりimageCacheFirst()が実行時に個別取得を試み、それでも失敗すれば画面側の
 //   「画像準備中」表示に任せる）。
-var CACHE = 'anatomy-quiz-v2-2026-08-300q-img';
+var CACHE = 'anatomy-quiz-v2-2026-08-illustrations-v1';
 var CORE_ASSETS = [
   './',
   './index.html',
@@ -19,33 +19,32 @@ var CORE_ASSETS = [
   './data/questions_v1.json'
 ];
 var IMAGE_ASSETS = [
-  './assets/images/anatomical_position.webp',
-  './assets/images/circulation_circuit.webp',
-  './assets/images/direction_terms.webp',
-  './assets/images/heart_exterior_anterior.webp',
-  './assets/images/heart_exterior_posterior.webp',
-  './assets/images/heart_valves_schematic.webp',
-  './assets/images/pleura_cross_section.webp',
-  './assets/images/q002_hierarchy.webp',
-  './assets/images/q004_epithelium.webp',
-  './assets/images/q008_body_planes.webp',
-  './assets/images/q011_germ_layers.webp',
-  './assets/images/q016_apex.webp',
-  './assets/images/q017_heart_chambers.webp',
-  './assets/images/q019_pulmonary_vein.webp',
-  './assets/images/q021_vessel_cross_sections.webp',
-  './assets/images/q025_conduction_system.webp',
-  './assets/images/q032_larynx.webp',
-  './assets/images/q035_right_middle_lobe.webp',
-  './assets/images/q037_alveolar_gas_exchange.webp',
-  './assets/images/q040_airway_branching.webp',
-  './assets/images/q041_alveolar_sac.webp',
-  './assets/images/q045_renal_hilum.webp',
-  './assets/images/q048_nephron.webp',
-  './assets/images/q050_urinary_system.webp',
-  './assets/images/q068_ecg_waveform.webp',
-  './assets/images/q073_coronary_arteries.webp',
-  './assets/images/q091_kidney_cross_section.webp'
+  './assets/illustrations/v1/assets/g01_organization_levels.webp',
+  './assets/illustrations/v1/assets/g02_epithelium.webp',
+  './assets/illustrations/v1/assets/g03_body_planes.webp',
+  './assets/illustrations/v1/assets/g04_germ_layers.webp',
+  './assets/illustrations/v1/assets/g05_anatomical_position.webp',
+  './assets/illustrations/v1/assets/g06_direction_terms.webp',
+  './assets/illustrations/v1/assets/c01_heart_exterior_anterior.webp',
+  './assets/illustrations/v1/assets/c02_heart_exterior_posterior.webp',
+  './assets/illustrations/v1/assets/c03_heart_chambers.webp',
+  './assets/illustrations/v1/assets/c04_heart_valve_plane.webp',
+  './assets/illustrations/v1/assets/c05_conduction_system.webp',
+  './assets/illustrations/v1/assets/c06_vessel_cross_sections.webp',
+  './assets/illustrations/v1/assets/c07_ecg_waveform.webp',
+  './assets/illustrations/v1/assets/c08_coronary_arteries.webp',
+  './assets/illustrations/v1/assets/c09_circulation_circuit.webp',
+  './assets/illustrations/v1/assets/r01_larynx.webp',
+  './assets/illustrations/v1/assets/r02_vocal_folds.webp',
+  './assets/illustrations/v1/assets/r03_lung_lobes.webp',
+  './assets/illustrations/v1/assets/r04_airway_branching.webp',
+  './assets/illustrations/v1/assets/r05_peripheral_airway_continuum.webp',
+  './assets/illustrations/v1/assets/r06_alveolar_gas_exchange.webp',
+  './assets/illustrations/v1/assets/r07_pleura_cross_section.webp',
+  './assets/illustrations/v1/assets/u01_renal_hilum.webp',
+  './assets/illustrations/v1/assets/u02_nephron.webp',
+  './assets/illustrations/v1/assets/u03_urinary_system.webp',
+  './assets/illustrations/v1/assets/u04_kidney_cross_section.webp'
 ];
 // 後方互換のため残す（他コードから参照されていた場合に備え、CORE+IMAGEの合成とする）。
 var PRECACHE_ASSETS = CORE_ASSETS.concat(IMAGE_ASSETS);
@@ -83,7 +82,7 @@ function isDataRequest(url) {
 }
 
 function isImageRequest(url) {
-  return url.pathname.indexOf('/assets/images/') !== -1;
+  return url.pathname.indexOf('/assets/illustrations/v1/assets/') !== -1;
 }
 
 // 問題データ: オンライン時は常に最新を取得し、キャッシュも更新する。オフライン時は最後にキャッシュした版を返す。
