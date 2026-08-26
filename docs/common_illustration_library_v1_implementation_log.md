@@ -357,3 +357,64 @@ commit hashは実装コミットのGit履歴を正本とする。
 | `?review=assets` | G04(2問)・G05(2問)・G06(1問)・C09(2問)で使用QID一覧とmarker表示を確認 |
 | `?review=images` | 対象6 QID（Q010, Q011, Q051, Q117, Q147, Q148）全件で問題文・選択肢・正答・markerを確認 |
 | responsive QA | Desktop(1280×800)／iPad(768×1024)／Phone(375×812)：`document.documentElement.scrollWidth`が`window.innerWidth`を超えないことを確認（横スクロールなし）。Phone幅でのzoom modalも画像が viewport 内に収まることを確認 |
+
+## common illustration library batch 6（循環器C06・呼吸器R06 -- Phase 1最終batch）
+
+### 基準
+
+- 作業開始HEAD：`a2685fe8f08dbaaf8c5835971ebf718e294f8438`（branch `fix/v2.0.1-review-and-update`）
+- 対象：C06（血管断面比較）・R06（胸膜横断模式図 → 胸膜・横隔膜）の2 masterをユーザー提供カスタムAI生成画像へ更新
+- text_mcq→image_mcq変換は実施していない。問題文・choices・answer・explanationは全QIDで無変更
+- master新設・削除は無し（26 master → 26 master）。既存2 masterの画像更新のみ
+
+### 実装内容
+
+- **C06（血管断面比較）**：旧c06はServier素材2パネル（動脈・静脈)と自作毛細血管パネルの合成。新画像（`.codex/generated_images/01a0331c-d0a0-7791-a884-fdf27de3cc82/exec-ae33ec04-f7e5-4c30-8893-c041da68fd74.png`、1536×1024）は3パネルとも統一されたカスタムAI生成画像で、左から動脈（厚い平滑筋壁・狭い内腔）・静脈（薄い壁・広い内腔・静脈弁）・毛細血管（単層内皮・赤血球が一列で通過）の順に並ぶ。旧画像と同じ左→右の並び順（動脈・静脈・毛細血管）だったため、Q020（静脈）・Q021（毛細血管）・Q067（動脈）のmarker_target割当は変更せず、各panel上の座標のみ実ピクセルサンプリングで再測定した。marker番号（Q020=③、Q021=①、Q067=②）は既存のoverlay labelをそのまま維持した（Q067の問題文中の「①」表記とmarker番号「②」が一致しない既存の不整合は、本batchのスコープ外のため変更していない）。静脈弁は視覚的に明瞭だが、これを直接問う既存image_mcqが無いためmarker化していない。毛細血管の基底膜など、より微細な構造は一意識別できないためmarker対象としていない。
+- **R06（胸膜・横隔膜）**：旧r06はプロジェクト自作SVGの胸壁・肺の横断面模式図で、横隔膜を含まなかった。新画像（`exec-5f7f12de-967c-4d05-b497-d5577331186c.png`、1024×1536）は胸郭全体を前額断（冠状断）で開いた図で、左右肺・心臓・気管・横隔膜に加え、肺表面へ直接接する臓側胸膜（内側の淡い膜）と胸壁側の壁側胸膜（外側の淡い膜）、およびその間に挟まれる胸膜腔（教育用に色を強調した狭い帯）が実ピクセルサンプリングで一意に識別できることを確認した。臓側胸膜・壁側胸膜・胸膜腔はいずれも幅数pxと狭いため、3つのmarkerを同一断面上に配置すると画面上で重なってしまう。そのため、同じ胸膜境界線上の3箇所（それぞれ色遷移で構造を確認済み）を選び、画面上で十分に離れた位置へ配置した。Q155（①臓側胸膜→②壁側胸膜）・Q156（③胸膜腔）のmarker座標を新画像上で再測定した（marker番号は既存のoverlay labelをそのまま維持）。図名称を「胸膜横断模式図」から「胸膜・横隔膜」へ改めたが、横隔膜自体を問う既存image_mcqが無い（Q038・Q055・Q083・Q170はtext_mcqのまま）ため、横隔膜はstructuresのみへの記載とし、marker化・text_mcq→image_mcq変換は行っていない。
+- 対象5 QID（Q020, Q021, Q067, Q155, Q156）の`image.asset`・`image.overlay`/`overlays`・`image.alt`（C06/R06の2 asset単位で統一文言に更新）を更新した。`marker`・`marker_target`・`prompt_id`はいずれも既存のまま変更していない。
+
+### 全marker座標（新画像に対する実ピクセルサンプリングで再測定。既存座標の流用は無し）
+
+**C06**（`c06_vessel_cross_sections.webp`、1536×1024）
+
+| marker | QID | marker_target |
+|---|---|---|
+| ②(0.0651,0.5371) | Q067 | 動脈（3断面中の1つ、左panelの平滑筋壁） |
+| ③(0.4199,0.7178) | Q020 | 静脈（中央panelの壁） |
+| ①(0.8789,0.2832) | Q021 | 毛細血管（右panelの単層内皮壁） |
+
+**R06**（`r06_pleura_cross_section.webp`、1024×1536）
+
+| marker | QID | marker_target |
+|---|---|---|
+| ①(0.8447,0.2734) | Q155 | 臓側胸膜（肺表面に直接接する内側の膜） |
+| ②(0.9072,0.3906) | Q155 | 壁側胸膜（胸壁側の外側の膜） |
+| ③(0.2051,0.6836) | Q156 | 胸膜腔（臓側・壁側胸膜に挟まれた、教育用に強調した狭い潜在腔） |
+
+### 画像処理
+
+2枚ともユーザー提供PNG（`.codex/generated_images/01a0331c-d0a0-7791-a884-fdf27de3cc82/`配下、RGB、アルファチャンネル無し）。C06（1536×1024）・R06（1024×1536）とも長辺1536pxで1600px以下のためリサイズなし。2枚ともWebP変換（quality=92, method=6）。トリミング等の追加改変は無し。
+
+### dataset側の変更
+
+- unique asset数：26のまま（新規追加・削除は0件。C06/R06は既存assetのバイト更新のみ）。
+- image_mcq数：77のまま（type変換は無し）。総問題数311は無変更。
+- `assets/illustrations/v1/manifest.json`：C06・R06の`status`を`accepted-existing`から`revised`へ変更し、`structures`・`generation`・`provenance`を新画像の内容に合わせて更新（`source_asset`は旧ファイルパスのまま維持、`revised`のためsha256一致チェックは対象外）。R06の`name`/`view`/`scale`を新画像の構図（前額断・胸郭全体・横隔膜含む）に合わせて更新した。`marker_targets`はC06=[静脈,毛細血管,動脈]、R06=[臓側胸膜,壁側胸膜,胸膜腔]へ整理（実質同じ対象、粒度のみ統一）。`status_counts`（accepted-existing 13→11、revised 13→15）を実態に合わせて更新した。`master_count`は26のまま。
+- `tools/dataset_validate.js`・`tools/queue_distribution_test.js`：変更なし（total/category/difficulty/type/unique assets期待値がいずれも今回の変更で変わらないため）。
+- `sw.js`：precacheリストは変更なし（ファイル名は既存のまま）。cache名を`anatomy-quiz-v2-2026-08-illustrations-v1-batch5-g1-g5-c5`から`anatomy-quiz-v2-2026-08-illustrations-v1-batch6-c6-r6`へ更新した。
+- `README.md`：master数（26）に変更が無いため無変更。
+
+### 新規Creditsエントリ
+
+- `app.js`のIMAGE_CREDITS中、Servier Medical Art行から「血管壁（動脈／静脈）」の記載を除去した（旧c06のServier由来2パネルが本batchで完全にカスタムAI生成画像へ置き換わったため）。R06はもともとプロジェクト自作SVGでCredits対象外だったため、R06関連の変更は無い。
+
+### 検証結果
+
+| 検証 | 結果 |
+|---|---|
+| `tools/dataset_validate.js` | errors 0、warnings 0（311問／image_mcq 77／text_mcq 234／unique assets 26） |
+| `tools/common_illustration_library_validate.js` | masters 26、77/77問割当、errors 0 |
+| `tools/queue_distribution_test.js` | PASSED |
+| `?review=assets` | C06(3問)・R06(2問)で使用QID一覧とmarker表示を確認 |
+| `?review=images` | 対象5 QID（Q020, Q021, Q067, Q155, Q156）全件で問題文・選択肢・正答・markerを確認 |
+| responsive QA | Desktop(1280×800)／iPad(768×1024)／Phone(375×812)：`document.documentElement.scrollWidth`が`window.innerWidth`を超えないことを確認（横スクロールなし）。Phone幅でのzoom modalも画像が viewport 内に収まることを確認 |

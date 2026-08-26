@@ -3,33 +3,998 @@
   "dataset": "data/questions_v1.json",
   "generated_at": "2026-08-25",
   "master_count": 26,
-  "status_counts": { "accepted-existing": 13, "revised": 13, "pending-generation": 0 },
+  "status_counts": {
+    "accepted-existing": 11,
+    "revised": 15,
+    "pending-generation": 0
+  },
   "masters": [
-    {"id":"G01","asset":"assets/illustrations/v1/assets/g01_organization_levels.webp","domain":"総論","name":"人体の構成段階","view":"概念図、左から右","scale":"細胞から個体までの段階比較","structures":["細胞","組織","器官","器官系","個体"],"marker_targets":["5段階の順序"],"questions":["Q002"],"source_asset":"assets/images/q002_hierarchy.webp","status":"accepted-existing","generation":{"required":false,"prompt":"Five-panel medical education illustration showing cell, tissue, organ, organ system, and whole human in increasing scale; white background; no text, labels, numbers, or markers; smartphone-readable."},"provenance":{"source":"既存AI生成asset","license":"プロジェクト保有。外部クレジット不要","reference":"docs/v2.0.1_image_quality_classification.md"}},
-    {"id":"G02","asset":"assets/illustrations/v1/assets/g02_epithelium.webp","domain":"総論","name":"上皮組織断面","view":"組織断面","scale":"組織学的拡大","structures":["上皮細胞層","基底膜","結合組織"],"marker_targets":["最表層の上皮組織"],"questions":["Q004"],"source_asset":"assets/images/q004_epithelium.webp","status":"accepted-existing","generation":{"required":false,"prompt":"Histology-style section with a continuous epithelial layer, basement membrane, and connective tissue; no text or markers; clear on a smartphone."},"provenance":{"source":"既存AI生成asset","license":"プロジェクト保有。外部クレジット不要","reference":"docs/v2.0.1_image_quality_classification.md"}},
-    {"id":"G03","asset":"assets/illustrations/v1/assets/g03_body_planes.webp","domain":"総論","name":"人体の主要断面","view":"正面を基準にした3パネル","scale":"全身","structures":["冠状面","矢状面","水平面"],"marker_targets":["冠状面","矢状面","水平面"],"questions":["Q008","Q053","Q054"],"source_asset":"assets/images/q008_body_planes.webp","status":"accepted-existing","generation":{"required":false,"prompt":"Three-panel anatomical-position human showing coronal, sagittal, and transverse planes as translucent planes; no labels or markers."},"provenance":{"source":"OpenStax Anatomy and Physiology 2e Fig.1.14（AnatomyTOOL経由、ラベル除去加工）","license":"CC BY 4.0","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"G04","asset":"assets/illustrations/v1/assets/g04_germ_layers.webp","domain":"総論","name":"三胚葉","view":"胚盤断面立体模式図（円柱状カットモデル）","scale":"発生学的模式","structures":["外胚葉","中胚葉","内胚葉","羊膜腔","卵黄嚢腔"],"marker_targets":["中胚葉","外胚葉"],"questions":["Q010","Q011"],"source_asset":"assets/images/q011_germ_layers.webp","status":"revised","generation":{"required":false,"prompt":"Cylindrical cutaway trilaminar germ disc for nursing education: outer columnar ectoderm layer (blue) facing an amniotic-cavity dome, middle loose mesoderm layer (pink/red), and inner cuboidal endoderm layer (yellow) facing a yolk-sac cavity below; all three layers unambiguously color-separated and continuous around the cylinder; no text, labels, arrows, or markers."},"provenance":{"source":"ユーザー提供カスタムAI生成画像（Codex ImageGen）。旧g04は既存のユーザー提供カスタム画像で、円柱状カットモデルとして3層をより明確に色分けした本画像へ更新した","license":"外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"G05","asset":"assets/illustrations/v1/assets/g05_anatomical_position.webp","domain":"総論","name":"解剖学的正位","view":"全身正面","scale":"全身","structures":["直立姿勢","前向きの手掌","上肢","下肢","前腕内側縁"],"marker_targets":["全身姿勢（Q051はoverlayなし）","前腕内側縁（内側の基準点、Q117）"],"questions":["Q051","Q117"],"source_asset":"assets/images/anatomical_position.webp","status":"revised","generation":{"required":false,"prompt":"Photorealistic full-body adult male in anatomical position, anterior view, palms forward, standing on white background, neutral medical/educational rendering, no labels or markers."},"provenance":{"source":"ユーザー提供カスタムAI生成画像（Codex ImageGen）。旧g05はプロジェクト自作SVGで、内側・外側の基準点(Q117)を一意に示せなかったため、写真的な全身画像へ更新し、Q117（旧G06「方向用語」より統合）を前腕内側縁上のmarkerとして追加した","license":"外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"G06","asset":"assets/illustrations/v1/assets/g06_direction_terms.webp","domain":"総論","name":"解剖学的方向用語","view":"正面図と側面図","scale":"全身","structures":["正中線","前方","後方","内側","外側"],"marker_targets":["前方・後方","内側・外側"],"questions":["Q063"],"source_asset":"assets/images/direction_terms.webp","status":"accepted-existing","generation":{"required":false,"prompt":"Paired anterior and lateral human silhouettes with unlabeled directional arrows for medial/lateral and anterior/posterior; no text or markers."},"provenance":{"source":"プロジェクト自作SVG","license":"プロジェクト保有","reference":"assets/image_sources/svg/direction_terms.svg"}},
-    {"id":"C01","asset":"assets/illustrations/v1/assets/c01_heart_exterior_anterior.webp","domain":"循環器","name":"心臓外観前面","view":"前面","scale":"臓器全体","structures":["心尖","右心房","右心室","左心室","右心耳","左心耳","上大静脈","肺動脈幹","上行大動脈","大動脈弓","右冠状動脈","前室間枝(LAD)"],"marker_targets":["心尖","上大静脈","肺動脈幹","左冠動脈(前室間枝)","右冠動脈"],"questions":["Q016","Q138","Q301","Q073","Q074"],"source_asset":"assets/images/heart_exterior_anterior.webp","status":"revised","generation":{"required":false,"prompt":"Anatomically accurate photorealistic anterior external heart with apex, right and left auricles, superior vena cava, pulmonary trunk, ascending aorta and arch, and both right coronary artery and anterior interventricular (LAD) branch clearly separable; no labels or markers."},"provenance":{"source":"ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧c01はServier Medical Art Heart anterior viewのCC BY 4.0画像、旧c08はQ073/Q074専用の別画像だったが、本画像で両方を統合し置換した","license":"外部クレジット不要。生成・統合記録はdocs/v2.0.1_asset_source_log.mdに記載","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"C02","asset":"assets/illustrations/v1/assets/c02_heart_exterior_posterior.webp","domain":"循環器","name":"心臓外観後面","view":"後面","scale":"臓器全体","structures":["左心房後面","左心室後面","右心房後面","上大静脈","下大静脈","左右肺静脈4本","冠状静脈洞"],"marker_targets":["肺静脈","心底","下大静脈","冠状静脈洞"],"questions":["Q019","Q125","Q302","Q140"],"source_asset":"assets/images/heart_exterior_posterior.webp","status":"revised","generation":{"required":false,"prompt":"Anatomically accurate photorealistic posterior external heart showing all four pulmonary veins entering the left atrium, superior and inferior vena cava, and the coronary sinus running the atrioventricular groove; no labels or markers."},"provenance":{"source":"ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧c02はServier Medical Art Heart posterior viewのCC BY 4.0画像","license":"外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"C03","asset":"assets/illustrations/v1/assets/c03_heart_chambers.webp","domain":"循環器","name":"心臓4腔断面","view":"前面からの切開・断面","scale":"臓器断面","structures":["右心房","右心室","左心房","左心室","心室中隔","腱索","乳頭筋","左右心室壁厚差"],"marker_targets":["左心室","4心腔","腱索・乳頭筋","心室中隔"],"questions":["Q017","Q064","Q129","Q230"],"source_asset":"assets/images/q017_heart_chambers.webp","status":"revised","generation":{"required":false,"prompt":"Cutaway heart showing four chambers, interventricular septum, chordae tendineae, papillary muscles, and markedly thicker left ventricular wall; no labels or markers."},"provenance":{"source":"ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧c03は既存AI生成asset。心房中隔はこの画像では大血管の陰に隠れ一意に識別できないため、Q231はC10（旧c03の保存コピー）へ移した","license":"外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"C04","asset":"assets/illustrations/v1/assets/c04_heart_valve_plane.webp","domain":"循環器","name":"心臓弁輪面","view":"心基部を上方から見る弁輪面","scale":"心臓内部局所","structures":["三尖弁","僧帽弁","肺動脈弁","大動脈弁"],"marker_targets":["房室弁","半月弁"],"questions":["Q065","Q066"],"source_asset":"assets/images/heart_valve_plane.webp","status":"accepted-existing","generation":{"required":false,"prompt":"Superior view at the cardiac valve plane with tricuspid, mitral, pulmonary, and aortic valves clearly separable; no labels or markers."},"provenance":{"source":"Servier Medical Art, Heart valves（AnatomyTOOL経由）","license":"CC BY 4.0","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"C05","asset":"assets/illustrations/v1/assets/c05_conduction_system.webp","domain":"循環器","name":"心刺激伝導系","view":"前面切開","scale":"臓器全体","structures":["洞房結節","房室結節","房室束","右脚","左脚","Purkinje線維"],"marker_targets":["洞房結節","房室束","房室結節"],"questions":["Q025","Q240","Q303"],"source_asset":"assets/images/q025_conduction_system.webp","status":"revised","generation":{"required":false,"prompt":"Cutaway heart with the complete cardiac conduction system (SA node, AV node, bundle of His, right and left bundle branches, Purkinje network reaching only the ventricles) rendered with clear anatomical landmarks; no text, labels, or answer markers."},"provenance":{"source":"ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧c05はServier Medical Art Cardiac conduction systemのCC BY 4.0画像","license":"外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"C06","asset":"assets/illustrations/v1/assets/c06_vessel_cross_sections.webp","domain":"循環器","name":"血管断面比較","view":"横断面3パネル","scale":"組織・微細構造比較","structures":["動脈","静脈","毛細血管","血管壁","内腔"],"marker_targets":["静脈","毛細血管","動脈"],"questions":["Q020","Q021","Q067"],"source_asset":"assets/images/q021_vessel_cross_sections.webp","status":"accepted-existing","generation":{"required":false,"prompt":"Side-by-side artery, vein, and capillary cross-sections with accurate relative wall thickness and lumen; no labels or markers."},"provenance":{"source":"Servier素材2パネルと自作毛細血管パネルの合成","license":"Servier部分 CC BY 4.0、自作部分はプロジェクト保有","reference":"docs/v2.0.1_image_quality_classification.md"}},
-    {"id":"C07","asset":"assets/illustrations/v1/assets/c07_ecg_waveform.webp","domain":"循環器","name":"標準心電図波形","view":"時間軸波形","scale":"1心周期","structures":["P波","QRS群","T波","基線"],"marker_targets":["P波","QRS群","T波"],"questions":["Q023","Q024","Q068"],"source_asset":"assets/images/q068_ecg_waveform.webp","status":"accepted-existing","generation":{"required":false,"prompt":"Clean single-cycle ECG trace on a subtle grid with recognizable P wave, QRS complex, and T wave; no labels or markers."},"provenance":{"source":"プロジェクト自作SVG","license":"プロジェクト保有","reference":"assets/image_sources/svg/q068_ecg_waveform.svg"}},
-    {"id":"C10","asset":"assets/illustrations/v1/assets/c10_heart_chambers_septum.webp","domain":"循環器","name":"心臓4腔・中隔模式図","view":"正面からの切開・断面（患者右は画像左）","scale":"臓器断面","structures":["右心房","右心室","左心房","左心室","心房中隔","心室中隔","三尖弁","僧帽弁","上大静脈","下大静脈","肺静脈","肺動脈幹","大動脈","左右心室壁厚差"],"marker_targets":["心房中隔"],"questions":["Q231"],"source_asset":"ユーザー確認済み添付PNG: codex-clipboard-f5bac386-9bd6-4f60-afff-1bced71fb221.png","status":"revised","generation":{"required":false,"prompt":"User-approved frontal four-chamber cutaway with exposed interatrial septum, interventricular septum, atrioventricular valves, great vessels, and a thicker left ventricular wall; no labels or markers."},"provenance":{"source":"ユーザー確認済みの最終採用画像。内容を改変せずWebP変換のみ実施","license":"プロジェクト保有。外部クレジット不要","reference":"docs/v2.0.1_asset_source_log.md。大動脈弁から上行大動脈までの位置関係は既知の限界として記録"}},
-    {"id":"C09","asset":"assets/illustrations/v1/assets/c09_circulation_circuit.webp","domain":"循環器","name":"体循環・肺循環","view":"循環経路模式図","scale":"全身系統","structures":["右心系","左心系","肺循環","体循環","肺静脈4本（左右各2本）","上大静脈(SVC)1本","下大静脈(IVC)1本","毛細血管床"],"marker_targets":["体循環経路","肺循環経路"],"questions":["Q147","Q148"],"source_asset":"assets/images/circulation_circuit.webp","status":"revised","generation":{"required":false,"prompt":"Dual-loop systemic and pulmonary circulation diagram centered on a four-chamber heart (blue right heart, red left heart), with unlabeled directional arrows; pulmonary loop shows exactly 4 pulmonary veins (2 per lung) returning to the left atrium; systemic return shows exactly 1 superior vena cava and 1 inferior vena cava entering the right atrium; distinct pulmonary and systemic capillary beds; no text, labels, or markers."},"provenance":{"source":"ユーザー提供カスタムAI生成画像（Codex ImageGen、複数回の修正を経た最終版）。旧c09はプロジェクト自作SVGで、肺静脈・上大静脈・下大静脈の本数が不正確だった。本画像は最終修正版として肺静脈4本・上大静脈1本・下大静脈1本に修正済みであることをユーザーが確認済み","license":"外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"R01","asset":"assets/illustrations/v1/assets/r01_larynx.webp","domain":"呼吸器","name":"喉頭外観と上下気道","view":"後面寄りの頸部局所","scale":"頭頸部局所","structures":["喉頭","喉頭蓋","甲状軟骨","輪状軟骨","気管"],"marker_targets":["喉頭","喉頭蓋","甲状軟骨","輪状軟骨","気管"],"questions":["Q256"],"source_asset":"assets/images/q032_larynx.webp","status":"accepted-existing","generation":{"required":false,"prompt":"Detailed larynx in anatomical context showing epiglottis, thyroid cartilage, cricoid cartilage, and upper trachea; no labels or markers."},"provenance":{"source":"Servier Medical Art, Larynx posterior view","license":"CC BY 4.0","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"R02","asset":"assets/illustrations/v1/assets/r02_vocal_folds.webp","domain":"呼吸器","name":"喉頭鏡視野・上方観","view":"喉頭鏡視野（上方観）","scale":"喉頭内部局所","structures":["喉頭蓋","披裂喉頭蓋ヒダ","前庭ヒダ（仮声帯）","真声帯（声帯ヒダ）","声門裂","披裂軟骨"],"marker_targets":["声帯（真声帯）","声門（声門裂）"],"questions":["Q255","Q307"],"source_asset":"assets/images/q032_vocal_folds.webp","status":"revised","generation":{"required":false,"prompt":"Laryngoscopic superior view clearly distinguishing pink vestibular folds (false cords), pale/ivory true vocal folds, and the dark rima glottidis (glottic chink) between them, with arytenoid mounds visible posteriorly; no labels or markers."},"provenance":{"source":"ユーザー提供カスタムAI生成画像（common illustration library batch 3）。旧r02はServier Medical Art Cordes vocalesのCC BY 4.0画像で、真声帯と声門裂の境界が不明瞭だった","license":"外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"R03","asset":"assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp","domain":"呼吸器","name":"肺外観・気管支樹統合図","view":"前面","scale":"気管から区域気管支を含む肺全体","structures":["気管","右主気管支","左主気管支","葉気管支","区域気管支","右上葉","右中葉","右下葉","左上葉","左下葉","水平裂","斜裂","肺尖","心切痕"],"marker_targets":["右肺中葉","左右肺葉数","水平裂","肺尖","区域気管支","右主気管支","葉気管支"],"questions":["Q035","Q036","Q077","Q082","Q152","Q153","Q169"],"source_asset":"assets/images/q035_right_middle_lobe.webp + assets/images/q040_airway_branching.webp","status":"revised","generation":{"required":false,"prompt":"Anterior-view lungs with semi-transparent parenchyma, right three lobes and left two lobes, clear fissures, trachea, asymmetric main bronchi, lobar bronchi, and segmental bronchi; patient right on image-left; no labels, arrows, numbers, or markers."},"provenance":{"source":"Codex ImageGenによるカスタムAI生成画像。旧R03のServier肺前面図と旧R04のServier気管支樹を1 masterへ統合","license":"外部クレジット不要。生成・統合記録はdocs/v2.0.1_asset_source_log.mdに記載","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"R04","asset":"assets/illustrations/v1/assets/r04_peripheral_airway_continuum.webp","domain":"呼吸器","name":"末梢気道連続図","view":"気道長軸と肺胞嚢断面の連続模式","scale":"終末細気管支から肺胞","structures":["終末細気管支","呼吸細気管支","肺胞管","肺胞嚢","肺胞"],"marker_targets":["終末細気管支","呼吸細気管支","肺胞管","肺胞嚢","肺胞"],"questions":["Q034","Q040","Q041","Q154","Q308"],"source_asset":"assets/images/peripheral_airway_continuum.webp","status":"accepted-existing","generation":{"required":false,"prompt":"Continuous distal airway from smooth terminal bronchiole without alveolar openings through respiratory bronchiole with alveoli opening in its wall, then alveolar duct, alveolar sacs, and individual alveoli; each transition spatially separable; no labels or markers."},"provenance":{"source":"ユーザー提供カスタムAI生成画像","license":"外部クレジット不要。生成・加工記録は出典ログに記載","reference":"docs/v2.0.1_asset_source_log.md#r4末梢気道連続図peripheral_airway_continuumwebp"}},
-    {"id":"R05","asset":"assets/illustrations/v1/assets/r05_alveolar_gas_exchange.webp","domain":"呼吸器","name":"肺胞ガス交換","view":"肺胞・毛細血管拡大断面","scale":"微細構造","structures":["肺胞腔","I型肺胞上皮","II型肺胞上皮","基底膜","毛細血管内皮","赤血球","交換方向"],"marker_targets":["肺胞から血液への方向","血液空気関門"],"questions":["Q037","Q084"],"source_asset":"assets/images/q037_alveolar_gas_exchange.webp","status":"accepted-existing","generation":{"required":false,"prompt":"Close-up alveolus and pulmonary capillary with red blood cells, type I and type II alveolar cells, thin air-blood barrier layers, and two unlabeled gas-direction arrows; no text or markers."},"provenance":{"source":"既存AI生成asset","license":"プロジェクト保有。外部クレジット不要","reference":"docs/v2.0.1_image_quality_classification.md"}},
-    {"id":"R06","asset":"assets/illustrations/v1/assets/r06_pleura_cross_section.webp","domain":"呼吸器","name":"胸膜横断模式図","view":"胸壁・肺の横断面","scale":"胸膜局所","structures":["臓側胸膜","胸膜腔","壁側胸膜","胸壁","肺"],"marker_targets":["臓側胸膜から壁側胸膜","胸膜腔"],"questions":["Q155","Q156"],"source_asset":"assets/images/pleura_cross_section.webp","status":"accepted-existing","generation":{"required":false,"prompt":"Cross-section of lung, visceral pleura, pleural cavity, parietal pleura, and chest wall with clear nested topology; no labels or markers."},"provenance":{"source":"プロジェクト自作SVG","license":"プロジェクト保有","reference":"assets/image_sources/svg/pleura_cross_section.svg"}},
-    {"id":"R08","asset":"assets/illustrations/v1/assets/r08_upper_airway_sagittal.webp","domain":"呼吸器","name":"上気道矢状断","view":"矢状断（頭頸部正中断面）","scale":"頭頸部から上気道全体","structures":["鼻腔","鼻中隔","副鼻腔","咽頭","喉頭","気管","食道"],"marker_targets":["喉頭"],"questions":["Q032"],"source_asset":"assets/images/upper_airway_sagittal.webp","status":"accepted-existing","generation":{"required":false,"prompt":"Midsagittal head-and-neck section showing nasal cavity, nasal septum, paranasal sinus, pharynx, larynx, trachea, and esophagus, each spatially separable; no labels or markers."},"provenance":{"source":"ユーザー提供カスタムAI生成画像（common illustration library batch 3）","license":"外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"R09","asset":"assets/illustrations/v1/assets/r09_larynx_exterior_anterior.webp","domain":"呼吸器","name":"喉頭外観・前面","view":"前面","scale":"頭頸部局所（喉頭外観）","structures":["舌骨","甲状軟骨","輪状甲状筋・輪状甲状靱帯","輪状軟骨","気管軟骨輪"],"marker_targets":["甲状軟骨","輪状軟骨","気管"],"questions":["Q304","Q305","Q306"],"source_asset":"assets/images/larynx_exterior_anterior.webp","status":"accepted-existing","generation":{"required":false,"prompt":"Anterior external view of the larynx with hyoid bone, thyroid cartilage (laryngeal prominence and superior thyroid notch visible), cricothyroid ligament, cricoid cartilage arch, and continuous tracheal cartilage rings below; no labels or markers."},"provenance":{"source":"ユーザー提供カスタムAI生成画像（common illustration library batch 3）","license":"外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"U02","asset":"assets/illustrations/v1/assets/u02_nephron.webp","domain":"泌尿器","name":"ネフロン全体","view":"ネフロン模式図","scale":"微細・機能単位","structures":["輸入細動脈","糸球体","腎小体","ボーマン嚢","近位尿細管","Henle係蹄","遠位尿細管","集合管"],"marker_targets":["腎小体","ボーマン嚢","近位尿細管","Henle係蹄","尿細管順路","遠位尿細管","輸入細動脈"],"questions":["Q048","Q176","Q177","Q178","Q199","Q310","Q311"],"source_asset":"assets/images/q048_nephron.webp","status":"revised","generation":{"required":false,"prompt":"Complete nephron diagram with afferent arteriole, glomerulus, Bowman's capsule wrapping it to form the renal corpuscle, convoluted proximal tubule, thin descending/ascending loop of Henle with a clear U-turn, convoluted distal tubule, and a collecting duct; no labels or markers."},"provenance":{"source":"ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧u02は既存AI生成asset","license":"外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"U03","asset":"assets/illustrations/v1/assets/u03_urinary_system.webp","domain":"泌尿器","name":"泌尿器系全体","view":"前面","scale":"臓器系全体","structures":["左右腎（右腎低位）","左右尿管","膀胱","尿道","尿管狭窄部"],"marker_targets":["尿管","尿管の3生理的狭窄","膀胱"],"questions":["Q050","Q095","Q192"],"source_asset":"assets/images/q050_urinary_system.webp","status":"revised","generation":{"required":false,"prompt":"Anterior urinary tract with both kidneys (right kidney positioned lower than left), ureters, bladder, and urethra, with enough anatomical context to identify the three ureteral constrictions; no labels or markers."},"provenance":{"source":"ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧u03はServier Medical Art Urinary tractのCC BY 4.0画像","license":"外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載","reference":"docs/v2.0.1_asset_source_log.md"}},
-    {"id":"U04","asset":"assets/illustrations/v1/assets/u04_kidney_cross_section.webp","domain":"泌尿器","name":"腎臓冠状断（腎門含む）","view":"冠状断","scale":"臓器断面","structures":["腎被膜","腎皮質","腎髄質","腎錐体","集合管","腎乳頭","小腎杯","大腎杯","腎盂","腎門","腎動脈","腎静脈"],"marker_targets":["腎皮質","腎錐体","腎乳頭","尿流路","集合管","腎被膜","腎門"],"questions":["Q045","Q091","Q092","Q093","Q100","Q180","Q309"],"source_asset":"assets/images/q091_kidney_cross_section.webp","status":"revised","generation":{"required":false,"prompt":"Coronal kidney section showing capsule, cortex, medullary pyramids, collecting ducts, papillae, minor and major calyces, and renal pelvis, with the renal hilum (artery, vein, and pelvis-to-ureter junction on the medial concave side) also visible; no labels or markers."},"provenance":{"source":"ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧u04はServier Medical Art Kidneys coronal sectionのCC BY 4.0画像（AnatomyTOOL経由、片側トリミング）。旧U01「腎門」（Servier Medical Art Kidney、CC BY 4.0）はQ045ごと本masterへ統合し、U01は削除した","license":"外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載","reference":"docs/v2.0.1_asset_source_log.md"}}
+    {
+      "id": "G01",
+      "asset": "assets/illustrations/v1/assets/g01_organization_levels.webp",
+      "domain": "総論",
+      "name": "人体の構成段階",
+      "view": "概念図、左から右",
+      "scale": "細胞から個体までの段階比較",
+      "structures": [
+        "細胞",
+        "組織",
+        "器官",
+        "器官系",
+        "個体"
+      ],
+      "marker_targets": [
+        "5段階の順序"
+      ],
+      "questions": [
+        "Q002"
+      ],
+      "source_asset": "assets/images/q002_hierarchy.webp",
+      "status": "accepted-existing",
+      "generation": {
+        "required": false,
+        "prompt": "Five-panel medical education illustration showing cell, tissue, organ, organ system, and whole human in increasing scale; white background; no text, labels, numbers, or markers; smartphone-readable."
+      },
+      "provenance": {
+        "source": "既存AI生成asset",
+        "license": "プロジェクト保有。外部クレジット不要",
+        "reference": "docs/v2.0.1_image_quality_classification.md"
+      }
+    },
+    {
+      "id": "G02",
+      "asset": "assets/illustrations/v1/assets/g02_epithelium.webp",
+      "domain": "総論",
+      "name": "上皮組織断面",
+      "view": "組織断面",
+      "scale": "組織学的拡大",
+      "structures": [
+        "上皮細胞層",
+        "基底膜",
+        "結合組織"
+      ],
+      "marker_targets": [
+        "最表層の上皮組織"
+      ],
+      "questions": [
+        "Q004"
+      ],
+      "source_asset": "assets/images/q004_epithelium.webp",
+      "status": "accepted-existing",
+      "generation": {
+        "required": false,
+        "prompt": "Histology-style section with a continuous epithelial layer, basement membrane, and connective tissue; no text or markers; clear on a smartphone."
+      },
+      "provenance": {
+        "source": "既存AI生成asset",
+        "license": "プロジェクト保有。外部クレジット不要",
+        "reference": "docs/v2.0.1_image_quality_classification.md"
+      }
+    },
+    {
+      "id": "G03",
+      "asset": "assets/illustrations/v1/assets/g03_body_planes.webp",
+      "domain": "総論",
+      "name": "人体の主要断面",
+      "view": "正面を基準にした3パネル",
+      "scale": "全身",
+      "structures": [
+        "冠状面",
+        "矢状面",
+        "水平面"
+      ],
+      "marker_targets": [
+        "冠状面",
+        "矢状面",
+        "水平面"
+      ],
+      "questions": [
+        "Q008",
+        "Q053",
+        "Q054"
+      ],
+      "source_asset": "assets/images/q008_body_planes.webp",
+      "status": "accepted-existing",
+      "generation": {
+        "required": false,
+        "prompt": "Three-panel anatomical-position human showing coronal, sagittal, and transverse planes as translucent planes; no labels or markers."
+      },
+      "provenance": {
+        "source": "OpenStax Anatomy and Physiology 2e Fig.1.14（AnatomyTOOL経由、ラベル除去加工）",
+        "license": "CC BY 4.0",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "G04",
+      "asset": "assets/illustrations/v1/assets/g04_germ_layers.webp",
+      "domain": "総論",
+      "name": "三胚葉",
+      "view": "胚盤断面立体模式図（円柱状カットモデル）",
+      "scale": "発生学的模式",
+      "structures": [
+        "外胚葉",
+        "中胚葉",
+        "内胚葉",
+        "羊膜腔",
+        "卵黄嚢腔"
+      ],
+      "marker_targets": [
+        "中胚葉",
+        "外胚葉"
+      ],
+      "questions": [
+        "Q010",
+        "Q011"
+      ],
+      "source_asset": "assets/images/q011_germ_layers.webp",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Cylindrical cutaway trilaminar germ disc for nursing education: outer columnar ectoderm layer (blue) facing an amniotic-cavity dome, middle loose mesoderm layer (pink/red), and inner cuboidal endoderm layer (yellow) facing a yolk-sac cavity below; all three layers unambiguously color-separated and continuous around the cylinder; no text, labels, arrows, or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（Codex ImageGen）。旧g04は既存のユーザー提供カスタム画像で、円柱状カットモデルとして3層をより明確に色分けした本画像へ更新した",
+        "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "G05",
+      "asset": "assets/illustrations/v1/assets/g05_anatomical_position.webp",
+      "domain": "総論",
+      "name": "解剖学的正位",
+      "view": "全身正面",
+      "scale": "全身",
+      "structures": [
+        "直立姿勢",
+        "前向きの手掌",
+        "上肢",
+        "下肢",
+        "前腕内側縁"
+      ],
+      "marker_targets": [
+        "全身姿勢（Q051はoverlayなし）",
+        "前腕内側縁（内側の基準点、Q117）"
+      ],
+      "questions": [
+        "Q051",
+        "Q117"
+      ],
+      "source_asset": "assets/images/anatomical_position.webp",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Photorealistic full-body adult male in anatomical position, anterior view, palms forward, standing on white background, neutral medical/educational rendering, no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（Codex ImageGen）。旧g05はプロジェクト自作SVGで、内側・外側の基準点(Q117)を一意に示せなかったため、写真的な全身画像へ更新し、Q117（旧G06「方向用語」より統合）を前腕内側縁上のmarkerとして追加した",
+        "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "G06",
+      "asset": "assets/illustrations/v1/assets/g06_direction_terms.webp",
+      "domain": "総論",
+      "name": "解剖学的方向用語",
+      "view": "正面図と側面図",
+      "scale": "全身",
+      "structures": [
+        "正中線",
+        "前方",
+        "後方",
+        "内側",
+        "外側"
+      ],
+      "marker_targets": [
+        "前方・後方",
+        "内側・外側"
+      ],
+      "questions": [
+        "Q063"
+      ],
+      "source_asset": "assets/images/direction_terms.webp",
+      "status": "accepted-existing",
+      "generation": {
+        "required": false,
+        "prompt": "Paired anterior and lateral human silhouettes with unlabeled directional arrows for medial/lateral and anterior/posterior; no text or markers."
+      },
+      "provenance": {
+        "source": "プロジェクト自作SVG",
+        "license": "プロジェクト保有",
+        "reference": "assets/image_sources/svg/direction_terms.svg"
+      }
+    },
+    {
+      "id": "C01",
+      "asset": "assets/illustrations/v1/assets/c01_heart_exterior_anterior.webp",
+      "domain": "循環器",
+      "name": "心臓外観前面",
+      "view": "前面",
+      "scale": "臓器全体",
+      "structures": [
+        "心尖",
+        "右心房",
+        "右心室",
+        "左心室",
+        "右心耳",
+        "左心耳",
+        "上大静脈",
+        "肺動脈幹",
+        "上行大動脈",
+        "大動脈弓",
+        "右冠状動脈",
+        "前室間枝(LAD)"
+      ],
+      "marker_targets": [
+        "心尖",
+        "上大静脈",
+        "肺動脈幹",
+        "左冠動脈(前室間枝)",
+        "右冠動脈"
+      ],
+      "questions": [
+        "Q016",
+        "Q138",
+        "Q301",
+        "Q073",
+        "Q074"
+      ],
+      "source_asset": "assets/images/heart_exterior_anterior.webp",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Anatomically accurate photorealistic anterior external heart with apex, right and left auricles, superior vena cava, pulmonary trunk, ascending aorta and arch, and both right coronary artery and anterior interventricular (LAD) branch clearly separable; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧c01はServier Medical Art Heart anterior viewのCC BY 4.0画像、旧c08はQ073/Q074専用の別画像だったが、本画像で両方を統合し置換した",
+        "license": "外部クレジット不要。生成・統合記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "C02",
+      "asset": "assets/illustrations/v1/assets/c02_heart_exterior_posterior.webp",
+      "domain": "循環器",
+      "name": "心臓外観後面",
+      "view": "後面",
+      "scale": "臓器全体",
+      "structures": [
+        "左心房後面",
+        "左心室後面",
+        "右心房後面",
+        "上大静脈",
+        "下大静脈",
+        "左右肺静脈4本",
+        "冠状静脈洞"
+      ],
+      "marker_targets": [
+        "肺静脈",
+        "心底",
+        "下大静脈",
+        "冠状静脈洞"
+      ],
+      "questions": [
+        "Q019",
+        "Q125",
+        "Q302",
+        "Q140"
+      ],
+      "source_asset": "assets/images/heart_exterior_posterior.webp",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Anatomically accurate photorealistic posterior external heart showing all four pulmonary veins entering the left atrium, superior and inferior vena cava, and the coronary sinus running the atrioventricular groove; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧c02はServier Medical Art Heart posterior viewのCC BY 4.0画像",
+        "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "C03",
+      "asset": "assets/illustrations/v1/assets/c03_heart_chambers.webp",
+      "domain": "循環器",
+      "name": "心臓4腔断面",
+      "view": "前面からの切開・断面",
+      "scale": "臓器断面",
+      "structures": [
+        "右心房",
+        "右心室",
+        "左心房",
+        "左心室",
+        "心室中隔",
+        "腱索",
+        "乳頭筋",
+        "左右心室壁厚差"
+      ],
+      "marker_targets": [
+        "左心室",
+        "4心腔",
+        "腱索・乳頭筋",
+        "心室中隔"
+      ],
+      "questions": [
+        "Q017",
+        "Q064",
+        "Q129",
+        "Q230"
+      ],
+      "source_asset": "assets/images/q017_heart_chambers.webp",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Cutaway heart showing four chambers, interventricular septum, chordae tendineae, papillary muscles, and markedly thicker left ventricular wall; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧c03は既存AI生成asset。心房中隔はこの画像では大血管の陰に隠れ一意に識別できないため、Q231はC10（旧c03の保存コピー）へ移した",
+        "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "C04",
+      "asset": "assets/illustrations/v1/assets/c04_heart_valve_plane.webp",
+      "domain": "循環器",
+      "name": "心臓弁輪面",
+      "view": "心基部を上方から見る弁輪面",
+      "scale": "心臓内部局所",
+      "structures": [
+        "三尖弁",
+        "僧帽弁",
+        "肺動脈弁",
+        "大動脈弁"
+      ],
+      "marker_targets": [
+        "房室弁",
+        "半月弁"
+      ],
+      "questions": [
+        "Q065",
+        "Q066"
+      ],
+      "source_asset": "assets/images/heart_valve_plane.webp",
+      "status": "accepted-existing",
+      "generation": {
+        "required": false,
+        "prompt": "Superior view at the cardiac valve plane with tricuspid, mitral, pulmonary, and aortic valves clearly separable; no labels or markers."
+      },
+      "provenance": {
+        "source": "Servier Medical Art, Heart valves（AnatomyTOOL経由）",
+        "license": "CC BY 4.0",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "C05",
+      "asset": "assets/illustrations/v1/assets/c05_conduction_system.webp",
+      "domain": "循環器",
+      "name": "心刺激伝導系",
+      "view": "前面切開",
+      "scale": "臓器全体",
+      "structures": [
+        "洞房結節",
+        "房室結節",
+        "房室束",
+        "右脚",
+        "左脚",
+        "Purkinje線維"
+      ],
+      "marker_targets": [
+        "洞房結節",
+        "房室束",
+        "房室結節"
+      ],
+      "questions": [
+        "Q025",
+        "Q240",
+        "Q303"
+      ],
+      "source_asset": "assets/images/q025_conduction_system.webp",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Cutaway heart with the complete cardiac conduction system (SA node, AV node, bundle of His, right and left bundle branches, Purkinje network reaching only the ventricles) rendered with clear anatomical landmarks; no text, labels, or answer markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧c05はServier Medical Art Cardiac conduction systemのCC BY 4.0画像",
+        "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "C06",
+      "asset": "assets/illustrations/v1/assets/c06_vessel_cross_sections.webp",
+      "domain": "循環器",
+      "name": "血管断面比較",
+      "view": "横断面3パネル",
+      "scale": "組織・微細構造比較",
+      "structures": [
+        "動脈",
+        "静脈",
+        "静脈弁",
+        "毛細血管",
+        "血管壁",
+        "内腔"
+      ],
+      "marker_targets": [
+        "静脈",
+        "毛細血管",
+        "動脈"
+      ],
+      "questions": [
+        "Q020",
+        "Q021",
+        "Q067"
+      ],
+      "source_asset": "assets/images/q021_vessel_cross_sections.webp",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Three side-by-side vessel cross-sections comparing wall structure: a thick-walled artery with abundant smooth muscle and elastic fibers and a narrow lumen, a thinner-walled vein with a wide lumen showing a visible venous valve, and a single-layer endothelial capillary tube with red blood cells passing through in single file; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（Codex ImageGen）。旧c06はServier素材2パネル（動脈・静脈)と自作毛細血管パネルの合成で、静脈弁など細部が乏しかった。本画像は3パネルとも新規のカスタムAI生成画像で統一され、静脈弁も明瞭に描写されている",
+        "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載。旧画像のServier由来クレジットは本更新で対象外となったためapp.jsのIMAGE_CREDITSから該当記載を除去した",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "C07",
+      "asset": "assets/illustrations/v1/assets/c07_ecg_waveform.webp",
+      "domain": "循環器",
+      "name": "標準心電図波形",
+      "view": "時間軸波形",
+      "scale": "1心周期",
+      "structures": [
+        "P波",
+        "QRS群",
+        "T波",
+        "基線"
+      ],
+      "marker_targets": [
+        "P波",
+        "QRS群",
+        "T波"
+      ],
+      "questions": [
+        "Q023",
+        "Q024",
+        "Q068"
+      ],
+      "source_asset": "assets/images/q068_ecg_waveform.webp",
+      "status": "accepted-existing",
+      "generation": {
+        "required": false,
+        "prompt": "Clean single-cycle ECG trace on a subtle grid with recognizable P wave, QRS complex, and T wave; no labels or markers."
+      },
+      "provenance": {
+        "source": "プロジェクト自作SVG",
+        "license": "プロジェクト保有",
+        "reference": "assets/image_sources/svg/q068_ecg_waveform.svg"
+      }
+    },
+    {
+      "id": "C10",
+      "asset": "assets/illustrations/v1/assets/c10_heart_chambers_septum.webp",
+      "domain": "循環器",
+      "name": "心臓4腔・中隔模式図",
+      "view": "正面からの切開・断面（患者右は画像左）",
+      "scale": "臓器断面",
+      "structures": [
+        "右心房",
+        "右心室",
+        "左心房",
+        "左心室",
+        "心房中隔",
+        "心室中隔",
+        "三尖弁",
+        "僧帽弁",
+        "上大静脈",
+        "下大静脈",
+        "肺静脈",
+        "肺動脈幹",
+        "大動脈",
+        "左右心室壁厚差"
+      ],
+      "marker_targets": [
+        "心房中隔"
+      ],
+      "questions": [
+        "Q231"
+      ],
+      "source_asset": "ユーザー確認済み添付PNG: codex-clipboard-f5bac386-9bd6-4f60-afff-1bced71fb221.png",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "User-approved frontal four-chamber cutaway with exposed interatrial septum, interventricular septum, atrioventricular valves, great vessels, and a thicker left ventricular wall; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー確認済みの最終採用画像。内容を改変せずWebP変換のみ実施",
+        "license": "プロジェクト保有。外部クレジット不要",
+        "reference": "docs/v2.0.1_asset_source_log.md。大動脈弁から上行大動脈までの位置関係は既知の限界として記録"
+      }
+    },
+    {
+      "id": "C09",
+      "asset": "assets/illustrations/v1/assets/c09_circulation_circuit.webp",
+      "domain": "循環器",
+      "name": "体循環・肺循環",
+      "view": "循環経路模式図",
+      "scale": "全身系統",
+      "structures": [
+        "右心系",
+        "左心系",
+        "肺循環",
+        "体循環",
+        "肺静脈4本（左右各2本）",
+        "上大静脈(SVC)1本",
+        "下大静脈(IVC)1本",
+        "毛細血管床"
+      ],
+      "marker_targets": [
+        "体循環経路",
+        "肺循環経路"
+      ],
+      "questions": [
+        "Q147",
+        "Q148"
+      ],
+      "source_asset": "assets/images/circulation_circuit.webp",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Dual-loop systemic and pulmonary circulation diagram centered on a four-chamber heart (blue right heart, red left heart), with unlabeled directional arrows; pulmonary loop shows exactly 4 pulmonary veins (2 per lung) returning to the left atrium; systemic return shows exactly 1 superior vena cava and 1 inferior vena cava entering the right atrium; distinct pulmonary and systemic capillary beds; no text, labels, or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（Codex ImageGen、複数回の修正を経た最終版）。旧c09はプロジェクト自作SVGで、肺静脈・上大静脈・下大静脈の本数が不正確だった。本画像は最終修正版として肺静脈4本・上大静脈1本・下大静脈1本に修正済みであることをユーザーが確認済み",
+        "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "R01",
+      "asset": "assets/illustrations/v1/assets/r01_larynx.webp",
+      "domain": "呼吸器",
+      "name": "喉頭外観と上下気道",
+      "view": "後面寄りの頸部局所",
+      "scale": "頭頸部局所",
+      "structures": [
+        "喉頭",
+        "喉頭蓋",
+        "甲状軟骨",
+        "輪状軟骨",
+        "気管"
+      ],
+      "marker_targets": [
+        "喉頭",
+        "喉頭蓋",
+        "甲状軟骨",
+        "輪状軟骨",
+        "気管"
+      ],
+      "questions": [
+        "Q256"
+      ],
+      "source_asset": "assets/images/q032_larynx.webp",
+      "status": "accepted-existing",
+      "generation": {
+        "required": false,
+        "prompt": "Detailed larynx in anatomical context showing epiglottis, thyroid cartilage, cricoid cartilage, and upper trachea; no labels or markers."
+      },
+      "provenance": {
+        "source": "Servier Medical Art, Larynx posterior view",
+        "license": "CC BY 4.0",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "R02",
+      "asset": "assets/illustrations/v1/assets/r02_vocal_folds.webp",
+      "domain": "呼吸器",
+      "name": "喉頭鏡視野・上方観",
+      "view": "喉頭鏡視野（上方観）",
+      "scale": "喉頭内部局所",
+      "structures": [
+        "喉頭蓋",
+        "披裂喉頭蓋ヒダ",
+        "前庭ヒダ（仮声帯）",
+        "真声帯（声帯ヒダ）",
+        "声門裂",
+        "披裂軟骨"
+      ],
+      "marker_targets": [
+        "声帯（真声帯）",
+        "声門（声門裂）"
+      ],
+      "questions": [
+        "Q255",
+        "Q307"
+      ],
+      "source_asset": "assets/images/q032_vocal_folds.webp",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Laryngoscopic superior view clearly distinguishing pink vestibular folds (false cords), pale/ivory true vocal folds, and the dark rima glottidis (glottic chink) between them, with arytenoid mounds visible posteriorly; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（common illustration library batch 3）。旧r02はServier Medical Art Cordes vocalesのCC BY 4.0画像で、真声帯と声門裂の境界が不明瞭だった",
+        "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "R03",
+      "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
+      "domain": "呼吸器",
+      "name": "肺外観・気管支樹統合図",
+      "view": "前面",
+      "scale": "気管から区域気管支を含む肺全体",
+      "structures": [
+        "気管",
+        "右主気管支",
+        "左主気管支",
+        "葉気管支",
+        "区域気管支",
+        "右上葉",
+        "右中葉",
+        "右下葉",
+        "左上葉",
+        "左下葉",
+        "水平裂",
+        "斜裂",
+        "肺尖",
+        "心切痕"
+      ],
+      "marker_targets": [
+        "右肺中葉",
+        "左右肺葉数",
+        "水平裂",
+        "肺尖",
+        "区域気管支",
+        "右主気管支",
+        "葉気管支"
+      ],
+      "questions": [
+        "Q035",
+        "Q036",
+        "Q077",
+        "Q082",
+        "Q152",
+        "Q153",
+        "Q169"
+      ],
+      "source_asset": "assets/images/q035_right_middle_lobe.webp + assets/images/q040_airway_branching.webp",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Anterior-view lungs with semi-transparent parenchyma, right three lobes and left two lobes, clear fissures, trachea, asymmetric main bronchi, lobar bronchi, and segmental bronchi; patient right on image-left; no labels, arrows, numbers, or markers."
+      },
+      "provenance": {
+        "source": "Codex ImageGenによるカスタムAI生成画像。旧R03のServier肺前面図と旧R04のServier気管支樹を1 masterへ統合",
+        "license": "外部クレジット不要。生成・統合記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "R04",
+      "asset": "assets/illustrations/v1/assets/r04_peripheral_airway_continuum.webp",
+      "domain": "呼吸器",
+      "name": "末梢気道連続図",
+      "view": "気道長軸と肺胞嚢断面の連続模式",
+      "scale": "終末細気管支から肺胞",
+      "structures": [
+        "終末細気管支",
+        "呼吸細気管支",
+        "肺胞管",
+        "肺胞嚢",
+        "肺胞"
+      ],
+      "marker_targets": [
+        "終末細気管支",
+        "呼吸細気管支",
+        "肺胞管",
+        "肺胞嚢",
+        "肺胞"
+      ],
+      "questions": [
+        "Q034",
+        "Q040",
+        "Q041",
+        "Q154",
+        "Q308"
+      ],
+      "source_asset": "assets/images/peripheral_airway_continuum.webp",
+      "status": "accepted-existing",
+      "generation": {
+        "required": false,
+        "prompt": "Continuous distal airway from smooth terminal bronchiole without alveolar openings through respiratory bronchiole with alveoli opening in its wall, then alveolar duct, alveolar sacs, and individual alveoli; each transition spatially separable; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像",
+        "license": "外部クレジット不要。生成・加工記録は出典ログに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md#r4末梢気道連続図peripheral_airway_continuumwebp"
+      }
+    },
+    {
+      "id": "R05",
+      "asset": "assets/illustrations/v1/assets/r05_alveolar_gas_exchange.webp",
+      "domain": "呼吸器",
+      "name": "肺胞ガス交換",
+      "view": "肺胞・毛細血管拡大断面",
+      "scale": "微細構造",
+      "structures": [
+        "肺胞腔",
+        "I型肺胞上皮",
+        "II型肺胞上皮",
+        "基底膜",
+        "毛細血管内皮",
+        "赤血球",
+        "交換方向"
+      ],
+      "marker_targets": [
+        "肺胞から血液への方向",
+        "血液空気関門"
+      ],
+      "questions": [
+        "Q037",
+        "Q084"
+      ],
+      "source_asset": "assets/images/q037_alveolar_gas_exchange.webp",
+      "status": "accepted-existing",
+      "generation": {
+        "required": false,
+        "prompt": "Close-up alveolus and pulmonary capillary with red blood cells, type I and type II alveolar cells, thin air-blood barrier layers, and two unlabeled gas-direction arrows; no text or markers."
+      },
+      "provenance": {
+        "source": "既存AI生成asset",
+        "license": "プロジェクト保有。外部クレジット不要",
+        "reference": "docs/v2.0.1_image_quality_classification.md"
+      }
+    },
+    {
+      "id": "R06",
+      "asset": "assets/illustrations/v1/assets/r06_pleura_cross_section.webp",
+      "domain": "呼吸器",
+      "name": "胸膜・横隔膜",
+      "view": "胸郭前額断（冠状断）",
+      "scale": "胸郭全体",
+      "structures": [
+        "肺",
+        "心臓",
+        "気管",
+        "横隔膜",
+        "胸壁（肋骨）",
+        "臓側胸膜",
+        "胸膜腔",
+        "壁側胸膜"
+      ],
+      "marker_targets": [
+        "臓側胸膜",
+        "壁側胸膜",
+        "胸膜腔"
+      ],
+      "questions": [
+        "Q155",
+        "Q156"
+      ],
+      "source_asset": "assets/images/pleura_cross_section.webp",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Coronal (frontal) section of the opened thorax showing both lungs, heart, trachea, and diaphragm, with the pleura rendered as two distinct nested membrane layers -- an inner visceral pleura directly on the lung surface and an outer parietal pleura against the chest wall -- separated by a narrow color-emphasized pleural cavity; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（Codex ImageGen、最終修正版）。旧r06はプロジェクト自作SVGの横断面模式図で、横隔膜を含まなかった。本画像は胸郭全体の前額断（冠状断）で、肺・心臓・気管・横隔膜と、臓側胸膜／胸膜腔（教育用に強調した狭い潜在腔）／壁側胸膜の層構造を示す",
+        "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "R08",
+      "asset": "assets/illustrations/v1/assets/r08_upper_airway_sagittal.webp",
+      "domain": "呼吸器",
+      "name": "上気道矢状断",
+      "view": "矢状断（頭頸部正中断面）",
+      "scale": "頭頸部から上気道全体",
+      "structures": [
+        "鼻腔",
+        "鼻中隔",
+        "副鼻腔",
+        "咽頭",
+        "喉頭",
+        "気管",
+        "食道"
+      ],
+      "marker_targets": [
+        "喉頭"
+      ],
+      "questions": [
+        "Q032"
+      ],
+      "source_asset": "assets/images/upper_airway_sagittal.webp",
+      "status": "accepted-existing",
+      "generation": {
+        "required": false,
+        "prompt": "Midsagittal head-and-neck section showing nasal cavity, nasal septum, paranasal sinus, pharynx, larynx, trachea, and esophagus, each spatially separable; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（common illustration library batch 3）",
+        "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "R09",
+      "asset": "assets/illustrations/v1/assets/r09_larynx_exterior_anterior.webp",
+      "domain": "呼吸器",
+      "name": "喉頭外観・前面",
+      "view": "前面",
+      "scale": "頭頸部局所（喉頭外観）",
+      "structures": [
+        "舌骨",
+        "甲状軟骨",
+        "輪状甲状筋・輪状甲状靱帯",
+        "輪状軟骨",
+        "気管軟骨輪"
+      ],
+      "marker_targets": [
+        "甲状軟骨",
+        "輪状軟骨",
+        "気管"
+      ],
+      "questions": [
+        "Q304",
+        "Q305",
+        "Q306"
+      ],
+      "source_asset": "assets/images/larynx_exterior_anterior.webp",
+      "status": "accepted-existing",
+      "generation": {
+        "required": false,
+        "prompt": "Anterior external view of the larynx with hyoid bone, thyroid cartilage (laryngeal prominence and superior thyroid notch visible), cricothyroid ligament, cricoid cartilage arch, and continuous tracheal cartilage rings below; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（common illustration library batch 3）",
+        "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "U02",
+      "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
+      "domain": "泌尿器",
+      "name": "ネフロン全体",
+      "view": "ネフロン模式図",
+      "scale": "微細・機能単位",
+      "structures": [
+        "輸入細動脈",
+        "糸球体",
+        "腎小体",
+        "ボーマン嚢",
+        "近位尿細管",
+        "Henle係蹄",
+        "遠位尿細管",
+        "集合管"
+      ],
+      "marker_targets": [
+        "腎小体",
+        "ボーマン嚢",
+        "近位尿細管",
+        "Henle係蹄",
+        "尿細管順路",
+        "遠位尿細管",
+        "輸入細動脈"
+      ],
+      "questions": [
+        "Q048",
+        "Q176",
+        "Q177",
+        "Q178",
+        "Q199",
+        "Q310",
+        "Q311"
+      ],
+      "source_asset": "assets/images/q048_nephron.webp",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Complete nephron diagram with afferent arteriole, glomerulus, Bowman's capsule wrapping it to form the renal corpuscle, convoluted proximal tubule, thin descending/ascending loop of Henle with a clear U-turn, convoluted distal tubule, and a collecting duct; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧u02は既存AI生成asset",
+        "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "U03",
+      "asset": "assets/illustrations/v1/assets/u03_urinary_system.webp",
+      "domain": "泌尿器",
+      "name": "泌尿器系全体",
+      "view": "前面",
+      "scale": "臓器系全体",
+      "structures": [
+        "左右腎（右腎低位）",
+        "左右尿管",
+        "膀胱",
+        "尿道",
+        "尿管狭窄部"
+      ],
+      "marker_targets": [
+        "尿管",
+        "尿管の3生理的狭窄",
+        "膀胱"
+      ],
+      "questions": [
+        "Q050",
+        "Q095",
+        "Q192"
+      ],
+      "source_asset": "assets/images/q050_urinary_system.webp",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Anterior urinary tract with both kidneys (right kidney positioned lower than left), ureters, bladder, and urethra, with enough anatomical context to identify the three ureteral constrictions; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧u03はServier Medical Art Urinary tractのCC BY 4.0画像",
+        "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "U04",
+      "asset": "assets/illustrations/v1/assets/u04_kidney_cross_section.webp",
+      "domain": "泌尿器",
+      "name": "腎臓冠状断（腎門含む）",
+      "view": "冠状断",
+      "scale": "臓器断面",
+      "structures": [
+        "腎被膜",
+        "腎皮質",
+        "腎髄質",
+        "腎錐体",
+        "集合管",
+        "腎乳頭",
+        "小腎杯",
+        "大腎杯",
+        "腎盂",
+        "腎門",
+        "腎動脈",
+        "腎静脈"
+      ],
+      "marker_targets": [
+        "腎皮質",
+        "腎錐体",
+        "腎乳頭",
+        "尿流路",
+        "集合管",
+        "腎被膜",
+        "腎門"
+      ],
+      "questions": [
+        "Q045",
+        "Q091",
+        "Q092",
+        "Q093",
+        "Q100",
+        "Q180",
+        "Q309"
+      ],
+      "source_asset": "assets/images/q091_kidney_cross_section.webp",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Coronal kidney section showing capsule, cortex, medullary pyramids, collecting ducts, papillae, minor and major calyces, and renal pelvis, with the renal hilum (artery, vein, and pelvis-to-ureter junction on the medial concave side) also visible; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧u04はServier Medical Art Kidneys coronal sectionのCC BY 4.0画像（AnatomyTOOL経由、片側トリミング）。旧U01「腎門」（Servier Medical Art Kidney、CC BY 4.0）はQ045ごと本masterへ統合し、U01は削除した",
+        "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    }
   ]
 }

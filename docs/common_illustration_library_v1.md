@@ -13,6 +13,8 @@
 > **更新（common illustration library batch 4）**：R01「喉頭外観と上下気道」からQ032・Q304・Q305・Q306を分離し、新設R08「上気道矢状断」・R09「喉頭外観・前面」へ移した（R01はQ256のみ残し、人間レビュー未完了のR2-B保留分として維持）。R02「喉頭鏡視野」はカスタムAI生成画像へ更新し、真声帯・前庭ヒダ・声門裂を分離識別できるようにした（Q307のmarkerを声帯ヒダ組織上から声門裂そのものへ再測定）。本batchはbatch 3と別worktreeで並行に進んでいたため、統合時に24 master → 26 masterとなった。詳細は`docs/v2.0.1_asset_source_log.md`「common illustration library batch 4」節を参照。
 >
 > **更新（common illustration library batch 5）**：G04「三胚葉」・G05「解剖学的正位」・C09「体循環・肺循環」をカスタムAI生成画像へ更新した（いずれも`status:"revised"`）。あわせてG06「解剖学的方向用語」のQ117（内側・外側）をG05の新画像上（前腕内側縁）へ統合し、G06はQ063（前方・後方）のみを残した。master数は26のまま変わらない（新設・削除なし、既存masterの画像更新とQ117の再配置のみ）。詳細は`docs/v2.0.1_asset_source_log.md`「common illustration library batch 5」節を参照。
+>
+> **更新（common illustration library batch 6 -- Phase 1最終batch）**：C06「血管断面比較」・R06をカスタムAI生成画像へ更新した（いずれも`status:"revised"`）。R06は横隔膜を含む胸郭全体の前額断（冠状断）画像となったため図名称を「胸膜横断模式図」から「胸膜・横隔膜」へ改めた（ただし今回markerを移行したのはQ155・Q156の胸膜3構造のみで、横隔膜自体を対象とするimage_mcqは無いためmarker_targetsには含めていない）。master数は26のまま変わらない（新設・削除なし、既存2masterの画像更新のみ）。詳細は`docs/v2.0.1_asset_source_log.md`「common illustration library batch 6」節を参照。
 
 画像は問題単位で複製しない。複数問題が同じ `image.asset` を参照し、markerの座標とラベルは各問題の `overlay` または `overlays` に残す。前面・後面・断面・組織像、または表示倍率が違う図は別masterとした。
 
@@ -49,7 +51,7 @@
 | R03 | 肺外観・気管支樹統合図 | Q035, Q036, Q077, Q082, Q152, Q153, Q169 | 7 | `r03_lungs_bronchial_tree.webp` |
 | R04 | 末梢気道連続図 | Q034, Q040, Q041, Q154, Q308 | 5 | `r04_peripheral_airway_continuum.webp` |
 | R05 | 肺胞ガス交換 | Q037, Q084 | 2 | `r05_alveolar_gas_exchange.webp` |
-| R06 | 胸膜横断模式図 | Q155, Q156 | 2 | `r06_pleura_cross_section.webp` |
+| R06 | 胸膜・横隔膜 | Q155, Q156 | 2 | `r06_pleura_cross_section.webp` |
 | R08 | 上気道矢状断 | Q032 | 1 | `r08_upper_airway_sagittal.webp` |
 | R09 | 喉頭外観・前面 | Q304, Q305, Q306 | 3 | `r09_larynx_exterior_anterior.webp` |
 | U02 | ネフロン全体 | Q048, Q176, Q177, Q178, Q199, Q310, Q311 | 7 | `u02_nephron.webp` |
