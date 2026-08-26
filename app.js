@@ -570,7 +570,7 @@
   var IMAGE_CREDITS = [
     {
       title: 'Servier Medical Art',
-      meta: 'License: CC BY 4.0　｜　喉頭・声帯・心臓外形（前面／後面）・刺激伝導系・心臓弁（弁輪面）・肺胞嚢・血管壁（動脈／静脈）の各画像に使用',
+      meta: 'License: CC BY 4.0　｜　喉頭・心臓外形（前面／後面）・刺激伝導系・心臓弁（弁輪面）・肺胞嚢・血管壁（動脈／静脈）の各画像に使用',
       url: 'https://smart.servier.com/'
     },
     {

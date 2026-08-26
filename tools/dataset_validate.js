@@ -188,7 +188,21 @@ qs.forEach(q => {
 // (one master retired, zero new ones added). See
 // docs/common_illustration_library_v1_implementation_log.md and
 // docs/v2.0.1_asset_source_log.md.
-if (referencedAssets.size !== 24) fail(`unique referenced assets = ${referencedAssets.size}, expected 24`);
+// v2.0.1 (common illustration library batch 3 -- 呼吸器 R1/R2-A/R2-C
+// consolidation): R03 (肺葉) and R04 (気管支分岐) were merged into a single
+// custom-generated R03 (肺外観・気管支樹統合図), renumbering the former R05/
+// R06/R07 down to R04/R05/R06 (25 -> 24 unique assets: two old masters
+// discarded, one new one added). Separately, R01 (喉頭外観と上下気道) was
+// split -- Q032 moved off to a new R08 (上気道矢状断) and Q304/Q305/Q306
+// moved off to a new R09 (喉頭外観・前面), leaving R01 with only Q256（喉頭蓋,
+// pending a still-unreviewed R2-B master). R02 was revised to a new
+// custom-generated laryngoscopic image that -- unlike its Servier predecessor
+// -- makes the true vocal folds, the vestibular folds, and the rima glottidis
+// all separately identifiable (Q307's marker moved off the fold tissue onto
+// the glottic chink itself). 24 -> 26 unique assets (two new masters added,
+// zero retired). See docs/common_illustration_library_v1_implementation_log.md
+// and docs/v2.0.1_asset_source_log.md.
+if (referencedAssets.size !== 26) fail(`unique referenced assets = ${referencedAssets.size}, expected 26`);
 
 const allFiles = fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir).filter(f => f.endsWith('.webp')) : [];
 allFiles.forEach(f => { if (!referencedAssets.has(f)) warn(`asset file not referenced by any question: ${f}`); });

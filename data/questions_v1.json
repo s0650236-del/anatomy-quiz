@@ -1223,14 +1223,14 @@
         "上気道"
       ],
       "image": {
-        "prompt_id": "IMG-010",
-        "asset": "assets/illustrations/v1/assets/r01_larynx.webp",
-        "alt": "喉頭の後面図（喉頭蓋・甲状軟骨・輪状軟骨・気管上部）",
+        "prompt_id": "IMG-029",
+        "asset": "assets/illustrations/v1/assets/r08_upper_airway_sagittal.webp",
+        "alt": "頭頸部正中矢状断（鼻腔・咽頭・喉頭・気管・食道が確認できる模式図）",
         "marker": "①",
         "marker_target": "喉頭",
         "overlay": {
-          "x": 0.5,
-          "y": 0.45,
+          "x": 0.565,
+          "y": 0.615,
           "label": "①"
         }
       }
@@ -9172,12 +9172,12 @@
       "image": {
         "prompt_id": "IMG-007",
         "asset": "assets/illustrations/v1/assets/r02_vocal_folds.webp",
-        "alt": "喉頭鏡視野（声帯を上方から見た模式図）",
+        "alt": "喉頭鏡視野（上方観）。前庭ヒダ（仮声帯）と真声帯、声門裂が識別できる模式図",
         "marker": "②",
         "marker_target": "声帯",
         "overlay": {
-          "x": 0.44,
-          "y": 0.45,
+          "x": 0.4,
+          "y": 0.6,
           "label": "②"
         }
       }
@@ -10724,12 +10724,12 @@
       "explanation": "甲状軟骨は喉頭の中で最も大きい軟骨で、喉頭の外形の大部分を形成する。前方への突出は「のどぼとけ」として触知できる。",
       "tags": ["甲状軟骨", "喉頭"],
       "image": {
-        "prompt_id": "IMG-010",
-        "asset": "assets/illustrations/v1/assets/r01_larynx.webp",
-        "alt": "喉頭の後面図（喉頭蓋・甲状軟骨・輪状軟骨・気管上部）",
+        "prompt_id": "IMG-030",
+        "asset": "assets/illustrations/v1/assets/r09_larynx_exterior_anterior.webp",
+        "alt": "喉頭外観の前面図（舌骨・甲状軟骨・輪状軟骨・気管軟骨輪が確認できる模式図）",
         "marker": "①",
         "marker_target": "甲状軟骨",
-        "overlay": { "x": 0.5, "y": 0.4, "label": "①" }
+        "overlay": { "x": 0.32, "y": 0.46, "label": "①" }
       }
     },
     {
@@ -10749,12 +10749,12 @@
       "explanation": "輪状軟骨は喉頭軟骨の中で唯一、完全な輪状構造をもち、甲状軟骨の下方で気管の最上部に連続する。",
       "tags": ["輪状軟骨", "喉頭"],
       "image": {
-        "prompt_id": "IMG-010",
-        "asset": "assets/illustrations/v1/assets/r01_larynx.webp",
-        "alt": "喉頭の後面図（喉頭蓋・甲状軟骨・輪状軟骨・気管上部）",
+        "prompt_id": "IMG-030",
+        "asset": "assets/illustrations/v1/assets/r09_larynx_exterior_anterior.webp",
+        "alt": "喉頭外観の前面図（舌骨・甲状軟骨・輪状軟骨・気管軟骨輪が確認できる模式図）",
         "marker": "①",
         "marker_target": "輪状軟骨",
-        "overlay": { "x": 0.5, "y": 0.65, "label": "①" }
+        "overlay": { "x": 0.5, "y": 0.665, "label": "①" }
       }
     },
     {
@@ -10774,12 +10774,12 @@
       "explanation": "気管は輪状軟骨の下方から続く管で、馬蹄形の気管軟骨によって内腔が保たれている。下方で左右の主気管支に分岐する。",
       "tags": ["気管", "気道"],
       "image": {
-        "prompt_id": "IMG-010",
-        "asset": "assets/illustrations/v1/assets/r01_larynx.webp",
-        "alt": "喉頭の後面図（喉頭蓋・甲状軟骨・輪状軟骨・気管上部）",
+        "prompt_id": "IMG-030",
+        "asset": "assets/illustrations/v1/assets/r09_larynx_exterior_anterior.webp",
+        "alt": "喉頭外観の前面図（舌骨・甲状軟骨・輪状軟骨・気管軟骨輪が確認できる模式図）",
         "marker": "①",
         "marker_target": "気管",
-        "overlay": { "x": 0.5, "y": 0.9, "label": "①" }
+        "overlay": { "x": 0.5, "y": 0.79, "label": "①" }
       }
     },
     {
@@ -10801,10 +10801,10 @@
       "image": {
         "prompt_id": "IMG-007",
         "asset": "assets/illustrations/v1/assets/r02_vocal_folds.webp",
-        "alt": "喉頭鏡視野（声帯を上方から見た模式図）",
+        "alt": "喉頭鏡視野（上方観）。前庭ヒダ（仮声帯）と真声帯、声門裂が識別できる模式図",
         "marker": "①",
-        "marker_target": "声門（左右の声帯に囲まれた開口部）",
-        "overlay": { "x": 0.5, "y": 0.48, "label": "①" }
+        "marker_target": "声門（左右の真声帯に囲まれた開口部＝声門裂）",
+        "overlay": { "x": 0.5, "y": 0.6, "label": "①" }
       }
     },
     {

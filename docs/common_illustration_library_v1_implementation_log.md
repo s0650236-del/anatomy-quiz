@@ -216,3 +216,69 @@ commit hashは実装コミットのGit履歴を正本とする。
 | `?review=assets` | U02(7問)・U03(3問)・U04(7問)、全marker位置を実測値と一致確認（画像の自然サイズも意図どおり：U02/U03=1024×1536、U04=1122×1402） |
 | `?review=images` | 変更した17 QID全件（Q045,Q048,Q050,Q091,Q092,Q093,Q095,Q100,Q176,Q177,Q178,Q180,Q192,Q199,Q309,Q310,Q311）で画像・正答表示を確認 |
 | responsive QA | Desktop(1280×800)／iPad(768×1024)：横スクロールなし。Phone(375×812)：Q045の実描画要素の右端はいずれもwindow.innerWidth内（zoom modal含む）。`scrollWidth`>`clientWidth`の乖離は本バッチ対象外のQ002でも同様に再現するため、batch 1で記録済みの既知の計測アーティファクトであり実際の視覚崩れではない |
+
+---
+
+## common illustration library batch 4（呼吸器 R1/R2-A/R2-C -- R01からR08/R09を分離新設、R02更新）
+
+### 基準
+
+- 作業開始HEAD：`1e387d98a02c4417f6f1f5268f44e628c2810fe0`
+- 作業ツリー：主worktree（`D:\GitHub\anatomy-quiz`）とは別の独立worktree（`D:\GitHub\anatomy-quiz-respiratory`、branch `work/respiratory-common-illustrations`）。主worktreeには発生源不明の別batch（R03/R04統合と見られる未コミット変更、後日「batch 3」と判明）が存在していたため、隔離して実施した。本batchは `fix/v2.0.1-review-and-update`（batch 3を含む）上へのrebaseにより統合され、以降batch 4として記録する
+- 対象：R01（喉頭外観と上下気道）からQ032・Q304・Q305・Q306を分離し、新設R08（上気道矢状断）・R09（喉頭外観・前面）へ移行。R02（声帯・声門）をカスタムAI生成画像へ更新し「喉頭鏡視野・上方観」へ改称
+- R2-B（Q256を含む可能性のある別視点master）は人間レビュー未完了のため対象外。R01はQ256のみを残した暫定状態のまま維持した
+- text_mcq→image_mcq変換は実施していない
+
+### 実装内容
+
+- Q032（上気道矢状断で喉頭を問う）・Q304〜Q306（喉頭外観の軟骨を問う）を、旧R01の後面局所図から、それぞれの観察方向に適した新画像（R08＝正中矢状断、R09＝前面外観）へ移行した。R01はQ256（喉頭蓋）のみを残し、structures/marker_targets/画像自体は変更していない。
+- R02を、真声帯・前庭ヒダ（仮声帯）・声門裂が色で明確に分離できるカスタムAI生成画像へ更新した（`status`を`accepted-existing`から`revised`へ変更）。Q307「声門」のmarkerは、旧版で声帯ヒダ組織寄りにあった座標から、左右真声帯に囲まれた声門裂そのもの（暗色の開口部）へ再測定した。marker_target文言も「声門（声門裂）」であることを明確化した。
+- 対象6 QID（Q032, Q304, Q305, Q306, Q255, Q307）の`image.asset`・`image.overlay`のみを新画像へ移行した。問題文・choices・answer・explanationは一切変更していない。alt文言は新画像の内容に合わせて更新した。
+- 全marker座標を新画像に対する実ピクセルサンプリング（対象色が期待どおりの構造色と一致し、±8pxの近傍でも安定していることをPythonで検証）で再測定した（既存座標の流用は無し）。
+- R01・R02とも参照QIDが残る（R01はQ256、R02は移行後も同じ2 QID）ため、今回削除したassetは無い。R08・R09は新規追加のみで、25 master → 27 masterとなった。
+- `tools/dataset_validate.js`のunique assets期待値（25→27）、`sw.js`のprecacheリスト（r08・r09追加）とcache名、`README.md`のmaster数表記、`app.js`のCredits文言（R02のServier由来「声帯」記載を削除、「喉頭」はR01がQ256で継続使用のため維持）を更新した。
+
+### marker配置（全件、新画像に対する実ピクセルサンプリングで検証済み。既存座標の流用は無し）
+
+**R08**（`r08_upper_airway_sagittal.webp`、1022×1538）
+
+| marker | QID | marker_target |
+|---|---|---|
+| ①(0.565,0.615) | Q032 | 喉頭 |
+
+**R09**（`r09_larynx_exterior_anterior.webp`、1122×1402）
+
+| marker | QID | marker_target |
+|---|---|---|
+| ①(0.32,0.46) | Q304 | 甲状軟骨 |
+| ①(0.5,0.665) | Q305 | 輪状軟骨 |
+| ①(0.5,0.79) | Q306 | 気管 |
+
+**R02**（`r02_vocal_folds.webp`、1126×1397）
+
+| marker | QID | marker_target |
+|---|---|---|
+| ②(0.4,0.6) | Q255 | 声帯（真声帯） |
+| ①(0.5,0.6) | Q307 | 声門（声門裂） |
+
+真声帯（象牙色）・前庭ヒダ（ピンク）・声門裂（暗赤色の開口）の3構造が実ピクセルサンプリングで色として明確に分離することを確認したうえで配置した。詳細は`docs/v2.0.1_asset_source_log.md`「common illustration library batch 4」節を参照。
+
+### 画像処理
+
+3枚ともユーザー提供PNG（`.codex/generated_images/01a0331c-d0a0-7791-a884-fdf27de3cc82/`配下、RGB、アルファチャンネル無し）をRGBのままWebP変換（quality=92, method=6）。3枚とも長辺1600px以下（最大1538px）のためリサイズなし。トリミング等の追加改変は無し。
+
+### dataset側の変更
+
+- unique asset数：25 → 27（`r08_upper_airway_sagittal.webp`・`r09_larynx_exterior_anterior.webp`を新規追加、削除は0件）。
+- image_mcq数：77のまま（type変換は無し）。総問題数311は無変更。
+- `assets/illustrations/v1/manifest.json`：R01の`questions`をQ256のみへ縮小。R02の`status`を`revised`へ変更しstructures・marker_targets・generation・provenanceを更新。R08・R09を`accepted-existing`として新設（`source_asset`は`assets/images/upper_airway_sagittal.webp`・`assets/images/larynx_exterior_anterior.webp`としてバイト同一コピーを追加）。`master_count`を25→27、`status_counts`を実態に合わせて更新した。
+
+### 検証結果
+
+| 検証 | 結果 |
+|---|---|
+| `tools/common_illustration_library_validate.js` | masters 27、77/77問割当、errors 0 |
+| `tools/dataset_validate.js` | errors 0、warnings 0（311問／image_mcq 77／text_mcq 234／unique assets 27） |
+| `tools/queue_distribution_test.js` | PASSED |
+
+（`?review=assets`・`?review=images`・responsive QAの結果は本ログの直後に追記する。）
