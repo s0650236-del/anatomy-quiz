@@ -181,7 +181,14 @@ qs.forEach(q => {
 // (Q016's apex marker added alongside Q138's existing marker on that asset).
 // 28 -> 26 unique assets is the deliberate result (two self-made assets
 // discarded, zero new ones added).
-if (referencedAssets.size !== 26) fail(`unique referenced assets = ${referencedAssets.size}, expected 26`);
+// v2.0.1 (common illustration library batch 2 -- 泌尿器 U1/U2/U3 consolidation):
+// U01 (renal hilum, Q045-only) was merged into U04 (kidney coronal section --
+// Q045's marker now sits on the same coronal image's hilum notch), and U02/U03/
+// U04 were all revised to new custom-generated images. 26 -> 25 unique assets
+// (one master retired, zero new ones added). See
+// docs/common_illustration_library_v1_implementation_log.md and
+// docs/v2.0.1_asset_source_log.md.
+if (referencedAssets.size !== 25) fail(`unique referenced assets = ${referencedAssets.size}, expected 25`);
 
 const allFiles = fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir).filter(f => f.endsWith('.webp')) : [];
 allFiles.forEach(f => { if (!referencedAssets.has(f)) warn(`asset file not referenced by any question: ${f}`); });
@@ -202,12 +209,16 @@ if (!q129 || !q129.image || q129.image.asset !== 'assets/illustrations/v1/assets
 // chamber cutaway, and all 4/5 chamber-marker coordinates were re-measured
 // on the new file by pixel sampling (previous baseline, now historical:
 // Q017 {x:0.62,y:0.67}; Q064 {x:0.32,y:0.46}/{x:0.38,y:0.73}/{x:0.63,y:0.38}/{x:0.62,y:0.67}).
+// Q048 baseline was updated for the "common illustration library batch 2"
+// pass: u02_nephron.webp was replaced with a higher-quality custom-generated
+// nephron diagram and the renal-corpuscle marker was re-measured on the new
+// file by pixel sampling (previous baseline, now historical: {x:0.19,y:0.135}).
 const BASELINE_OVERLAYS = {
   Q002: [{ x: 0.08, y: 0.46, label: '①' }, { x: 0.28, y: 0.46, label: '②' }, { x: 0.48, y: 0.43, label: '③' }, { x: 0.7, y: 0.45, label: '④' }, { x: 0.91, y: 0.47, label: '⑤' }],
   Q004: [{ x: 0.5, y: 0.46, label: '①' }],
   Q017: [{ x: 0.7007, y: 0.7188, label: '①' }],
   Q037: [{ x: 0.385, y: 0.57, label: '①' }],
-  Q048: [{ x: 0.19, y: 0.135, label: '①' }],
+  Q048: [{ x: 0.3223, y: 0.1237, label: '①' }],
   Q064: [{ x: 0.2925, y: 0.3438, label: '①' }, { x: 0.3061, y: 0.7812, label: '②' }, { x: 0.7007, y: 0.325, label: '③' }, { x: 0.7007, y: 0.7188, label: '④' }],
 };
 Object.keys(BASELINE_OVERLAYS).forEach(id => {
