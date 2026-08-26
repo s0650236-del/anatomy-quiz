@@ -11,6 +11,8 @@
 > **更新（common illustration library batch 3）**：R03「左右肺葉・肺裂」とR04「気管支分岐」をカスタムAI生成画像による新R03「肺外観・気管支樹統合図」へ統合し、旧R05〜R07をR04〜R06へ改番した。25 master → 24 masterとなった。詳細は`docs/v2.0.1_asset_source_log.md`「common illustration library batch 3」節を参照。
 >
 > **更新（common illustration library batch 4）**：R01「喉頭外観と上下気道」からQ032・Q304・Q305・Q306を分離し、新設R08「上気道矢状断」・R09「喉頭外観・前面」へ移した（R01はQ256のみ残し、人間レビュー未完了のR2-B保留分として維持）。R02「喉頭鏡視野」はカスタムAI生成画像へ更新し、真声帯・前庭ヒダ・声門裂を分離識別できるようにした（Q307のmarkerを声帯ヒダ組織上から声門裂そのものへ再測定）。本batchはbatch 3と別worktreeで並行に進んでいたため、統合時に24 master → 26 masterとなった。詳細は`docs/v2.0.1_asset_source_log.md`「common illustration library batch 4」節を参照。
+>
+> **更新（common illustration library batch 5）**：G04「三胚葉」・G05「解剖学的正位」・C09「体循環・肺循環」をカスタムAI生成画像へ更新した（いずれも`status:"revised"`）。あわせてG06「解剖学的方向用語」のQ117（内側・外側）をG05の新画像上（前腕内側縁）へ統合し、G06はQ063（前方・後方）のみを残した。master数は26のまま変わらない（新設・削除なし、既存masterの画像更新とQ117の再配置のみ）。詳細は`docs/v2.0.1_asset_source_log.md`「common illustration library batch 5」節を参照。
 
 画像は問題単位で複製しない。複数問題が同じ `image.asset` を参照し、markerの座標とラベルは各問題の `overlay` または `overlays` に残す。前面・後面・断面・組織像、または表示倍率が違う図は別masterとした。
 
@@ -31,8 +33,8 @@
 | G02 | 上皮組織断面 | Q004 | 1 | `g02_epithelium.webp` |
 | G03 | 人体の主要断面 | Q008, Q053, Q054 | 3 | `g03_body_planes.webp` |
 | G04 | 三胚葉 | Q010, Q011 | 2 | `g04_germ_layers.webp` |
-| G05 | 解剖学的正位 | Q051 | 1 | `g05_anatomical_position.webp` |
-| G06 | 解剖学的方向用語 | Q063, Q117 | 2 | `g06_direction_terms.webp` |
+| G05 | 解剖学的正位 | Q051, Q117 | 2 | `g05_anatomical_position.webp` |
+| G06 | 解剖学的方向用語 | Q063 | 1 | `g06_direction_terms.webp` |
 | C01 | 心臓外観前面 | Q016, Q138, Q301, Q073, Q074 | 5 | `c01_heart_exterior_anterior.webp` |
 | C02 | 心臓外観後面 | Q019, Q125, Q302, Q140 | 4 | `c02_heart_exterior_posterior.webp` |
 | C03 | 心臓4腔断面 | Q017, Q064, Q129, Q230 | 4 | `c03_heart_chambers.webp` |
@@ -54,7 +56,7 @@
 | U03 | 泌尿器系全体 | Q050, Q095, Q192 | 3 | `u03_urinary_system.webp` |
 | U04 | 腎臓冠状断（腎門含む） | Q045, Q091, Q092, Q093, Q100, Q180, Q309 | 7 | `u04_kidney_cross_section.webp` |
 
-77問すべてがmasterへ割り当てられている。うち71問は複数Qで使うmasterに属し、Q002、Q004、Q051、Q231は教育上の縮尺・識別性を守るため単独masterとした。Q256（R01）とQ032（R08）も現時点では単独masterだが、これはR01がR2-B新設（人間レビュー未完了のため保留）を待つ暫定状態であることによるもので、恒久的な設計判断ではない。
+77問すべてがmasterへ割り当てられている。うち71問は複数Qで使うmasterに属し、Q002、Q004、Q231は教育上の縮尺・識別性を守るため単独masterとした。Q063（G06）もbatch 5でQ117がG05へ移った結果、単独masterとなった。Q256（R01）とQ032（R08）も現時点では単独masterだが、これはR01がR2-B新設（人間レビュー未完了のため保留）を待つ暫定状態であることによるもので、恒久的な設計判断ではない。
 
 ## 統合しなかった主な図
 
@@ -67,10 +69,11 @@
 - U02、U03、U04はネフロン模式図、泌尿器系全体、腎断面。観察範囲が一致しない。腎門（旧U01）だけはU04の腎臓冠状断上で無理なく一意に指せたため、batch 2でU04へ統合した。
 - R08（上気道矢状断）とR09（喉頭外観・前面）：旧R01は後面寄りの頸部局所図1枚に、鼻腔〜気管の全体像（Q032）と喉頭単体の前面観（Q304〜Q306）を無理に同居させていた。矢状断と前面外観は観察方向が異なるため、batch 4で別masterに分離した。Q256（喉頭蓋）は、まだ人間レビューが済んでいない別視点の候補（R2-B）に統合される可能性があるため、今回は旧R01画像に残し統合対象から外した。
 - R02は声帯を扱う点でR08・R09と同じ喉頭領域だが、喉頭鏡視野（上方から見た内視鏡的視野）は前面外観・矢状断のどちらとも観察方向が異なり、実在する内視鏡所見の再現という性質上も独立して扱う。
+- G05とG06：batch 5でG05の画像を全身写真的イラストへ更新した際、Q117（内側・外側）の marker を前腕内側縁として一意に配置できることを確認できたため、G06からG05へ統合した。Q063（前方・後方）はG05の画像（正面観のみ）では前後方向を示せないため、G06（正面図＋側面図）に残した。G04（三胚葉）は発生学の胚葉断面図でG05・G06とは主題が異なるため統合していない。
 
 ## 生成・出典管理
 
-v1の当初26 masterは品質評価済みの既存assetをバイト同一で採用した。batch 1でC01・C02・C03・C05をカスタムAI生成画像へ更新し（`status:"revised"`）、C08を統合廃止、C10を新設した。batch 2でU01（腎門）をU04へ統合・削除し、U02・U03・U04をカスタムAI生成画像へ更新した（`status:"revised"`）。26 master → 25 masterとなった。batch 3では呼吸器の肺葉図（旧R03）と気管支分岐図（旧R04）を新R03（肺外観・気管支樹統合図）へ統合し、25 master → 24 masterとなった。batch 4でR01からQ032・Q304〜Q306を分離し、カスタムAI生成画像によるR08・R09を新設、R02もカスタムAI生成画像へ更新した（`status:"revised"`）。batch 3・batch 4は別worktreeで並行に進み、後日rebaseで統合したため24 master → 26 masterとなった。生成待ちは0件。各masterの観察方向、縮尺、主要構造、marker target、代替画像を作る場合のprompt、出典・ライセンス欄はmanifestに収録した。
+v1の当初26 masterは品質評価済みの既存assetをバイト同一で採用した。batch 1でC01・C02・C03・C05をカスタムAI生成画像へ更新し（`status:"revised"`）、C08を統合廃止、C10を新設した。batch 2でU01（腎門）をU04へ統合・削除し、U02・U03・U04をカスタムAI生成画像へ更新した（`status:"revised"`）。26 master → 25 masterとなった。batch 3では呼吸器の肺葉図（旧R03）と気管支分岐図（旧R04）を新R03（肺外観・気管支樹統合図）へ統合し、25 master → 24 masterとなった。batch 4でR01からQ032・Q304〜Q306を分離し、カスタムAI生成画像によるR08・R09を新設、R02もカスタムAI生成画像へ更新した（`status:"revised"`）。batch 3・batch 4は別worktreeで並行に進み、後日rebaseで統合したため24 master → 26 masterとなった。batch 5でG04・G05・C09をカスタムAI生成画像へ更新し（`status:"revised"`）、G06のQ117をG05へ再配置した。master新設・削除は無く26 masterのまま。生成待ちは0件。各masterの観察方向、縮尺、主要構造、marker target、代替画像を作る場合のprompt、出典・ライセンス欄はmanifestに収録した。
 
 出典URL、加工方法、採否理由は `docs/v2.0.1_asset_source_log.md` と `docs/v2.0.1_image_quality_classification.md` を参照する。出典欄が「詳細は出典ログ参照」のassetは、公開前にクレジット表示との一致を人が再確認する。
 

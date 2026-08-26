@@ -283,3 +283,77 @@ commit hashは実装コミットのGit履歴を正本とする。
 | `tools/queue_distribution_test.js` | PASSED |
 
 （`?review=assets`・`?review=images`・responsive QAの結果は本ログの直後に追記する。）
+
+---
+
+## common illustration library batch 5（総論G04/G05・循環器C09 -- 既存3 masterの画像更新、G06からG05へQ117再配置）
+
+### 基準
+
+- 作業開始HEAD：`68171a4b4dab57ddbe3a882091aa1a0d1c82cf97`（branch `fix/v2.0.1-review-and-update`）
+- 対象：G04（三胚葉）・G05（解剖学的正位）・C09（体循環・肺循環）の3 masterをユーザー提供カスタムAI生成画像へ更新。あわせてG06（解剖学的方向用語）のQ117（内側・外側）を、G05の新画像上（前腕内側縁）へ一意に配置できることを確認したうえで統合した
+- text_mcq→image_mcq変換は実施していない。問題文・choices・answer・explanationは全QIDで無変更
+- master新設・削除は無し（26 master → 26 master）。既存3 masterの画像更新とQ117の再配置のみ
+
+### 実装内容
+
+- **G05（解剖学的正位）**：旧g05はプロジェクト自作SVGで、直立正面像のみを示しQ051（正位の定義選択、overlayなし）専用だった。新画像（`.codex/generated_images/01a0331c-d0a0-7791-a884-fdf27de3cc82/exec-2bc0434f-2f33-415b-b191-772303bc8456.png`、887×1774）は写実的な全身正面像で、Q051の構図（直立・正面視・手掌前方）を保ちつつ、前腕内側縁を内側・外側の基準点として実ピクセルサンプリングで一意に指せることを確認した。これによりQ117（旧G06「方向用語」でQ063と同一画像を共有）をG05へ統合し、markerを新規測定した。Q051は元々overlayなしの定義選択問題のため、画像更新後もoverlay追加は行っていない（`tools/dataset_validate.js`のQ051例外はそのまま有効）。
+- **G04（三胚葉）**：旧g04は平面的な胚盤断面模式図。新画像（`exec-92659ef8-a458-4f81-bdf3-979b0f1be49e.png`、1214×1296）は外胚葉（青・円柱上皮）／中胚葉（ピンク・疎な間葉）／内胚葉（黄・立方上皮）を色で明確に分離した円柱状カットモデルで、羊膜腔（上方）・卵黄嚢腔（下方）も含む。Q010（中胚葉）・Q011（外胚葉）のmarkerを新画像上で再測定した。marker_targetの文言（「中胚葉（中層）」「最外層（外胚葉）」）は層の相対位置が変わらないため無変更。
+- **C09（体循環・肺循環）**：旧c09はプロジェクト自作SVGで、肺静脈・上大静脈・下大静脈の本数が不正確だった。ユーザーが複数回の修正を経て最終確認した画像（`exec-52927d44-a91c-4cb9-8b93-05a12b160b15.png`、1024×1536）は、肺静脈4本（左右各2本）・上大静脈1本・下大静脈1本に修正済み。Q147（体循環：①a大動脈／①b全身毛細血管／①c大静脈復路）・Q148（肺循環：②a肺動脈枝／②b肺毛細血管／②c肺静脈）の各3点markerを新画像上で再測定し、いずれも右肺側の一続きの経路（動脈→毛細血管→静脈）を辿るよう統一した。
+- 対象6 QID（Q010, Q011, Q051, Q117, Q147, Q148）の`image.asset`・`image.overlay`/`overlays`・`marker_target`（Q117のみ）・`image.alt`（G04/G05/C09の3 asset単位で統一文言に更新）・`prompt_id`（Q117のみ、G06のIMG-022からG05のIMG-021へ変更し、同一assetを共有するQ051と一致させた）を更新した。
+- G06の`questions`をQ063のみへ縮小（Q117を除去）。G06自体の画像・structures・marker_targetsは変更していない（Q063のmarker位置も不変。画像には引き続き内側・外側の矢印も描かれているが、参照する問題が無くなっただけで画像は削除していない）。
+
+### 全marker座標（新画像に対する実ピクセルサンプリングで再測定。既存座標の流用は無し）
+
+**G05**（`g05_anatomical_position.webp`、800×1600、長辺1600pxへリサイズ済み）
+
+| marker | QID | marker_target |
+|---|---|---|
+| （overlayなし） | Q051 | 全身姿勢（正位の定義選択問題） |
+| ①(0.72,0.365) | Q117 | 内側（前腕の内側縁、正中線に近い側） |
+
+**G04**（`g04_germ_layers.webp`、1214×1296）
+
+| marker | QID | marker_target |
+|---|---|---|
+| ①(0.5,0.43) | Q011 | 最外層（外胚葉、青の円柱上皮層） |
+| ②(0.5,0.505) | Q010 | 中胚葉（中層、ピンクの疎な間葉層） |
+
+**C09**（`c09_circulation_circuit.webp`、1024×1536）
+
+| marker | QID | marker_target |
+|---|---|---|
+| ①a(0.638,0.73) | Q147 | 大動脈（左心室からの下行路） |
+| ①b(0.5,0.87) | Q147 | 全身毛細血管床 |
+| ①c(0.29,0.7) | Q147 | 大静脈復路（右心房へ戻る経路） |
+| ②a(0.765,0.15) | Q148 | 肺動脈枝（右心室から肺への経路） |
+| ②b(0.874,0.148) | Q148 | 肺毛細血管床（右肺内） |
+| ②c(0.799,0.217) | Q148 | 肺静脈（肺から左心房へ戻る経路） |
+
+### 画像処理
+
+3枚ともユーザー提供PNG（`.codex/generated_images/01a0331c-d0a0-7791-a884-fdf27de3cc82/`配下、RGB、アルファチャンネル無し）。G04（1214×1296）・C09（1024×1536）は長辺1600px以下のためリサイズなし。G05（887×1774）のみ長辺1600pxへLANCZOSリサイズ（800×1600）。3枚ともWebP変換（quality=92, method=6）。トリミング等の追加改変は無し。
+
+### dataset側の変更
+
+- unique asset数：26のまま（新規追加・削除は0件。G04/G05/C09は既存assetのバイト更新のみ）。
+- image_mcq数：77のまま（type変換は無し）。総問題数311は無変更。
+- `assets/illustrations/v1/manifest.json`：G04・G05・C09の`status`を`accepted-existing`から`revised`へ変更し、`structures`・`generation`・`provenance`を新画像の内容に合わせて更新（`source_asset`は旧ファイルパスのまま維持、`revised`のためsha256一致チェックは対象外）。G05の`questions`にQ117を追加、G06の`questions`からQ117を除去。`status_counts`（accepted-existing 16→13、revised 10→13）を実態に合わせて更新した。`master_count`は26のまま。
+- `tools/dataset_validate.js`・`tools/queue_distribution_test.js`：変更なし（total/category/difficulty/type/unique assets期待値がいずれも今回の変更で変わらないため）。
+- `sw.js`：precacheリストは変更なし（ファイル名は既存のまま）。cache名を`anatomy-quiz-v2-2026-08-illustrations-v1-batch4-q231-final`から`anatomy-quiz-v2-2026-08-illustrations-v1-batch5-g1-g5-c5`へ更新した。
+- `README.md`：master数（26）に変更が無いため無変更。
+
+### 新規Creditsエントリ
+
+不要。G04・G05・C09はいずれも元々ユーザー提供カスタム画像またはプロジェクト自作SVGで、外部CC表示の対象ではなかった。`app.js`のIMAGE_CREDITSにG04/G05/G06/C09関連の記載は元々無く、変更していない。
+
+### 検証結果
+
+| 検証 | 結果 |
+|---|---|
+| `tools/dataset_validate.js` | errors 0、warnings 0（311問／image_mcq 77／text_mcq 234／unique assets 26） |
+| `tools/common_illustration_library_validate.js` | masters 26、77/77問割当、errors 0 |
+| `tools/queue_distribution_test.js` | PASSED |
+| `?review=assets` | G04(2問)・G05(2問)・G06(1問)・C09(2問)で使用QID一覧とmarker表示を確認 |
+| `?review=images` | 対象6 QID（Q010, Q011, Q051, Q117, Q147, Q148）全件で問題文・選択肢・正答・markerを確認 |
+| responsive QA | Desktop(1280×800)／iPad(768×1024)／Phone(375×812)：`document.documentElement.scrollWidth`が`window.innerWidth`を超えないことを確認（横スクロールなし）。Phone幅でのzoom modalも画像が viewport 内に収まることを確認 |
