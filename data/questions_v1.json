@@ -8376,12 +8376,12 @@
       "image": {
         "prompt_id": "IMG-006",
         "asset": "assets/illustrations/v1/assets/c10_heart_chambers_septum.webp",
-        "alt": "心臓4腔と両中隔を正面から示す模式図（患者右は画像左、心房中隔を広く露出）",
+        "alt": "心臓4腔、両中隔、房室弁、主要血管を正面から示す模式図（患者右は画像左）",
         "marker": "⑥",
         "marker_target": "心房中隔",
         "overlay": {
-          "x": 0.505,
-          "y": 0.337,
+          "x": 0.376,
+          "y": 0.462,
           "label": "⑥"
         }
       }
