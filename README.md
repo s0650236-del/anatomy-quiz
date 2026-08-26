@@ -16,7 +16,7 @@ index.html                    アプリ本体（画面・スタイル）
 app.js                        画面ロジック（問題データとは分離）
 data/questions_v1.json        問題データ（マスターデータ、全311問）
 data/questions.schema.json    問題データのJSON Schema（検証用）
-assets/illustrations/v1/      共通イラストライブラリ（25 master）
+assets/illustrations/v1/      共通イラストライブラリ（24 master）
 manifest.webmanifest          PWA用マニフェスト
 sw.js                         Service Worker（オフラインキャッシュ）
 icon-180.png / icon-512.png   PWA用アイコン

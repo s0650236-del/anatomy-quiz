@@ -188,7 +188,7 @@ qs.forEach(q => {
 // (one master retired, zero new ones added). See
 // docs/common_illustration_library_v1_implementation_log.md and
 // docs/v2.0.1_asset_source_log.md.
-if (referencedAssets.size !== 25) fail(`unique referenced assets = ${referencedAssets.size}, expected 25`);
+if (referencedAssets.size !== 24) fail(`unique referenced assets = ${referencedAssets.size}, expected 24`);
 
 const allFiles = fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir).filter(f => f.endsWith('.webp')) : [];
 allFiles.forEach(f => { if (!referencedAssets.has(f)) warn(`asset file not referenced by any question: ${f}`); });
@@ -232,7 +232,7 @@ Object.keys(BASELINE_OVERLAYS).forEach(id => {
     fail(`${id}: overlay drifted from the preserved baseline. current=${JSON.stringify(overlays)} baseline=${JSON.stringify(BASELINE_OVERLAYS[id])}`);
   }
 });
-const PRESERVED_5 = ['g01_organization_levels.webp', 'g02_epithelium.webp', 'c03_heart_chambers.webp', 'r06_alveolar_gas_exchange.webp', 'u02_nephron.webp'];
+const PRESERVED_5 = ['g01_organization_levels.webp', 'g02_epithelium.webp', 'c03_heart_chambers.webp', 'r05_alveolar_gas_exchange.webp', 'u02_nephron.webp'];
 PRESERVED_5.forEach(f => {
   if (!fs.existsSync(path.join(assetsDir, f))) fail(`preserved asset missing on disk: ${f}`);
 });

@@ -1296,7 +1296,7 @@
       "explanation": "終末細気管支までが導気部で、その先の呼吸細気管支から呼吸部が始まる。",
       "image": {
         "prompt_id": "IMG-014",
-        "asset": "assets/illustrations/v1/assets/r05_peripheral_airway_continuum.webp",
+        "asset": "assets/illustrations/v1/assets/r04_peripheral_airway_continuum.webp",
         "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
         "marker": "①",
         "marker_target": "終末細気管支",
@@ -1345,13 +1345,13 @@
       ],
       "image": {
         "prompt_id": "IMG-011",
-        "asset": "assets/illustrations/v1/assets/r03_lung_lobes.webp",
-        "alt": "実際の肺の形状に基づく前面模式図（水平裂・肺尖が確認できる。Servier Medical Art, CC BY 4.0）",
+        "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
+        "alt": "肺葉・肺裂と気管支樹を統合した前面図（患者右は画像左）",
         "marker": "①",
         "marker_target": "右肺中葉",
         "overlay": {
-          "x": 0.1875,
-          "y": 0.6575,
+          "x": 0.2441,
+          "y": 0.5208,
           "label": "①"
         }
       }
@@ -1390,19 +1390,19 @@
       ],
       "image": {
         "prompt_id": "IMG-011",
-        "asset": "assets/illustrations/v1/assets/r03_lung_lobes.webp",
-        "alt": "実際の肺の形状に基づく前面模式図（水平裂・肺尖が確認できる。Servier Medical Art, CC BY 4.0）",
+        "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
+        "alt": "肺葉・肺裂と気管支樹を統合した前面図（患者右は画像左）",
         "marker": "④",
         "marker_target": "肺葉数（右3葉・左2葉）",
         "overlays": [
           {
-            "x": 0.25,
-            "y": 0.263,
+            "x": 0.2637,
+            "y": 0.332,
             "label": "④a"
           },
           {
-            "x": 0.7188,
-            "y": 0.263,
+            "x": 0.7383,
+            "y": 0.332,
             "label": "④b"
           }
         ]
@@ -1442,7 +1442,7 @@
       ],
       "image": {
         "prompt_id": "IMG-012",
-        "asset": "assets/illustrations/v1/assets/r06_alveolar_gas_exchange.webp",
+        "asset": "assets/illustrations/v1/assets/r05_alveolar_gas_exchange.webp",
         "alt": "肺胞と周囲毛細血管間のガス移動を示す模式図",
         "marker": "①",
         "marker_target": "肺胞から血液へ向かう矢印",
@@ -1551,7 +1551,7 @@
       ],
       "image": {
         "prompt_id": "IMG-014",
-        "asset": "assets/illustrations/v1/assets/r05_peripheral_airway_continuum.webp",
+        "asset": "assets/illustrations/v1/assets/r04_peripheral_airway_continuum.webp",
         "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
         "marker": "②",
         "marker_target": "呼吸細気管支",
@@ -1595,7 +1595,7 @@
       ],
       "image": {
         "prompt_id": "IMG-014",
-        "asset": "assets/illustrations/v1/assets/r05_peripheral_airway_continuum.webp",
+        "asset": "assets/illustrations/v1/assets/r04_peripheral_airway_continuum.webp",
         "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
         "marker": "④",
         "marker_target": "肺胞嚢",
@@ -2975,13 +2975,13 @@
       ],
       "image": {
         "prompt_id": "IMG-013",
-        "asset": "assets/illustrations/v1/assets/r04_airway_branching.webp",
-        "alt": "実際の気管支の枝分かれ形状に基づく気道分岐図（気管〜末梢気管支。Servier Medical Art, CC BY 4.0）",
+        "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
+        "alt": "肺葉・肺裂と気管支樹を統合した前面図（患者右は画像左）",
         "marker": "②",
         "marker_target": "区域気管支",
         "overlay": {
-          "x": 0.2488,
-          "y": 0.5719,
+          "x": 0.2852,
+          "y": 0.4596,
           "label": "②"
         }
       }
@@ -3147,13 +3147,13 @@
       ],
       "image": {
         "prompt_id": "IMG-011",
-        "asset": "assets/illustrations/v1/assets/r03_lung_lobes.webp",
-        "alt": "実際の肺の形状に基づく前面模式図（水平裂・肺尖が確認できる。Servier Medical Art, CC BY 4.0）",
+        "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
+        "alt": "肺葉・肺裂と気管支樹を統合した前面図（患者右は画像左）",
         "marker": "②",
         "marker_target": "水平裂",
         "overlay": {
-          "x": 0.2188,
-          "y": 0.5306,
+          "x": 0.2051,
+          "y": 0.4401,
           "label": "②"
         }
       }
@@ -3225,7 +3225,7 @@
       ],
       "image": {
         "prompt_id": "IMG-012",
-        "asset": "assets/illustrations/v1/assets/r06_alveolar_gas_exchange.webp",
+        "asset": "assets/illustrations/v1/assets/r05_alveolar_gas_exchange.webp",
         "alt": "肺胞と周囲毛細血管間のガス移動を示す模式図",
         "marker": "②",
         "marker_target": "血液空気関門（I型肺胞上皮細胞・基底膜・肺毛細血管内皮細胞）",
@@ -5650,13 +5650,13 @@
       ],
       "image": {
         "prompt_id": "IMG-013",
-        "asset": "assets/illustrations/v1/assets/r04_airway_branching.webp",
-        "alt": "実際の気管支の枝分かれ形状に基づく気道分岐図（気管〜末梢気管支。Servier Medical Art, CC BY 4.0）",
+        "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
+        "alt": "肺葉・肺裂と気管支樹を統合した前面図（患者右は画像左）",
         "marker": "③",
         "marker_target": "右主気管支",
         "overlay": {
-          "x": 0.4122,
-          "y": 0.4062,
+          "x": 0.4521,
+          "y": 0.4036,
           "label": "③"
         }
       }
@@ -5693,13 +5693,13 @@
       ],
       "image": {
         "prompt_id": "IMG-013",
-        "asset": "assets/illustrations/v1/assets/r04_airway_branching.webp",
-        "alt": "実際の気管支の枝分かれ形状に基づく気道分岐図（気管〜末梢気管支。Servier Medical Art, CC BY 4.0）",
+        "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
+        "alt": "肺葉・肺裂と気管支樹を統合した前面図（患者右は画像左）",
         "marker": "④",
         "marker_target": "葉気管支",
         "overlay": {
-          "x": 0.2985,
-          "y": 0.45,
+          "x": 0.373,
+          "y": 0.393,
           "label": "④"
         }
       }
@@ -5737,7 +5737,7 @@
       ],
       "image": {
         "prompt_id": "IMG-014",
-        "asset": "assets/illustrations/v1/assets/r05_peripheral_airway_continuum.webp",
+        "asset": "assets/illustrations/v1/assets/r04_peripheral_airway_continuum.webp",
         "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
         "marker": "③",
         "marker_target": "肺胞管",
@@ -5782,7 +5782,7 @@
       ],
       "image": {
         "prompt_id": "IMG-027",
-        "asset": "assets/illustrations/v1/assets/r07_pleura_cross_section.webp",
+        "asset": "assets/illustrations/v1/assets/r06_pleura_cross_section.webp",
         "alt": "胸部横断面における胸膜（壁側・臓側）の層構造模式図",
         "marker": "①②",
         "marker_target": "①臓側胸膜→②壁側胸膜の順にoverlaysを設定",
@@ -5833,7 +5833,7 @@
       ],
       "image": {
         "prompt_id": "IMG-027",
-        "asset": "assets/illustrations/v1/assets/r07_pleura_cross_section.webp",
+        "asset": "assets/illustrations/v1/assets/r06_pleura_cross_section.webp",
         "alt": "胸部横断面における胸膜（壁側・臓側）の層構造模式図",
         "marker": "③",
         "marker_target": "胸膜腔",
@@ -6260,13 +6260,13 @@
       ],
       "image": {
         "prompt_id": "IMG-011",
-        "asset": "assets/illustrations/v1/assets/r03_lung_lobes.webp",
-        "alt": "実際の肺の形状に基づく前面模式図（水平裂・肺尖が確認できる。Servier Medical Art, CC BY 4.0）",
+        "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
+        "alt": "肺葉・肺裂と気管支樹を統合した前面図（患者右は画像左）",
         "marker": "③",
         "marker_target": "肺尖",
         "overlay": {
-          "x": 0.3125,
-          "y": 0.0723,
+          "x": 0.2861,
+          "y": 0.207,
           "label": "③"
         }
       }
@@ -10825,7 +10825,7 @@
       "tags": ["肺胞", "ガス交換"],
       "image": {
         "prompt_id": "IMG-014",
-        "asset": "assets/illustrations/v1/assets/r05_peripheral_airway_continuum.webp",
+        "asset": "assets/illustrations/v1/assets/r04_peripheral_airway_continuum.webp",
         "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
         "marker": "⑤",
         "marker_target": "肺胞（肺胞嚢断面内の個々の袋状構造）",
