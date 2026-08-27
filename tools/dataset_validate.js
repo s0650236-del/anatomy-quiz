@@ -109,12 +109,14 @@ qs.forEach(q => {
 // text_mcq -> image_mcq once the new C02 posterior heart view made the
 // coronary sinus (running the AV groove, distinct from every neighboring
 // vessel) uniquely identifiable for the first time. 76 -> 77.
-if ((typeCount.text_mcq || 0) !== 234) fail(`text_mcq count = ${typeCount.text_mcq}, expected 234`);
-if ((typeCount.image_mcq || 0) !== 77) fail(`image_mcq count = ${typeCount.image_mcq}, expected 77`);
+// Nano Banana final integration: Q096 (bladder trigone) and Q290 (detrusor)
+// converted to image_mcq using new U05 bladder-interior master. 77 -> 79.
+if ((typeCount.text_mcq || 0) !== 232) fail(`text_mcq count = ${typeCount.text_mcq}, expected 232`);
+if ((typeCount.image_mcq || 0) !== 79) fail(`image_mcq count = ${typeCount.image_mcq}, expected 79`);
 
 const catImgCount = {};
 qs.forEach(q => { if (q.type === 'image_mcq') catImgCount[q.category] = (catImgCount[q.category] || 0) + 1; });
-const expectCatImg = { '総論': 10, '循環器': 27, '呼吸器': 23, '泌尿器': 17 };
+const expectCatImg = { '総論': 10, '循環器': 27, '呼吸器': 23, '泌尿器': 19 };
 Object.keys(expectCatImg).forEach(c => {
   if ((catImgCount[c] || 0) !== expectCatImg[c]) fail(`category ${c} image_mcq count = ${catImgCount[c] || 0}, expected ${expectCatImg[c]}`);
 });
@@ -202,7 +204,8 @@ qs.forEach(q => {
 // the glottic chink itself). 24 -> 26 unique assets (two new masters added,
 // zero retired). See docs/common_illustration_library_v1_implementation_log.md
 // and docs/v2.0.1_asset_source_log.md.
-if (referencedAssets.size !== 26) fail(`unique referenced assets = ${referencedAssets.size}, expected 26`);
+// Nano Banana final integration adds U05 for Q096/Q290. 26 -> 27.
+if (referencedAssets.size !== 27) fail(`unique referenced assets = ${referencedAssets.size}, expected 27`);
 
 const allFiles = fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir).filter(f => f.endsWith('.webp')) : [];
 allFiles.forEach(f => { if (!referencedAssets.has(f)) warn(`asset file not referenced by any question: ${f}`); });
@@ -230,10 +233,10 @@ if (!q129 || !q129.image || q129.image.asset !== 'assets/illustrations/v1/assets
 const BASELINE_OVERLAYS = {
   Q002: [{ x: 0.08, y: 0.46, label: '①' }, { x: 0.28, y: 0.46, label: '②' }, { x: 0.48, y: 0.43, label: '③' }, { x: 0.7, y: 0.45, label: '④' }, { x: 0.91, y: 0.47, label: '⑤' }],
   Q004: [{ x: 0.5, y: 0.46, label: '①' }],
-  Q017: [{ x: 0.7007, y: 0.7188, label: '①' }],
+  Q017: [{ x: 0.5717, y: 0.7161, label: '①' }],
   Q037: [{ x: 0.385, y: 0.57, label: '①' }],
-  Q048: [{ x: 0.3223, y: 0.1237, label: '①' }],
-  Q064: [{ x: 0.2925, y: 0.3438, label: '①' }, { x: 0.3061, y: 0.7812, label: '②' }, { x: 0.7007, y: 0.325, label: '③' }, { x: 0.7007, y: 0.7188, label: '④' }],
+  Q048: [{ x: 0.3196, y: 0.207, label: '①' }],
+  Q064: [{ x: 0.397, y: 0.4297, label: '①' }, { x: 0.4197, y: 0.7422, label: '②' }, { x: 0.5888, y: 0.4102, label: '③' }, { x: 0.5717, y: 0.7161, label: '④' }],
 };
 Object.keys(BASELINE_OVERLAYS).forEach(id => {
   const q = qs.find(x => x.id === id);

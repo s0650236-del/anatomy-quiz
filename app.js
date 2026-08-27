@@ -616,8 +616,8 @@
 
   // ---------- review modes (開発・教員用。学生向け通常クイズとは別導線) ----------
   //
-  // ?review=images : 75問のimage_mcqを1問ずつ前後送りで確認する。
-  // ?review=assets  : 26種のunique asset単位で、そのassetを使う全QIDとmarker配置を確認する。
+  // ?review=images : 79問のimage_mcqを1問ずつ前後送りで確認する。
+  // ?review=assets  : 27種のunique asset単位で、そのassetを使う全QIDとmarker配置を確認する。
   //
   // どちらも renderImageBlock()/renderMarkers()/attachImageHandlers() をそのまま呼び出す
   // （通常クイズと完全に同じ関数）ため、レビュー画面だけmarker位置がずれる、といったことは

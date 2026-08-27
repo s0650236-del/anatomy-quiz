@@ -2,10 +2,10 @@
   "version": "1.0.0",
   "dataset": "data/questions_v1.json",
   "generated_at": "2026-08-25",
-  "master_count": 26,
+  "master_count": 27,
   "status_counts": {
-    "accepted-existing": 11,
-    "revised": 15,
+    "accepted-existing": 9,
+    "revised": 18,
     "pending-generation": 0
   },
   "masters": [
@@ -178,32 +178,28 @@
       "asset": "assets/illustrations/v1/assets/g06_direction_terms.webp",
       "domain": "総論",
       "name": "解剖学的方向用語",
-      "view": "正面図と側面図",
+      "view": "完全側面",
       "scale": "全身",
       "structures": [
-        "正中線",
         "前方",
-        "後方",
-        "内側",
-        "外側"
+        "後方"
       ],
       "marker_targets": [
-        "前方・後方",
-        "内側・外側"
+        "前方・後方"
       ],
       "questions": [
         "Q063"
       ],
       "source_asset": "assets/images/direction_terms.webp",
-      "status": "accepted-existing",
+      "status": "revised",
       "generation": {
         "required": false,
-        "prompt": "Paired anterior and lateral human silhouettes with unlabeled directional arrows for medial/lateral and anterior/posterior; no text or markers."
+        "prompt": "Strict lateral-view adult figure with one anterior and one posterior arrow; white background; no labels or markers."
       },
       "provenance": {
-        "source": "プロジェクト自作SVG",
-        "license": "プロジェクト保有",
-        "reference": "assets/image_sources/svg/direction_terms.svg"
+        "source": "Nano Bananaによるプロジェクト専用カスタム教材画像。人間による医学的・教材的レビュー済み。旧g06はプロジェクト自作SVG",
+        "license": "外部素材を直接使用していないため外部クレジット不要",
+        "reference": "docs/v2.0.1_asset_source_log.md"
       }
     },
     {
@@ -329,7 +325,7 @@
         "prompt": "Cutaway heart showing four chambers, interventricular septum, chordae tendineae, papillary muscles, and markedly thicker left ventricular wall; no labels or markers."
       },
       "provenance": {
-        "source": "ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧c03は既存AI生成asset。心房中隔はこの画像では大血管の陰に隠れ一意に識別できないため、Q231はC10（旧c03の保存コピー）へ移した",
+        "source": "Nano Bananaによるプロジェクト専用カスタム教材画像。人間による医学的・教材的レビュー済み。心房中隔専用Q231はC10、弁専用Q065/Q066はC04を維持",
         "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
         "reference": "docs/v2.0.1_asset_source_log.md"
       }
@@ -399,7 +395,7 @@
         "prompt": "Cutaway heart with the complete cardiac conduction system (SA node, AV node, bundle of His, right and left bundle branches, Purkinje network reaching only the ventricles) rendered with clear anatomical landmarks; no text, labels, or answer markers."
       },
       "provenance": {
-        "source": "ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧c05はServier Medical Art Cardiac conduction systemのCC BY 4.0画像",
+        "source": "Nano Bananaによるプロジェクト専用カスタム教材画像。人間による医学的・教材的レビュー済み。旧c05はカスタムAI生成画像",
         "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
         "reference": "docs/v2.0.1_asset_source_log.md"
       }
@@ -447,7 +443,7 @@
       "domain": "循環器",
       "name": "標準心電図波形",
       "view": "時間軸波形",
-      "scale": "1心周期",
+      "scale": "3心周期",
       "structures": [
         "P波",
         "QRS群",
@@ -465,15 +461,15 @@
         "Q068"
       ],
       "source_asset": "assets/images/q068_ecg_waveform.webp",
-      "status": "accepted-existing",
+      "status": "revised",
       "generation": {
         "required": false,
-        "prompt": "Clean single-cycle ECG trace on a subtle grid with recognizable P wave, QRS complex, and T wave; no labels or markers."
+        "prompt": "Clean standard ECG trace spanning three cycles on a subtle grid, with small rounded P waves, narrow sharp QRS complexes, and broad rounded T waves; no labels or markers."
       },
       "provenance": {
-        "source": "プロジェクト自作SVG",
-        "license": "プロジェクト保有",
-        "reference": "assets/image_sources/svg/q068_ecg_waveform.svg"
+        "source": "Nano Bananaによるプロジェクト専用カスタム教材画像。人間による医学的・教材的レビュー済み。旧c07はプロジェクト自作SVG",
+        "license": "外部素材を直接使用していないため外部クレジット不要",
+        "reference": "docs/v2.0.1_asset_source_log.md"
       }
     },
     {
@@ -877,6 +873,7 @@
         "近位尿細管",
         "Henle係蹄",
         "遠位尿細管",
+        "接合尿細管",
         "集合管"
       ],
       "marker_targets": [
@@ -904,7 +901,7 @@
         "prompt": "Complete nephron diagram with afferent arteriole, glomerulus, Bowman's capsule wrapping it to form the renal corpuscle, convoluted proximal tubule, thin descending/ascending loop of Henle with a clear U-turn, convoluted distal tubule, and a collecting duct; no labels or markers."
       },
       "provenance": {
-        "source": "ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧u02は既存AI生成asset",
+        "source": "Nano Bananaによるプロジェクト専用カスタム教材画像。人間による医学的・教材的レビュー済み。旧u02はカスタムAI生成画像",
         "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
         "reference": "docs/v2.0.1_asset_source_log.md"
       }
@@ -993,6 +990,41 @@
       "provenance": {
         "source": "ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧u04はServier Medical Art Kidneys coronal sectionのCC BY 4.0画像（AnatomyTOOL経由、片側トリミング）。旧U01「腎門」（Servier Medical Art Kidney、CC BY 4.0）はQ045ごと本masterへ統合し、U01は削除した",
         "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "U05",
+      "asset": "assets/illustrations/v1/assets/u05_bladder_interior.webp",
+      "domain": "泌尿器",
+      "name": "膀胱内面",
+      "view": "膀胱を前方から開いた内面観",
+      "scale": "臓器内面",
+      "structures": [
+        "左右尿管口",
+        "内尿道口",
+        "膀胱三角",
+        "膀胱粘膜皺襞",
+        "近位尿道",
+        "膀胱壁・排尿筋"
+      ],
+      "marker_targets": [
+        "膀胱三角",
+        "膀胱壁・排尿筋"
+      ],
+      "questions": [
+        "Q096",
+        "Q290"
+      ],
+      "source_asset": "C:/Users/中野　元/Downloads/nano_u04_bladder_interior_final.jfif",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Opened anterior view of the urinary bladder interior with exactly two ureteric orifices, one internal urethral orifice, a smooth trigone, surrounding mucosal rugae, proximal urethra, and visible bladder wall; no labels or markers."
+      },
+      "provenance": {
+        "source": "Nano Bananaによるプロジェクト専用カスタム教材画像。人間による医学的・教材的レビュー済み。外部原図の直接使用なし",
+        "license": "外部素材を直接使用していないため外部クレジット不要",
         "reference": "docs/v2.0.1_asset_source_log.md"
       }
     }

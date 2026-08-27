@@ -656,12 +656,12 @@
       "image": {
         "prompt_id": "IMG-006",
         "asset": "assets/illustrations/v1/assets/c03_heart_chambers.webp",
-        "alt": "4つの心腔を断面で示す高精細な心臓断面模式図（腱索・乳頭筋・心室中隔も確認できる）",
+        "alt": "4心腔・房室弁・腱索・乳頭筋・心室中隔を示す心臓断面模式図",
         "marker": "①",
         "marker_target": "左心室",
         "overlay": {
-          "x": 0.7007,
-          "y": 0.7188,
+          "x": 0.5717,
+          "y": 0.7161,
           "label": "①"
         }
       }
@@ -897,12 +897,12 @@
       "image": {
         "prompt_id": "IMG-020",
         "asset": "assets/illustrations/v1/assets/c07_ecg_waveform.webp",
-        "alt": "心電図の基本波形（P波・QRS群・T波）を示す模式図",
+        "alt": "方眼上にP波・QRS群・T波を3周期示す標準心電図模式図",
         "marker": "②",
         "marker_target": "P波",
         "overlay": {
-          "x": 0.1286,
-          "y": 0.5357,
+          "x": 0.4126,
+          "y": 0.5781,
           "label": "②"
         }
       }
@@ -941,12 +941,12 @@
       "image": {
         "prompt_id": "IMG-020",
         "asset": "assets/illustrations/v1/assets/c07_ecg_waveform.webp",
-        "alt": "心電図の基本波形（P波・QRS群・T波）を示す模式図",
+        "alt": "方眼上にP波・QRS群・T波を3周期示す標準心電図模式図",
         "marker": "③",
         "marker_target": "QRS群",
         "overlay": {
-          "x": 0.2493,
-          "y": 0.3143,
+          "x": 0.4844,
+          "y": 0.3229,
           "label": "③"
         }
       }
@@ -985,12 +985,12 @@
       "image": {
         "prompt_id": "IMG-009",
         "asset": "assets/illustrations/v1/assets/c05_conduction_system.webp",
-        "alt": "心臓断面内の刺激伝導系（洞房結節・房室結節・房室束・左右脚・プルキンエ線維）を示す高精細模式図",
+        "alt": "洞房結節から房室結節・房室束・左右脚・プルキンエ線維へ続く心刺激伝導系模式図",
         "marker": "①",
         "marker_target": "右心房上部の洞房結節",
         "overlay": {
-          "x": 0.1992,
-          "y": 0.325,
+          "x": 0.3864,
+          "y": 0.3945,
           "label": "①"
         }
       }
@@ -1851,12 +1851,12 @@
       "image": {
         "prompt_id": "IMG-016",
         "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
-        "alt": "腎小体・尿細管・集合管を示すネフロン模式図",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
         "marker": "①",
         "marker_target": "腎小体",
         "overlay": {
-          "x": 0.3223,
-          "y": 0.1237,
+          "x": 0.3196,
+          "y": 0.207,
           "label": "①"
         }
       }
@@ -2388,12 +2388,12 @@
       "image": {
         "prompt_id": "IMG-022",
         "asset": "assets/illustrations/v1/assets/g06_direction_terms.webp",
-        "alt": "方向用語（内側・外側／前方・後方）を示す模式図",
+        "alt": "完全側面の人体と前方・後方を示す2本の矢印",
         "marker": "②",
         "marker_target": "前方・後方を示す矢印（側面図）",
         "overlay": {
-          "x": 0.7719,
-          "y": 0.3333,
+          "x": 0.5753,
+          "y": 0.3021,
           "label": "②"
         }
       }
@@ -2435,28 +2435,28 @@
       "image": {
         "prompt_id": "IMG-006",
         "asset": "assets/illustrations/v1/assets/c03_heart_chambers.webp",
-        "alt": "4つの心腔を断面で示す高精細な心臓断面模式図（腱索・乳頭筋・心室中隔も確認できる）",
+        "alt": "4心腔・房室弁・腱索・乳頭筋・心室中隔を示す心臓断面模式図",
         "marker": "①②③④",
         "marker_target": "右心房・右心室・左心房・左心室（4か所）",
         "overlays": [
           {
-            "x": 0.2925,
-            "y": 0.3438,
+            "x": 0.397,
+            "y": 0.4297,
             "label": "①"
           },
           {
-            "x": 0.3061,
-            "y": 0.7812,
+            "x": 0.4197,
+            "y": 0.7422,
             "label": "②"
           },
           {
-            "x": 0.7007,
-            "y": 0.325,
+            "x": 0.5888,
+            "y": 0.4102,
             "label": "③"
           },
           {
-            "x": 0.7007,
-            "y": 0.7188,
+            "x": 0.5717,
+            "y": 0.7161,
             "label": "④"
           }
         ]
@@ -2645,12 +2645,12 @@
       "image": {
         "prompt_id": "IMG-020",
         "asset": "assets/illustrations/v1/assets/c07_ecg_waveform.webp",
-        "alt": "心電図の基本波形（P波・QRS群・T波）を示す模式図",
+        "alt": "方眼上にP波・QRS群・T波を3周期示す標準心電図模式図",
         "marker": "①",
         "marker_target": "T波",
         "overlay": {
-          "x": 0.4429,
-          "y": 0.4286,
+          "x": 0.5831,
+          "y": 0.5352,
           "label": "①"
         }
       }
@@ -3659,9 +3659,9 @@
       "id": "Q096",
       "category": "泌尿器",
       "subcategory": "膀胱三角",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 2,
-      "question": "膀胱三角について正しいものはどれか。",
+      "question": "膀胱内面図の①で示された膀胱三角について正しいものはどれか。",
       "choices": [
         {
           "id": "A",
@@ -3682,6 +3682,18 @@
       ],
       "answer": "A",
       "explanation": "膀胱底部の重要な解剖学的領域である。",
+      "image": {
+        "prompt_id": "IMG-031",
+        "asset": "assets/illustrations/v1/assets/u05_bladder_interior.webp",
+        "alt": "2つの尿管口・内尿道口・膀胱三角・粘膜皺襞を示す膀胱内面模式図",
+        "marker": "①",
+        "marker_target": "2つの尿管口と内尿道口に囲まれた膀胱三角",
+        "overlay": {
+          "x": 0.5,
+          "y": 0.5599,
+          "label": "①"
+        }
+      },
       "tags": [
         "膀胱三角",
         "尿管口",
@@ -4821,18 +4833,18 @@
       "image": {
         "prompt_id": "IMG-006",
         "asset": "assets/illustrations/v1/assets/c03_heart_chambers.webp",
-        "alt": "4つの心腔を断面で示す高精細な心臓断面模式図（腱索・乳頭筋・心室中隔も確認できる）",
+        "alt": "4心腔・房室弁・腱索・乳頭筋・心室中隔を示す心臓断面模式図",
         "marker": "⑦",
         "marker_target": "腱索・乳頭筋",
         "overlays": [
           {
-            "x": 0.2789,
-            "y": 0.55,
+            "x": 0.4112,
+            "y": 0.6354,
             "label": "⑦a"
           },
           {
-            "x": 0.6871,
-            "y": 0.5125,
+            "x": 0.5717,
+            "y": 0.5638,
             "label": "⑦b"
           }
         ]
@@ -6499,12 +6511,12 @@
       "image": {
         "prompt_id": "IMG-016",
         "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
-        "alt": "ネフロン（腎小体・尿細管・集合管）を示す模式図",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
         "marker": "②",
         "marker_target": "ボーマン嚢",
         "overlay": {
-          "x": 0.1855,
-          "y": 0.1563,
+          "x": 0.2855,
+          "y": 0.2057,
           "label": "②"
         }
       }
@@ -6543,12 +6555,12 @@
       "image": {
         "prompt_id": "IMG-016",
         "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
-        "alt": "ネフロン（腎小体・尿細管・集合管）を示す模式図",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
         "marker": "③",
         "marker_target": "近位尿細管",
         "overlay": {
-          "x": 0.3906,
-          "y": 0.293,
+          "x": 0.4347,
+          "y": 0.2786,
           "label": "③"
         }
       }
@@ -6587,12 +6599,12 @@
       "image": {
         "prompt_id": "IMG-016",
         "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
-        "alt": "ネフロン（腎小体・尿細管・集合管）を示す模式図",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
         "marker": "④",
         "marker_target": "ヘンレ係蹄",
         "overlay": {
-          "x": 0.5664,
-          "y": 0.9245,
+          "x": 0.5213,
+          "y": 0.9336,
           "label": "④"
         }
       }
@@ -7294,33 +7306,33 @@
       "image": {
         "prompt_id": "IMG-016",
         "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
-        "alt": "ネフロン（腎小体・尿細管・集合管）を示す模式図",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
         "marker": "⑤",
         "marker_target": "腎小体→近位尿細管→ヘンレ係蹄→遠位尿細管→集合管（順路overlay）",
         "overlays": [
           {
-            "x": 0.3223,
-            "y": 0.1237,
+            "x": 0.3196,
+            "y": 0.207,
             "label": "⑤-1"
           },
           {
-            "x": 0.3906,
-            "y": 0.293,
+            "x": 0.4347,
+            "y": 0.2786,
             "label": "⑤-2"
           },
           {
-            "x": 0.5664,
-            "y": 0.9245,
+            "x": 0.5213,
+            "y": 0.9336,
             "label": "⑤-3"
           },
           {
-            "x": 0.7129,
-            "y": 0.1953,
+            "x": 0.5895,
+            "y": 0.2604,
             "label": "⑤-4"
           },
           {
-            "x": 0.9082,
-            "y": 0.1953,
+            "x": 0.7244,
+            "y": 0.2474,
             "label": "⑤-5"
           }
         ]
@@ -8333,12 +8345,12 @@
       "image": {
         "prompt_id": "IMG-006",
         "asset": "assets/illustrations/v1/assets/c03_heart_chambers.webp",
-        "alt": "4つの心腔を断面で示す高精細な心臓断面模式図（腱索・乳頭筋・心室中隔も確認できる）",
+        "alt": "4心腔・房室弁・腱索・乳頭筋・心室中隔を示す心臓断面模式図",
         "marker": "⑤",
         "marker_target": "心室中隔",
         "overlay": {
-          "x": 0.5034,
-          "y": 0.7188,
+          "x": 0.5057,
+          "y": 0.7448,
           "label": "⑤"
         }
       }
@@ -8676,12 +8688,12 @@
       "image": {
         "prompt_id": "IMG-009",
         "asset": "assets/illustrations/v1/assets/c05_conduction_system.webp",
-        "alt": "心臓断面内の刺激伝導系（洞房結節・房室結節・房室束・左右脚・プルキンエ線維）を示す高精細模式図",
+        "alt": "洞房結節から房室結節・房室束・左右脚・プルキンエ線維へ続く心刺激伝導系模式図",
         "marker": "②",
         "marker_target": "房室束",
         "overlay": {
-          "x": 0.4609,
-          "y": 0.4875,
+          "x": 0.4574,
+          "y": 0.5365,
           "label": "②"
         }
       }
@@ -10282,9 +10294,9 @@
       "id": "Q290",
       "category": "泌尿器",
       "subcategory": "排尿反射",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 1,
-      "question": "膀胱の排尿筋について正しいものはどれか。",
+      "question": "膀胱内面図の②で示された膀胱壁の排尿筋について正しいものはどれか。",
       "choices": [
         {
           "id": "A",
@@ -10305,6 +10317,18 @@
       ],
       "answer": "A",
       "explanation": "排尿筋は膀胱壁を構成する平滑筋であり、副交感神経の作用(既存Q197)により収縮して膀胱内の尿を排出する。",
+      "image": {
+        "prompt_id": "IMG-031",
+        "asset": "assets/illustrations/v1/assets/u05_bladder_interior.webp",
+        "alt": "2つの尿管口・内尿道口・膀胱三角・粘膜皺襞を示す膀胱内面模式図",
+        "marker": "②",
+        "marker_target": "膀胱壁を構成する排尿筋",
+        "overlay": {
+          "x": 0.2514,
+          "y": 0.4492,
+          "label": "②"
+        }
+      },
       "tags": [
         "排尿筋"
       ]
@@ -10754,12 +10778,12 @@
       "image": {
         "prompt_id": "IMG-009",
         "asset": "assets/illustrations/v1/assets/c05_conduction_system.webp",
-        "alt": "心臓断面内の刺激伝導系（洞房結節・房室結節・房室束・左右脚・プルキンエ線維）を示す高精細模式図",
+        "alt": "洞房結節から房室結節・房室束・左右脚・プルキンエ線維へ続く心刺激伝導系模式図",
         "marker": "③",
         "marker_target": "房室結節",
         "overlay": {
-          "x": 0.3945,
-          "y": 0.4531,
+          "x": 0.4112,
+          "y": 0.5117,
           "label": "③"
         }
       }
@@ -11062,12 +11086,12 @@
       "image": {
         "prompt_id": "IMG-016",
         "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
-        "alt": "腎小体・尿細管・集合管を示すネフロン模式図",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
         "marker": "①",
         "marker_target": "遠位尿細管",
         "overlay": {
-          "x": 0.7129,
-          "y": 0.1953,
+          "x": 0.5895,
+          "y": 0.2604,
           "label": "①"
         }
       }
@@ -11106,12 +11130,12 @@
       "image": {
         "prompt_id": "IMG-016",
         "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
-        "alt": "腎小体・尿細管・集合管を示すネフロン模式図",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
         "marker": "①",
         "marker_target": "輸入細動脈",
         "overlay": {
-          "x": 0.1074,
-          "y": 0.0651,
+          "x": 0.2734,
+          "y": 0.2227,
           "label": "①"
         }
       }

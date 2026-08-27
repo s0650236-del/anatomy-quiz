@@ -47,10 +47,11 @@ const imageMcq = qs.filter(q => q.type === 'image_mcq');
 // made its marker target uniquely identifiable (75 -> 76), then Q140
 // converted back to image_mcq once the common-illustration-library batch 1
 // C02 posterior heart view made the coronary sinus uniquely identifiable
-// (76 -> 77). See docs/v2.0.1_asset_source_log.md and
+// (76 -> 77), then Q096/Q290 converted using U05 bladder interior (77 -> 79).
+// See docs/v2.0.1_asset_source_log.md and
 // docs/v2.0.1_expansion_log.md.
-if (imageMcq.length !== 77) {
-  fail(`expected 77 image_mcq in source pool, found ${imageMcq.length}`);
+if (imageMcq.length !== 79) {
+  fail(`expected 79 image_mcq in source pool, found ${imageMcq.length}`);
 } else {
   note(`source pool: ${imageMcq.length}/${qs.length} questions are image_mcq (OK)`);
 }
