@@ -584,7 +584,7 @@
       "subcategory": "心臓の位置",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "図中①で示された、左第5肋間の鎖骨中線付近で拍動を触知できる部位はどれか。",
+      "question": "図中②で示された、左第5肋間の鎖骨中線付近で拍動を触知できる部位はどれか。",
       "choices": [
         {
           "id": "A",
@@ -660,8 +660,8 @@
         "marker": "①",
         "marker_target": "左心室",
         "overlay": {
-          "x": 0.5717,
-          "y": 0.7161,
+          "x": 0.5533,
+          "y": 0.6185,
           "label": "①"
         }
       }
@@ -2057,7 +2057,7 @@
       "subcategory": "人体の面",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "図中①のように、身体を上下に分ける面はどれか。",
+      "question": "図中③のように、身体を上下に分ける面はどれか。",
       "choices": [
         {
           "id": "A",
@@ -2554,8 +2554,8 @@
         "marker_target": "肺動脈弁・大動脈弁（半月弁）",
         "overlays": [
           {
-            "x": 0.55,
-            "y": 0.041,
+            "x": 0.5,
+            "y": 0.7871,
             "label": "②a"
           },
           {
@@ -2572,7 +2572,7 @@
       "subcategory": "血管",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "3種類の血管断面のうち、厚い壁で弾性線維・平滑筋が豊富な①はどれか。",
+      "question": "3種類の血管断面のうち、厚い壁で弾性線維・平滑筋が豊富な②はどれか。",
       "choices": [
         {
           "id": "A",
@@ -3120,7 +3120,7 @@
       "subcategory": "肺葉",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "肺の図の①で示された、右肺の上葉と中葉を分ける裂はどれか。",
+      "question": "肺の図の②で示された、右肺の上葉と中葉を分ける裂はどれか。",
       "choices": [
         {
           "id": "A",
@@ -5635,7 +5635,7 @@
       "subcategory": "気管支",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "気道分岐図の①で示された、より太く短く、垂直に近い角度で分岐する気管支はどれか。",
+      "question": "気道分岐図の③で示された、より太く短く、垂直に近い角度で分岐する気管支はどれか。",
       "choices": [
         {
           "id": "A",
@@ -5679,7 +5679,7 @@
       "subcategory": "気管支",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "気道分岐図の②で示された、肺葉ごとに分布する気管支はどれか。",
+      "question": "気道分岐図の④で示された、肺葉ごとに分布する気管支はどれか。",
       "choices": [
         {
           "id": "A",
@@ -6245,7 +6245,7 @@
       "subcategory": "肺葉",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "肺の図の①で示された、肺の最上部(鎖骨の上方まで達する部分)はどれか。",
+      "question": "肺の図の③で示された、肺の最上部(鎖骨の上方まで達する部分)はどれか。",
       "choices": [
         {
           "id": "A",

@@ -233,7 +233,8 @@ if (!q129 || !q129.image || q129.image.asset !== 'assets/illustrations/v1/assets
 const BASELINE_OVERLAYS = {
   Q002: [{ x: 0.08, y: 0.46, label: '①' }, { x: 0.28, y: 0.46, label: '②' }, { x: 0.48, y: 0.43, label: '③' }, { x: 0.7, y: 0.45, label: '④' }, { x: 0.91, y: 0.47, label: '⑤' }],
   Q004: [{ x: 0.5, y: 0.46, label: '①' }],
-  Q017: [{ x: 0.5717, y: 0.7161, label: '①' }],
+  // Playtest correction: move off the papillary muscle into the LV cavity.
+  Q017: [{ x: 0.5533, y: 0.6185, label: '①' }],
   Q037: [{ x: 0.385, y: 0.57, label: '①' }],
   Q048: [{ x: 0.3196, y: 0.207, label: '①' }],
   Q064: [{ x: 0.397, y: 0.4297, label: '①' }, { x: 0.4197, y: 0.7422, label: '②' }, { x: 0.5888, y: 0.4102, label: '③' }, { x: 0.5717, y: 0.7161, label: '④' }],
