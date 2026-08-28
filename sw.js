@@ -8,7 +8,7 @@
 //   （＝どれか1枚の取得に失敗してもinstall全体を失敗させない。取得できなかった分は
 //   従来どおりimageCacheFirst()が実行時に個別取得を試み、それでも失敗すれば画面側の
 //   「画像準備中」表示に任せる）。
-var CACHE = 'anatomy-quiz-v2-2026-08-illustrations-v1-nano-final-batch';
+var CACHE = 'anatomy-quiz-v2-2026-08-marker-zoom-fix';
 var CORE_ASSETS = [
   './',
   './index.html',

@@ -1,5 +1,15 @@
 # 共通イラストライブラリ v1 実装記録
 
+## 2026-08-28 プレイテスト修正
+
+- Q008（冠状面）、Q019（肺静脈）、Q045（腎門）、Q100の⑤-4（腎盂）の座標を修正。Q008の「図中A」を「図中①」に統一。
+- zoomは実画像の表示boundsを基準にmarkerを配置し、画像読み込み・サイズ変更時に再計算する。通常表示の配置処理は変更しない。
+- asset reviewのfilenameだけに折り返し指定を追加。更新配信用にService Workerのcache名を更新。
+- 腎冠状断master刷新時の残課題：Q100の⑤-1（乳頭）と⑤-2（小腎杯）は近接して重なる。今回は両座標を維持。
+- 腎冠状断master刷新時の要再検討QID：Q180。現画像の髄質の線状模様から集合管を一意に識別できないため、marker・type・production画像を変更しない。
+- QA：Q008/Q019/Q023/Q025/Q045/Q048/Q063/Q096/Q100/Q231をDesktop 1280×800、iPad 768×1024、Phone 375×812で通常・zoom比較（30ケース）。全27 assetも同3サイズで検証（81ケース）。実画像に対するzoom座標誤差は最大0.016px未満、横はみ出しなし。Q231はzoom中のリサイズ追従も確認。Q100の既知の重なりは判定対象外。
+- `git diff --check`、dataset/common_illustration_library/queue_distributionの各validator、`node --check app.js`はPASS。画像ファイル・manifestは変更なし。
+
 ## 基準
 
 - 作業開始HEAD：`7a6577e99a0f562281cedd5a9c9597b7155b3c39`

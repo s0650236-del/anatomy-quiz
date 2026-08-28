@@ -541,19 +541,46 @@
       '</div>';
   }
 
+  var zoomPositionObserver = null;
+
   function openZoom(image) {
+    if (zoomPositionObserver) zoomPositionObserver.disconnect();
     el.zoomImgWrap.innerHTML = '<img src="' + escapeHtml(image.asset) + '" alt="' + escapeHtml(image.alt || '') + '">' + renderMarkers(image);
     var zoomImg = el.zoomImgWrap.querySelector('img');
+    var markers = el.zoomImgWrap.querySelectorAll('.marker');
+    var overlays = overlaysOf(image);
+    markers.forEach(function (marker) { marker.style.visibility = 'hidden'; });
+    function positionMarkers() {
+      if (!zoomImg.naturalWidth || !zoomImg.isConnected) return;
+      // Zoom images use width:auto/max-height (no object-fit letterboxing).
+      // Their actual bounds exclude the centered margins in zoomImgWrap.
+      var bounds = zoomImg.getBoundingClientRect();
+      var wrapBounds = el.zoomImgWrap.getBoundingClientRect();
+      markers.forEach(function (marker, i) {
+        marker.style.left = (bounds.left - wrapBounds.left + clamp(overlays[i].x, 0, 1) * bounds.width) + 'px';
+        marker.style.top = (bounds.top - wrapBounds.top + clamp(overlays[i].y, 0, 1) * bounds.height) + 'px';
+        marker.style.visibility = 'visible';
+      });
+    }
+    zoomPositionObserver = new ResizeObserver(positionMarkers);
+    zoomPositionObserver.observe(zoomImg);
+    zoomPositionObserver.observe(el.zoomImgWrap);
+    zoomImg.addEventListener('load', positionMarkers, { once: true });
     zoomImg.addEventListener('error', function () {
+      if (!zoomImg.isConnected) return;
+      zoomPositionObserver.disconnect();
       el.zoomImgWrap.innerHTML = '<div class="img-placeholder"><div class="ph-title">画像準備中</div><div class="ph-alt">' + escapeHtml(image.alt || '') + '</div></div>';
     }, { once: true });
     el.zoomCaption.textContent = image.alt || '';
     el.zoomModal.style.display = 'flex';
+    positionMarkers();
     el.zoomClose.focus();
     document.addEventListener('keydown', onZoomKeydown);
   }
 
   function closeZoom() {
+    if (zoomPositionObserver) zoomPositionObserver.disconnect();
+    zoomPositionObserver = null;
     el.zoomModal.style.display = 'none';
     el.zoomImgWrap.innerHTML = '';
     document.removeEventListener('keydown', onZoomKeydown);
@@ -740,7 +767,7 @@
       : '';
 
     var html = reviewBackLink() + '<section class="card" id="questionCard">';
-    html += '<div class="qtop"><span>asset review：' + (i + 1) + ' / ' + list.length + '</span><span>filename：' + escapeHtml(displayAsset) +
+    html += '<div class="qtop"><span>asset review：' + (i + 1) + ' / ' + list.length + '</span><span style="min-width:0;overflow-wrap:anywhere">filename：' + escapeHtml(displayAsset) +
       (showCandidate ? '（candidate）' : '') + '</span></div>';
     html += '<div class="qcount">この画像を使用するQID：' + entry.questions.length + '問（差し替え時の影響範囲）</div>';
     html += candidateToggleHtml;
