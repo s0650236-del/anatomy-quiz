@@ -2011,9 +2011,9 @@
       "id": "Q053",
       "category": "総論",
       "subcategory": "人体の面",
-      "type": "image_mcq",
+      "type": "text_mcq",
       "difficulty": 1,
-      "question": "図中①のように、身体を左右に分ける面はどれか。",
+      "question": "身体を左右に分ける面はどれか。",
       "choices": [
         {
           "id": "A",
@@ -2029,27 +2029,15 @@
         },
         {
           "id": "D",
-          "text": "正中面"
+          "text": "斜断面"
         }
       ],
       "answer": "A",
-      "explanation": "矢状面は身体を左右に分ける面である。正中を通るものを特に正中面という。",
+      "explanation": "矢状面は身体を左右に分ける面である。正中を通る矢状面を特に正中面という。",
       "tags": [
         "矢状面",
         "身体面"
-      ],
-      "image": {
-        "prompt_id": "IMG-003",
-        "asset": "assets/illustrations/v1/assets/g03_body_planes.webp",
-        "alt": "実際の人体モデルに矢状面・冠状面・水平面の3断面を重ねた図（OpenStax Anatomy and Physiology, CC BY 4.0）",
-        "marker": "②",
-        "marker_target": "矢状面パネル",
-        "overlay": {
-          "x": 0.1923,
-          "y": 0.375,
-          "label": "②"
-        }
-      }
+      ]
     },
     {
       "id": "Q054",
