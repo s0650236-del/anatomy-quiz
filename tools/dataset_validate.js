@@ -206,8 +206,9 @@ qs.forEach(q => {
 // zero retired). See docs/common_illustration_library_v1_implementation_log.md
 // and docs/v2.0.1_asset_source_log.md.
 // Nano Banana final integration adds U05 for Q096/Q290. 26 -> 27.
-// Q129's dedicated C11 master adds one further asset. 27 -> 28.
-if (referencedAssets.size !== 28) fail(`unique referenced assets = ${referencedAssets.size}, expected 28`);
+// Q129's dedicated C11 and Q176's dedicated U06 masters add two further
+// assets. 27 -> 29.
+if (referencedAssets.size !== 29) fail(`unique referenced assets = ${referencedAssets.size}, expected 29`);
 
 const allFiles = fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir).filter(f => f.endsWith('.webp')) : [];
 allFiles.forEach(f => { if (!referencedAssets.has(f)) warn(`asset file not referenced by any question: ${f}`); });
@@ -217,6 +218,13 @@ allFiles.forEach(f => { if (!referencedAssets.has(f)) warn(`asset file not refer
 const q129 = qs.find(q => q.id === 'Q129');
 if (!q129 || !q129.image || q129.image.asset !== 'assets/illustrations/v1/assets/c11_av_valve_chordae_papillary.webp') {
   fail(`Q129 must use dedicated C11 AV-valve master, got: ${q129 && q129.image && q129.image.asset}`);
+}
+
+// Q176 uses a dedicated renal-corpuscle close-up so Bowman's capsule wall
+// remains distinct from the glomerular tuft at phone width.
+const q176 = qs.find(q => q.id === 'Q176');
+if (!q176 || !q176.image || q176.image.asset !== 'assets/illustrations/v1/assets/u06_renal_corpuscle.webp') {
+  fail(`Q176 must use dedicated U06 renal-corpuscle master, got: ${q176 && q176.image && q176.image.asset}`);
 }
 
 // The 5 pre-existing real-photo assets' Q001-Q100 overlays must never drift

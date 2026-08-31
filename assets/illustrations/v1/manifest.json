@@ -2,10 +2,10 @@
   "version": "1.0.0",
   "dataset": "data/questions_v1.json",
   "generated_at": "2026-08-25",
-  "master_count": 28,
+  "master_count": 29,
   "status_counts": {
     "accepted-existing": 9,
-    "revised": 19,
+    "revised": 20,
     "pending-generation": 0
   },
   "masters": [
@@ -907,7 +907,6 @@
       ],
       "marker_targets": [
         "腎小体",
-        "ボーマン嚢",
         "近位尿細管",
         "Henle係蹄",
         "尿細管順路",
@@ -917,7 +916,6 @@
       ],
       "questions": [
         "Q048",
-        "Q176",
         "Q177",
         "Q178",
         "Q180",
@@ -1053,6 +1051,42 @@
       "provenance": {
         "source": "Nano Bananaによるプロジェクト専用カスタム教材画像。人間による医学的・教材的レビュー済み。外部原図の直接使用なし",
         "license": "外部素材を直接使用していないため外部クレジット不要",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "U06",
+      "asset": "assets/illustrations/v1/assets/u06_renal_corpuscle.webp",
+      "domain": "泌尿器",
+      "name": "腎小体拡大図",
+      "view": "腎小体の断面拡大模式図",
+      "scale": "腎小体局所",
+      "structures": [
+        "糸球体",
+        "ボーマン嚢壁側葉",
+        "ボーマン嚢臓側葉",
+        "糸球体嚢腔",
+        "輸入細動脈",
+        "輸出細動脈",
+        "血管極",
+        "尿細管極",
+        "近位尿細管"
+      ],
+      "marker_targets": [
+        "ボーマン嚢（壁側葉）"
+      ],
+      "questions": [
+        "Q176"
+      ],
+      "source_asset": "ユーザー提供PNG: ChatGPT Image 2026年8月31日 16_12_34.png",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Large renal corpuscle cutaway clearly separating the glomerular capillary tuft, Bowman's capsule parietal wall, capsular space, vascular pole with afferent and efferent arterioles, and urinary pole continuing into the proximal tubule; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー提供のChatGPTカスタム教材画像。内容を改変せずWebP変換のみ実施し、Q176専用masterとして採用",
+        "license": "プロジェクト保有。外部クレジット不要",
         "reference": "docs/v2.0.1_asset_source_log.md"
       }
     }

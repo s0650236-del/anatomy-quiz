@@ -6470,7 +6470,7 @@
       "subcategory": "ネフロン",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "ネフロンの模式図の①で示された、毛細血管の塊(糸球体)を包む構造はどれか。",
+      "question": "腎小体の拡大模式図の①で示された、毛細血管の塊（糸球体）を包む構造はどれか。",
       "choices": [
         {
           "id": "A",
@@ -6490,22 +6490,22 @@
         }
       ],
       "answer": "A",
-      "explanation": "ボーマン嚢は糸球体(毛細血管の塊)を包む袋状の構造で、糸球体とボーマン嚢を合わせて腎小体という(既存Q048/091)。",
+      "explanation": "ボーマン嚢は糸球体（毛細血管の塊）を包む袋状の構造で、糸球体とボーマン嚢を合わせて腎小体という（既存Q048）。",
       "tags": [
         "ボーマン嚢",
         "糸球体",
         "腎小体"
       ],
       "image": {
-        "prompt_id": "IMG-016",
-        "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
-        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
-        "marker": "②",
-        "marker_target": "ボーマン嚢",
+        "prompt_id": "IMG-033",
+        "asset": "assets/illustrations/v1/assets/u06_renal_corpuscle.webp",
+        "alt": "糸球体、ボーマン嚢壁、糸球体嚢腔、血管極、尿細管極、近位尿細管を示す腎小体拡大模式図",
+        "marker": "①",
+        "marker_target": "ボーマン嚢（壁側葉）",
         "overlay": {
-          "x": 0.2855,
-          "y": 0.2057,
-          "label": "②"
+          "x": 0.7129,
+          "y": 0.2185,
+          "label": "①"
         }
       }
     },

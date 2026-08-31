@@ -27,7 +27,7 @@
 | G | 総論 | 6 |
 | C | 循環器 | 10（C08はC01へ統合、C10を新設） |
 | R | 呼吸器 | 8（R03/R04統合、R08・R09を新設） |
-| U | 泌尿器 | 4（U01はU04へ統合、U05を新設） |
+| U | 泌尿器 | 5（U01はU04へ統合、U05・U06を新設） |
 
 ## master-to-question対応表
 
@@ -57,12 +57,13 @@
 | R06 | 胸膜・横隔膜 | Q155, Q156 | 2 | `r06_pleura_cross_section.webp` |
 | R08 | 上気道矢状断 | Q032 | 1 | `r08_upper_airway_sagittal.webp` |
 | R09 | 喉頭外観・前面 | Q304, Q305, Q306 | 3 | `r09_larynx_exterior_anterior.webp` |
-| U02 | ネフロン全体 | Q048, Q176, Q177, Q178, Q180, Q199, Q310, Q311 | 8 | `u02_nephron.webp` |
+| U02 | ネフロン全体 | Q048, Q177, Q178, Q180, Q199, Q310, Q311 | 7 | `u02_nephron.webp` |
 | U03 | 泌尿器系全体 | Q050, Q095, Q192 | 3 | `u03_urinary_system.webp` |
 | U04 | 腎臓冠状断（腎門含む） | Q045, Q091, Q092, Q093, Q100, Q309 | 6 | `u04_kidney_cross_section.webp` |
 | U05 | 膀胱内面 | Q096, Q290 | 2 | `u05_bladder_interior.webp` |
+| U06 | 腎小体拡大図 | Q176 | 1 | `u06_renal_corpuscle.webp` |
 
-78問すべてがmasterへ割り当てられている。うち71問は複数Qで使うmasterに属する。Q002、Q004、Q063、Q129、Q231、Q256、Q032は単独masterであり、Q129はPhoneで腱索と乳頭筋を分けて示すためC03から専用C11へ移した。
+78問すべてがmasterへ割り当てられている。うち70問は複数Qで使うmasterに属する。Q002、Q004、Q032、Q063、Q129、Q176、Q231、Q256は単独masterである。Q129はPhoneで腱索と乳頭筋を分けるためC11、Q176はボーマン嚢壁と糸球体を分けるためU06へ移した。
 
 ## 統合しなかった主な図
 
@@ -79,7 +80,7 @@
 
 ## 生成・出典管理
 
-v1の当初26 masterは品質評価済みの既存assetをバイト同一で採用した。batch 1でC01・C02・C03・C05をカスタムAI生成画像へ更新し（`status:"revised"`）、C08を統合廃止、C10を新設した。batch 2でU01（腎門）をU04へ統合・削除し、U02・U03・U04をカスタムAI生成画像へ更新した（`status:"revised"`）。26 master → 25 masterとなった。batch 3では呼吸器の肺葉図（旧R03）と気管支分岐図（旧R04）を新R03（肺外観・気管支樹統合図）へ統合し、25 master → 24 masterとなった。batch 4でR01からQ032・Q304〜Q306を分離し、カスタムAI生成画像によるR08・R09を新設、R02もカスタムAI生成画像へ更新した。batch 5・6で既存masterを更新した。Nano Banana final batchでU05を新設し27 masterとなり、Q129専用C11の追加後は28 masterである。生成待ちは0件。各masterの観察方向、縮尺、主要構造、marker target、代替画像を作る場合のprompt、出典・ライセンス欄はmanifestに収録した。
+v1の当初26 masterは品質評価済みの既存assetをバイト同一で採用した。batch 1でC01・C02・C03・C05をカスタムAI生成画像へ更新し（`status:"revised"`）、C08を統合廃止、C10を新設した。batch 2でU01（腎門）をU04へ統合・削除し、U02・U03・U04をカスタムAI生成画像へ更新した（`status:"revised"`）。26 master → 25 masterとなった。batch 3では呼吸器の肺葉図（旧R03）と気管支分岐図（旧R04）を新R03（肺外観・気管支樹統合図）へ統合し、25 master → 24 masterとなった。batch 4でR01からQ032・Q304〜Q306を分離し、カスタムAI生成画像によるR08・R09を新設、R02もカスタムAI生成画像へ更新した。batch 5・6で既存masterを更新した。Nano Banana final batchでU05を新設し27 masterとなり、Q129専用C11とQ176専用U06の追加後は29 masterである。生成待ちは0件。各masterの観察方向、縮尺、主要構造、marker target、代替画像を作る場合のprompt、出典・ライセンス欄はmanifestに収録した。
 
 出典URL、加工方法、採否理由は `docs/v2.0.1_asset_source_log.md` と `docs/v2.0.1_image_quality_classification.md` を参照する。出典欄が「詳細は出典ログ参照」のassetは、公開前にクレジット表示との一致を人が再確認する。
 

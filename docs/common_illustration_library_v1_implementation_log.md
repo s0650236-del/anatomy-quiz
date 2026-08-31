@@ -540,3 +540,11 @@ U04をユーザー提供の`nano_u04_kidney_cross_section_v2_final.jfif`へ更�
 | `?review=assets` | C06(3問)・R06(2問)で使用QID一覧とmarker表示を確認 |
 | `?review=images` | 対象5 QID（Q020, Q021, Q067, Q155, Q156）全件で問題文・選択肢・正答・markerを確認 |
 | responsive QA | Desktop(1280×800)／iPad(768×1024)／Phone(375×812)：`document.documentElement.scrollWidth`が`window.innerWidth`を超えないことを確認（横スクロールなし）。Phone幅でのzoom modalも画像が viewport 内に収まることを確認 |
+## Q176専用U06腎小体拡大図
+
+Q176「糸球体を包む構造＝ボーマン嚢」を、共有U02ネフロン図から専用U06へ移行した。原図では糸球体、ボーマン嚢壁側葉、糸球体嚢腔、血管極、尿細管極、近位尿細管を分離して追える。①は糸球体や両極から離れた上右側の壁側葉上（0.7129, 0.2185）に置き、Phone通常表示でも嚢壁の輪郭がmarker周囲に残る位置とした。
+
+- U06：`u06_renal_corpuscle.webp`（1254×1254、Q176専用）
+- Q176：問題文の番号を①に統一し、`marker_target`を「ボーマン嚢（壁側葉）」へ明確化した。
+- U02：Q176のみ参照解除。他の7 QIDとそのoverlay、production画像は変更していない。
+- 原PNGはcrop・resizeなしでWebP（quality=94, method=6）へ変換した。
