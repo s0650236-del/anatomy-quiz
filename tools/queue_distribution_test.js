@@ -50,9 +50,9 @@ const imageMcq = qs.filter(q => q.type === 'image_mcq');
 // (76 -> 77), then Q096/Q290 converted using U05 bladder interior (77 -> 79).
 // See docs/v2.0.1_asset_source_log.md and
 // docs/v2.0.1_expansion_log.md.
-// Q053 converted to text_mcq after Phone visual review (79 -> 78).
-if (imageMcq.length !== 78) {
-  fail(`expected 78 image_mcq in source pool, found ${imageMcq.length}`);
+// Q053 and Q040 converted to text_mcq after Phone visual review (79 -> 77).
+if (imageMcq.length !== 77) {
+  fail(`expected 77 image_mcq in source pool, found ${imageMcq.length}`);
 } else {
   note(`source pool: ${imageMcq.length}/${qs.length} questions are image_mcq (OK)`);
 }

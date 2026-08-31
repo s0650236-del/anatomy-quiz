@@ -111,13 +111,13 @@ qs.forEach(q => {
 // vessel) uniquely identifiable for the first time. 76 -> 77.
 // Nano Banana final integration: Q096 (bladder trigone) and Q290 (detrusor)
 // converted to image_mcq using new U05 bladder-interior master. 77 -> 79.
-// Q053: sagittal-plane identification moved to text after Phone visual review.
-if ((typeCount.text_mcq || 0) !== 233) fail(`text_mcq count = ${typeCount.text_mcq}, expected 233`);
-if ((typeCount.image_mcq || 0) !== 78) fail(`image_mcq count = ${typeCount.image_mcq}, expected 78`);
+// Q053 and Q040 moved to text after Phone visual review (79 -> 77).
+if ((typeCount.text_mcq || 0) !== 234) fail(`text_mcq count = ${typeCount.text_mcq}, expected 234`);
+if ((typeCount.image_mcq || 0) !== 77) fail(`image_mcq count = ${typeCount.image_mcq}, expected 77`);
 
 const catImgCount = {};
 qs.forEach(q => { if (q.type === 'image_mcq') catImgCount[q.category] = (catImgCount[q.category] || 0) + 1; });
-const expectCatImg = { '総論': 9, '循環器': 27, '呼吸器': 23, '泌尿器': 19 };
+const expectCatImg = { '総論': 9, '循環器': 27, '呼吸器': 22, '泌尿器': 19 };
 Object.keys(expectCatImg).forEach(c => {
   if ((catImgCount[c] || 0) !== expectCatImg[c]) fail(`category ${c} image_mcq count = ${catImgCount[c] || 0}, expected ${expectCatImg[c]}`);
 });

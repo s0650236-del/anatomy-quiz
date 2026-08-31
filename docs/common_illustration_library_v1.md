@@ -52,7 +52,7 @@
 | R01 | 喉頭外観と上下気道（Q256のみ。R2-B保留中の暫定状態） | Q256 | 1 | `r01_larynx.webp` |
 | R02 | 喉頭鏡視野・上方観 | Q255, Q307 | 2 | `r02_vocal_folds.webp` |
 | R03 | 肺外観・気管支樹統合図 | Q035, Q036, Q077, Q082, Q152, Q153, Q169 | 7 | `r03_lungs_bronchial_tree.webp` |
-| R04 | 末梢気道連続図 | Q034, Q040, Q041, Q154, Q308 | 5 | `r04_peripheral_airway_continuum.webp` |
+| R04 | 末梢気道連続図 | Q034, Q041, Q154, Q308 | 4 | `r04_peripheral_airway_continuum.webp` |
 | R05 | 肺胞ガス交換 | Q037, Q084 | 2 | `r05_alveolar_gas_exchange.webp` |
 | R06 | 胸膜・横隔膜 | Q155, Q156 | 2 | `r06_pleura_cross_section.webp` |
 | R08 | 上気道矢状断 | Q032 | 1 | `r08_upper_airway_sagittal.webp` |

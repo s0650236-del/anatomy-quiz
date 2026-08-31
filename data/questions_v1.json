@@ -1522,45 +1522,33 @@
       "id": "Q040",
       "category": "呼吸器",
       "subcategory": "気道分岐",
-      "type": "image_mcq",
+      "type": "text_mcq",
       "difficulty": 2,
-      "question": "末梢気道の連続図の②で示された「呼吸部の始まり」にあたる部位はどれか。",
+      "question": "終末細気管支の遠位に続き、壁の一部に肺胞が開口する構造はどれか。",
       "choices": [
         {
           "id": "A",
-          "text": "主気管支"
+          "text": "呼吸細気管支"
         },
         {
           "id": "B",
-          "text": "区域気管支"
-        },
-        {
-          "id": "C",
           "text": "終末細気管支"
         },
         {
+          "id": "C",
+          "text": "肺胞道"
+        },
+        {
           "id": "D",
-          "text": "呼吸細気管支"
+          "text": "主気管支"
         }
       ],
-      "answer": "D",
-      "explanation": "終末細気管支までが導気部の末端であり、その先に続く呼吸細気管支から肺胞を壁の一部に持つようになり、呼吸部が始まる。",
+      "answer": "A",
+      "explanation": "呼吸細気管支は終末細気管支に続き、壁の一部に肺胞が開口するため、ここからガス交換に関わる呼吸部が始まる。さらに末梢では肺胞道へ移行する。",
       "tags": [
         "呼吸細気管支",
         "気道分岐"
-      ],
-      "image": {
-        "prompt_id": "IMG-014",
-        "asset": "assets/illustrations/v1/assets/r04_peripheral_airway_continuum.webp",
-        "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
-        "marker": "②",
-        "marker_target": "呼吸細気管支",
-        "overlay": {
-          "x": 0.4171,
-          "y": 0.3063,
-          "label": "②"
-        }
-      }
+      ]
     },
     {
       "id": "Q041",
