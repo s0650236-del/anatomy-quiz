@@ -1737,14 +1737,14 @@
         "腎臓"
       ],
       "image": {
-        "prompt_id": "IMG-015",
+        "prompt_id": "IMG-019",
         "asset": "assets/illustrations/v1/assets/u04_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "alt": "腎被膜・皮質・錐体・腎杯・腎盂・腎門と血管を示した腎臓冠状断模式図",
         "marker": "①",
         "marker_target": "腎門",
         "overlay": {
-          "x": 0.601,
-          "y": 0.365,
+          "x": 0.7012,
+          "y": 0.4268,
           "label": "①"
         }
       }
@@ -3457,12 +3457,12 @@
       "image": {
         "prompt_id": "IMG-019",
         "asset": "assets/illustrations/v1/assets/u04_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "alt": "腎被膜・皮質・錐体・腎杯・腎盂・腎門と血管を示した腎臓冠状断模式図",
         "marker": "①",
         "marker_target": "腎皮質",
         "overlay": {
-          "x": 0.4456,
-          "y": 0.0713,
+          "x": 0.2637,
+          "y": 0.1514,
           "label": "①"
         }
       }
@@ -3501,12 +3501,12 @@
       "image": {
         "prompt_id": "IMG-019",
         "asset": "assets/illustrations/v1/assets/u04_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "alt": "腎被膜・皮質・錐体・腎杯・腎盂・腎門と血管を示した腎臓冠状断模式図",
         "marker": "②",
         "marker_target": "腎錐体",
         "overlay": {
-          "x": 0.3922,
-          "y": 0.1427,
+          "x": 0.3027,
+          "y": 0.3125,
           "label": "②"
         }
       }
@@ -3545,12 +3545,12 @@
       "image": {
         "prompt_id": "IMG-019",
         "asset": "assets/illustrations/v1/assets/u04_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "alt": "腎被膜・皮質・錐体・腎杯・腎盂・腎門と血管を示した腎臓冠状断模式図",
         "marker": "③",
         "marker_target": "腎乳頭",
         "overlay": {
-          "x": 0.4118,
-          "y": 0.2154,
+          "x": 0.5498,
+          "y": 0.2715,
           "label": "③"
         }
       }
@@ -3824,28 +3824,28 @@
       "image": {
         "prompt_id": "IMG-019",
         "asset": "assets/illustrations/v1/assets/u04_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "alt": "腎被膜・皮質・錐体・腎杯・腎盂・腎門と血管を示した腎臓冠状断模式図",
         "marker": "⑤",
         "marker_target": "腎乳頭→小腎杯→大腎杯→腎盂（順路overlay）",
         "overlays": [
           {
-            "x": 0.5276,
-            "y": 0.6776,
+            "x": 0.374,
+            "y": 0.5029,
             "label": "⑤-1"
           },
           {
-            "x": 0.5249,
-            "y": 0.6669,
+            "x": 0.5137,
+            "y": 0.2529,
             "label": "⑤-2"
           },
           {
-            "x": 0.5392,
-            "y": 0.5599,
+            "x": 0.5566,
+            "y": 0.3516,
             "label": "⑤-3"
           },
           {
-            "x": 0.622,
-            "y": 0.484,
+            "x": 0.5967,
+            "y": 0.5078,
             "label": "⑤-4"
           }
         ]
@@ -6635,7 +6635,7 @@
       "subcategory": "ネフロン",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "腎臓断面図の④で示された、複数のネフロンから原尿を集め、腎乳頭へ導く構造はどれか。",
+      "question": "ネフロンの模式図の④で示された、複数のネフロンから尿を集め、腎乳頭へ導く構造はどれか。",
       "choices": [
         {
           "id": "A",
@@ -6655,19 +6655,19 @@
         }
       ],
       "answer": "A",
-      "explanation": "集合管は複数のネフロンの遠位尿細管から原尿を集め、腎乳頭(既存Q093)へと導く。この過程でも水の再吸収が調節される。",
+      "explanation": "集合管は複数のネフロンの遠位尿細管から尿を集め、腎乳頭（既存Q093）へと導く。この過程でも水の再吸収が調節される。",
       "tags": [
         "集合管"
       ],
       "image": {
-        "prompt_id": "IMG-019",
-        "asset": "assets/illustrations/v1/assets/u04_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "prompt_id": "IMG-016",
+        "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
         "marker": "④",
         "marker_target": "集合管",
         "overlay": {
-          "x": 0.5348,
-          "y": 0.1355,
+          "x": 0.7287,
+          "y": 0.6771,
           "label": "④"
         }
       }
@@ -11030,12 +11030,12 @@
       "image": {
         "prompt_id": "IMG-019",
         "asset": "assets/illustrations/v1/assets/u04_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "alt": "腎被膜・皮質・錐体・腎杯・腎盂・腎門と血管を示した腎臓冠状断模式図",
         "marker": "①",
         "marker_target": "腎被膜",
         "overlay": {
-          "x": 0.1872,
-          "y": 0.1284,
+          "x": 0.2783,
+          "y": 0.0908,
           "label": "①"
         }
       }

@@ -56,12 +56,12 @@
 | R06 | 胸膜・横隔膜 | Q155, Q156 | 2 | `r06_pleura_cross_section.webp` |
 | R08 | 上気道矢状断 | Q032 | 1 | `r08_upper_airway_sagittal.webp` |
 | R09 | 喉頭外観・前面 | Q304, Q305, Q306 | 3 | `r09_larynx_exterior_anterior.webp` |
-| U02 | ネフロン全体 | Q048, Q176, Q177, Q178, Q199, Q310, Q311 | 7 | `u02_nephron.webp` |
+| U02 | ネフロン全体 | Q048, Q176, Q177, Q178, Q180, Q199, Q310, Q311 | 8 | `u02_nephron.webp` |
 | U03 | 泌尿器系全体 | Q050, Q095, Q192 | 3 | `u03_urinary_system.webp` |
-| U04 | 腎臓冠状断（腎門含む） | Q045, Q091, Q092, Q093, Q100, Q180, Q309 | 7 | `u04_kidney_cross_section.webp` |
+| U04 | 腎臓冠状断（腎門含む） | Q045, Q091, Q092, Q093, Q100, Q309 | 6 | `u04_kidney_cross_section.webp` |
 | U05 | 膀胱内面 | Q096, Q290 | 2 | `u05_bladder_interior.webp` |
 
-79問すべてがmasterへ割り当てられている。うち73問は複数Qで使うmasterに属し、Q002、Q004、Q231は教育上の縮尺・識別性を守るため単独masterとした。Q063（G06）もbatch 5でQ117がG05へ移った結果、単独masterとなった。Q256（R01）とQ032（R08）も現時点では単独masterだが、これはR01がR2-B新設（人間レビュー未完了のため保留）を待つ暫定状態であることによるもので、恒久的な設計判断ではない。
+78問すべてがmasterへ割り当てられている。うち72問は複数Qで使うmasterに属し、Q002、Q004、Q231は教育上の縮尺・識別性を守るため単独masterとした。Q063（G06）もbatch 5でQ117がG05へ移った結果、単独masterとなった。Q256（R01）とQ032（R08）も現時点では単独masterだが、これはR01がR2-B新設（人間レビュー未完了のため保留）を待つ暫定状態であることによるもので、恒久的な設計判断ではない。
 
 ## 統合しなかった主な図
 

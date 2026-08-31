@@ -882,6 +882,7 @@
         "Henle係蹄",
         "尿細管順路",
         "遠位尿細管",
+        "集合管",
         "輸入細動脈"
       ],
       "questions": [
@@ -889,6 +890,7 @@
         "Q176",
         "Q177",
         "Q178",
+        "Q180",
         "Q199",
         "Q310",
         "Q311"
@@ -953,7 +955,6 @@
         "腎皮質",
         "腎髄質",
         "腎錐体",
-        "集合管",
         "腎乳頭",
         "小腎杯",
         "大腎杯",
@@ -967,7 +968,6 @@
         "腎錐体",
         "腎乳頭",
         "尿流路",
-        "集合管",
         "腎被膜",
         "腎門"
       ],
@@ -977,17 +977,16 @@
         "Q092",
         "Q093",
         "Q100",
-        "Q180",
         "Q309"
       ],
       "source_asset": "assets/images/q091_kidney_cross_section.webp",
       "status": "revised",
       "generation": {
         "required": false,
-        "prompt": "Coronal kidney section showing capsule, cortex, medullary pyramids, collecting ducts, papillae, minor and major calyces, and renal pelvis, with the renal hilum (artery, vein, and pelvis-to-ureter junction on the medial concave side) also visible; no labels or markers."
+        "prompt": "Coronal kidney section showing the fibrous capsule, cortex, medullary pyramids and papillae, minor and major calyces, renal pelvis, ureter, and the medial renal hilum with renal artery and vein; no labels or markers."
       },
       "provenance": {
-        "source": "ユーザー提供カスタムAI生成画像（ChatGPT Work/Codex、人間レビューGO）。旧u04はServier Medical Art Kidneys coronal sectionのCC BY 4.0画像（AnatomyTOOL経由、片側トリミング）。旧U01「腎門」（Servier Medical Art Kidney、CC BY 4.0）はQ045ごと本masterへ統合し、U01は削除した",
+        "source": "ユーザー提供のNano BananaカスタムAI生成画像（nano_u04_kidney_cross_section_v2_final.jfif、人間レビューGO）。旧u04はユーザー提供カスタムAI生成画像。Q180（集合管）はU02へ移行した",
         "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
         "reference": "docs/v2.0.1_asset_source_log.md"
       }
