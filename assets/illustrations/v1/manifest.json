@@ -2,10 +2,10 @@
   "version": "1.0.0",
   "dataset": "data/questions_v1.json",
   "generated_at": "2026-08-25",
-  "master_count": 27,
+  "master_count": 28,
   "status_counts": {
     "accepted-existing": 9,
-    "revised": 18,
+    "revised": 19,
     "pending-generation": 0
   },
   "masters": [
@@ -308,13 +308,11 @@
       "marker_targets": [
         "左心室",
         "4心腔",
-        "腱索・乳頭筋",
         "心室中隔"
       ],
       "questions": [
         "Q017",
         "Q064",
-        "Q129",
         "Q230"
       ],
       "source_asset": "assets/images/q017_heart_chambers.webp",
@@ -510,6 +508,38 @@
         "source": "ユーザー確認済みの最終採用画像。内容を改変せずWebP変換のみ実施",
         "license": "プロジェクト保有。外部クレジット不要",
         "reference": "docs/v2.0.1_asset_source_log.md。大動脈弁から上行大動脈までの位置関係は既知の限界として記録"
+      }
+    },
+    {
+      "id": "C11",
+      "asset": "assets/illustrations/v1/assets/c11_av_valve_chordae_papillary.webp",
+      "domain": "循環器",
+      "name": "房室弁・腱索・乳頭筋拡大図",
+      "view": "心室内の房室弁支持装置を正面から見た拡大模式図",
+      "scale": "心臓内部局所",
+      "structures": [
+        "房室弁弁尖",
+        "腱索",
+        "乳頭筋",
+        "心室壁"
+      ],
+      "marker_targets": [
+        "腱索",
+        "乳頭筋"
+      ],
+      "questions": [
+        "Q129"
+      ],
+      "source_asset": "ユーザー保存画像: codex-clipboard-fe2e4251-a86d-42da-bc3b-58dce4c234e5.jpg",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Close-up educational cutaway of atrioventricular valve leaflets connected by chordae tendineae to papillary muscles, with the chordae and papillary muscle bellies clearly separated; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー保存のカスタム教材画像。内容を改変せずWebP変換のみ実施し、Q129専用masterとして採用",
+        "license": "プロジェクト保有。外部クレジット不要",
+        "reference": "docs/v2.0.1_asset_source_log.md"
       }
     },
     {

@@ -4792,48 +4792,48 @@
       "subcategory": "心臓弁",
       "type": "image_mcq",
       "difficulty": 2,
-      "question": "心臓断面図の①で示された、房室弁の弁尖につながり、心室収縮時に弁が心房側へ反転するのを防ぐ構造はどれか。",
+      "question": "図中①a・①bで示された、房室弁の弁尖につながり、心室収縮時に弁が心房側へ反転するのを防ぐ構造の組み合わせとして正しいものはどれか。",
       "choices": [
         {
           "id": "A",
-          "text": "腱索・乳頭筋"
+          "text": "①a 腱索、①b 乳頭筋"
         },
         {
           "id": "B",
-          "text": "冠状動脈"
+          "text": "①a 乳頭筋、①b 腱索"
         },
         {
           "id": "C",
-          "text": "刺激伝導系"
+          "text": "①a 心室壁、①b 腱索"
         },
         {
           "id": "D",
-          "text": "心膜"
+          "text": "①a 弁尖、①b 心室壁"
         }
       ],
       "answer": "A",
-      "explanation": "房室弁の弁尖は腱索によって心室壁の乳頭筋につながっており、心室収縮時に弁が心房側へめくれ返る(逸脱する)のを防いでいる。",
+      "explanation": "房室弁の弁尖は腱索（①a）を介して乳頭筋（①b）につながる。心室収縮時に乳頭筋が収縮して腱索を張り、弁尖が心房側へ反転するのを防ぐ。",
       "tags": [
         "腱索",
         "乳頭筋",
         "房室弁"
       ],
       "image": {
-        "prompt_id": "IMG-006",
-        "asset": "assets/illustrations/v1/assets/c03_heart_chambers.webp",
-        "alt": "4心腔・房室弁・腱索・乳頭筋・心室中隔を示す心臓断面模式図",
-        "marker": "⑦",
-        "marker_target": "腱索・乳頭筋",
+        "prompt_id": "IMG-032",
+        "asset": "assets/illustrations/v1/assets/c11_av_valve_chordae_papillary.webp",
+        "alt": "房室弁の弁尖から腱索を介して乳頭筋へつながる関係を拡大した心室内模式図",
+        "marker": "①",
+        "marker_target": "①a 腱索・①b 乳頭筋",
         "overlays": [
           {
-            "x": 0.4112,
-            "y": 0.6354,
-            "label": "⑦a"
+            "x": 0.6543,
+            "y": 0.4707,
+            "label": "①a"
           },
           {
-            "x": 0.5717,
-            "y": 0.5638,
-            "label": "⑦b"
+            "x": 0.6748,
+            "y": 0.7002,
+            "label": "①b"
           }
         ]
       }

@@ -177,9 +177,9 @@ qs.forEach(q => {
 });
 
 // v2.0.1 image-quality re-evaluation pass: heart_valves_schematic.webp
-// (self-made SVG) was retired -- its only user, Q129 (chordae tendineae /
-// papillary muscle), was repointed to the real-photo q017_heart_chambers.webp,
-// which already shows the same structures clearly. q016_apex.webp (self-made
+// (self-made SVG) was retired. Q129 later moved from the shared C03 chamber
+// image to a dedicated C11 close-up of chordae tendineae and papillary muscle.
+// q016_apex.webp (self-made
 // SVG) was likewise retired in favour of reusing heart_exterior_anterior.webp
 // (Q016's apex marker added alongside Q138's existing marker on that asset).
 // 28 -> 26 unique assets is the deliberate result (two self-made assets
@@ -206,16 +206,17 @@ qs.forEach(q => {
 // zero retired). See docs/common_illustration_library_v1_implementation_log.md
 // and docs/v2.0.1_asset_source_log.md.
 // Nano Banana final integration adds U05 for Q096/Q290. 26 -> 27.
-if (referencedAssets.size !== 27) fail(`unique referenced assets = ${referencedAssets.size}, expected 27`);
+// Q129's dedicated C11 master adds one further asset. 27 -> 28.
+if (referencedAssets.size !== 28) fail(`unique referenced assets = ${referencedAssets.size}, expected 28`);
 
 const allFiles = fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir).filter(f => f.endsWith('.webp')) : [];
 allFiles.forEach(f => { if (!referencedAssets.has(f)) warn(`asset file not referenced by any question: ${f}`); });
 
-// Q129 now shares q017_heart_chambers.webp (real photo) instead of the
-// retired heart_valves_schematic.webp self-made SVG.
+// Q129 uses a dedicated close-up so both chordae tendineae and papillary
+// muscle remain independently identifiable on a phone display.
 const q129 = qs.find(q => q.id === 'Q129');
-if (!q129 || !q129.image || q129.image.asset !== 'assets/illustrations/v1/assets/c03_heart_chambers.webp') {
-  fail(`Q129 must use C03 heart chambers master, got: ${q129 && q129.image && q129.image.asset}`);
+if (!q129 || !q129.image || q129.image.asset !== 'assets/illustrations/v1/assets/c11_av_valve_chordae_papillary.webp') {
+  fail(`Q129 must use dedicated C11 AV-valve master, got: ${q129 && q129.image && q129.image.asset}`);
 }
 
 // The 5 pre-existing real-photo assets' Q001-Q100 overlays must never drift
