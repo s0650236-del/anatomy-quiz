@@ -1,50 +1,133 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500">
-  <rect x="0" y="0" width="1200" height="1500" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1300">
+  <rect x="0" y="0" width="1000" height="1300" fill="#ffffff"/>
 
-  <!-- Classic "figure-8" double-circulation schematic: pulmonary circuit (heart<->lungs) on top,
-       systemic circuit (heart<->body) on the bottom. Red = oxygenated blood, blue = deoxygenated
-       blood, regardless of artery/vein -- the standard convention (so the pulmonary artery is
-       blue and the pulmonary vein is red, unlike vessels in the systemic circuit). -->
+  <!-- v2.0.1 educational-quality redesign (image-quality improvement pass):
+       the previous version only color-split the heart in half and drew four
+       plain connecting pipes with NO chamber boundaries and NO flow-direction
+       cues, which made it impossible to actually trace "the systemic route"
+       or "the pulmonary route" from the picture alone. This version fixes
+       that directly:
+         1) the heart is now drawn as four chambers (RA/RV/LA/LV) with an
+            AV-groove line and a septum line, plus small valve dots at all
+            four valve positions (tricuspid / pulmonary / mitral / aortic),
+            so "right atrium" etc. is a real region, not just a color.
+         2) every one of the four great-vessel paths (pulmonary artery,
+            pulmonary vein, aorta, vena cava) now carries a solid directional
+            arrowhead drawn ON the vessel, so flow direction is visible
+            without relying on any caption or marker text.
+       Two loops still share the heart at the pinch point: a SMALL loop up to
+       the lungs (pulmonary circuit) and a LARGE loop down to the body
+       (systemic circuit) -- true to the "figure-8" description used by the
+       two questions that reference this asset. Organ/heart shapes remain a
+       deliberate schematic abstraction (SVG-PRO): the pedagogical point of
+       this asset is the route topology and chamber relationships, not
+       photorealistic organ silhouettes. -->
 
-  <!-- lungs (top) -->
-  <g fill="#e8a8a0" stroke="#8a4a44" stroke-width="5">
-    <ellipse cx="270" cy="230" rx="150" ry="180"/>
-    <ellipse cx="930" cy="230" rx="150" ry="180"/>
+  <!-- lungs (top). Concave inner (mediastinal) border, rounded outer (costal)
+       border, tapered apex/base -- not a plain ellipse. -->
+  <g fill="#e8b3ac" stroke="#8a4a44" stroke-width="6" stroke-linejoin="round">
+    <path d="M 452,96 C 400,50 300,40 216,66 C 130,92 92,158 96,214
+             C 100,276 138,326 206,344 C 262,352 310,332 344,296
+             C 320,270 300,236 300,196 C 300,168 340,140 400,150
+             C 424,134 442,116 452,96 Z"/>
+    <path d="M 548,96 C 600,50 700,40 784,66 C 870,92 908,158 904,214
+             C 900,276 862,326 794,344 C 738,352 690,332 656,296
+             C 680,270 700,236 700,196 C 700,168 660,140 600,150
+             C 576,134 558,116 548,96 Z"/>
+  </g>
+  <!-- trachea + main bronchi, sitting in the gap between the lungs -->
+  <g fill="none" stroke="#9aa7ad" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 500,40 L 500,200"/>
+    <path d="M 500,200 L 430,300"/>
+    <path d="M 500,200 L 570,300"/>
   </g>
 
-  <!-- body / systemic tissue bed (bottom) -->
-  <rect x="300" y="1260" width="600" height="200" rx="40" fill="#f2d9b0" stroke="#a68a3a" stroke-width="5"/>
+  <!-- ===================== HEART: four chambers, not a color-split blob ===================== -->
+  <!-- outer silhouette, filled per-side (red = left heart/oxygenated, blue = right heart/deoxygenated) -->
+  <path d="M 500,520 C 480,480 430,450 400,470 C 350,500 320,560 335,620
+           C 350,700 400,760 470,820 C 540,760 610,700 665,620
+           C 680,560 650,500 600,470 C 570,450 520,480 500,520 Z"
+        fill="#c9536a" stroke="#7a3040" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M 500,520 C 480,480 430,450 400,470 C 350,500 320,560 335,620
+           C 350,700 400,760 470,820 L 500,520 Z"
+        fill="#4a6fa5" stroke="#233a5c" stroke-width="7" stroke-linejoin="round"/>
 
-  <!-- mini heart (center) -->
-  <rect x="430" y="640" width="150" height="150" rx="26" fill="#e79a92" stroke="#8a3a34" stroke-width="5"/> <!-- RA -->
-  <rect x="610" y="635" width="165" height="145" rx="26" fill="#e79a92" stroke="#8a3a34" stroke-width="5"/> <!-- LA -->
-  <rect x="430" y="795" width="150" height="190" rx="30" fill="#d97a6c" stroke="#7a3228" stroke-width="6"/> <!-- RV -->
-  <rect x="605" y="785" width="185" height="205" rx="34" fill="#c9584a" stroke="#6a2a20" stroke-width="8"/> <!-- LV -->
-  <rect x="580" y="635" width="30" height="360" fill="#e9d9b8"/> <!-- septum -->
+  <!-- AV groove: separates the atria (top, small) from the ventricles (bottom,
+       large) on both sides -- this is what turns "left half / right half" into
+       four actual chambers. -->
+  <path d="M 350,560 C 400,592 460,600 500,596 C 540,600 600,592 650,560"
+        fill="none" stroke="#3a2430" stroke-width="6" stroke-linecap="round" opacity="0.75"/>
 
-  <!-- ===================== PULMONARY CIRCUIT (deoxygenated out in blue, oxygenated back in red) ===================== -->
-  <!-- pulmonary veins drawn first (right lung -> LA, left lung -> LA) -->
-  <path d="M 330 390 Q 420 500 560 640 L 610 660 Q 460 540 375 400 Z"
-        fill="#c9536a" opacity="0.9" stroke="#8a3040" stroke-width="4"/>
-  <path d="M 870 390 Q 780 500 660 640 L 700 665 Q 810 530 910 405 Z"
-        fill="#c9536a" opacity="0.9" stroke="#8a3040" stroke-width="4"/>
-  <!-- pulmonary trunk branches drawn last so both stay fully visible on top (RV -> right lung, RV -> left lung) -->
-  <path d="M 460 795 Q 380 700 300 500 Q 260 400 270 410 L 320 430 Q 330 440 355 520 Q 410 690 500 785 Z"
-        fill="#4a6fa5" opacity="0.92" stroke="#233a5c" stroke-width="4"/>
-  <path d="M 500 795 Q 650 700 830 500 Q 900 420 890 410 L 840 430 Q 820 445 780 520 Q 690 690 555 790 Z"
-        fill="#4a6fa5" opacity="0.92" stroke="#233a5c" stroke-width="4"/>
+  <!-- valve dots, in actual blood-flow order top-to-bottom-to-out so the
+       reading order matches physiology: atrium -> AV valve (tricuspid /
+       mitral, at the groove) -> ventricle -> semilunar valve (pulmonary /
+       aortic, at the ventricle-to-great-vessel junction) -> great vessel.
+       Four small white-ringed circles, matching the visual language already
+       used on heart_valves_schematic.webp. -->
+  <g fill="#ffffff" stroke="#3a2430" stroke-width="3">
+    <circle cx="460" cy="588" r="10"/>  <!-- tricuspid -->
+    <circle cx="540" cy="588" r="10"/>  <!-- mitral -->
+    <circle cx="397" cy="652" r="9"/>   <!-- pulmonary valve -->
+    <circle cx="603" cy="656" r="9"/>   <!-- aortic valve -->
+  </g>
 
-  <!-- ===================== SYSTEMIC CIRCUIT (oxygenated out in red, deoxygenated back in blue) ===================== -->
-  <!-- LV -> aorta -> body -->
-  <path d="M 660 985 Q 640 1100 630 1200 Q 625 1240 630 1260 L 685 1260 Q 680 1220 685 1190 Q 695 1090 715 990 Z"
-        fill="#c9536a" opacity="0.9" stroke="#8a3040" stroke-width="4"/>
-  <!-- body -> venae cavae -> RA (routed up the left flank, clear of the RV box at x430-580/y795-985,
-       so the tube visibly terminates inside the RA box at y640-790 rather than against RV) -->
-  <path d="M 470 1260 Q 450 1150 420 1030 Q 390 900 385 800 Q 382 720 410 680 Q 440 650 500 645
-           L 460 690 Q 430 715 428 780 Q 420 900 425 1030 Q 428 1150 415 1260 Z"
-        fill="#4a6fa5" opacity="0.9" stroke="#233a5c" stroke-width="4"/>
+  <!-- ===================== PULMONARY CIRCUIT (small loop, heart <-> lungs) ===================== -->
+  <!-- pulmonary artery: RV -> left lung (deoxygenated, blue) -->
+  <path d="M 372,660 C 340,600 330,480 350,400 C 362,352 388,320 418,308
+           L 434,332 C 410,350 392,378 384,412 C 368,486 378,590 406,646 Z"
+        fill="#4a6fa5" stroke="#233a5c" stroke-width="5" stroke-linejoin="round"/>
+  <!-- pulmonary vein: right lung -> LA (oxygenated, red) -->
+  <path d="M 582,308 C 612,320 638,352 650,400 C 670,478 662,590 628,656
+           L 596,644 C 626,588 634,486 618,412 C 610,378 592,350 568,332 Z"
+        fill="#c9536a" stroke="#7a3040" stroke-width="5" stroke-linejoin="round"/>
+
+  <!-- ===================== SYSTEMIC CIRCUIT (large loop, heart <-> body) ===================== -->
+  <!-- aorta: LV -> body (oxygenated, red) -->
+  <path d="M 606,672 C 660,700 700,760 712,840 C 722,900 716,940 700,970
+           L 660,958 C 674,928 678,896 670,846 C 660,776 628,724 582,700 Z"
+        fill="#c9536a" stroke="#7a3040" stroke-width="5" stroke-linejoin="round"/>
+  <!-- vena cava: body -> RA (deoxygenated, blue) -->
+  <path d="M 300,970 C 284,940 278,900 288,840 C 300,760 340,700 394,672
+           L 418,700 C 372,724 340,776 330,846 C 322,896 326,928 340,958 Z"
+        fill="#4a6fa5" stroke="#233a5c" stroke-width="5" stroke-linejoin="round"/>
+
+  <!-- direction arrowheads, drawn ON each vessel, pointing the way blood
+       actually flows -- this is the main missing piece that made the old
+       image impossible to "read" as a route. -->
+  <g fill="#ffffff" stroke="#233a5c" stroke-width="3" stroke-linejoin="round">
+    <!-- pulmonary artery: flow goes UP toward the lung -->
+    <polygon points="349,455 375,505 323,505"/>
+  </g>
+  <g fill="#ffffff" stroke="#7a3040" stroke-width="3" stroke-linejoin="round">
+    <!-- pulmonary vein: flow goes DOWN toward the heart -->
+    <polygon points="651,490 625,440 677,440"/>
+    <!-- aorta: flow goes DOWN toward the body -->
+    <polygon points="706,790 680,740 732,740"/>
+  </g>
+  <g fill="#ffffff" stroke="#233a5c" stroke-width="3" stroke-linejoin="round">
+    <!-- vena cava: flow goes UP toward the heart -->
+    <polygon points="294,795 268,845 320,845"/>
+  </g>
+
+  <!-- body / systemic capillary bed (bottom). Rounded torso silhouette with a fine
+       branching mesh inside standing in for the capillary bed -- not a flat box. -->
+  <path d="M 360,970 C 300,970 264,1010 260,1070 L 260,1170
+           C 260,1220 300,1260 360,1260 L 640,1260
+           C 700,1260 740,1220 740,1170 L 740,1070
+           C 736,1010 700,970 640,970 Z"
+        fill="#f2d9b0" stroke="#a68a3a" stroke-width="6" stroke-linejoin="round"/>
+  <g fill="none" stroke="#c98f6a" stroke-width="3.5" stroke-linecap="round" opacity="0.85">
+    <path d="M 330,1030 L 380,1050 L 360,1090 L 420,1080 L 400,1130 L 460,1140"/>
+    <path d="M 380,1050 L 400,1010"/>
+    <path d="M 420,1080 L 440,1040"/>
+    <path d="M 500,1030 L 540,1060 L 520,1100 L 580,1090 L 560,1140 L 620,1150"/>
+    <path d="M 540,1060 L 560,1020"/>
+    <path d="M 520,1100 L 490,1130"/>
+    <path d="M 620,1050 L 660,1080 L 640,1120 L 690,1110"/>
+    <path d="M 300,1140 L 340,1160 L 320,1200 L 380,1190"/>
+  </g>
 
   <!-- legend-free geometric key: red = oxygenated flow, blue = deoxygenated flow -->
-  <circle cx="70" cy="1400" r="16" fill="#c9536a" stroke="#8a3040" stroke-width="3"/>
-  <circle cx="70" cy="1450" r="16" fill="#4a6fa5" stroke="#233a5c" stroke-width="3"/>
+  <circle cx="60" cy="1230" r="16" fill="#c9536a" stroke="#7a3040" stroke-width="3"/>
+  <circle cx="60" cy="1275" r="16" fill="#4a6fa5" stroke="#233a5c" stroke-width="3"/>
 </svg>

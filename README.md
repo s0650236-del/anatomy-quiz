@@ -3,7 +3,7 @@
 看護学科1年生向けの「人体の構造と機能」試験対策クイズWebアプリです。
 GitHub PagesでホスティングしたHTTPS URLを、iPhone / iPad / Windows / Mac の各ブラウザ（主にSafari）から開いて利用します。
 
-- 対象：総論・循環器・呼吸器・泌尿器（全300問、うちimage_mcq 65問）
+- 対象：総論・循環器・呼吸器・泌尿器（全311問、うちimage_mcq 75問）
 - 配布方法：GitHub PagesのURLをSafari等で開く（HTMLファイルの直接配布は非推奨）
 - PWA対応：ホーム画面に追加してアプリのように利用可能、2回目以降はオフラインでも動作
 
@@ -14,9 +14,9 @@ GitHub PagesでホスティングしたHTTPS URLを、iPhone / iPad / Windows / 
 ```
 index.html                    アプリ本体（画面・スタイル）
 app.js                        画面ロジック（問題データとは分離）
-data/questions_v1.json        問題データ（マスターデータ、全300問）
+data/questions_v1.json        問題データ（マスターデータ、全311問）
 data/questions.schema.json    問題データのJSON Schema（検証用）
-assets/images/                image_mcq 用の画像（27種類）
+assets/illustrations/v1/      共通イラストライブラリ（30 master）
 manifest.webmanifest          PWA用マニフェスト
 sw.js                         Service Worker（オフラインキャッシュ）
 icon-180.png / icon-512.png   PWA用アイコン
@@ -81,7 +81,7 @@ GitHub Pages上ではHTTPSで配信されるため、この制約は発生しま
 ```json
 "image": {
   "prompt_id": "IMG-001",
-  "asset": "assets/images/q002_hierarchy.webp",
+  "asset": "assets/illustrations/v1/assets/g01_organization_levels.webp",
   "alt": "人体の構成段階を示す5段階の模式図",
   "marker": "①〜⑤",
   "marker_target": "細胞→組織→器官→器官系→個体の各段階",
@@ -125,26 +125,26 @@ GitHub Pages上ではHTTPSで配信されるため、この制約は発生しま
 
 1. `docs/CLAUDE_CODE_TASK.md` の方針どおり、当面は 総論 / 循環器 / 呼吸器 / 泌尿器 の4分野のまま増やす。
 2. 新しい問題は `id` を `Q051`, `Q052`, … `Q300` … と連番で採番し、`data/questions_v1.json` の `questions` 配列に追記する。
-3. 画像問題を追加する場合は `image.asset` に新しい画像パスを指定する（画像本体は別途 `assets/images/` に配置。未配置でも動作する）。
+3. 画像問題を追加する場合は、`assets/illustrations/v1/manifest.json` の既存masterを優先する。該当図がなければ新規masterを登録し、確定画像を `assets/illustrations/v1/assets/` に配置する。
 4. 可能であれば `data/questions.schema.json` を使ってJSONを検証する（Node.js + [ajv](https://ajv.js.org/) など、任意のJSON Schemaバリデータを利用。本リポジトリには検証スクリプトを同梱していないため、必要に応じて別途導入するか、エディタのJSON Schema機能を利用する）。
 5. カテゴリを新設する場合（例：将来 消化器 を追加する等）は、`data/questions.schema.json` の `category` の `enum` に追加する。アプリ側（`app.js`）はカテゴリを固定配列で持たず、読み込んだデータから動的に一覧を生成するため、コード修正は不要。
 6. 出題数プルダウンの選択肢（5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 150, 200, 250, 300）は問題数に応じて自動的に絞り込まれるため、300問構成でもそのまま動作する。
 
-## 画像17枚を追加する手順
+## 共通イラストを追加・更新する手順
 
-1. `docs/image_generation_prompts_v1.md` に記載の17件の生成プロンプトを使い、教育用のオリジナル画像を用意する（教科書図版の複製は禁止）。
-2. 各画像は `data/questions_v1.json` の該当問題の `image.asset` に記載されたファイル名で `assets/images/` 配下に配置する（例：`assets/images/q002_hierarchy.webp`）。
-3. 画像生成後、解剖学的な誤りがないか教員が確認する。
-4. マーカー（①など）が必要な場合は、画像自体には焼き込まず、該当する問題の `image.overlay`（または複数必要なら `image.overlays`）に正規化座標を追加する。座標はブラウザで実際に表示しながら微調整するとよい。
-5. 配置後は追加のコード変更なしに、該当問題の画像がアプリ上に表示され、タップ/クリックで拡大表示できるようになる。
-6. Service Worker（`sw.js`）は `assets/images/` 配下のリクエストをキャッシュ優先で扱うため、一度表示された画像は2回目以降オフラインでも表示される。
+1. `assets/illustrations/v1/manifest.json` を確認し、観察方向・縮尺・marker targetが一致するmasterを探す。
+2. 新規masterが必要な場合はmanifestに仕様と生成promptを登録し、教員確認前は `pending-generation` とする。
+3. 採用画像は `data/questions_v1.json` の `image.asset` と同じパスで `assets/illustrations/v1/assets/` に配置する。
+4. 解剖学的な誤りがないか教員が確認する。
+5. markerは画像へ焼き込まず、問題単位の `image.overlay` または `image.overlays` に正規化座標を置く。
+6. `node tools/common_illustration_library_validate.js` と `node tools/dataset_validate.js` を実行する。
 
 ## PWA / オフライン対応
 
 - `manifest.webmanifest`：ホーム画面追加時のアプリ名・アイコン・テーマカラーなどを定義。
 - `sw.js`：初回アクセス時に `index.html` / `app.js` / `manifest.webmanifest` / アイコン / `data/questions_v1.json` をキャッシュし、2回目以降のアクセスやオフライン時にも読み込めるようにする。
   - 問題データ（JSON）はオンライン時は常に最新を取得し（network-first）、オフライン時は最後にキャッシュした版を使用する。
-  - 画像（`assets/images/`）はキャッシュ優先（cache-first）。取得に失敗した場合（未配置・404など）は何もキャッシュせず、画面側で「画像準備中」表示にフォールバックする。
+  - 画像（`assets/illustrations/v1/assets/`）はキャッシュ優先（cache-first）。取得に失敗した場合は何もキャッシュせず、画面側で「画像準備中」表示にフォールバックする。
 - `sw.js` の `CACHE` 定数（バージョン文字列）を変更すると、古いキャッシュを破棄して新しい内容に更新される。アプリ本体を大きく更新した際は、このバージョン文字列を更新すること。
 
 ## 禁止・注意事項（変更しないもの）

@@ -53,7 +53,7 @@
     .progress{height:7px;background:#e4e7ec;border-radius:999px;overflow:hidden;margin:12px 1px 14px}
     .progress>div{height:100%;background:var(--primary);width:0;transition:width .2s ease}
     .qtop{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin-bottom:9px}
-    .qcount{font-size:13px;color:#475467;margin-bottom:8px}
+    .qcount{font-size:13px;color:#475467;margin-bottom:8px;overflow-wrap:anywhere}
     .question{font-size:18px;font-weight:700;line-height:1.75;margin:0 0 12px}
     .img-wrap{position:relative;margin:0 0 16px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#eef1f5;cursor:zoom-in;line-height:0}
     .img-wrap img{display:block;width:100%;height:auto}
@@ -112,6 +112,18 @@
     .modal-caption{color:#f2f4f7;font-size:13px;text-align:center;margin-top:10px}
     @media(max-width:680px){.app{padding-left:calc(10px + env(safe-area-inset-left));padding-right:calc(10px + env(safe-area-inset-right))}.header{display:block}.title{font-size:21px}.mini{padding-top:2px;text-align:left}.controls{grid-template-columns:1fr}.card{border-radius:15px;padding:14px}.question{font-size:17px}.actions{flex-direction:column}.actions .btn{min-width:0}.score{font-size:50px}.option{padding:12px 11px}.chip{padding:8px 11px}.modal-close{top:-48px;right:0}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+    #versionBadge{display:none;position:fixed;right:8px;bottom:calc(6px + env(safe-area-inset-bottom));font-size:10px;color:#98a2b3;background:rgba(255,255,255,.85);border:1px solid #eaecf0;border-radius:999px;padding:3px 9px;pointer-events:none;z-index:500}
+    #updateBanner{display:none;position:sticky;top:0;z-index:900;align-items:center;justify-content:space-between;gap:10px;background:#155eef;color:#fff;padding:10px 14px;font-size:13px;border-radius:0 0 12px 12px;margin:0 0 14px}
+    #updateBanner .btn{width:auto;min-height:36px;padding:6px 14px;font-size:13px;background:#fff;color:#155eef;border-color:#fff}
+    .credits-link{background:none;border:none;padding:0;color:#98a2b3;font-size:11px;text-decoration:underline;cursor:pointer}
+    .credits-content{max-width:min(92vw,640px);max-height:86vh;overflow-y:auto;background:#fff;border-radius:14px;padding:20px}
+    .credits-panel h2{font-size:17px;margin:0 0 10px}
+    .credits-panel p{font-size:13px;color:#475467;margin:0 0 14px}
+    .credit-item{border-top:1px solid #eaecf0;padding:10px 0;font-size:13px}
+    .credit-item:first-child{border-top:none}
+    .credit-item .credit-title{font-weight:700;color:var(--text)}
+    .credit-item .credit-meta{color:#667085;margin-top:2px}
+    .credit-item .credit-meta a{color:#155eef}
   </style>
 </head>
 <body>
@@ -124,6 +136,7 @@
     <div class="mini" id="miniScore" aria-live="polite"></div>
   </header>
 
+  <div id="updateBanner"><span>新しいバージョンが利用できます。</span><button type="button" class="btn" id="updateReloadBtn">更新して読み込み直す</button></div>
   <div class="notice show" id="fileNotice">学生の皆さんへ：このアプリは配布されたHTMLファイルを直接開くのではなく、GitHub PagesのURLをSafari等のブラウザで開いて利用してください。</div>
   <div class="notice error" id="loadError" role="alert"></div>
 
@@ -150,14 +163,26 @@
     <div class="card loading-card" id="initialLoading">問題データを読み込んでいます…</div>
   </main>
   <div class="homehint">iPhone／iPad：Safariで開き、共有 →「ホーム画面に追加」でアプリのように利用できます。</div>
-  <div class="footer">学習用Webアプリ｜問題・解説データは data/questions_v1.json を利用</div>
+  <div class="footer">学習用Webアプリ｜問題・解説データは data/questions_v1.json を利用｜<button type="button" class="credits-link" id="creditsOpenBtn">画像の出典・ライセンス</button></div>
 </div>
+<div id="versionBadge" aria-hidden="true"></div>
 
 <div class="modal-backdrop" id="zoomModal" style="display:none" role="dialog" aria-modal="true" aria-label="画像の拡大表示">
   <div class="modal-content">
     <button type="button" class="modal-close" id="zoomClose" aria-label="拡大表示を閉じる">✕</button>
     <div class="img-wrap" id="zoomImgWrap"></div>
     <div class="modal-caption" id="zoomCaption"></div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="creditsModal" style="display:none" role="dialog" aria-modal="true" aria-label="画像の出典・ライセンス">
+  <div class="modal-content credits-content">
+    <button type="button" class="modal-close" id="creditsClose" aria-label="閉じる">✕</button>
+    <div class="credits-panel">
+      <h2>画像の出典・ライセンス</h2>
+      <p>このアプリの解剖学イラストの一部は、以下のオープンライセンス素材を利用しています（改変・トリミング・WebP変換のうえ使用）。</p>
+      <div id="creditsList"></div>
+    </div>
   </div>
 </div>
 

@@ -28,15 +28,18 @@ function warn(msg) { warnings.push(msg); }
 const qs = data.questions;
 
 // -- total / id sequence --------------------------------------------------
-if (qs.length !== 300) fail(`total questions = ${qs.length}, expected 300`);
-if (data.question_count !== 300) fail(`question_count = ${data.question_count}, expected 300`);
+// v2.0.1: 11 new image_mcq (Q301-Q311) added, extracted from existing
+// high-quality open-license assets rather than forced onto unrelated text
+// questions -- see docs/v2.0.1_expansion_log.md. 300 -> 311.
+if (qs.length !== 311) fail(`total questions = ${qs.length}, expected 311`);
+if (data.question_count !== 311) fail(`question_count = ${data.question_count}, expected 311`);
 
 const idSet = new Set();
 qs.forEach(q => {
   if (idSet.has(q.id)) fail(`duplicate id ${q.id}`);
   idSet.add(q.id);
 });
-for (let n = 1; n <= 300; n++) {
+for (let n = 1; n <= 311; n++) {
   const id = 'Q' + String(n).padStart(3, '0');
   if (!idSet.has(id)) fail(`missing id ${id}`);
 }
@@ -48,7 +51,7 @@ qs.forEach(q => {
   if (!validCats.includes(q.category)) fail(`${q.id}: invalid category "${q.category}"`);
   catCount[q.category] = (catCount[q.category] || 0) + 1;
 });
-const expectCat = { '総論': 70, '循環器': 85, '呼吸器': 75, '泌尿器': 70 };
+const expectCat = { '総論': 70, '循環器': 88, '呼吸器': 80, '泌尿器': 73 };
 Object.keys(expectCat).forEach(c => {
   if (catCount[c] !== expectCat[c]) fail(`category ${c} count = ${catCount[c]}, expected ${expectCat[c]}`);
 });
@@ -58,7 +61,7 @@ qs.forEach(q => {
   if (![1, 2, 3].includes(q.difficulty)) fail(`${q.id}: invalid difficulty ${q.difficulty}`);
   diffCount[q.difficulty] = (diffCount[q.difficulty] || 0) + 1;
 });
-const expectDiff = { 1: 170, 2: 107, 3: 23 };
+const expectDiff = { 1: 176, 2: 112, 3: 23 };
 Object.keys(expectDiff).forEach(d => {
   if ((diffCount[d] || 0) !== expectDiff[d]) fail(`difficulty ${d} count = ${diffCount[d] || 0}, expected ${expectDiff[d]}`);
 });
@@ -91,12 +94,32 @@ qs.forEach(q => {
   if (!['text_mcq', 'image_mcq'].includes(q.type)) fail(`${q.id}: invalid type "${q.type}"`);
   typeCount[q.type] = (typeCount[q.type] || 0) + 1;
 });
-if ((typeCount.text_mcq || 0) !== 235) fail(`text_mcq count = ${typeCount.text_mcq}, expected 235`);
-if ((typeCount.image_mcq || 0) !== 65) fail(`image_mcq count = ${typeCount.image_mcq}, expected 65`);
+// v2.0.1: Q140 (冠状静脈洞) converted image_mcq -> text_mcq -- no open-license
+// image was found that actually depicts the coronary sinus as an identifiable
+// structure (see docs/v2.0.1_asset_source_log.md), so the question was moved
+// off image_mcq rather than keep an approximate/unverifiable marker.
+// v2.0.1 (expansion pass): +11 new image_mcq (Q301-Q311), each extracted from
+// a structure already visible and markable in an existing asset -- see
+// docs/v2.0.1_expansion_log.md. 64 -> 75.
+// v2.0.1 (R4 peripheral_airway_continuum pass): Q034 (導気部の終点) converted
+// text_mcq -> image_mcq once a real open-license-quality asset made its
+// marker target (終末細気管支, a genuinely smooth alveoli-free segment)
+// uniquely identifiable. 75 -> 76.
+// v2.0.1 (common illustration library batch 1): Q140 (冠状静脈洞) converted
+// text_mcq -> image_mcq once the new C02 posterior heart view made the
+// coronary sinus (running the AV groove, distinct from every neighboring
+// vessel) uniquely identifiable for the first time. 76 -> 77.
+// Nano Banana final integration: Q096 (bladder trigone) and Q290 (detrusor)
+// converted to image_mcq using new U05 bladder-interior master. 77 -> 79.
+// Q053, Q040, and Q231 moved to text after Phone visual review (79 -> 76).
+// Q152 later moved to text because its main-bronchus feature is clearer as a
+// text comparison than as a phone-width marker target (76 -> 75).
+if ((typeCount.text_mcq || 0) !== 236) fail(`text_mcq count = ${typeCount.text_mcq}, expected 236`);
+if ((typeCount.image_mcq || 0) !== 75) fail(`image_mcq count = ${typeCount.image_mcq}, expected 75`);
 
 const catImgCount = {};
 qs.forEach(q => { if (q.type === 'image_mcq') catImgCount[q.category] = (catImgCount[q.category] || 0) + 1; });
-const expectCatImg = { '総論': 10, '循環器': 24, '呼吸器': 17, '泌尿器': 14 };
+const expectCatImg = { '総論': 9, '循環器': 26, '呼吸器': 21, '泌尿器': 19 };
 Object.keys(expectCatImg).forEach(c => {
   if ((catImgCount[c] || 0) !== expectCatImg[c]) fail(`category ${c} image_mcq count = ${catImgCount[c] || 0}, expected ${expectCatImg[c]}`);
 });
@@ -107,7 +130,8 @@ Object.keys(expectCatImg).forEach(c => {
 // whole image *is* the answer (a posture to recognize), not a "point at this
 // structure" question. Do not treat "no overlay" as an error; only warn, and
 // only for QIDs that don't explicitly document why (see marker_target).
-const assetsDir = path.join(REPO, 'assets', 'images');
+const ASSET_PREFIX = 'assets/illustrations/v1/assets/';
+const assetsDir = path.join(REPO, 'assets', 'illustrations', 'v1', 'assets');
 const referencedAssets = new Set();
 let overlayCount = { withOverlay: 0, withoutOverlay: 0, singleOverlay: 0, multiOverlay: 0, markerTotal: 0 };
 const withoutOverlayIds = [];
@@ -123,8 +147,8 @@ qs.forEach(q => {
     if (!img[f] && img[f] !== '') fail(`${q.id}: image.${f} missing`);
   });
   if (!/^IMG-[0-9]{3}$/.test(img.prompt_id)) fail(`${q.id}: invalid prompt_id "${img.prompt_id}"`);
-  if (!img.asset || !img.asset.startsWith('assets/images/')) fail(`${q.id}: image.asset does not start with assets/images/: "${img.asset}"`);
-  const assetFile = img.asset.replace('assets/images/', '');
+  if (!img.asset || !img.asset.startsWith(ASSET_PREFIX)) fail(`${q.id}: image.asset does not start with ${ASSET_PREFIX}: "${img.asset}"`);
+  const assetFile = img.asset.replace(ASSET_PREFIX, '');
   referencedAssets.add(assetFile);
   const fullPath = path.join(assetsDir, assetFile);
   if (!fs.existsSync(fullPath)) fail(`${q.id}: asset file missing on disk: ${fullPath}`);
@@ -154,25 +178,99 @@ qs.forEach(q => {
   });
 });
 
-if (referencedAssets.size !== 27) fail(`unique referenced assets = ${referencedAssets.size}, expected 27`);
+// v2.0.1 image-quality re-evaluation pass: heart_valves_schematic.webp
+// (self-made SVG) was retired. Q129 later moved from the shared C03 chamber
+// image to a dedicated C11 close-up of chordae tendineae and papillary muscle.
+// q016_apex.webp (self-made
+// SVG) was likewise retired in favour of reusing heart_exterior_anterior.webp
+// (Q016's apex marker added alongside Q138's existing marker on that asset).
+// 28 -> 26 unique assets is the deliberate result (two self-made assets
+// discarded, zero new ones added).
+// v2.0.1 (common illustration library batch 2 -- 泌尿器 U1/U2/U3 consolidation):
+// U01 (renal hilum, Q045-only) was merged into U04 (kidney coronal section --
+// Q045's marker now sits on the same coronal image's hilum notch), and U02/U03/
+// U04 were all revised to new custom-generated images. 26 -> 25 unique assets
+// (one master retired, zero new ones added). See
+// docs/common_illustration_library_v1_implementation_log.md and
+// docs/v2.0.1_asset_source_log.md.
+// v2.0.1 (common illustration library batch 3 -- 呼吸器 R1/R2-A/R2-C
+// consolidation): R03 (肺葉) and R04 (気管支分岐) were merged into a single
+// custom-generated R03 (肺外観・気管支樹統合図), renumbering the former R05/
+// R06/R07 down to R04/R05/R06 (25 -> 24 unique assets: two old masters
+// discarded, one new one added). Separately, R01 (喉頭外観と上下気道) was
+// split -- Q032 moved off to a new R08 (上気道矢状断) and Q304/Q305/Q306
+// moved off to a new R09 (喉頭外観・前面), leaving R01 with only Q256（喉頭蓋,
+// pending a still-unreviewed R2-B master). R02 was revised to a new
+// custom-generated laryngoscopic image that -- unlike its Servier predecessor
+// -- makes the true vocal folds, the vestibular folds, and the rima glottidis
+// all separately identifiable (Q307's marker moved off the fold tissue onto
+// the glottic chink itself). 24 -> 26 unique assets (two new masters added,
+// zero retired). See docs/common_illustration_library_v1_implementation_log.md
+// and docs/v2.0.1_asset_source_log.md.
+// Nano Banana final integration adds U05 for Q096/Q290. 26 -> 27.
+// Q129's dedicated C11 and Q176's dedicated U06 masters add two further
+// assets. Q231's text conversion retired C10 (29 -> 28), then Q064's
+// dedicated C12 four-chamber master restored the total to 29. R07 then split
+// Q077/Q153 bronchial hierarchy targets from R03, bringing the total to 30.
+if (referencedAssets.size !== 30) fail(`unique referenced assets = ${referencedAssets.size}, expected 30`);
 
 const allFiles = fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir).filter(f => f.endsWith('.webp')) : [];
 allFiles.forEach(f => { if (!referencedAssets.has(f)) warn(`asset file not referenced by any question: ${f}`); });
 
-// Q129 must use the schematic, not the real photo.
+// Q129 uses a dedicated close-up so both chordae tendineae and papillary
+// muscle remain independently identifiable on a phone display.
 const q129 = qs.find(q => q.id === 'Q129');
-if (!q129 || !q129.image || q129.image.asset !== 'assets/images/heart_valves_schematic.webp') {
-  fail(`Q129 must use assets/images/heart_valves_schematic.webp, got: ${q129 && q129.image && q129.image.asset}`);
+if (!q129 || !q129.image || q129.image.asset !== 'assets/illustrations/v1/assets/c11_av_valve_chordae_papillary.webp') {
+  fail(`Q129 must use dedicated C11 AV-valve master, got: ${q129 && q129.image && q129.image.asset}`);
 }
 
-// The 5 pre-existing real-photo assets' Q001-Q100 overlays must never drift.
+// Q176 uses a dedicated renal-corpuscle close-up so Bowman's capsule wall
+// remains distinct from the glomerular tuft at phone width.
+const q176 = qs.find(q => q.id === 'Q176');
+if (!q176 || !q176.image || q176.image.asset !== 'assets/illustrations/v1/assets/u06_renal_corpuscle.webp') {
+  fail(`Q176 must use dedicated U06 renal-corpuscle master, got: ${q176 && q176.image && q176.image.asset}`);
+}
+
+// Q064 uses a dedicated four-chamber cutaway so all four cavity markers remain
+// independently identifiable at phone width without covering valve apparatus.
+const q064 = qs.find(q => q.id === 'Q064');
+if (!q064 || !q064.image || q064.image.asset !== 'assets/illustrations/v1/assets/c12_heart_four_chambers.webp') {
+  fail(`Q064 must use dedicated C12 four-chamber master, got: ${q064 && q064.image && q064.image.asset}`);
+}
+
+const q077 = qs.find(q => q.id === 'Q077');
+const q153 = qs.find(q => q.id === 'Q153');
+const r07Asset = 'assets/illustrations/v1/assets/r07_bronchial_tree.webp';
+if (!q077 || !q077.image || q077.image.asset !== r07Asset) {
+  fail(`Q077 must use dedicated R07 bronchial-tree master, got: ${q077 && q077.image && q077.image.asset}`);
+}
+if (!q153 || !q153.image || q153.image.asset !== r07Asset) {
+  fail(`Q153 must use dedicated R07 bronchial-tree master, got: ${q153 && q153.image && q153.image.asset}`);
+}
+const q152 = qs.find(q => q.id === 'Q152');
+if (!q152 || q152.type !== 'text_mcq' || q152.image) {
+  fail('Q152 must be text_mcq with no image block');
+}
+
+// The 5 pre-existing real-photo assets' Q001-Q100 overlays must never drift
+// -- EXCEPT when an asset is deliberately upgraded, in which case this
+// baseline is updated in the same commit as the intentional change (same
+// pattern used throughout this project's history). Q017's baseline was
+// updated for the "common illustration library batch 1" C03 replacement.
+// Q064 was later moved to the dedicated C12 four-chamber master and its four
+// cavity-marker coordinates were re-measured on that image.
+// Q048 baseline was updated for the "common illustration library batch 2"
+// pass: u02_nephron.webp was replaced with a higher-quality custom-generated
+// nephron diagram and the renal-corpuscle marker was re-measured on the new
+// file by pixel sampling (previous baseline, now historical: {x:0.19,y:0.135}).
 const BASELINE_OVERLAYS = {
   Q002: [{ x: 0.08, y: 0.46, label: '①' }, { x: 0.28, y: 0.46, label: '②' }, { x: 0.48, y: 0.43, label: '③' }, { x: 0.7, y: 0.45, label: '④' }, { x: 0.91, y: 0.47, label: '⑤' }],
   Q004: [{ x: 0.5, y: 0.46, label: '①' }],
-  Q017: [{ x: 0.62, y: 0.67, label: '①' }],
+  // Playtest correction: move off the papillary muscle into the LV cavity.
+  Q017: [{ x: 0.5533, y: 0.6185, label: '①' }],
   Q037: [{ x: 0.385, y: 0.57, label: '①' }],
-  Q048: [{ x: 0.19, y: 0.135, label: '①' }],
-  Q064: [{ x: 0.32, y: 0.46, label: '①' }, { x: 0.38, y: 0.73, label: '②' }, { x: 0.63, y: 0.38, label: '③' }, { x: 0.62, y: 0.67, label: '④' }],
+  Q048: [{ x: 0.3196, y: 0.207, label: '①' }],
+  Q064: [{ x: 0.2109, y: 0.4667, label: '①' }, { x: 0.3571, y: 0.6667, label: '②' }, { x: 0.692, y: 0.3958, label: '③' }, { x: 0.692, y: 0.6417, label: '④' }],
 };
 Object.keys(BASELINE_OVERLAYS).forEach(id => {
   const q = qs.find(x => x.id === id);
@@ -185,7 +283,7 @@ Object.keys(BASELINE_OVERLAYS).forEach(id => {
     fail(`${id}: overlay drifted from the preserved baseline. current=${JSON.stringify(overlays)} baseline=${JSON.stringify(BASELINE_OVERLAYS[id])}`);
   }
 });
-const PRESERVED_5 = ['q002_hierarchy.webp', 'q004_epithelium.webp', 'q017_heart_chambers.webp', 'q037_alveolar_gas_exchange.webp', 'q048_nephron.webp'];
+const PRESERVED_5 = ['g01_organization_levels.webp', 'g02_epithelium.webp', 'c03_heart_chambers.webp', 'r05_alveolar_gas_exchange.webp', 'u02_nephron.webp'];
 PRESERVED_5.forEach(f => {
   if (!fs.existsSync(path.join(assetsDir, f))) fail(`preserved asset missing on disk: ${f}`);
 });

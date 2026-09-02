@@ -1,8 +1,8 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.1",
   "title": "人体の構造と機能A クイズ 全300問",
   "language": "ja",
-  "question_count": 300,
+  "question_count": 311,
   "difficulty_scale": {
     "1": "基礎",
     "2": "標準",
@@ -77,7 +77,7 @@
       ],
       "image": {
         "prompt_id": "IMG-001",
-        "asset": "assets/images/q002_hierarchy.webp",
+        "asset": "assets/illustrations/v1/assets/g01_organization_levels.webp",
         "alt": "人体の構成段階を示す5段階の模式図",
         "marker": "①〜⑤",
         "marker_target": "細胞→組織→器官→器官系→個体の各段階",
@@ -174,7 +174,7 @@
       ],
       "image": {
         "prompt_id": "IMG-002",
-        "asset": "assets/images/q004_epithelium.webp",
+        "asset": "assets/illustrations/v1/assets/g02_epithelium.webp",
         "alt": "上皮組織とその下の結合組織を示す模式図",
         "marker": "①",
         "marker_target": "最表層の上皮組織",
@@ -288,7 +288,7 @@
       "subcategory": "人体の面",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "図中Aのように、人体を前方と後方に分ける面はどれか。",
+      "question": "図中①のように、人体を前方と後方に分ける面はどれか。",
       "choices": [
         {
           "id": "A",
@@ -316,13 +316,13 @@
       ],
       "image": {
         "prompt_id": "IMG-003",
-        "asset": "assets/images/q008_body_planes.webp",
-        "alt": "人体の3断面（矢状面・冠状面・水平面）を示す模式図",
+        "asset": "assets/illustrations/v1/assets/g03_body_planes.webp",
+        "alt": "実際の人体モデルに矢状面・冠状面・水平面の3断面を重ねた図（OpenStax Anatomy and Physiology, CC BY 4.0）",
         "marker": "①",
         "marker_target": "冠状面",
         "overlay": {
-          "x": 0.3929,
-          "y": 0.3333,
+          "x": 0.2,
+          "y": 0.24,
           "label": "①"
         }
       }
@@ -393,13 +393,13 @@
       ],
       "image": {
         "prompt_id": "IMG-004",
-        "asset": "assets/images/q011_germ_layers.webp",
-        "alt": "3胚葉（外胚葉・中胚葉・内胚葉）の同心円状の模式図",
+        "asset": "assets/illustrations/v1/assets/g04_germ_layers.webp",
+        "alt": "三胚葉の胚盤断面立体模式図（外胚葉・中胚葉・内胚葉の3層が色分けされた円柱状カットモデル）",
         "marker": "②",
         "marker_target": "中胚葉（中層）",
         "overlay": {
-          "x": 0.6875,
-          "y": 0.5,
+          "x": 0.5,
+          "y": 0.505,
           "label": "②"
         }
       }
@@ -437,13 +437,13 @@
       ],
       "image": {
         "prompt_id": "IMG-004",
-        "asset": "assets/images/q011_germ_layers.webp",
-        "alt": "3胚葉（外胚葉・中胚葉・内胚葉）の同心円状の模式図",
+        "asset": "assets/illustrations/v1/assets/g04_germ_layers.webp",
+        "alt": "三胚葉の胚盤断面立体模式図（外胚葉・中胚葉・内胚葉の3層が色分けされた円柱状カットモデル）",
         "marker": "①",
         "marker_target": "最外層（外胚葉）",
         "overlay": {
-          "x": 0.8583,
-          "y": 0.5,
+          "x": 0.5,
+          "y": 0.43,
           "label": "①"
         }
       }
@@ -584,7 +584,7 @@
       "subcategory": "心臓の位置",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "図中①で示された、左第5肋間の鎖骨中線付近で拍動を触知できる部位はどれか。",
+      "question": "図中②で示された、左第5肋間の鎖骨中線付近で拍動を触知できる部位はどれか。",
       "choices": [
         {
           "id": "A",
@@ -610,15 +610,15 @@
         "心臓"
       ],
       "image": {
-        "prompt_id": "IMG-005",
-        "asset": "assets/images/q016_apex.webp",
-        "alt": "胸壁と肋間を背景に心臓の概形を示す模式図",
-        "marker": "①",
+        "prompt_id": "IMG-025",
+        "asset": "assets/illustrations/v1/assets/c01_heart_exterior_anterior.webp",
+        "alt": "心臓を前面から見た外形模式図（心尖・上大静脈・肺動脈幹・冠状動脈まで確認できる高精細イラスト）",
+        "marker": "②",
         "marker_target": "心尖",
         "overlay": {
-          "x": 0.6927,
-          "y": 0.5385,
-          "label": "①"
+          "x": 0.6135,
+          "y": 0.9688,
+          "label": "②"
         }
       }
     },
@@ -655,13 +655,13 @@
       ],
       "image": {
         "prompt_id": "IMG-006",
-        "asset": "assets/images/q017_heart_chambers.webp",
-        "alt": "4つの心腔を示す心臓断面模式図",
+        "asset": "assets/illustrations/v1/assets/c03_heart_chambers.webp",
+        "alt": "4心腔・房室弁・腱索・乳頭筋・心室中隔を示す心臓断面模式図",
         "marker": "①",
         "marker_target": "左心室",
         "overlay": {
-          "x": 0.62,
-          "y": 0.67,
+          "x": 0.5533,
+          "y": 0.6185,
           "label": "①"
         }
       }
@@ -730,14 +730,14 @@
         "肺循環"
       ],
       "image": {
-        "prompt_id": "IMG-007",
-        "asset": "assets/images/q019_pulmonary_vein.webp",
-        "alt": "肺静脈が左心房へ入る経路を示す模式図",
+        "prompt_id": "IMG-026",
+        "asset": "assets/illustrations/v1/assets/c02_heart_exterior_posterior.webp",
+        "alt": "心臓を後面から見た外形模式図（左右肺静脈4本・下大静脈・冠状静脈洞まで確認できる高精細イラスト）",
         "marker": "①",
         "marker_target": "肺から左心房へ入る肺静脈",
         "overlay": {
-          "x": 0.2857,
-          "y": 0.32,
+          "x": 0.1847,
+          "y": 0.2438,
           "label": "①"
         }
       }
@@ -775,13 +775,13 @@
       ],
       "image": {
         "prompt_id": "IMG-008",
-        "asset": "assets/images/q021_vessel_cross_sections.webp",
-        "alt": "動脈・静脈・毛細血管の断面を比較する模式図",
+        "asset": "assets/illustrations/v1/assets/c06_vessel_cross_sections.webp",
+        "alt": "動脈・静脈（静脈弁を含む）・毛細血管の血管壁を比較する断面図（左から動脈・静脈・毛細血管）",
         "marker": "③",
         "marker_target": "静脈",
         "overlay": {
-          "x": 0.61,
-          "y": 0.5,
+          "x": 0.4199,
+          "y": 0.7178,
           "label": "③"
         }
       }
@@ -819,13 +819,13 @@
       ],
       "image": {
         "prompt_id": "IMG-008",
-        "asset": "assets/images/q021_vessel_cross_sections.webp",
-        "alt": "動脈・静脈・毛細血管の断面を比較する模式図",
+        "asset": "assets/illustrations/v1/assets/c06_vessel_cross_sections.webp",
+        "alt": "動脈・静脈（静脈弁を含む）・毛細血管の血管壁を比較する断面図（左から動脈・静脈・毛細血管）",
         "marker": "①",
         "marker_target": "毛細血管",
         "overlay": {
-          "x": 0.8607,
-          "y": 0.5,
+          "x": 0.8789,
+          "y": 0.2832,
           "label": "①"
         }
       }
@@ -896,13 +896,13 @@
       ],
       "image": {
         "prompt_id": "IMG-020",
-        "asset": "assets/images/q068_ecg_waveform.webp",
-        "alt": "心電図の基本波形（P波・QRS群・T波）を示す模式図",
+        "asset": "assets/illustrations/v1/assets/c07_ecg_waveform.webp",
+        "alt": "方眼上にP波・QRS群・T波を3周期示す標準心電図模式図",
         "marker": "②",
         "marker_target": "P波",
         "overlay": {
-          "x": 0.1286,
-          "y": 0.5357,
+          "x": 0.4126,
+          "y": 0.5781,
           "label": "②"
         }
       }
@@ -940,13 +940,13 @@
       ],
       "image": {
         "prompt_id": "IMG-020",
-        "asset": "assets/images/q068_ecg_waveform.webp",
-        "alt": "心電図の基本波形（P波・QRS群・T波）を示す模式図",
+        "asset": "assets/illustrations/v1/assets/c07_ecg_waveform.webp",
+        "alt": "方眼上にP波・QRS群・T波を3周期示す標準心電図模式図",
         "marker": "③",
         "marker_target": "QRS群",
         "overlay": {
-          "x": 0.2493,
-          "y": 0.3143,
+          "x": 0.4844,
+          "y": 0.3229,
           "label": "③"
         }
       }
@@ -984,13 +984,13 @@
       ],
       "image": {
         "prompt_id": "IMG-009",
-        "asset": "assets/images/q025_conduction_system.webp",
-        "alt": "刺激伝導系の経路を示す模式図",
+        "asset": "assets/illustrations/v1/assets/c05_conduction_system.webp",
+        "alt": "洞房結節から房室結節・房室束・左右脚・プルキンエ線維へ続く心刺激伝導系模式図",
         "marker": "①",
         "marker_target": "右心房上部の洞房結節",
         "overlay": {
-          "x": 0.2417,
-          "y": 0.1909,
+          "x": 0.3864,
+          "y": 0.3945,
           "label": "①"
         }
       }
@@ -1223,14 +1223,14 @@
         "上気道"
       ],
       "image": {
-        "prompt_id": "IMG-010",
-        "asset": "assets/images/q032_larynx.webp",
-        "alt": "喉頭の前面図（冠状断面窓に声帯を表示）",
+        "prompt_id": "IMG-029",
+        "asset": "assets/illustrations/v1/assets/r08_upper_airway_sagittal.webp",
+        "alt": "頭頸部正中矢状断（鼻腔・咽頭・喉頭・気管・食道が確認できる模式図）",
         "marker": "①",
         "marker_target": "喉頭",
         "overlay": {
-          "x": 0.3111,
-          "y": 0.3692,
+          "x": 0.565,
+          "y": 0.615,
           "label": "①"
         }
       }
@@ -1271,9 +1271,9 @@
       "id": "Q034",
       "category": "呼吸器",
       "subcategory": "導気部",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 2,
-      "question": "導気部の終点にあたるものはどれか。",
+      "question": "末梢気道の連続図の①で示された、導気部の終点にあたる部位はどれか。",
       "choices": [
         {
           "id": "A",
@@ -1294,6 +1294,18 @@
       ],
       "answer": "C",
       "explanation": "終末細気管支までが導気部で、その先の呼吸細気管支から呼吸部が始まる。",
+      "image": {
+        "prompt_id": "IMG-014",
+        "asset": "assets/illustrations/v1/assets/r04_peripheral_airway_continuum.webp",
+        "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
+        "marker": "①",
+        "marker_target": "終末細気管支",
+        "overlay": {
+          "x": 0.1874,
+          "y": 0.1125,
+          "label": "①"
+        }
+      },
       "tags": [
         "終末細気管支",
         "導気部"
@@ -1333,13 +1345,13 @@
       ],
       "image": {
         "prompt_id": "IMG-011",
-        "asset": "assets/images/q035_right_middle_lobe.webp",
-        "alt": "左右肺の肺葉構成を示す前面模式図",
+        "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
+        "alt": "肺葉・肺裂と気管支樹を統合した前面図（患者右は画像左）",
         "marker": "①",
         "marker_target": "右肺中葉",
         "overlay": {
-          "x": 0.2143,
-          "y": 0.4958,
+          "x": 0.2441,
+          "y": 0.5208,
           "label": "①"
         }
       }
@@ -1378,19 +1390,19 @@
       ],
       "image": {
         "prompt_id": "IMG-011",
-        "asset": "assets/images/q035_right_middle_lobe.webp",
-        "alt": "左右肺の肺葉構成を示す前面模式図",
+        "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
+        "alt": "肺葉・肺裂と気管支樹を統合した前面図（患者右は画像左）",
         "marker": "④",
         "marker_target": "肺葉数（右3葉・左2葉）",
         "overlays": [
           {
-            "x": 0.2143,
-            "y": 0.375,
+            "x": 0.2637,
+            "y": 0.332,
             "label": "④a"
           },
           {
-            "x": 0.7714,
-            "y": 0.375,
+            "x": 0.7383,
+            "y": 0.332,
             "label": "④b"
           }
         ]
@@ -1430,7 +1442,7 @@
       ],
       "image": {
         "prompt_id": "IMG-012",
-        "asset": "assets/images/q037_alveolar_gas_exchange.webp",
+        "asset": "assets/illustrations/v1/assets/r05_alveolar_gas_exchange.webp",
         "alt": "肺胞と周囲毛細血管間のガス移動を示す模式図",
         "marker": "①",
         "marker_target": "肺胞から血液へ向かう矢印",
@@ -1510,45 +1522,33 @@
       "id": "Q040",
       "category": "呼吸器",
       "subcategory": "気道分岐",
-      "type": "image_mcq",
+      "type": "text_mcq",
       "difficulty": 2,
-      "question": "気道分岐図の①で示された「呼吸部の始まり」にあたる部位はどれか。",
+      "question": "終末細気管支の遠位に続き、壁の一部に肺胞が開口する構造はどれか。",
       "choices": [
         {
           "id": "A",
-          "text": "主気管支"
+          "text": "呼吸細気管支"
         },
         {
           "id": "B",
-          "text": "区域気管支"
-        },
-        {
-          "id": "C",
           "text": "終末細気管支"
         },
         {
+          "id": "C",
+          "text": "肺胞道"
+        },
+        {
           "id": "D",
-          "text": "呼吸細気管支"
+          "text": "主気管支"
         }
       ],
-      "answer": "D",
-      "explanation": "終末細気管支までが導気部の末端であり、その先に続く呼吸細気管支から肺胞を壁の一部に持つようになり、呼吸部が始まる。",
+      "answer": "A",
+      "explanation": "呼吸細気管支は終末細気管支に続き、壁の一部に肺胞が開口するため、ここからガス交換に関わる呼吸部が始まる。さらに末梢では肺胞道へ移行する。",
       "tags": [
         "呼吸細気管支",
         "気道分岐"
-      ],
-      "image": {
-        "prompt_id": "IMG-013",
-        "asset": "assets/images/q040_airway_branching.webp",
-        "alt": "気道分岐（気管〜終末細気管支）を示す模式図",
-        "marker": "①",
-        "marker_target": "呼吸細気管支",
-        "overlay": {
-          "x": 0.1571,
-          "y": 0.3769,
-          "label": "①"
-        }
-      }
+      ]
     },
     {
       "id": "Q041",
@@ -1556,7 +1556,7 @@
       "subcategory": "肺胞",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "図中①で示された、複数の肺胞が集合した最末端部はどれか。",
+      "question": "末梢気道の連続図の④で示された、複数の肺胞が集合した最末端部はどれか。",
       "choices": [
         {
           "id": "A",
@@ -1583,14 +1583,14 @@
       ],
       "image": {
         "prompt_id": "IMG-014",
-        "asset": "assets/images/q041_alveolar_sac.webp",
-        "alt": "終末呼吸単位（肺胞管・肺胞嚢）を示す模式図",
-        "marker": "①",
+        "asset": "assets/illustrations/v1/assets/r04_peripheral_airway_continuum.webp",
+        "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
+        "marker": "④",
         "marker_target": "肺胞嚢",
         "overlay": {
-          "x": 0.4167,
-          "y": 0.5333,
-          "label": "①"
+          "x": 0.15,
+          "y": 0.7688,
+          "label": "④"
         }
       }
     },
@@ -1725,14 +1725,14 @@
         "腎臓"
       ],
       "image": {
-        "prompt_id": "IMG-015",
-        "asset": "assets/images/q045_renal_hilum.webp",
-        "alt": "腎臓を内側（腎門側）から見た模式図",
+        "prompt_id": "IMG-019",
+        "asset": "assets/illustrations/v1/assets/u04_kidney_cross_section.webp",
+        "alt": "腎被膜・皮質・錐体・腎杯・腎盂・腎門と血管を示した腎臓冠状断模式図",
         "marker": "①",
         "marker_target": "腎門",
         "overlay": {
-          "x": 0.705,
-          "y": 0.5083,
+          "x": 0.7012,
+          "y": 0.4268,
           "label": "①"
         }
       }
@@ -1838,13 +1838,13 @@
       ],
       "image": {
         "prompt_id": "IMG-016",
-        "asset": "assets/images/q048_nephron.webp",
-        "alt": "腎小体・尿細管・集合管を示すネフロン模式図",
+        "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
         "marker": "①",
         "marker_target": "腎小体",
         "overlay": {
-          "x": 0.19,
-          "y": 0.135,
+          "x": 0.3196,
+          "y": 0.207,
           "label": "①"
         }
       }
@@ -1914,13 +1914,13 @@
       ],
       "image": {
         "prompt_id": "IMG-017",
-        "asset": "assets/images/q050_urinary_system.webp",
+        "asset": "assets/illustrations/v1/assets/u03_urinary_system.webp",
         "alt": "泌尿器系全体（腎臓・尿管・膀胱）を示す模式図",
         "marker": "①",
         "marker_target": "尿管",
         "overlay": {
-          "x": 0.4333,
-          "y": 0.4643,
+          "x": 0.6553,
+          "y": 0.3581,
           "label": "①"
         }
       }
@@ -1957,8 +1957,8 @@
       ],
       "image": {
         "prompt_id": "IMG-021",
-        "asset": "assets/images/anatomical_position.webp",
-        "alt": "解剖学的正位（直立・正面視・手掌前方）を示す全身模式図",
+        "asset": "assets/illustrations/v1/assets/g05_anatomical_position.webp",
+        "alt": "解剖学的正位（直立・正面視・手掌前方）を示す全身写真的イラスト",
         "marker": "",
         "marker_target": "(overlayなし。正位の定義選択問題)"
       }
@@ -1999,9 +1999,9 @@
       "id": "Q053",
       "category": "総論",
       "subcategory": "人体の面",
-      "type": "image_mcq",
+      "type": "text_mcq",
       "difficulty": 1,
-      "question": "図中①のように、身体を左右に分ける面はどれか。",
+      "question": "身体を左右に分ける面はどれか。",
       "choices": [
         {
           "id": "A",
@@ -2017,27 +2017,15 @@
         },
         {
           "id": "D",
-          "text": "正中面"
+          "text": "斜断面"
         }
       ],
       "answer": "A",
-      "explanation": "矢状面は身体を左右に分ける面である。正中を通るものを特に正中面という。",
+      "explanation": "矢状面は身体を左右に分ける面である。正中を通る矢状面を特に正中面という。",
       "tags": [
         "矢状面",
         "身体面"
-      ],
-      "image": {
-        "prompt_id": "IMG-003",
-        "asset": "assets/images/q008_body_planes.webp",
-        "alt": "人体の3断面（矢状面・冠状面・水平面）を示す模式図",
-        "marker": "②",
-        "marker_target": "矢状面パネル",
-        "overlay": {
-          "x": 0.5,
-          "y": 0.3333,
-          "label": "②"
-        }
-      }
+      ]
     },
     {
       "id": "Q054",
@@ -2045,7 +2033,7 @@
       "subcategory": "人体の面",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "図中①のように、身体を上下に分ける面はどれか。",
+      "question": "図中③のように、身体を上下に分ける面はどれか。",
       "choices": [
         {
           "id": "A",
@@ -2072,13 +2060,13 @@
       ],
       "image": {
         "prompt_id": "IMG-003",
-        "asset": "assets/images/q008_body_planes.webp",
-        "alt": "人体の3断面（矢状面・冠状面・水平面）を示す模式図",
+        "asset": "assets/illustrations/v1/assets/g03_body_planes.webp",
+        "alt": "実際の人体モデルに矢状面・冠状面・水平面の3断面を重ねた図（OpenStax Anatomy and Physiology, CC BY 4.0）",
         "marker": "③",
         "marker_target": "水平面パネル",
         "overlay": {
-          "x": 0.6557,
-          "y": 0.3133,
+          "x": 0.7372,
+          "y": 0.3875,
           "label": "③"
         }
       }
@@ -2375,13 +2363,13 @@
       ],
       "image": {
         "prompt_id": "IMG-022",
-        "asset": "assets/images/direction_terms.webp",
-        "alt": "方向用語（内側・外側／前方・後方）を示す模式図",
+        "asset": "assets/illustrations/v1/assets/g06_direction_terms.webp",
+        "alt": "完全側面の人体と前方・後方を示す2本の矢印",
         "marker": "②",
         "marker_target": "前方・後方を示す矢印（側面図）",
         "overlay": {
-          "x": 0.7719,
-          "y": 0.3333,
+          "x": 0.5753,
+          "y": 0.3021,
           "label": "②"
         }
       }
@@ -2421,30 +2409,30 @@
         "心腔"
       ],
       "image": {
-        "prompt_id": "IMG-006",
-        "asset": "assets/images/q017_heart_chambers.webp",
-        "alt": "4つの心腔を示す心臓断面模式図",
+        "prompt_id": "IMG-034",
+        "asset": "assets/illustrations/v1/assets/c12_heart_four_chambers.webp",
+        "alt": "右心房・右心室・左心房・左心室の内腔を大きく示す心臓断面模式図",
         "marker": "①②③④",
         "marker_target": "右心房・右心室・左心房・左心室（4か所）",
         "overlays": [
           {
-            "x": 0.32,
-            "y": 0.46,
+            "x": 0.2109,
+            "y": 0.4667,
             "label": "①"
           },
           {
-            "x": 0.38,
-            "y": 0.73,
+            "x": 0.3571,
+            "y": 0.6667,
             "label": "②"
           },
           {
-            "x": 0.63,
-            "y": 0.38,
+            "x": 0.692,
+            "y": 0.3958,
             "label": "③"
           },
           {
-            "x": 0.62,
-            "y": 0.67,
+            "x": 0.692,
+            "y": 0.6417,
             "label": "④"
           }
         ]
@@ -2483,20 +2471,20 @@
         "僧帽弁"
       ],
       "image": {
-        "prompt_id": "IMG-023",
-        "asset": "assets/images/heart_valves_schematic.webp",
-        "alt": "心臓弁と腱索・乳頭筋を示す模式図",
+        "prompt_id": "IMG-028",
+        "asset": "assets/illustrations/v1/assets/c04_heart_valve_plane.webp",
+        "alt": "心臓弁を弁輪の高さで上方から見た模式図（三尖弁・僧帽弁・肺動脈弁・大動脈弁）",
         "marker": "①",
         "marker_target": "三尖弁・僧帽弁（房室弁）",
         "overlays": [
           {
-            "x": 0.3833,
-            "y": 0.4091,
+            "x": 0.25,
+            "y": 0.29,
             "label": "①a"
           },
           {
-            "x": 0.75,
-            "y": 0.3909,
+            "x": 0.675,
+            "y": 0.29,
             "label": "①b"
           }
         ]
@@ -2535,20 +2523,20 @@
         "大動脈弁"
       ],
       "image": {
-        "prompt_id": "IMG-023",
-        "asset": "assets/images/heart_valves_schematic.webp",
-        "alt": "心臓弁と腱索・乳頭筋を示す模式図",
+        "prompt_id": "IMG-028",
+        "asset": "assets/illustrations/v1/assets/c04_heart_valve_plane.webp",
+        "alt": "心臓弁を弁輪の高さで上方から見た模式図（三尖弁・僧帽弁・肺動脈弁・大動脈弁）",
         "marker": "②",
         "marker_target": "肺動脈弁・大動脈弁（半月弁）",
         "overlays": [
           {
-            "x": 0.2958,
-            "y": 0.3864,
+            "x": 0.5,
+            "y": 0.7871,
             "label": "②a"
           },
           {
-            "x": 0.6792,
-            "y": 0.3682,
+            "x": 0.44,
+            "y": 0.62,
             "label": "②b"
           }
         ]
@@ -2560,7 +2548,7 @@
       "subcategory": "血管",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "3種類の血管断面のうち、厚い壁で弾性線維・平滑筋が豊富な①はどれか。",
+      "question": "3種類の血管断面のうち、厚い壁で弾性線維・平滑筋が豊富な②はどれか。",
       "choices": [
         {
           "id": "A",
@@ -2587,13 +2575,13 @@
       ],
       "image": {
         "prompt_id": "IMG-008",
-        "asset": "assets/images/q021_vessel_cross_sections.webp",
-        "alt": "動脈・静脈・毛細血管の断面を比較する模式図",
+        "asset": "assets/illustrations/v1/assets/c06_vessel_cross_sections.webp",
+        "alt": "動脈・静脈（静脈弁を含む）・毛細血管の血管壁を比較する断面図（左から動脈・静脈・毛細血管）",
         "marker": "②",
         "marker_target": "動脈（3断面中の1つ）",
         "overlay": {
-          "x": 0.2333,
-          "y": 0.5,
+          "x": 0.0651,
+          "y": 0.5371,
           "label": "②"
         }
       }
@@ -2632,13 +2620,13 @@
       ],
       "image": {
         "prompt_id": "IMG-020",
-        "asset": "assets/images/q068_ecg_waveform.webp",
-        "alt": "心電図の基本波形（P波・QRS群・T波）を示す模式図",
+        "asset": "assets/illustrations/v1/assets/c07_ecg_waveform.webp",
+        "alt": "方眼上にP波・QRS群・T波を3周期示す標準心電図模式図",
         "marker": "①",
         "marker_target": "T波",
         "overlay": {
-          "x": 0.4429,
-          "y": 0.4286,
+          "x": 0.5831,
+          "y": 0.5352,
           "label": "①"
         }
       }
@@ -2782,11 +2770,11 @@
       "subcategory": "冠状動脈",
       "type": "image_mcq",
       "difficulty": 2,
-      "question": "冠動脈走行図の①で示された血管が主に栄養することが多い部位として正しいものはどれか。",
+      "question": "冠動脈走行図の④で示された血管が主に栄養することが多い部位として正しいものはどれか。",
       "choices": [
         {
           "id": "A",
-          "text": "左心房・左心室・心室中隔前面など"
+          "text": "左心室前壁・心尖部・心室中隔前方など"
         },
         {
           "id": "B",
@@ -2802,21 +2790,21 @@
         }
       ],
       "answer": "A",
-      "explanation": "左冠動脈は左心系（左心房・左心室）と心室中隔前面などを栄養することが多い。冠動脈の分布・灌流域には個人差があるため、ここでは代表的な傾向として扱う。",
+      "explanation": "前室間枝（LAD）は左冠動脈の主要な枝の一つで、前室間溝を心尖方向へ走行し、主に左心室前壁、心尖部、心室中隔前方などを灌流する。冠動脈の分布には個人差があるため、ここでは代表的な灌流域として扱う。",
       "tags": [
         "冠状動脈",
         "左冠動脈"
       ],
       "image": {
-        "prompt_id": "IMG-018",
-        "asset": "assets/images/q073_coronary_arteries.webp",
-        "alt": "心臓前面の冠状動脈の走行を示す模式図",
-        "marker": "①",
-        "marker_target": "左冠動脈",
+        "prompt_id": "IMG-025",
+        "asset": "assets/illustrations/v1/assets/c01_heart_exterior_anterior.webp",
+        "alt": "心臓を前面から見た外形模式図（心尖・上大静脈・肺動脈幹・冠状動脈まで確認できる高精細イラスト）",
+        "marker": "④",
+        "marker_target": "左冠動脈 前室間枝（LAD）",
         "overlay": {
-          "x": 0.5125,
-          "y": 0.2857,
-          "label": "①"
+          "x": 0.5842,
+          "y": 0.6875,
+          "label": "④"
         }
       }
     },
@@ -2826,7 +2814,7 @@
       "subcategory": "冠状動脈",
       "type": "image_mcq",
       "difficulty": 2,
-      "question": "冠動脈走行図の②で示された血管が主に栄養することが多い部位として正しいものはどれか。",
+      "question": "冠動脈走行図の⑤で示された血管が主に栄養することが多い部位として正しいものはどれか。",
       "choices": [
         {
           "id": "A",
@@ -2852,15 +2840,15 @@
         "右冠動脈"
       ],
       "image": {
-        "prompt_id": "IMG-018",
-        "asset": "assets/images/q073_coronary_arteries.webp",
-        "alt": "心臓前面の冠状動脈の走行を示す模式図",
-        "marker": "②",
+        "prompt_id": "IMG-025",
+        "asset": "assets/illustrations/v1/assets/c01_heart_exterior_anterior.webp",
+        "alt": "心臓を前面から見た外形模式図（心尖・上大静脈・肺動脈幹・冠状動脈まで確認できる高精細イラスト）",
+        "marker": "⑤",
         "marker_target": "右冠動脈",
         "overlay": {
-          "x": 0.2833,
-          "y": 0.2571,
-          "label": "②"
+          "x": 0.2045,
+          "y": 0.5875,
+          "label": "⑤"
         }
       }
     },
@@ -2962,14 +2950,14 @@
         "区域気管支"
       ],
       "image": {
-        "prompt_id": "IMG-013",
-        "asset": "assets/images/q040_airway_branching.webp",
-        "alt": "気道分岐（気管〜終末細気管支）を示す模式図",
+        "prompt_id": "IMG-035",
+        "asset": "assets/illustrations/v1/assets/r07_bronchial_tree.webp",
+        "alt": "気管から主気管支・葉気管支・区域気管支への分岐を示す前面模式図（画像左が人体右）",
         "marker": "②",
         "marker_target": "区域気管支",
         "overlay": {
-          "x": 0.2429,
-          "y": 0.3077,
+          "x": 0.295,
+          "y": 0.366,
           "label": "②"
         }
       }
@@ -3108,7 +3096,7 @@
       "subcategory": "肺葉",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "肺の図の①で示された、右肺の上葉と中葉を分ける裂はどれか。",
+      "question": "肺の図の②で示された、右肺の上葉と中葉を分ける裂はどれか。",
       "choices": [
         {
           "id": "A",
@@ -3135,13 +3123,13 @@
       ],
       "image": {
         "prompt_id": "IMG-011",
-        "asset": "assets/images/q035_right_middle_lobe.webp",
-        "alt": "左右肺の肺葉構成を示す前面模式図",
+        "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
+        "alt": "肺葉・肺裂と気管支樹を統合した前面図（患者右は画像左）",
         "marker": "②",
         "marker_target": "水平裂",
         "overlay": {
-          "x": 0.2143,
-          "y": 0.4375,
+          "x": 0.2051,
+          "y": 0.4401,
           "label": "②"
         }
       }
@@ -3213,7 +3201,7 @@
       ],
       "image": {
         "prompt_id": "IMG-012",
-        "asset": "assets/images/q037_alveolar_gas_exchange.webp",
+        "asset": "assets/illustrations/v1/assets/r05_alveolar_gas_exchange.webp",
         "alt": "肺胞と周囲毛細血管間のガス移動を示す模式図",
         "marker": "②",
         "marker_target": "血液空気関門（I型肺胞上皮細胞・基底膜・肺毛細血管内皮細胞）",
@@ -3456,13 +3444,13 @@
       ],
       "image": {
         "prompt_id": "IMG-019",
-        "asset": "assets/images/q091_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "asset": "assets/illustrations/v1/assets/u04_kidney_cross_section.webp",
+        "alt": "腎被膜・皮質・錐体・腎杯・腎盂・腎門と血管を示した腎臓冠状断模式図",
         "marker": "①",
         "marker_target": "腎皮質",
         "overlay": {
-          "x": 0.7273,
-          "y": 0.5385,
+          "x": 0.2637,
+          "y": 0.1514,
           "label": "①"
         }
       }
@@ -3500,13 +3488,13 @@
       ],
       "image": {
         "prompt_id": "IMG-019",
-        "asset": "assets/images/q091_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "asset": "assets/illustrations/v1/assets/u04_kidney_cross_section.webp",
+        "alt": "腎被膜・皮質・錐体・腎杯・腎盂・腎門と血管を示した腎臓冠状断模式図",
         "marker": "②",
         "marker_target": "腎錐体",
         "overlay": {
-          "x": 0.4818,
-          "y": 0.2231,
+          "x": 0.3027,
+          "y": 0.3125,
           "label": "②"
         }
       }
@@ -3544,13 +3532,13 @@
       ],
       "image": {
         "prompt_id": "IMG-019",
-        "asset": "assets/images/q091_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "asset": "assets/illustrations/v1/assets/u04_kidney_cross_section.webp",
+        "alt": "腎被膜・皮質・錐体・腎杯・腎盂・腎門と血管を示した腎臓冠状断模式図",
         "marker": "③",
         "marker_target": "腎乳頭",
         "overlay": {
-          "x": 0.5091,
-          "y": 0.2731,
+          "x": 0.5498,
+          "y": 0.2715,
           "label": "③"
         }
       }
@@ -3620,24 +3608,24 @@
       ],
       "image": {
         "prompt_id": "IMG-017",
-        "asset": "assets/images/q050_urinary_system.webp",
+        "asset": "assets/illustrations/v1/assets/u03_urinary_system.webp",
         "alt": "泌尿器系全体（腎臓・尿管・膀胱）を示す模式図",
         "marker": "③",
         "marker_target": "尿管の3か所の生理的狭窄部",
         "overlays": [
           {
-            "x": 0.3778,
-            "y": 0.3571,
+            "x": 0.6299,
+            "y": 0.2669,
             "label": "③-1"
           },
           {
-            "x": 0.4444,
-            "y": 0.5714,
+            "x": 0.6611,
+            "y": 0.4948,
             "label": "③-2"
           },
           {
-            "x": 0.5111,
-            "y": 0.7643,
+            "x": 0.627,
+            "y": 0.7259,
             "label": "③-3"
           }
         ]
@@ -3647,9 +3635,9 @@
       "id": "Q096",
       "category": "泌尿器",
       "subcategory": "膀胱三角",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 2,
-      "question": "膀胱三角について正しいものはどれか。",
+      "question": "膀胱内面図の①で示された膀胱三角について正しいものはどれか。",
       "choices": [
         {
           "id": "A",
@@ -3670,6 +3658,18 @@
       ],
       "answer": "A",
       "explanation": "膀胱底部の重要な解剖学的領域である。",
+      "image": {
+        "prompt_id": "IMG-031",
+        "asset": "assets/illustrations/v1/assets/u05_bladder_interior.webp",
+        "alt": "2つの尿管口・内尿道口・膀胱三角・粘膜皺襞を示す膀胱内面模式図",
+        "marker": "①",
+        "marker_target": "2つの尿管口と内尿道口に囲まれた膀胱三角",
+        "overlay": {
+          "x": 0.5,
+          "y": 0.5599,
+          "label": "①"
+        }
+      },
       "tags": [
         "膀胱三角",
         "尿管口",
@@ -3811,29 +3811,29 @@
       ],
       "image": {
         "prompt_id": "IMG-019",
-        "asset": "assets/images/q091_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "asset": "assets/illustrations/v1/assets/u04_kidney_cross_section.webp",
+        "alt": "腎被膜・皮質・錐体・腎杯・腎盂・腎門と血管を示した腎臓冠状断模式図",
         "marker": "⑤",
         "marker_target": "腎乳頭→小腎杯→大腎杯→腎盂（順路overlay）",
         "overlays": [
           {
-            "x": 0.5091,
-            "y": 0.2731,
+            "x": 0.374,
+            "y": 0.5029,
             "label": "⑤-1"
           },
           {
-            "x": 0.5091,
-            "y": 0.3015,
+            "x": 0.5137,
+            "y": 0.2529,
             "label": "⑤-2"
           },
           {
-            "x": 0.5091,
-            "y": 0.3615,
+            "x": 0.5566,
+            "y": 0.3516,
             "label": "⑤-3"
           },
           {
-            "x": 0.5091,
-            "y": 0.5038,
+            "x": 0.5967,
+            "y": 0.5078,
             "label": "⑤-4"
           }
         ]
@@ -4393,14 +4393,14 @@
         "方向用語"
       ],
       "image": {
-        "prompt_id": "IMG-022",
-        "asset": "assets/images/direction_terms.webp",
-        "alt": "方向用語（内側・外側／前方・後方）を示す模式図",
+        "prompt_id": "IMG-021",
+        "asset": "assets/illustrations/v1/assets/g05_anatomical_position.webp",
+        "alt": "解剖学的正位（直立・正面視・手掌前方）を示す全身写真的イラスト",
         "marker": "①",
-        "marker_target": "内側・外側を示す矢印（正面図）",
+        "marker_target": "内側（前腕の内側縁、正中線に近い側）",
         "overlay": {
-          "x": 0.2281,
-          "y": 0.3917,
+          "x": 0.72,
+          "y": 0.365,
           "label": "①"
         }
       }
@@ -4638,7 +4638,7 @@
       "subcategory": "心臓の位置",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "心臓外形模式図の①で示された、心臓の後上方に位置し、大血管が出入りする部分はどれか。",
+      "question": "心臓外形模式図の②で示された、心臓の後上方に位置し、大血管が出入りする部分はどれか。",
       "choices": [
         {
           "id": "A",
@@ -4665,14 +4665,14 @@
       ],
       "image": {
         "prompt_id": "IMG-026",
-        "asset": "assets/images/heart_exterior_posterior.webp",
-        "alt": "心臓を後面から見た外形模式図",
-        "marker": "①",
+        "asset": "assets/illustrations/v1/assets/c02_heart_exterior_posterior.webp",
+        "alt": "心臓を後面から見た外形模式図（左右肺静脈4本・下大静脈・冠状静脈洞まで確認できる高精細イラスト）",
+        "marker": "②",
         "marker_target": "心底",
         "overlay": {
-          "x": 0.5417,
-          "y": 0.2286,
-          "label": "①"
+          "x": 0.4104,
+          "y": 0.3125,
+          "label": "②"
         }
       }
     },
@@ -4780,48 +4780,48 @@
       "subcategory": "心臓弁",
       "type": "image_mcq",
       "difficulty": 2,
-      "question": "心臓断面図の①で示された、房室弁の弁尖につながり、心室収縮時に弁が心房側へ反転するのを防ぐ構造はどれか。",
+      "question": "図中①a・①bで示された、房室弁の弁尖につながり、心室収縮時に弁が心房側へ反転するのを防ぐ構造の組み合わせとして正しいものはどれか。",
       "choices": [
         {
           "id": "A",
-          "text": "腱索・乳頭筋"
+          "text": "①a 腱索、①b 乳頭筋"
         },
         {
           "id": "B",
-          "text": "冠状動脈"
+          "text": "①a 乳頭筋、①b 腱索"
         },
         {
           "id": "C",
-          "text": "刺激伝導系"
+          "text": "①a 心室壁、①b 腱索"
         },
         {
           "id": "D",
-          "text": "心膜"
+          "text": "①a 弁尖、①b 心室壁"
         }
       ],
       "answer": "A",
-      "explanation": "房室弁の弁尖は腱索によって心室壁の乳頭筋につながっており、心室収縮時に弁が心房側へめくれ返る(逸脱する)のを防いでいる。",
+      "explanation": "房室弁の弁尖は腱索（①a）を介して乳頭筋（①b）につながる。心室収縮時に乳頭筋が収縮して腱索を張り、弁尖が心房側へ反転するのを防ぐ。",
       "tags": [
         "腱索",
         "乳頭筋",
         "房室弁"
       ],
       "image": {
-        "prompt_id": "IMG-023",
-        "asset": "assets/images/heart_valves_schematic.webp",
-        "alt": "心臓弁と腱索・乳頭筋を示す模式図",
-        "marker": "⑤",
-        "marker_target": "腱索・乳頭筋",
+        "prompt_id": "IMG-032",
+        "asset": "assets/illustrations/v1/assets/c11_av_valve_chordae_papillary.webp",
+        "alt": "房室弁の弁尖から腱索を介して乳頭筋へつながる関係を拡大した心室内模式図",
+        "marker": "①",
+        "marker_target": "①a 腱索・①b 乳頭筋",
         "overlays": [
           {
-            "x": 0.275,
-            "y": 0.6045,
-            "label": "⑤a"
+            "x": 0.6543,
+            "y": 0.4707,
+            "label": "①a"
           },
           {
-            "x": 0.6833,
-            "y": 0.5618,
-            "label": "⑤b"
+            "x": 0.6748,
+            "y": 0.7002,
+            "label": "①b"
           }
         ]
       }
@@ -5088,7 +5088,7 @@
       "subcategory": "血管",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "心臓外形模式図の②で示された、上半身からの静脈血を右心房へ運ぶ血管はどれか。",
+      "question": "心臓外形模式図の①で示された、上半身からの静脈血を右心房へ運ぶ血管はどれか。",
       "choices": [
         {
           "id": "A",
@@ -5116,13 +5116,13 @@
       ],
       "image": {
         "prompt_id": "IMG-025",
-        "asset": "assets/images/heart_exterior_anterior.webp",
-        "alt": "心臓を前面から見た外形模式図",
+        "asset": "assets/illustrations/v1/assets/c01_heart_exterior_anterior.webp",
+        "alt": "心臓を前面から見た外形模式図（心尖・上大静脈・肺動脈幹・冠状動脈まで確認できる高精細イラスト）",
         "marker": "①",
         "marker_target": "上大静脈",
         "overlay": {
-          "x": 0.3833,
-          "y": 0.1179,
+          "x": 0.259,
+          "y": 0.1562,
           "label": "①"
         }
       }
@@ -5165,7 +5165,7 @@
       "subcategory": "冠状動脈",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "心臓外形模式図の③で示された、心臓を還流した静脈血が集まり右心房へ注ぐ部位はどれか。",
+      "question": "心臓外形模式図（後面）の④で示された、心臓を還流した静脈血が集まり、右心房へ注ぐ部位はどれか。",
       "choices": [
         {
           "id": "A",
@@ -5192,14 +5192,14 @@
       ],
       "image": {
         "prompt_id": "IMG-026",
-        "asset": "assets/images/heart_exterior_posterior.webp",
-        "alt": "心臓を後面から見た外形模式図",
-        "marker": "②",
+        "asset": "assets/illustrations/v1/assets/c02_heart_exterior_posterior.webp",
+        "alt": "心臓を後面から見た外形模式図（左右肺静脈4本・下大静脈・冠状静脈洞まで確認できる高精細イラスト）",
+        "marker": "④",
         "marker_target": "冠状静脈洞",
         "overlay": {
-          "x": 0.5833,
-          "y": 0.425,
-          "label": "②"
+          "x": 0.4104,
+          "y": 0.4688,
+          "label": "④"
         }
       }
     },
@@ -5430,24 +5430,24 @@
       ],
       "image": {
         "prompt_id": "IMG-024",
-        "asset": "assets/images/circulation_circuit.webp",
-        "alt": "体循環・肺循環の全経路を示す「8の字」模式図",
+        "asset": "assets/illustrations/v1/assets/c09_circulation_circuit.webp",
+        "alt": "体循環・肺循環の全経路を矢印付きで示す模式図（心臓を中心に肺循環と体循環がループ状に連続し、肺静脈4本・上大静脈・下大静脈がそれぞれ区別して描かれている）",
         "marker": "①",
         "marker_target": "体循環経路（矢印列）",
         "overlays": [
           {
-            "x": 0.5583,
-            "y": 0.7333,
+            "x": 0.638,
+            "y": 0.73,
             "label": "①a"
           },
           {
             "x": 0.5,
-            "y": 0.9067,
+            "y": 0.87,
             "label": "①b"
           },
           {
-            "x": 0.34,
-            "y": 0.62,
+            "x": 0.29,
+            "y": 0.7,
             "label": "①c"
           }
         ]
@@ -5485,24 +5485,24 @@
       ],
       "image": {
         "prompt_id": "IMG-024",
-        "asset": "assets/images/circulation_circuit.webp",
-        "alt": "体循環・肺循環の全経路を示す「8の字」模式図",
+        "asset": "assets/illustrations/v1/assets/c09_circulation_circuit.webp",
+        "alt": "体循環・肺循環の全経路を矢印付きで示す模式図（心臓を中心に肺循環と体循環がループ状に連続し、肺静脈4本・上大静脈・下大静脈がそれぞれ区別して描かれている）",
         "marker": "②",
         "marker_target": "肺循環経路（矢印列）",
         "overlays": [
           {
-            "x": 0.2917,
-            "y": 0.4,
+            "x": 0.765,
+            "y": 0.15,
             "label": "②a"
           },
           {
-            "x": 0.225,
-            "y": 0.1533,
+            "x": 0.874,
+            "y": 0.148,
             "label": "②b"
           },
           {
-            "x": 0.3917,
-            "y": 0.3533,
+            "x": 0.799,
+            "y": 0.217,
             "label": "②c"
           }
         ]
@@ -5609,9 +5609,9 @@
       "id": "Q152",
       "category": "呼吸器",
       "subcategory": "気管支",
-      "type": "image_mcq",
+      "type": "text_mcq",
       "difficulty": 1,
-      "question": "気道分岐図の①で示された、より太く短く、垂直に近い角度で分岐する気管支はどれか。",
+      "question": "左右の主気管支について、より太く短く、垂直に近い角度で分岐するのはどれか。",
       "choices": [
         {
           "id": "A",
@@ -5631,23 +5631,11 @@
         }
       ],
       "answer": "A",
-      "explanation": "右主気管支は左主気管支に比べて太く短く、気管からより垂直に近い角度で分岐するため、誤嚥した異物は右主気管支に入りやすい。",
+      "explanation": "右主気管支は左主気管支より太く短く、より垂直に近い走行をとる。そのため、気道内へ入った異物は右主気管支へ進入しやすい。",
       "tags": [
         "主気管支",
         "右主気管支"
-      ],
-      "image": {
-        "prompt_id": "IMG-013",
-        "asset": "assets/images/q040_airway_branching.webp",
-        "alt": "気道分岐（気管〜終末細気管支）を示す模式図",
-        "marker": "③",
-        "marker_target": "右主気管支",
-        "overlay": {
-          "x": 0.4,
-          "y": 0.1692,
-          "label": "③"
-        }
-      }
+      ]
     },
     {
       "id": "Q153",
@@ -5655,7 +5643,7 @@
       "subcategory": "気管支",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "気道分岐図の②で示された、肺葉ごとに分布する気管支はどれか。",
+      "question": "気道分岐図の④で示された、肺葉ごとに分布する気管支はどれか。",
       "choices": [
         {
           "id": "A",
@@ -5680,14 +5668,14 @@
         "葉気管支"
       ],
       "image": {
-        "prompt_id": "IMG-013",
-        "asset": "assets/images/q040_airway_branching.webp",
-        "alt": "気道分岐（気管〜終末細気管支）を示す模式図",
+        "prompt_id": "IMG-035",
+        "asset": "assets/illustrations/v1/assets/r07_bronchial_tree.webp",
+        "alt": "気管から主気管支・葉気管支・区域気管支への分岐を示す前面模式図（画像左が人体右）",
         "marker": "④",
         "marker_target": "葉気管支",
         "overlay": {
-          "x": 0.2857,
-          "y": 0.2615,
+          "x": 0.6663,
+          "y": 0.5425,
           "label": "④"
         }
       }
@@ -5698,7 +5686,7 @@
       "subcategory": "肺胞",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "肺胞嚢周辺の模式図の①で示された、呼吸細気管支に続き肺胞嚢へ至る管状の構造はどれか。",
+      "question": "末梢気道の連続図の③で示された、呼吸細気管支に続き肺胞嚢へ至る管状の構造はどれか。",
       "choices": [
         {
           "id": "A",
@@ -5725,14 +5713,14 @@
       ],
       "image": {
         "prompt_id": "IMG-014",
-        "asset": "assets/images/q041_alveolar_sac.webp",
-        "alt": "終末呼吸単位（肺胞管・肺胞嚢）を示す模式図",
-        "marker": "②",
+        "asset": "assets/illustrations/v1/assets/r04_peripheral_airway_continuum.webp",
+        "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
+        "marker": "③",
         "marker_target": "肺胞管",
         "overlay": {
-          "x": 0.25,
-          "y": 0.3333,
-          "label": "②"
+          "x": 0.5998,
+          "y": 0.6062,
+          "label": "③"
         }
       }
     },
@@ -5770,19 +5758,19 @@
       ],
       "image": {
         "prompt_id": "IMG-027",
-        "asset": "assets/images/pleura_cross_section.webp",
-        "alt": "胸部横断面における胸膜（壁側・臓側）の層構造模式図",
+        "asset": "assets/illustrations/v1/assets/r06_pleura_cross_section.webp",
+        "alt": "胸郭前額断（冠状断）における肺・心臓・気管・横隔膜と、胸膜（臓側・壁側）の層構造を示す図",
         "marker": "①②",
         "marker_target": "①臓側胸膜→②壁側胸膜の順にoverlaysを設定",
         "overlays": [
           {
-            "x": 0.1538,
-            "y": 0.25,
+            "x": 0.8447,
+            "y": 0.2734,
             "label": "①"
           },
           {
-            "x": 0.5,
-            "y": 0.102,
+            "x": 0.9072,
+            "y": 0.3906,
             "label": "②"
           }
         ]
@@ -5821,13 +5809,13 @@
       ],
       "image": {
         "prompt_id": "IMG-027",
-        "asset": "assets/images/pleura_cross_section.webp",
-        "alt": "胸部横断面における胸膜（壁側・臓側）の層構造模式図",
+        "asset": "assets/illustrations/v1/assets/r06_pleura_cross_section.webp",
+        "alt": "胸郭前額断（冠状断）における肺・心臓・気管・横隔膜と、胸膜（臓側・壁側）の層構造を示す図",
         "marker": "③",
         "marker_target": "胸膜腔",
         "overlay": {
-          "x": 0.0862,
-          "y": 0.5,
+          "x": 0.2051,
+          "y": 0.6836,
           "label": "③"
         }
       }
@@ -6221,7 +6209,7 @@
       "subcategory": "肺葉",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "肺の図の①で示された、肺の最上部(鎖骨の上方まで達する部分)はどれか。",
+      "question": "肺の図の③で示された、肺の最上部(鎖骨の上方まで達する部分)はどれか。",
       "choices": [
         {
           "id": "A",
@@ -6248,13 +6236,13 @@
       ],
       "image": {
         "prompt_id": "IMG-011",
-        "asset": "assets/images/q035_right_middle_lobe.webp",
-        "alt": "左右肺の肺葉構成を示す前面模式図",
+        "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
+        "alt": "肺葉・肺裂と気管支樹を統合した前面図（患者右は画像左）",
         "marker": "③",
         "marker_target": "肺尖",
         "overlay": {
-          "x": 0.2143,
-          "y": 0.25,
+          "x": 0.2861,
+          "y": 0.207,
           "label": "③"
         }
       }
@@ -6458,7 +6446,7 @@
       "subcategory": "ネフロン",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "ネフロンの模式図の①で示された、毛細血管の塊(糸球体)を包む構造はどれか。",
+      "question": "腎小体の拡大模式図の①で示された、毛細血管の塊（糸球体）を包む構造はどれか。",
       "choices": [
         {
           "id": "A",
@@ -6478,22 +6466,22 @@
         }
       ],
       "answer": "A",
-      "explanation": "ボーマン嚢は糸球体(毛細血管の塊)を包む袋状の構造で、糸球体とボーマン嚢を合わせて腎小体という(既存Q048/091)。",
+      "explanation": "ボーマン嚢は糸球体（毛細血管の塊）を包む袋状の構造で、糸球体とボーマン嚢を合わせて腎小体という（既存Q048）。",
       "tags": [
         "ボーマン嚢",
         "糸球体",
         "腎小体"
       ],
       "image": {
-        "prompt_id": "IMG-016",
-        "asset": "assets/images/q048_nephron.webp",
-        "alt": "ネフロン（腎小体・尿細管・集合管）を示す模式図",
-        "marker": "②",
-        "marker_target": "ボーマン嚢",
+        "prompt_id": "IMG-033",
+        "asset": "assets/illustrations/v1/assets/u06_renal_corpuscle.webp",
+        "alt": "糸球体、ボーマン嚢壁、糸球体嚢腔、血管極、尿細管極、近位尿細管を示す腎小体拡大模式図",
+        "marker": "①",
+        "marker_target": "ボーマン嚢（壁側葉）",
         "overlay": {
-          "x": 0.19,
-          "y": 0.135,
-          "label": "②"
+          "x": 0.7129,
+          "y": 0.2185,
+          "label": "①"
         }
       }
     },
@@ -6530,13 +6518,13 @@
       ],
       "image": {
         "prompt_id": "IMG-016",
-        "asset": "assets/images/q048_nephron.webp",
-        "alt": "ネフロン（腎小体・尿細管・集合管）を示す模式図",
+        "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
         "marker": "③",
         "marker_target": "近位尿細管",
         "overlay": {
-          "x": 0.4006,
-          "y": 0.2394,
+          "x": 0.4347,
+          "y": 0.2786,
           "label": "③"
         }
       }
@@ -6574,13 +6562,13 @@
       ],
       "image": {
         "prompt_id": "IMG-016",
-        "asset": "assets/images/q048_nephron.webp",
-        "alt": "ネフロン（腎小体・尿細管・集合管）を示す模式図",
+        "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
         "marker": "④",
         "marker_target": "ヘンレ係蹄",
         "overlay": {
-          "x": 0.549,
-          "y": 0.9208,
+          "x": 0.5213,
+          "y": 0.9336,
           "label": "④"
         }
       }
@@ -6623,7 +6611,7 @@
       "subcategory": "ネフロン",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "腎臓断面図の④で示された、複数のネフロンから原尿を集め、腎乳頭へ導く構造はどれか。",
+      "question": "ネフロンの模式図の④で示された、複数のネフロンから尿を集め、腎乳頭へ導く構造はどれか。",
       "choices": [
         {
           "id": "A",
@@ -6643,19 +6631,19 @@
         }
       ],
       "answer": "A",
-      "explanation": "集合管は複数のネフロンの遠位尿細管から原尿を集め、腎乳頭(既存Q093)へと導く。この過程でも水の再吸収が調節される。",
+      "explanation": "集合管は複数のネフロンの遠位尿細管から尿を集め、腎乳頭（既存Q093）へと導く。この過程でも水の再吸収が調節される。",
       "tags": [
         "集合管"
       ],
       "image": {
-        "prompt_id": "IMG-019",
-        "asset": "assets/images/q091_kidney_cross_section.webp",
-        "alt": "腎臓の前額断面模式図（皮質・髄質・腎盂）",
+        "prompt_id": "IMG-016",
+        "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
         "marker": "④",
         "marker_target": "集合管",
         "overlay": {
-          "x": 0.4545,
-          "y": 0.7923,
+          "x": 0.7287,
+          "y": 0.6771,
           "label": "④"
         }
       }
@@ -7042,13 +7030,13 @@
       ],
       "image": {
         "prompt_id": "IMG-017",
-        "asset": "assets/images/q050_urinary_system.webp",
+        "asset": "assets/illustrations/v1/assets/u03_urinary_system.webp",
         "alt": "泌尿器系全体（腎臓・尿管・膀胱）を示す模式図",
         "marker": "②",
         "marker_target": "膀胱",
         "overlay": {
-          "x": 0.5,
-          "y": 0.8393,
+          "x": 0.4883,
+          "y": 0.7682,
           "label": "②"
         }
       }
@@ -7281,34 +7269,34 @@
       ],
       "image": {
         "prompt_id": "IMG-016",
-        "asset": "assets/images/q048_nephron.webp",
-        "alt": "ネフロン（腎小体・尿細管・集合管）を示す模式図",
+        "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
         "marker": "⑤",
         "marker_target": "腎小体→近位尿細管→ヘンレ係蹄→遠位尿細管→集合管（順路overlay）",
         "overlays": [
           {
-            "x": 0.19,
-            "y": 0.135,
+            "x": 0.3196,
+            "y": 0.207,
             "label": "⑤-1"
           },
           {
-            "x": 0.4006,
-            "y": 0.2394,
+            "x": 0.4347,
+            "y": 0.2786,
             "label": "⑤-2"
           },
           {
-            "x": 0.549,
-            "y": 0.9208,
+            "x": 0.5213,
+            "y": 0.9336,
             "label": "⑤-3"
           },
           {
-            "x": 0.6975,
-            "y": 0.2026,
+            "x": 0.5895,
+            "y": 0.2604,
             "label": "⑤-4"
           },
           {
-            "x": 0.8909,
-            "y": 0.4604,
+            "x": 0.7244,
+            "y": 0.2474,
             "label": "⑤-5"
           }
         ]
@@ -7649,7 +7637,7 @@
       "choices": [
         {
           "id": "A",
-          "text": "胸腔―心臓・肺、腹腔―胃・肝臓・腎臓の一部、骨盤腔―膀胱"
+          "text": "胸腔―心臓・肺、腹腔―胃・肝臓・脾臓、骨盤腔―膀胱"
         },
         {
           "id": "B",
@@ -7665,7 +7653,7 @@
         }
       ],
       "answer": "A",
-      "explanation": "胸腔には心臓・肺、腹腔には胃・肝臓・腎臓の一部などの臓器、骨盤腔には膀胱などが収められる。既存Q055〜058の体腔問題を統合する。",
+      "explanation": "胸腔には心臓・肺、腹腔には胃・肝臓・脾臓などの臓器、骨盤腔には膀胱などが収められる。腎臓は腹膜の後方にある後腹膜臓器である。",
       "tags": [
         "体腔",
         "胸腔",
@@ -8320,13 +8308,13 @@
       ],
       "image": {
         "prompt_id": "IMG-006",
-        "asset": "assets/images/q017_heart_chambers.webp",
-        "alt": "心臓の4腔を示す前額断面模式図",
+        "asset": "assets/illustrations/v1/assets/c03_heart_chambers.webp",
+        "alt": "4心腔・房室弁・腱索・乳頭筋・心室中隔を示す心臓断面模式図",
         "marker": "⑤",
         "marker_target": "心室中隔",
         "overlay": {
-          "x": 0.48,
-          "y": 0.5985,
+          "x": 0.54,
+          "y": 0.72,
           "label": "⑤"
         }
       }
@@ -8335,44 +8323,32 @@
       "id": "Q231",
       "category": "循環器",
       "subcategory": "心臓の内部構造",
-      "type": "image_mcq",
+      "type": "text_mcq",
       "difficulty": 1,
-      "question": "心房中隔について正しいものはどれか。",
+      "question": "右心房と左心房を隔てる壁はどれか。",
       "choices": [
         {
           "id": "A",
-          "text": "左心房と右心房を隔てる壁である。"
+          "text": "心房中隔"
         },
         {
           "id": "B",
-          "text": "左心室と右心室を隔てる壁である。"
+          "text": "心室中隔"
         },
         {
           "id": "C",
-          "text": "心房中隔は存在しない構造である。"
+          "text": "三尖弁"
         },
         {
           "id": "D",
-          "text": "心房中隔は血液を通す構造である。"
+          "text": "心膜"
         }
       ],
       "answer": "A",
-      "explanation": "心房中隔は左心房と右心房を隔てる壁であり、心室中隔(Q230)と対をなす構造である。",
+      "explanation": "心房中隔は右心房と左心房を隔てる壁である。心室中隔は右心室と左心室を隔てる。",
       "tags": [
         "心房中隔"
-      ],
-      "image": {
-        "prompt_id": "IMG-006",
-        "asset": "assets/images/q017_heart_chambers.webp",
-        "alt": "心臓の4腔を示す前額断面模式図",
-        "marker": "⑥",
-        "marker_target": "心房中隔",
-        "overlay": {
-          "x": 0.5249,
-          "y": 0.442,
-          "label": "⑥"
-        }
-      }
+      ]
     },
     {
       "id": "Q232",
@@ -8636,7 +8612,7 @@
       "subcategory": "刺激伝導系",
       "type": "image_mcq",
       "difficulty": 1,
-      "question": "刺激伝導系の模式図の①で示された、房室結節からの興奮を心室中隔へ伝え、左右の脚へ続く構造はどれか。",
+      "question": "刺激伝導系の模式図の②で示された、房室結節からの興奮を心室中隔へ伝え、左右の脚へ続く構造はどれか。",
       "choices": [
         {
           "id": "A",
@@ -8663,13 +8639,13 @@
       ],
       "image": {
         "prompt_id": "IMG-009",
-        "asset": "assets/images/q025_conduction_system.webp",
-        "alt": "刺激伝導系の経路を示す模式図",
+        "asset": "assets/illustrations/v1/assets/c05_conduction_system.webp",
+        "alt": "洞房結節から房室結節・房室束・左右脚・プルキンエ線維へ続く心刺激伝導系模式図",
         "marker": "②",
         "marker_target": "房室束",
         "overlay": {
-          "x": 0.48,
-          "y": 0.4727,
+          "x": 0.4574,
+          "y": 0.5365,
           "label": "②"
         }
       }
@@ -9158,14 +9134,14 @@
         "喉頭"
       ],
       "image": {
-        "prompt_id": "IMG-010",
-        "asset": "assets/images/q032_larynx.webp",
-        "alt": "喉頭の前面図（冠状断面窓に声帯を表示）",
+        "prompt_id": "IMG-007",
+        "asset": "assets/illustrations/v1/assets/r02_vocal_folds.webp",
+        "alt": "喉頭鏡視野（上方観）。前庭ヒダ（仮声帯）と真声帯、声門裂が識別できる模式図",
         "marker": "②",
         "marker_target": "声帯",
         "overlay": {
-          "x": 0.5,
-          "y": 0.4269,
+          "x": 0.4,
+          "y": 0.6,
           "label": "②"
         }
       }
@@ -9203,13 +9179,13 @@
       ],
       "image": {
         "prompt_id": "IMG-010",
-        "asset": "assets/images/q032_larynx.webp",
-        "alt": "喉頭の前面図（冠状断面窓に声帯を表示）",
+        "asset": "assets/illustrations/v1/assets/r01_larynx.webp",
+        "alt": "喉頭の後面図（喉頭蓋・甲状軟骨・輪状軟骨・気管上部）",
         "marker": "③",
         "marker_target": "喉頭蓋",
         "overlay": {
           "x": 0.5,
-          "y": 0.1692,
+          "y": 0.09,
           "label": "③"
         }
       }
@@ -9748,7 +9724,7 @@
         }
       ],
       "answer": "A",
-      "explanation": "安静時の呼吸は横隔膜(既存Q170)を主体とした受動的な過程が中心だが、運動時など換気量を増やす必要がある努力呼吸では、呼吸補助筋(Q262)や呼気筋(既存Q158)が追加で動員される。",
+      "explanation": "安静時の吸気は横隔膜の収縮を主体とする能動的過程である。一方、安静時の呼気は吸気筋の弛緩と肺・胸郭の弾性収縮により、主として受動的に生じる。運動時などの努力呼吸では、呼吸補助筋や呼気筋が追加で動員される。",
       "tags": [
         "呼吸筋",
         "呼吸調節"
@@ -10270,9 +10246,9 @@
       "id": "Q290",
       "category": "泌尿器",
       "subcategory": "排尿反射",
-      "type": "text_mcq",
+      "type": "image_mcq",
       "difficulty": 1,
-      "question": "膀胱の排尿筋について正しいものはどれか。",
+      "question": "膀胱内面図の②で示された膀胱壁の排尿筋について正しいものはどれか。",
       "choices": [
         {
           "id": "A",
@@ -10293,6 +10269,18 @@
       ],
       "answer": "A",
       "explanation": "排尿筋は膀胱壁を構成する平滑筋であり、副交感神経の作用(既存Q197)により収縮して膀胱内の尿を排出する。",
+      "image": {
+        "prompt_id": "IMG-031",
+        "asset": "assets/illustrations/v1/assets/u05_bladder_interior.webp",
+        "alt": "2つの尿管口・内尿道口・膀胱三角・粘膜皺襞を示す膀胱内面模式図",
+        "marker": "②",
+        "marker_target": "膀胱壁を構成する排尿筋",
+        "overlay": {
+          "x": 0.2514,
+          "y": 0.4492,
+          "label": "②"
+        }
+      },
       "tags": [
         "排尿筋"
       ]
@@ -10387,7 +10375,7 @@
         }
       ],
       "answer": "A",
-      "explanation": "正常な尿は水分を主体とし、尿素などの老廃物や電解質が溶けている。健常時、グルコースやタンパク質は糸球体で濾過されても大部分が再吸収され、尿中にはほとんど排出されない。",
+      "explanation": "正常な尿は水分を主体とし、尿素などの老廃物や電解質が溶けている。グルコースは糸球体で濾過された後、通常は主に近位尿細管でほぼ全量が再吸収される。一方、血漿タンパク質の大部分は糸球体濾過障壁によって保持され、正常ではほとんど濾過されない。",
       "tags": [
         "尿の成分"
       ]
@@ -10619,6 +10607,490 @@
         "恒常性",
         "器官系の協調"
       ]
+    },
+    {
+      "id": "Q301",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "心臓外形模式図（前面）で示された、右心室から肺へ向かう血液を送り出す血管はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "肺動脈幹"
+        },
+        {
+          "id": "B",
+          "text": "上大静脈"
+        },
+        {
+          "id": "C",
+          "text": "大動脈"
+        },
+        {
+          "id": "D",
+          "text": "冠状動脈"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺動脈幹は右心室から拍出された静脈血（低酸素血）を肺へ運ぶ血管であり、動脈でありながら静脈血が流れる点が特徴である。",
+      "tags": [
+        "肺動脈幹",
+        "肺循環"
+      ],
+      "image": {
+        "prompt_id": "IMG-025",
+        "asset": "assets/illustrations/v1/assets/c01_heart_exterior_anterior.webp",
+        "alt": "心臓を前面から見た外形模式図（心尖・上大静脈・肺動脈幹・冠状動脈まで確認できる高精細イラスト）",
+        "marker": "③",
+        "marker_target": "肺動脈幹",
+        "overlay": {
+          "x": 0.5794,
+          "y": 0.2375,
+          "label": "③"
+        }
+      }
+    },
+    {
+      "id": "Q302",
+      "category": "循環器",
+      "subcategory": "血管",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "心臓外形模式図（後面）で示された、下半身からの静脈血を右心房へ運ぶ血管はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "下大静脈"
+        },
+        {
+          "id": "B",
+          "text": "上大静脈"
+        },
+        {
+          "id": "C",
+          "text": "肺静脈"
+        },
+        {
+          "id": "D",
+          "text": "肺動脈幹"
+        }
+      ],
+      "answer": "A",
+      "explanation": "下大静脈は下半身・腹部からの静脈血を集めて右心房へ運ぶ。上大静脈が上半身からの還流を担うのと対をなす。",
+      "tags": [
+        "下大静脈",
+        "静脈還流"
+      ],
+      "image": {
+        "prompt_id": "IMG-026",
+        "asset": "assets/illustrations/v1/assets/c02_heart_exterior_posterior.webp",
+        "alt": "心臓を後面から見た外形模式図（左右肺静脈4本・下大静脈・冠状静脈洞まで確認できる高精細イラスト）",
+        "marker": "③",
+        "marker_target": "下大静脈",
+        "overlay": {
+          "x": 0.7182,
+          "y": 0.5938,
+          "label": "③"
+        }
+      }
+    },
+    {
+      "id": "Q303",
+      "category": "循環器",
+      "subcategory": "刺激伝導系",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "刺激伝導系の模式図で示された、洞房結節からの興奮を受け取り、房室束（ヒス束）へ伝える中継点はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "房室結節"
+        },
+        {
+          "id": "B",
+          "text": "洞房結節"
+        },
+        {
+          "id": "C",
+          "text": "プルキンエ線維"
+        },
+        {
+          "id": "D",
+          "text": "右脚"
+        }
+      ],
+      "answer": "A",
+      "explanation": "房室結節は心房中隔下部に位置し、洞房結節からの興奮を一時的に遅延させたうえで房室束へ伝える中継点である。この遅延により心房収縮後に心室が収縮するタイミングが確保される。",
+      "tags": [
+        "房室結節",
+        "刺激伝導系"
+      ],
+      "image": {
+        "prompt_id": "IMG-009",
+        "asset": "assets/illustrations/v1/assets/c05_conduction_system.webp",
+        "alt": "洞房結節から房室結節・房室束・左右脚・プルキンエ線維へ続く心刺激伝導系模式図",
+        "marker": "③",
+        "marker_target": "房室結節",
+        "overlay": {
+          "x": 0.4112,
+          "y": 0.5117,
+          "label": "③"
+        }
+      }
+    },
+    {
+      "id": "Q304",
+      "category": "呼吸器",
+      "subcategory": "喉頭",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "喉頭の模式図で示された、喉頭の外形の大部分を占める最大の軟骨はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "甲状軟骨"
+        },
+        {
+          "id": "B",
+          "text": "輪状軟骨"
+        },
+        {
+          "id": "C",
+          "text": "披裂軟骨"
+        },
+        {
+          "id": "D",
+          "text": "喉頭蓋軟骨"
+        }
+      ],
+      "answer": "A",
+      "explanation": "甲状軟骨は喉頭の中で最も大きい軟骨で、喉頭の外形の大部分を形成する。前方への突出は「のどぼとけ」として触知できる。",
+      "tags": [
+        "甲状軟骨",
+        "喉頭"
+      ],
+      "image": {
+        "prompt_id": "IMG-030",
+        "asset": "assets/illustrations/v1/assets/r09_larynx_exterior_anterior.webp",
+        "alt": "喉頭外観の前面図（舌骨・甲状軟骨・輪状軟骨・気管軟骨輪が確認できる模式図）",
+        "marker": "①",
+        "marker_target": "甲状軟骨",
+        "overlay": {
+          "x": 0.32,
+          "y": 0.46,
+          "label": "①"
+        }
+      }
+    },
+    {
+      "id": "Q305",
+      "category": "呼吸器",
+      "subcategory": "喉頭",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "喉頭の模式図で示された、甲状軟骨の下方に位置し、気管とつながる輪状の軟骨はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "輪状軟骨"
+        },
+        {
+          "id": "B",
+          "text": "甲状軟骨"
+        },
+        {
+          "id": "C",
+          "text": "喉頭蓋軟骨"
+        },
+        {
+          "id": "D",
+          "text": "披裂軟骨"
+        }
+      ],
+      "answer": "A",
+      "explanation": "輪状軟骨は喉頭軟骨の中で唯一、完全な輪状構造をもち、甲状軟骨の下方で気管の最上部に連続する。",
+      "tags": [
+        "輪状軟骨",
+        "喉頭"
+      ],
+      "image": {
+        "prompt_id": "IMG-030",
+        "asset": "assets/illustrations/v1/assets/r09_larynx_exterior_anterior.webp",
+        "alt": "喉頭外観の前面図（舌骨・甲状軟骨・輪状軟骨・気管軟骨輪が確認できる模式図）",
+        "marker": "①",
+        "marker_target": "輪状軟骨",
+        "overlay": {
+          "x": 0.5,
+          "y": 0.665,
+          "label": "①"
+        }
+      }
+    },
+    {
+      "id": "Q306",
+      "category": "呼吸器",
+      "subcategory": "気道",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "喉頭の模式図で示された、輪状軟骨の下方に続く、軟骨輪をもつ管状の構造はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "気管"
+        },
+        {
+          "id": "B",
+          "text": "喉頭"
+        },
+        {
+          "id": "C",
+          "text": "食道"
+        },
+        {
+          "id": "D",
+          "text": "気管支"
+        }
+      ],
+      "answer": "A",
+      "explanation": "気管は輪状軟骨の下方から続く管で、馬蹄形の気管軟骨によって内腔が保たれている。下方で左右の主気管支に分岐する。",
+      "tags": [
+        "気管",
+        "気道"
+      ],
+      "image": {
+        "prompt_id": "IMG-030",
+        "asset": "assets/illustrations/v1/assets/r09_larynx_exterior_anterior.webp",
+        "alt": "喉頭外観の前面図（舌骨・甲状軟骨・輪状軟骨・気管軟骨輪が確認できる模式図）",
+        "marker": "①",
+        "marker_target": "気管",
+        "overlay": {
+          "x": 0.5,
+          "y": 0.79,
+          "label": "①"
+        }
+      }
+    },
+    {
+      "id": "Q307",
+      "category": "呼吸器",
+      "subcategory": "喉頭",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "喉頭鏡視野の模式図で示された、左右の声帯に囲まれた開口部はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "声門"
+        },
+        {
+          "id": "B",
+          "text": "咽頭"
+        },
+        {
+          "id": "C",
+          "text": "喉頭蓋"
+        },
+        {
+          "id": "D",
+          "text": "気管分岐部"
+        }
+      ],
+      "answer": "A",
+      "explanation": "声門は左右の声帯（ヒダ）に囲まれた開口部で、呼吸時には開大し、発声時には声帯が近づいて狭まる。",
+      "tags": [
+        "声門",
+        "声帯"
+      ],
+      "image": {
+        "prompt_id": "IMG-007",
+        "asset": "assets/illustrations/v1/assets/r02_vocal_folds.webp",
+        "alt": "喉頭鏡視野（上方観）。前庭ヒダ（仮声帯）と真声帯、声門裂が識別できる模式図",
+        "marker": "①",
+        "marker_target": "声門（左右の真声帯に囲まれた開口部＝声門裂）",
+        "overlay": {
+          "x": 0.5,
+          "y": 0.6,
+          "label": "①"
+        }
+      }
+    },
+    {
+      "id": "Q308",
+      "category": "呼吸器",
+      "subcategory": "肺胞",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "終末呼吸単位の模式図で、断面が示された肺胞嚢の内部に見える、ガス交換の場となる1つ1つの袋状構造はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "肺胞"
+        },
+        {
+          "id": "B",
+          "text": "肺胞管"
+        },
+        {
+          "id": "C",
+          "text": "呼吸細気管支"
+        },
+        {
+          "id": "D",
+          "text": "肺胞嚢"
+        }
+      ],
+      "answer": "A",
+      "explanation": "肺胞は肺胞嚢を構成する1つ1つの小さな袋状構造で、ここで血液とのガス交換が行われる。多数の肺胞が集まって肺胞嚢を形成する。",
+      "tags": [
+        "肺胞",
+        "ガス交換"
+      ],
+      "image": {
+        "prompt_id": "IMG-014",
+        "asset": "assets/illustrations/v1/assets/r04_peripheral_airway_continuum.webp",
+        "alt": "末梢気道の連続図（終末細気管支・呼吸細気管支・肺胞管・肺胞嚢・肺胞の移行を1本の気道上に示す模式図）",
+        "marker": "⑤",
+        "marker_target": "肺胞（肺胞嚢断面内の個々の袋状構造）",
+        "overlay": {
+          "x": 0.7966,
+          "y": 0.7688,
+          "label": "⑤"
+        }
+      }
+    },
+    {
+      "id": "Q309",
+      "category": "泌尿器",
+      "subcategory": "腎臓の内部構造",
+      "type": "image_mcq",
+      "difficulty": 1,
+      "question": "腎臓断面図で示された、腎臓の表面を包む線維性の膜はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "腎被膜"
+        },
+        {
+          "id": "B",
+          "text": "腎皮質"
+        },
+        {
+          "id": "C",
+          "text": "腎盂"
+        },
+        {
+          "id": "D",
+          "text": "腎筋膜"
+        }
+      ],
+      "answer": "A",
+      "explanation": "腎被膜は腎臓表面を直接包む線維性の膜であり、その内側に腎皮質・腎髄質が続く。腎臓全体をさらに包む脂肪被膜・腎筋膜とは別の構造である。",
+      "tags": [
+        "腎被膜",
+        "腎臓"
+      ],
+      "image": {
+        "prompt_id": "IMG-019",
+        "asset": "assets/illustrations/v1/assets/u04_kidney_cross_section.webp",
+        "alt": "腎被膜・皮質・錐体・腎杯・腎盂・腎門と血管を示した腎臓冠状断模式図",
+        "marker": "①",
+        "marker_target": "腎被膜",
+        "overlay": {
+          "x": 0.2783,
+          "y": 0.1299,
+          "label": "①"
+        }
+      }
+    },
+    {
+      "id": "Q310",
+      "category": "泌尿器",
+      "subcategory": "ネフロン",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "ネフロンの模式図で示された、ヘンレ係蹄に続き、集合管の手前に位置する尿細管はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "遠位尿細管"
+        },
+        {
+          "id": "B",
+          "text": "近位尿細管"
+        },
+        {
+          "id": "C",
+          "text": "ボーマン嚢"
+        },
+        {
+          "id": "D",
+          "text": "集合管"
+        }
+      ],
+      "answer": "A",
+      "explanation": "遠位尿細管はヘンレ係蹄に続く部分で、集合管へ原尿を送る前の最終調節を担う。近位尿細管より再吸収の調節性が高く、ホルモンによる水・電解質の調節に関わる。",
+      "tags": [
+        "遠位尿細管",
+        "ネフロン"
+      ],
+      "image": {
+        "prompt_id": "IMG-016",
+        "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
+        "marker": "①",
+        "marker_target": "遠位尿細管",
+        "overlay": {
+          "x": 0.5895,
+          "y": 0.2604,
+          "label": "①"
+        }
+      }
+    },
+    {
+      "id": "Q311",
+      "category": "泌尿器",
+      "subcategory": "ネフロン",
+      "type": "image_mcq",
+      "difficulty": 2,
+      "question": "ネフロンの模式図で示された、糸球体へ血液を送り込む細動脈はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "輸入細動脈"
+        },
+        {
+          "id": "B",
+          "text": "輸出細動脈"
+        },
+        {
+          "id": "C",
+          "text": "腎動脈"
+        },
+        {
+          "id": "D",
+          "text": "弓状動脈"
+        }
+      ],
+      "answer": "A",
+      "explanation": "輸入細動脈は糸球体へ血液を送り込む細動脈で、糸球体を出たあとの輸出細動脈より一般に太い。この太さの差が糸球体内の血圧（ろ過圧）を生み出す。",
+      "tags": [
+        "輸入細動脈",
+        "糸球体"
+      ],
+      "image": {
+        "prompt_id": "IMG-016",
+        "asset": "assets/illustrations/v1/assets/u02_nephron.webp",
+        "alt": "腎小体から近位尿細管・ヘンレ係蹄・遠位尿細管・集合管へ続くネフロン模式図",
+        "marker": "①",
+        "marker_target": "輸入細動脈",
+        "overlay": {
+          "x": 0.2734,
+          "y": 0.2227,
+          "label": "①"
+        }
+      }
     }
   ]
 }
