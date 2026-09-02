@@ -111,13 +111,13 @@ qs.forEach(q => {
 // vessel) uniquely identifiable for the first time. 76 -> 77.
 // Nano Banana final integration: Q096 (bladder trigone) and Q290 (detrusor)
 // converted to image_mcq using new U05 bladder-interior master. 77 -> 79.
-// Q053 and Q040 moved to text after Phone visual review (79 -> 77).
-if ((typeCount.text_mcq || 0) !== 234) fail(`text_mcq count = ${typeCount.text_mcq}, expected 234`);
-if ((typeCount.image_mcq || 0) !== 77) fail(`image_mcq count = ${typeCount.image_mcq}, expected 77`);
+// Q053, Q040, and Q231 moved to text after Phone visual review (79 -> 76).
+if ((typeCount.text_mcq || 0) !== 235) fail(`text_mcq count = ${typeCount.text_mcq}, expected 235`);
+if ((typeCount.image_mcq || 0) !== 76) fail(`image_mcq count = ${typeCount.image_mcq}, expected 76`);
 
 const catImgCount = {};
 qs.forEach(q => { if (q.type === 'image_mcq') catImgCount[q.category] = (catImgCount[q.category] || 0) + 1; });
-const expectCatImg = { '総論': 9, '循環器': 27, '呼吸器': 22, '泌尿器': 19 };
+const expectCatImg = { '総論': 9, '循環器': 26, '呼吸器': 22, '泌尿器': 19 };
 Object.keys(expectCatImg).forEach(c => {
   if ((catImgCount[c] || 0) !== expectCatImg[c]) fail(`category ${c} image_mcq count = ${catImgCount[c] || 0}, expected ${expectCatImg[c]}`);
 });
@@ -208,7 +208,7 @@ qs.forEach(q => {
 // Nano Banana final integration adds U05 for Q096/Q290. 26 -> 27.
 // Q129's dedicated C11 and Q176's dedicated U06 masters add two further
 // assets. 27 -> 29.
-if (referencedAssets.size !== 29) fail(`unique referenced assets = ${referencedAssets.size}, expected 29`);
+if (referencedAssets.size !== 28) fail(`unique referenced assets = ${referencedAssets.size}, expected 28`);
 
 const allFiles = fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir).filter(f => f.endsWith('.webp')) : [];
 allFiles.forEach(f => { if (!referencedAssets.has(f)) warn(`asset file not referenced by any question: ${f}`); });

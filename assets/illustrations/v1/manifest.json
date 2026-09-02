@@ -2,10 +2,10 @@
   "version": "1.0.0",
   "dataset": "data/questions_v1.json",
   "generated_at": "2026-08-25",
-  "master_count": 29,
+  "master_count": 28,
   "status_counts": {
     "accepted-existing": 9,
-    "revised": 20,
+    "revised": 19,
     "pending-generation": 0
   },
   "masters": [
@@ -322,7 +322,7 @@
         "prompt": "Cutaway heart showing four chambers, interventricular septum, chordae tendineae, papillary muscles, and markedly thicker left ventricular wall; no labels or markers."
       },
       "provenance": {
-        "source": "Nano Bananaによるプロジェクト専用カスタム教材画像。人間による医学的・教材的レビュー済み。心房中隔専用Q231はC10、弁専用Q065/Q066はC04を維持",
+        "source": "Nano Bananaによるプロジェクト専用カスタム教材画像。人間による医学的・教材的レビュー済み。弁専用Q065/Q066はC04を維持",
         "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
         "reference": "docs/v2.0.1_asset_source_log.md"
       }
@@ -467,47 +467,6 @@
         "source": "Nano Bananaによるプロジェクト専用カスタム教材画像。人間による医学的・教材的レビュー済み。旧c07はプロジェクト自作SVG",
         "license": "外部素材を直接使用していないため外部クレジット不要",
         "reference": "docs/v2.0.1_asset_source_log.md"
-      }
-    },
-    {
-      "id": "C10",
-      "asset": "assets/illustrations/v1/assets/c10_heart_chambers_septum.webp",
-      "domain": "循環器",
-      "name": "心臓4腔・中隔模式図",
-      "view": "正面からの切開・断面（患者右は画像左）",
-      "scale": "臓器断面",
-      "structures": [
-        "右心房",
-        "右心室",
-        "左心房",
-        "左心室",
-        "心房中隔",
-        "心室中隔",
-        "三尖弁",
-        "僧帽弁",
-        "上大静脈",
-        "下大静脈",
-        "肺静脈",
-        "肺動脈幹",
-        "大動脈",
-        "左右心室壁厚差"
-      ],
-      "marker_targets": [
-        "心房中隔"
-      ],
-      "questions": [
-        "Q231"
-      ],
-      "source_asset": "ユーザー確認済み添付PNG: codex-clipboard-f5bac386-9bd6-4f60-afff-1bced71fb221.png",
-      "status": "revised",
-      "generation": {
-        "required": false,
-        "prompt": "User-approved frontal four-chamber cutaway with exposed interatrial septum, interventricular septum, atrioventricular valves, great vessels, and a thicker left ventricular wall; no labels or markers."
-      },
-      "provenance": {
-        "source": "ユーザー確認済みの最終採用画像。内容を改変せずWebP変換のみ実施",
-        "license": "プロジェクト保有。外部クレジット不要",
-        "reference": "docs/v2.0.1_asset_source_log.md。大動脈弁から上行大動脈までの位置関係は既知の限界として記録"
       }
     },
     {

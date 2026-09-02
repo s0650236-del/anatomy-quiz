@@ -2,13 +2,13 @@
 // - アプリ本体（HTML/CSS/JS/アイコン/manifest）と問題データはあらかじめキャッシュし、
 //   2回目以降のアクセスやオフライン時にも利用できるようにする。
 // - 問題データ(JSON)は更新が入る可能性があるため network-first（オンライン時は常に最新を取得）。
-// - 311問版で全77 image_mcqの共通master画像（29種類）が出揃ったため、初回install時に
+// - 311問版で全76 image_mcqの共通master画像（28種類）が出揃ったため、初回install時に
 //   まとめてprecacheし、初回オンライン起動後はオフラインでも全image_mcqを利用可能にする。
 //   ただしCORE_ASSETS（アプリ本体）とは別のPromise.allで、1枚ずつ個別にcatchする
 //   （＝どれか1枚の取得に失敗してもinstall全体を失敗させない。取得できなかった分は
 //   従来どおりimageCacheFirst()が実行時に個別取得を試み、それでも失敗すれば画面側の
 //   「画像準備中」表示に任せる）。
-var CACHE = 'anatomy-quiz-v2-2026-08-q040-text';
+var CACHE = 'anatomy-quiz-v2-2026-09-q231-text';
 var CORE_ASSETS = [
   './',
   './index.html',
@@ -33,7 +33,6 @@ var IMAGE_ASSETS = [
   './assets/illustrations/v1/assets/c06_vessel_cross_sections.webp',
   './assets/illustrations/v1/assets/c07_ecg_waveform.webp',
   './assets/illustrations/v1/assets/c09_circulation_circuit.webp',
-  './assets/illustrations/v1/assets/c10_heart_chambers_septum.webp',
   './assets/illustrations/v1/assets/c11_av_valve_chordae_papillary.webp',
   './assets/illustrations/v1/assets/r01_larynx.webp',
   './assets/illustrations/v1/assets/r02_vocal_folds.webp',

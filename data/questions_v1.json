@@ -8335,44 +8335,32 @@
       "id": "Q231",
       "category": "循環器",
       "subcategory": "心臓の内部構造",
-      "type": "image_mcq",
+      "type": "text_mcq",
       "difficulty": 1,
-      "question": "心房中隔について正しいものはどれか。",
+      "question": "右心房と左心房を隔てる壁はどれか。",
       "choices": [
         {
           "id": "A",
-          "text": "左心房と右心房を隔てる壁である。"
+          "text": "心房中隔"
         },
         {
           "id": "B",
-          "text": "左心室と右心室を隔てる壁である。"
+          "text": "心室中隔"
         },
         {
           "id": "C",
-          "text": "心房中隔は存在しない構造である。"
+          "text": "三尖弁"
         },
         {
           "id": "D",
-          "text": "心房中隔は血液を通す構造である。"
+          "text": "心膜"
         }
       ],
       "answer": "A",
-      "explanation": "心房中隔は左心房と右心房を隔てる壁であり、心室中隔(Q230)と対をなす構造である。",
+      "explanation": "心房中隔は右心房と左心房を隔てる壁である。心室中隔は右心室と左心室を隔てる。",
       "tags": [
         "心房中隔"
-      ],
-      "image": {
-        "prompt_id": "IMG-006",
-        "asset": "assets/illustrations/v1/assets/c10_heart_chambers_septum.webp",
-        "alt": "心臓4腔、両中隔、房室弁、主要血管を正面から示す模式図（患者右は画像左）",
-        "marker": "⑥",
-        "marker_target": "心房中隔",
-        "overlay": {
-          "x": 0.376,
-          "y": 0.462,
-          "label": "⑥"
-        }
-      }
+      ]
     },
     {
       "id": "Q232",
