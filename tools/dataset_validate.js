@@ -207,8 +207,9 @@ qs.forEach(q => {
 // and docs/v2.0.1_asset_source_log.md.
 // Nano Banana final integration adds U05 for Q096/Q290. 26 -> 27.
 // Q129's dedicated C11 and Q176's dedicated U06 masters add two further
-// assets. 27 -> 29.
-if (referencedAssets.size !== 28) fail(`unique referenced assets = ${referencedAssets.size}, expected 28`);
+// assets. Q231's text conversion retired C10 (29 -> 28), then Q064's
+// dedicated C12 four-chamber master restored the total to 29.
+if (referencedAssets.size !== 29) fail(`unique referenced assets = ${referencedAssets.size}, expected 29`);
 
 const allFiles = fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir).filter(f => f.endsWith('.webp')) : [];
 allFiles.forEach(f => { if (!referencedAssets.has(f)) warn(`asset file not referenced by any question: ${f}`); });
@@ -227,15 +228,20 @@ if (!q176 || !q176.image || q176.image.asset !== 'assets/illustrations/v1/assets
   fail(`Q176 must use dedicated U06 renal-corpuscle master, got: ${q176 && q176.image && q176.image.asset}`);
 }
 
+// Q064 uses a dedicated four-chamber cutaway so all four cavity markers remain
+// independently identifiable at phone width without covering valve apparatus.
+const q064 = qs.find(q => q.id === 'Q064');
+if (!q064 || !q064.image || q064.image.asset !== 'assets/illustrations/v1/assets/c12_heart_four_chambers.webp') {
+  fail(`Q064 must use dedicated C12 four-chamber master, got: ${q064 && q064.image && q064.image.asset}`);
+}
+
 // The 5 pre-existing real-photo assets' Q001-Q100 overlays must never drift
 // -- EXCEPT when an asset is deliberately upgraded, in which case this
 // baseline is updated in the same commit as the intentional change (same
-// pattern used throughout this project's history). Q017/Q064 baseline was
-// updated for the "common illustration library batch 1" pass: c03's
-// underlying image was replaced with a higher-quality custom-generated
-// chamber cutaway, and all 4/5 chamber-marker coordinates were re-measured
-// on the new file by pixel sampling (previous baseline, now historical:
-// Q017 {x:0.62,y:0.67}; Q064 {x:0.32,y:0.46}/{x:0.38,y:0.73}/{x:0.63,y:0.38}/{x:0.62,y:0.67}).
+// pattern used throughout this project's history). Q017's baseline was
+// updated for the "common illustration library batch 1" C03 replacement.
+// Q064 was later moved to the dedicated C12 four-chamber master and its four
+// cavity-marker coordinates were re-measured on that image.
 // Q048 baseline was updated for the "common illustration library batch 2"
 // pass: u02_nephron.webp was replaced with a higher-quality custom-generated
 // nephron diagram and the renal-corpuscle marker was re-measured on the new
@@ -247,7 +253,7 @@ const BASELINE_OVERLAYS = {
   Q017: [{ x: 0.5533, y: 0.6185, label: '①' }],
   Q037: [{ x: 0.385, y: 0.57, label: '①' }],
   Q048: [{ x: 0.3196, y: 0.207, label: '①' }],
-  Q064: [{ x: 0.397, y: 0.4297, label: '①' }, { x: 0.4197, y: 0.7422, label: '②' }, { x: 0.5888, y: 0.4102, label: '③' }, { x: 0.5717, y: 0.7161, label: '④' }],
+  Q064: [{ x: 0.2109, y: 0.4667, label: '①' }, { x: 0.3571, y: 0.6667, label: '②' }, { x: 0.692, y: 0.3958, label: '③' }, { x: 0.692, y: 0.6417, label: '④' }],
 };
 Object.keys(BASELINE_OVERLAYS).forEach(id => {
   const q = qs.find(x => x.id === id);

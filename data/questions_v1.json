@@ -2409,30 +2409,30 @@
         "心腔"
       ],
       "image": {
-        "prompt_id": "IMG-006",
-        "asset": "assets/illustrations/v1/assets/c03_heart_chambers.webp",
-        "alt": "4心腔・房室弁・腱索・乳頭筋・心室中隔を示す心臓断面模式図",
+        "prompt_id": "IMG-034",
+        "asset": "assets/illustrations/v1/assets/c12_heart_four_chambers.webp",
+        "alt": "右心房・右心室・左心房・左心室の内腔を大きく示す心臓断面模式図",
         "marker": "①②③④",
         "marker_target": "右心房・右心室・左心房・左心室（4か所）",
         "overlays": [
           {
-            "x": 0.397,
-            "y": 0.4297,
+            "x": 0.2109,
+            "y": 0.4667,
             "label": "①"
           },
           {
-            "x": 0.4197,
-            "y": 0.7422,
+            "x": 0.3571,
+            "y": 0.6667,
             "label": "②"
           },
           {
-            "x": 0.5888,
-            "y": 0.4102,
+            "x": 0.692,
+            "y": 0.3958,
             "label": "③"
           },
           {
-            "x": 0.5717,
-            "y": 0.7161,
+            "x": 0.692,
+            "y": 0.6417,
             "label": "④"
           }
         ]

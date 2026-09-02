@@ -2,10 +2,10 @@
   "version": "1.0.0",
   "dataset": "data/questions_v1.json",
   "generated_at": "2026-08-25",
-  "master_count": 28,
+  "master_count": 29,
   "status_counts": {
     "accepted-existing": 9,
-    "revised": 19,
+    "revised": 20,
     "pending-generation": 0
   },
   "masters": [
@@ -307,12 +307,10 @@
       ],
       "marker_targets": [
         "左心室",
-        "4心腔",
         "心室中隔"
       ],
       "questions": [
         "Q017",
-        "Q064",
         "Q230"
       ],
       "source_asset": "assets/images/q017_heart_chambers.webp",
@@ -497,6 +495,40 @@
       },
       "provenance": {
         "source": "ユーザー保存のカスタム教材画像。内容を改変せずWebP変換のみ実施し、Q129専用masterとして採用",
+        "license": "プロジェクト保有。外部クレジット不要",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "C12",
+      "asset": "assets/illustrations/v1/assets/c12_heart_four_chambers.webp",
+      "domain": "循環器",
+      "name": "四心腔識別専用断面図",
+      "view": "前面からの切開・断面（画像左が人体右）",
+      "scale": "心臓全体・四心腔",
+      "structures": [
+        "右心房",
+        "右心室",
+        "左心房",
+        "左心室",
+        "心房中隔",
+        "心室中隔",
+        "左右心室壁厚差"
+      ],
+      "marker_targets": [
+        "4心腔"
+      ],
+      "questions": [
+        "Q064"
+      ],
+      "source_asset": "ユーザー保存画像: gemini_c12_four_chambers_final.jfif",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Simplified frontal cutaway heart dedicated to identifying the four chambers, with large unobstructed blood-cavity areas in the right atrium, right ventricle, left atrium, and left ventricle; minimal valve apparatus; no labels or markers."
+      },
+      "provenance": {
+        "source": "ユーザー保存のGeminiカスタム教材画像。内容を改変せずWebP変換のみ実施し、Q064専用masterとして採用",
         "license": "プロジェクト保有。外部クレジット不要",
         "reference": "docs/v2.0.1_asset_source_log.md"
       }
