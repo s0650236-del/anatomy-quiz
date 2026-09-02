@@ -112,12 +112,14 @@ qs.forEach(q => {
 // Nano Banana final integration: Q096 (bladder trigone) and Q290 (detrusor)
 // converted to image_mcq using new U05 bladder-interior master. 77 -> 79.
 // Q053, Q040, and Q231 moved to text after Phone visual review (79 -> 76).
-if ((typeCount.text_mcq || 0) !== 235) fail(`text_mcq count = ${typeCount.text_mcq}, expected 235`);
-if ((typeCount.image_mcq || 0) !== 76) fail(`image_mcq count = ${typeCount.image_mcq}, expected 76`);
+// Q152 later moved to text because its main-bronchus feature is clearer as a
+// text comparison than as a phone-width marker target (76 -> 75).
+if ((typeCount.text_mcq || 0) !== 236) fail(`text_mcq count = ${typeCount.text_mcq}, expected 236`);
+if ((typeCount.image_mcq || 0) !== 75) fail(`image_mcq count = ${typeCount.image_mcq}, expected 75`);
 
 const catImgCount = {};
 qs.forEach(q => { if (q.type === 'image_mcq') catImgCount[q.category] = (catImgCount[q.category] || 0) + 1; });
-const expectCatImg = { '総論': 9, '循環器': 26, '呼吸器': 22, '泌尿器': 19 };
+const expectCatImg = { '総論': 9, '循環器': 26, '呼吸器': 21, '泌尿器': 19 };
 Object.keys(expectCatImg).forEach(c => {
   if ((catImgCount[c] || 0) !== expectCatImg[c]) fail(`category ${c} image_mcq count = ${catImgCount[c] || 0}, expected ${expectCatImg[c]}`);
 });
@@ -208,8 +210,9 @@ qs.forEach(q => {
 // Nano Banana final integration adds U05 for Q096/Q290. 26 -> 27.
 // Q129's dedicated C11 and Q176's dedicated U06 masters add two further
 // assets. Q231's text conversion retired C10 (29 -> 28), then Q064's
-// dedicated C12 four-chamber master restored the total to 29.
-if (referencedAssets.size !== 29) fail(`unique referenced assets = ${referencedAssets.size}, expected 29`);
+// dedicated C12 four-chamber master restored the total to 29. R07 then split
+// Q077/Q153 bronchial hierarchy targets from R03, bringing the total to 30.
+if (referencedAssets.size !== 30) fail(`unique referenced assets = ${referencedAssets.size}, expected 30`);
 
 const allFiles = fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir).filter(f => f.endsWith('.webp')) : [];
 allFiles.forEach(f => { if (!referencedAssets.has(f)) warn(`asset file not referenced by any question: ${f}`); });
@@ -233,6 +236,20 @@ if (!q176 || !q176.image || q176.image.asset !== 'assets/illustrations/v1/assets
 const q064 = qs.find(q => q.id === 'Q064');
 if (!q064 || !q064.image || q064.image.asset !== 'assets/illustrations/v1/assets/c12_heart_four_chambers.webp') {
   fail(`Q064 must use dedicated C12 four-chamber master, got: ${q064 && q064.image && q064.image.asset}`);
+}
+
+const q077 = qs.find(q => q.id === 'Q077');
+const q153 = qs.find(q => q.id === 'Q153');
+const r07Asset = 'assets/illustrations/v1/assets/r07_bronchial_tree.webp';
+if (!q077 || !q077.image || q077.image.asset !== r07Asset) {
+  fail(`Q077 must use dedicated R07 bronchial-tree master, got: ${q077 && q077.image && q077.image.asset}`);
+}
+if (!q153 || !q153.image || q153.image.asset !== r07Asset) {
+  fail(`Q153 must use dedicated R07 bronchial-tree master, got: ${q153 && q153.image && q153.image.asset}`);
+}
+const q152 = qs.find(q => q.id === 'Q152');
+if (!q152 || q152.type !== 'text_mcq' || q152.image) {
+  fail('Q152 must be text_mcq with no image block');
 }
 
 // The 5 pre-existing real-photo assets' Q001-Q100 overlays must never drift

@@ -2950,14 +2950,14 @@
         "区域気管支"
       ],
       "image": {
-        "prompt_id": "IMG-013",
-        "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
-        "alt": "肺葉・肺裂と気管支樹を統合した前面図（患者右は画像左）",
+        "prompt_id": "IMG-035",
+        "asset": "assets/illustrations/v1/assets/r07_bronchial_tree.webp",
+        "alt": "気管から主気管支・葉気管支・区域気管支への分岐を示す前面模式図（画像左が人体右）",
         "marker": "②",
         "marker_target": "区域気管支",
         "overlay": {
-          "x": 0.2852,
-          "y": 0.4596,
+          "x": 0.295,
+          "y": 0.366,
           "label": "②"
         }
       }
@@ -5609,9 +5609,9 @@
       "id": "Q152",
       "category": "呼吸器",
       "subcategory": "気管支",
-      "type": "image_mcq",
+      "type": "text_mcq",
       "difficulty": 1,
-      "question": "気道分岐図の③で示された、より太く短く、垂直に近い角度で分岐する気管支はどれか。",
+      "question": "左右の主気管支について、より太く短く、垂直に近い角度で分岐するのはどれか。",
       "choices": [
         {
           "id": "A",
@@ -5631,23 +5631,11 @@
         }
       ],
       "answer": "A",
-      "explanation": "右主気管支は左主気管支に比べて太く短く、気管からより垂直に近い角度で分岐するため、誤嚥した異物は右主気管支に入りやすい。",
+      "explanation": "右主気管支は左主気管支より太く短く、より垂直に近い走行をとる。そのため、気道内へ入った異物は右主気管支へ進入しやすい。",
       "tags": [
         "主気管支",
         "右主気管支"
-      ],
-      "image": {
-        "prompt_id": "IMG-013",
-        "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
-        "alt": "肺葉・肺裂と気管支樹を統合した前面図（患者右は画像左）",
-        "marker": "③",
-        "marker_target": "右主気管支",
-        "overlay": {
-          "x": 0.4521,
-          "y": 0.4036,
-          "label": "③"
-        }
-      }
+      ]
     },
     {
       "id": "Q153",
@@ -5680,14 +5668,14 @@
         "葉気管支"
       ],
       "image": {
-        "prompt_id": "IMG-013",
-        "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
-        "alt": "肺葉・肺裂と気管支樹を統合した前面図（患者右は画像左）",
+        "prompt_id": "IMG-035",
+        "asset": "assets/illustrations/v1/assets/r07_bronchial_tree.webp",
+        "alt": "気管から主気管支・葉気管支・区域気管支への分岐を示す前面模式図（画像左が人体右）",
         "marker": "④",
         "marker_target": "葉気管支",
         "overlay": {
-          "x": 0.373,
-          "y": 0.393,
+          "x": 0.6663,
+          "y": 0.5425,
           "label": "④"
         }
       }

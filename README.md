@@ -3,7 +3,7 @@
 看護学科1年生向けの「人体の構造と機能」試験対策クイズWebアプリです。
 GitHub PagesでホスティングしたHTTPS URLを、iPhone / iPad / Windows / Mac の各ブラウザ（主にSafari）から開いて利用します。
 
-- 対象：総論・循環器・呼吸器・泌尿器（全311問、うちimage_mcq 76問）
+- 対象：総論・循環器・呼吸器・泌尿器（全311問、うちimage_mcq 75問）
 - 配布方法：GitHub PagesのURLをSafari等で開く（HTMLファイルの直接配布は非推奨）
 - PWA対応：ホーム画面に追加してアプリのように利用可能、2回目以降はオフラインでも動作
 
@@ -16,7 +16,7 @@ index.html                    アプリ本体（画面・スタイル）
 app.js                        画面ロジック（問題データとは分離）
 data/questions_v1.json        問題データ（マスターデータ、全311問）
 data/questions.schema.json    問題データのJSON Schema（検証用）
-assets/illustrations/v1/      共通イラストライブラリ（29 master）
+assets/illustrations/v1/      共通イラストライブラリ（30 master）
 manifest.webmanifest          PWA用マニフェスト
 sw.js                         Service Worker（オフラインキャッシュ）
 icon-180.png / icon-512.png   PWA用アイコン

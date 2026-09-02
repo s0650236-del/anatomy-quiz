@@ -2,7 +2,7 @@
 
 ## 適用範囲
 
-`data/questions_v1.json` の311問を正本とし、76件の `image_mcq` を29 masterへ割り当てた。master仕様の機械可読な正本は `assets/illustrations/v1/manifest.json` である。
+`data/questions_v1.json` の311問を正本とし、75件の `image_mcq` を30 masterへ割り当てた。master仕様の機械可読な正本は `assets/illustrations/v1/manifest.json` である。
 
 > **更新（common illustration library batch 1）**：C01・C02・C03・C05をカスタムAI生成画像へ更新し、C08（冠状動脈前面）をC01へ統合して削除、C03から分離できなかったQ231（心房中隔）専用にC10を新設した。Q140（冠状静脈洞）はC02で一意に識別できるようになったためimage_mcqへ復帰した。詳細は`docs/v2.0.1_asset_source_log.md`「common illustration library batch 1」節を参照。
 >
@@ -21,6 +21,8 @@
 > **更新（Q231 text_mcq化）**：C10では心房中隔面を一意に示せず、Q231自体も画像非依存の定義問題だったためtext_mcqへ変更した。Q231専用だったC10はproduction利用を終了し、28 masterとなった。
 >
 > **更新（Q064専用C12）**：Phoneで4心腔すべてに十分なmarker-safe areaを確保するため、Q064を共有C03から専用C12「四心腔識別専用断面図」へ移した。C03はQ017・Q230で継続利用し、29 masterとなった。
+>
+> **更新（気管支問題最終整理）**：気管支階層識別専用R07を新設し、Q077（区域気管支）・Q153（葉気管支）をR03から移した。Q152は右主気管支の左右差を文章で問うtext_mcqへ変更した。R03は肺葉・肺裂4問で継続利用し、75 image_mcq、30 masterとなった。
 
 画像は問題単位で複製しない。複数問題が同じ `image.asset` を参照し、markerの座標とラベルは各問題の `overlay` または `overlays` に残す。前面・後面・断面・組織像、または表示倍率が違う図は別masterとした。
 
@@ -30,7 +32,7 @@
 |---|---|---:|
 | G | 総論 | 6 |
 | C | 循環器 | 10（C08はC01へ統合、C10は利用終了、C12を新設） |
-| R | 呼吸器 | 8（R03/R04統合、R08・R09を新設） |
+| R | 呼吸器 | 9（R03から気管支階層専用R07を分離） |
 | U | 泌尿器 | 5（U01はU04へ統合、U05・U06を新設） |
 
 ## master-to-question対応表
@@ -55,10 +57,11 @@
 | C12 | 四心腔識別専用断面図 | Q064 | 1 | `c12_heart_four_chambers.webp` |
 | R01 | 喉頭外観と上下気道（Q256のみ。R2-B保留中の暫定状態） | Q256 | 1 | `r01_larynx.webp` |
 | R02 | 喉頭鏡視野・上方観 | Q255, Q307 | 2 | `r02_vocal_folds.webp` |
-| R03 | 肺外観・気管支樹統合図 | Q035, Q036, Q077, Q082, Q152, Q153, Q169 | 7 | `r03_lungs_bronchial_tree.webp` |
+| R03 | 肺外観・肺葉・肺裂図 | Q035, Q036, Q082, Q169 | 4 | `r03_lungs_bronchial_tree.webp` |
 | R04 | 末梢気道連続図 | Q034, Q041, Q154, Q308 | 4 | `r04_peripheral_airway_continuum.webp` |
 | R05 | 肺胞ガス交換 | Q037, Q084 | 2 | `r05_alveolar_gas_exchange.webp` |
 | R06 | 胸膜・横隔膜 | Q155, Q156 | 2 | `r06_pleura_cross_section.webp` |
+| R07 | 気管支階層識別専用図 | Q077, Q153 | 2 | `r07_bronchial_tree.webp` |
 | R08 | 上気道矢状断 | Q032 | 1 | `r08_upper_airway_sagittal.webp` |
 | R09 | 喉頭外観・前面 | Q304, Q305, Q306 | 3 | `r09_larynx_exterior_anterior.webp` |
 | U02 | ネフロン全体 | Q048, Q177, Q178, Q180, Q199, Q310, Q311 | 7 | `u02_nephron.webp` |
@@ -67,14 +70,14 @@
 | U05 | 膀胱内面 | Q096, Q290 | 2 | `u05_bladder_interior.webp` |
 | U06 | 腎小体拡大図 | Q176 | 1 | `u06_renal_corpuscle.webp` |
 
-76問すべてがmasterへ割り当てられている。Q002、Q004、Q032、Q063、Q064、Q129、Q176、Q256は単独masterである。Q064はPhoneで4心腔を同水準に識別するためC12、Q129は腱索と乳頭筋を分けるためC11、Q176はボーマン嚢壁と糸球体を分けるためU06へ移した。
+75問すべてがmasterへ割り当てられている。Q002、Q004、Q032、Q063、Q064、Q129、Q176、Q256は単独masterである。Q064はPhoneで4心腔を同水準に識別するためC12、Q077・Q153は気管支階層を肺実質から分離して示すためR07、Q129は腱索と乳頭筋を分けるためC11、Q176はボーマン嚢壁と糸球体を分けるためU06へ移した。
 
 ## 統合しなかった主な図
 
 - C01、C02、C03は同じ心臓でも観察方向が違う。前面外観、後面外観、内部断面を一枚へ詰めない。
 - C04は弁輪面、C05は刺激伝導系である。C03へ重ねるとスマートフォン上でmarker候補が密集する。
 - C01とC08（batch 1で統合・削除）：新C01は冠状動脈（右冠動脈・前室間枝）も明瞭に写る高精細画像だったため、専用assetだったC08をC01へ統合しC08を削除した。
-- R03は肺外観と主気管支から区域気管支を一枚に統合した。R04は終末細気管支から肺胞を扱うため、縮尺差を守って分けた。
+- R03は肺葉・肺裂、R07は主気管支から区域気管支までの階層識別に用途を分けた。R04は終末細気管支から肺胞を扱うため、縮尺差を守って分けた。
 - R05は血液空気関門を識別する微細構造図であり、R04へ統合しない。
 - U02、U03、U04はネフロン模式図、泌尿器系全体、腎断面。観察範囲が一致しない。腎門（旧U01）だけはU04の腎臓冠状断上で無理なく一意に指せたため、batch 2でU04へ統合した。
 - R08（上気道矢状断）とR09（喉頭外観・前面）：旧R01は後面寄りの頸部局所図1枚に、鼻腔〜気管の全体像（Q032）と喉頭単体の前面観（Q304〜Q306）を無理に同居させていた。矢状断と前面外観は観察方向が異なるため、batch 4で別masterに分離した。Q256（喉頭蓋）は、まだ人間レビューが済んでいない別視点の候補（R2-B）に統合される可能性があるため、今回は旧R01画像に残し統合対象から外した。
@@ -83,7 +86,7 @@
 
 ## 生成・出典管理
 
-v1の当初26 masterは品質評価済みの既存assetをバイト同一で採用した。batch 1でC01・C02・C03・C05をカスタムAI生成画像へ更新し（`status:"revised"`）、C08を統合廃止、C10を新設した。batch 2でU01（腎門）をU04へ統合・削除し、U02・U03・U04をカスタムAI生成画像へ更新した（`status:"revised"`）。26 master → 25 masterとなった。batch 3では呼吸器の肺葉図（旧R03）と気管支分岐図（旧R04）を新R03（肺外観・気管支樹統合図）へ統合し、25 master → 24 masterとなった。batch 4でR01からQ032・Q304〜Q306を分離し、カスタムAI生成画像によるR08・R09を新設、R02もカスタムAI生成画像へ更新した。batch 5・6で既存masterを更新した。Nano Banana final batchでU05を新設し27 masterとなり、Q129専用C11とQ176専用U06の追加後は29 masterとなった。Q231のtext_mcq化に伴ってC10のproduction利用を終了して28 masterとなり、Q064専用C12の追加後は29 masterである。生成待ちは0件。各masterの観察方向、縮尺、主要構造、marker target、代替画像を作る場合のprompt、出典・ライセンス欄はmanifestに収録した。
+v1の当初26 masterは品質評価済みの既存assetをバイト同一で採用した。batch 1でC01・C02・C03・C05をカスタムAI生成画像へ更新し（`status:"revised"`）、C08を統合廃止、C10を新設した。batch 2でU01（腎門）をU04へ統合・削除し、U02・U03・U04をカスタムAI生成画像へ更新した（`status:"revised"`）。26 master → 25 masterとなった。batch 3では呼吸器の肺葉図（旧R03）と気管支分岐図（旧R04）を新R03（肺外観・気管支樹統合図）へ統合し、25 master → 24 masterとなった。batch 4でR01からQ032・Q304〜Q306を分離し、カスタムAI生成画像によるR08・R09を新設、R02もカスタムAI生成画像へ更新した。batch 5・6で既存masterを更新した。Nano Banana final batchでU05を新設し27 masterとなり、Q129専用C11とQ176専用U06の追加後は29 masterとなった。Q231のtext_mcq化に伴ってC10のproduction利用を終了して28 masterとなり、Q064専用C12の追加後は29 masterとなった。気管支問題最終整理でR07を追加し、現在は30 masterである。生成待ちは0件。各masterの観察方向、縮尺、主要構造、marker target、代替画像を作る場合のprompt、出典・ライセンス欄はmanifestに収録した。
 
 出典URL、加工方法、採否理由は `docs/v2.0.1_asset_source_log.md` と `docs/v2.0.1_image_quality_classification.md` を参照する。出典欄が「詳細は出典ログ参照」のassetは、公開前にクレジット表示との一致を人が再確認する。
 

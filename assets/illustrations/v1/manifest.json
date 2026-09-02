@@ -2,10 +2,10 @@
   "version": "1.0.0",
   "dataset": "data/questions_v1.json",
   "generated_at": "2026-08-25",
-  "master_count": 29,
+  "master_count": 30,
   "status_counts": {
     "accepted-existing": 9,
-    "revised": 20,
+    "revised": 21,
     "pending-generation": 0
   },
   "masters": [
@@ -645,9 +645,9 @@
       "id": "R03",
       "asset": "assets/illustrations/v1/assets/r03_lungs_bronchial_tree.webp",
       "domain": "呼吸器",
-      "name": "肺外観・気管支樹統合図",
+      "name": "肺外観・肺葉・肺裂図",
       "view": "前面",
-      "scale": "気管から区域気管支を含む肺全体",
+      "scale": "肺全体・肺葉・肺裂",
       "structures": [
         "気管",
         "右主気管支",
@@ -668,18 +668,12 @@
         "右肺中葉",
         "左右肺葉数",
         "水平裂",
-        "肺尖",
-        "区域気管支",
-        "右主気管支",
-        "葉気管支"
+        "肺尖"
       ],
       "questions": [
         "Q035",
         "Q036",
-        "Q077",
         "Q082",
-        "Q152",
-        "Q153",
         "Q169"
       ],
       "source_asset": "assets/images/q035_right_middle_lobe.webp + assets/images/q040_airway_branching.webp",
@@ -803,6 +797,42 @@
       "provenance": {
         "source": "ユーザー提供カスタムAI生成画像（Codex ImageGen、最終修正版）。旧r06はプロジェクト自作SVGの横断面模式図で、横隔膜を含まなかった。本画像は胸郭全体の前額断（冠状断）で、肺・心臓・気管・横隔膜と、臓側胸膜／胸膜腔（教育用に強調した狭い潜在腔）／壁側胸膜の層構造を示す",
         "license": "外部クレジット不要。生成記録はdocs/v2.0.1_asset_source_log.mdに記載",
+        "reference": "docs/v2.0.1_asset_source_log.md"
+      }
+    },
+    {
+      "id": "R07",
+      "asset": "assets/illustrations/v1/assets/r07_bronchial_tree.webp",
+      "domain": "呼吸器",
+      "name": "気管支階層識別専用図",
+      "view": "前面（画像左が人体右）",
+      "scale": "気管から区域気管支",
+      "structures": [
+        "気管",
+        "気管分岐部",
+        "右主気管支",
+        "左主気管支",
+        "葉気管支",
+        "区域気管支",
+        "末梢気管支"
+      ],
+      "marker_targets": [
+        "区域気管支",
+        "葉気管支"
+      ],
+      "questions": [
+        "Q077",
+        "Q153"
+      ],
+      "source_asset": "ユーザー保存画像: gemini_r06_bronchial_tree_final.jfif",
+      "status": "revised",
+      "generation": {
+        "required": false,
+        "prompt": "Anterior-view isolated bronchial tree showing the trachea, carina, asymmetric main bronchi, lobar bronchi, segmental bronchi, and smaller peripheral branches with clear caliber hierarchy; image-left is patient right; no lungs, text, labels, arrows, numbers, or markers."
+      },
+      "provenance": {
+        "source": "ユーザー保存のGeminiカスタム教材画像。crop・resizeなしでWebP変換し、Q077・Q153の気管支階層識別専用masterとして採用",
+        "license": "プロジェクト保有。外部クレジット不要",
         "reference": "docs/v2.0.1_asset_source_log.md"
       }
     },
